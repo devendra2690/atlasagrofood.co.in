@@ -84,31 +84,17 @@
   </style>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // We listen on the whole document for clicks
-    document.addEventListener('click', (e) => {
-      
-      // Check if the clicked element (or its parent) is the menu button
-      // CHANGE 'mobile-menu-btn' to match the ID in your header.html if different
-      const toggleBtn = e.target.closest('#mobile-menu-btn');
-      
-      if (toggleBtn) {
-        // Prevent default link behavior if it's an <a> tag
-        e.preventDefault(); 
-        
-        // Find the menu element
-        // CHANGE 'mobile-menu' to match the ID of your hidden menu list
-        const menu = document.getElementById('mobile-menu');
-        
-        if (menu) {
-          // Toggle the hidden class (Tailwind standard)
-          menu.classList.toggle('hidden');
-          
-          // Optional: Toggle an 'open' icon if you have one
-          // toggleBtn.querySelector('.icon-open').classList.toggle('hidden');
-          // toggleBtn.querySelector('.icon-close').classList.toggle('hidden');
-        } else {
-          console.warn('Mobile menu element not found. Check IDs.');
-        }
+    document.body.addEventListener('click', (e) => {
+      // 1. Open Menu
+      if (e.target.closest('#mobile-open-btn')) {
+        document.getElementById('mobile-overlay').classList.remove('hidden');
+        document.getElementById('mobile-sidebar').classList.remove('hidden');
+      }
+
+      // 2. Close Menu (Clicking X or Overlay)
+      if (e.target.closest('#mobile-close-btn') || e.target.id === 'mobile-overlay') {
+        document.getElementById('mobile-overlay').classList.add('hidden');
+        document.getElementById('mobile-sidebar').classList.add('hidden');
       }
     });
   });
