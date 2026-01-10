@@ -6,8 +6,8 @@
 
   <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
   
-  <title>Dehydrated Vegetables & Fruit Chips | Bulk Supplier | Atlas AgroFood</title>
-  <meta name="description" content="Export-quality dehydrated onion, garlic, ginger, and fruit chips. Air-dried to retain natural fiber and flavor. Available in flakes, granules, and powder." />
+  <title>Dehydrated Vegetables & Fruit Powders | Bulk B2B Supplier | Atlas AgroFood</title>
+  <meta name="description" content="Manufacturer and supplier of dehydrated vegetables, fruit powders, flakes and blends. Export-quality Onion, Garlic, Ginger, and 25+ other ingredients." />
   <meta name="theme-color" content="#15803d" />
   
   <link rel="canonical" href="https://atlasagro.co.in/products/dehydrated-products.html" />
@@ -48,6 +48,10 @@
     .card-hover { transition: all .3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(21, 128, 61, 0.15); border-color: #c5a365; }
     
+    /* Search Input Styling */
+    .search-input { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: 1rem center; background-size: 1.25rem; padding-left: 3rem; }
+
+    /* Sticky CTA */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
@@ -68,19 +72,7 @@
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atlasagro.co.in" },
       { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://atlasagro.co.in/products/" },
-      { "@type": "ListItem", "position": 3, "name": "Dehydrated Vegetables", "item": "https://atlasagro.co.in/products/dehydrated-products.html" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Dehydrated Red Onion", "url": "https://atlasagro.co.in/products/onion.html" },
-      { "@type": "ListItem", "position": 2, "name": "Dehydrated Garlic", "url": "https://atlasagro.co.in/products/garlic.html" },
-      { "@type": "ListItem", "position": 3, "name": "Dried Ginger", "url": "https://atlasagro.co.in/products/ginger.html" },
-      { "@type": "ListItem", "position": 4, "name": "Fruit Chips", "url": "https://atlasagro.co.in/products/banana.html" }
+      { "@type": "ListItem", "position": 3, "name": "Dehydrated Products", "item": "https://atlasagro.co.in/products/dehydrated-products.html" }
     ]
   }
   </script>
@@ -113,116 +105,336 @@
       </nav>
     </div>
 
-    <section class="max-w-7xl mx-auto mb-12 text-center">
-      <div class="inline-block text-earth-gold font-bold tracking-widest uppercase text-xs mb-3">Air Dried & Natural</div>
+    <section class="max-w-7xl mx-auto mb-12">
+      <div class="inline-block text-earth-gold font-bold tracking-widest uppercase text-xs mb-3">Core Ingredients</div>
       <h1 class="text-4xl md:text-6xl font-serif-display font-bold text-brand-900 leading-tight mb-6">
         Dehydrated <span class="italic text-brand-700">Vegetables</span> & Fruits
       </h1>
-      <p class="text-stone-600 text-lg max-w-2xl mx-auto leading-relaxed">
-        Premium air-dried ingredients that retain natural texture, fiber, and flavor. Ideal for soups, ready meals, seasonings, and snacks.
+      <p class="text-stone-600 text-lg max-w-3xl leading-relaxed mb-8">
+        We manufacture export-quality dehydrated ingredients for food manufacturers, HoReCa, and private label brands. Available in flakes, granules, minced, and powder forms.
       </p>
-    </section>
-
-    <section class="max-w-2xl mx-auto mb-12">
-      <div class="relative group">
-        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-          <svg class="h-5 w-5 text-stone-400 group-focus-within:text-brand-600 transition" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-          </svg>
-        </div>
-        <input type="text" id="productSearch" 
-               class="w-full rounded-2xl border border-stone-200 bg-white py-4 pl-12 pr-4 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none shadow-sm transition"
-               placeholder="Search onions, garlic, flakes, powder...">
-        <div class="absolute inset-y-0 right-0 pr-4 flex items-center">
-           <span id="searchCount" class="text-xs text-stone-400 font-medium"></span>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       
-      <a href="/products/onion.html" class="group block bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-56 bg-stone-100 relative overflow-hidden flex items-center justify-center">
-           <div class="text-6xl group-hover:scale-110 transition duration-500">🧅</div>
-           <div class="absolute top-4 right-4 bg-brand-100 text-brand-800 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Best Seller</div>
+      <div class="bg-white p-2 rounded-2xl border border-stone-200 shadow-sm max-w-xl">
+        <input type="text" id="productSearch" placeholder="Search products (e.g. Onion, Mango, Spinach)..." 
+               class="search-input w-full bg-stone-50 border border-stone-100 rounded-xl px-4 py-3 outline-none focus:border-brand-500 focus:bg-white transition text-ink placeholder:text-stone-400">
+      </div>
+      <div class="mt-2 text-xs text-stone-400 pl-2" id="productSearchCount">Showing all products</div>
+    </section>
+
+    <section class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
+      
+      <a href="/products/onion.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/onion/hero.png" alt="Onion Powder & Flakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
         </div>
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-brand-900 group-hover:text-earth-gold transition">Red Onion</h2>
-          <p class="text-sm text-stone-500 mt-1 mb-4 line-clamp-2">Pungent and flavorful. Available as flakes (kibbled), chopped, minced, granules, and powder.</p>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Onion</h3>
+          <p class="text-sm text-stone-500 mb-3">Red, White & Pink varieties.</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Flakes</span>
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Powder</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Flakes</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Powder</span>
           </div>
         </div>
       </a>
 
-      <a href="/products/onion.html" class="group block bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-56 bg-stone-100 relative overflow-hidden flex items-center justify-center">
-           <div class="text-6xl group-hover:scale-110 transition duration-500">⚪</div>
+      <a href="/products/garlic.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/garlic/hero.png" alt="Garlic Powder & Granules" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
         </div>
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-brand-900 group-hover:text-earth-gold transition">White Onion</h2>
-          <p class="text-sm text-stone-500 mt-1 mb-4 line-clamp-2">Milder, sweeter profile. Preferred for export markets, especially Europe and USA.</p>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Spice/Veg</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Garlic</h3>
+          <p class="text-sm text-stone-500 mb-3">High pungency cloves & powder.</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Kibbled</span>
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Powder</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Granules</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Powder</span>
           </div>
         </div>
       </a>
 
-      <a href="/products/garlic.html" class="group block bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-56 bg-stone-100 relative overflow-hidden flex items-center justify-center">
-           <div class="text-6xl group-hover:scale-110 transition duration-500">🧄</div>
+      <a href="/products/ginger.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/ginger/hero.png" alt="Ginger Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
         </div>
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-brand-900 group-hover:text-earth-gold transition">Dried Garlic</h2>
-          <p class="text-sm text-stone-500 mt-1 mb-4 line-clamp-2">High pungency Indian garlic. Cloves, minced, granules, and fine powder (100 mesh).</p>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Spice</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Ginger</h3>
+          <p class="text-sm text-stone-500 mb-3">Dried slices and fine powder.</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Cloves</span>
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Granules</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Slices</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Powder</span>
           </div>
         </div>
       </a>
 
-      <a href="/products/ginger.html" class="group block bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-56 bg-stone-100 relative overflow-hidden flex items-center justify-center">
-           <div class="text-6xl group-hover:scale-110 transition duration-500">🪵</div>
+      <a href="/products/mixed-veg.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/mixed-veg/hero.png" alt="Mixed Vegetable" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
         </div>
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-brand-900 group-hover:text-earth-gold transition">Dried Ginger</h2>
-          <p class="text-sm text-stone-500 mt-1 mb-4 line-clamp-2">Whole dried slices (chips) and powder. Essential for tea blends, baking, and masalas.</p>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Blend</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Mixed Veg</h3>
+          <p class="text-sm text-stone-500 mb-3">Ready blend for soups/noodles.</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Slices</span>
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Powder</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Premix</span>
           </div>
         </div>
       </a>
 
-      <a href="/products/banana.html" class="group block bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-56 bg-stone-100 relative overflow-hidden flex items-center justify-center">
-           <div class="text-6xl group-hover:scale-110 transition duration-500">🍌</div>
+      <a href="/products/assorted-dehydrated-fruit-chips.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/gallery/fruit-chips.png" alt="Fruit Chips" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
         </div>
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-brand-900 group-hover:text-earth-gold transition">Fruit Chips</h2>
-          <p class="text-sm text-stone-500 mt-1 mb-4 line-clamp-2">Natural dehydrated fruit slices. Banana, Mango, Chikoo. No sugar added.</p>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Snack</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Fruit Chips</h3>
+          <p class="text-sm text-stone-500 mb-3">Assorted crunchy fruit snacks.</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Slices</span>
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Dice</span>
+            <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100">Mix</span>
           </div>
         </div>
       </a>
 
-      <a href="/products/spices.html" class="group block bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-56 bg-stone-100 relative overflow-hidden flex items-center justify-center">
-           <div class="text-6xl group-hover:scale-110 transition duration-500">🌶️</div>
+      <a href="/products/methi.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/methi/hero.png" alt="Kasuri Methi" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
         </div>
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-brand-900 group-hover:text-earth-gold transition">Dried Green Chilli</h2>
-          <p class="text-sm text-stone-500 mt-1 mb-4 line-clamp-2">Dried green chilli flakes and powder. Retains color and heat.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Flakes</span>
-            <span class="px-2 py-1 bg-stone-50 border border-stone-200 rounded-md text-xs text-stone-600 font-medium">Powder</span>
-          </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Herb</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Methi (Fenugreek)</h3>
+          <p class="text-sm text-stone-500 mb-3">Kasuri methi leaves & powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/spinach.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/spinach/hero.png" alt="Spinach Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Leafy</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Spinach</h3>
+          <p class="text-sm text-stone-500 mb-3">Nutrient-rich green powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/beetroot.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/beetroot/hero.png" alt="Beetroot Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Beetroot</h3>
+          <p class="text-sm text-stone-500 mb-3">Natural red coloring agent.</p>
+        </div>
+      </a>
+
+      <a href="/products/moringa.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/moringa/hero.png" alt="Moringa Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Superfood</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Moringa</h3>
+          <p class="text-sm text-stone-500 mb-3">Drumstick leaves powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/curry-leaves.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/curry-leaves/hero.png" alt="Curry Leaves" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Herb</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Curry Leaves</h3>
+          <p class="text-sm text-stone-500 mb-3">Aromatic Indian herb.</p>
+        </div>
+      </a>
+
+      <a href="/products/coriander.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/coriander/hero.png" alt="Coriander Leaves" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Herb</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Coriander</h3>
+          <p class="text-sm text-stone-500 mb-3">Dried leaves & powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/tomato.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/tomato/hero.png" alt="Tomato Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Tomato</h3>
+          <p class="text-sm text-stone-500 mb-3">Powder / Flakes / Granules.</p>
+        </div>
+      </a>
+
+      <a href="/products/carrot.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/carrot/hero.png" alt="Carrot Flakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Carrot</h3>
+          <p class="text-sm text-stone-500 mb-3">Red & Orange varieties.</p>
+        </div>
+      </a>
+
+      <a href="/products/green-chilli.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/green-chilli/hero.png" alt="Green Chilli" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Spice</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Green Chilli</h3>
+          <p class="text-sm text-stone-500 mb-3">Powder / Flakes / Granules.</p>
+        </div>
+      </a>
+
+      <a href="/products/bitter-gourd.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/bitter-gourd/hero.png" alt="Karela Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Bitter Gourd</h3>
+          <p class="text-sm text-stone-500 mb-3">Karela powder & flakes.</p>
+        </div>
+      </a>
+
+      <a href="/products/corn.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/corn/hero.png" alt="Sweet Corn" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Sweet Corn</h3>
+          <p class="text-sm text-stone-500 mb-3">Dehydrated kernels & powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/mango.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/mango/hero.png" alt="Amchur Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Fruit</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Mango (Amchur)</h3>
+          <p class="text-sm text-stone-500 mb-3">Dry mango powder & flakes.</p>
+        </div>
+      </a>
+
+      <a href="/products/coconut.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/coconut/hero.png" alt="Desiccated Coconut" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Fruit</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Coconut</h3>
+          <p class="text-sm text-stone-500 mb-3">Desiccated powder & flakes.</p>
+        </div>
+      </a>
+
+      <a href="/products/apple.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/apple/hero.png" alt="Apple Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Fruit</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Apple</h3>
+          <p class="text-sm text-stone-500 mb-3">Powder & dried chips.</p>
+        </div>
+      </a>
+
+      <a href="/products/papaya.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/papaya/hero.png" alt="Papaya Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Fruit</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Papaya</h3>
+          <p class="text-sm text-stone-500 mb-3">Tutti-frutti bits & powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/guava.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/guava/hero.png" alt="Guava Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Fruit</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Guava</h3>
+          <p class="text-sm text-stone-500 mb-3">White & Pink pulp powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/orange.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/orange/hero.png" alt="Orange Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Fruit</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Orange</h3>
+          <p class="text-sm text-stone-500 mb-3">Citrus powder & peel.</p>
+        </div>
+      </a>
+
+      <a href="/products/potato.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/potato/hero.png" alt="Potato Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Potato</h3>
+          <p class="text-sm text-stone-500 mb-3">Flakes & flour for binding.</p>
+        </div>
+      </a>
+
+      <a href="/products/mushroom.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/mushroom/hero.png" alt="Mushroom Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Mushroom</h3>
+          <p class="text-sm text-stone-500 mb-3">Oyster/Button mushroom powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/okra.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/okra/hero.png" alt="Okra Flakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Okra (Bhindi)</h3>
+          <p class="text-sm text-stone-500 mb-3">Dried flakes & powder.</p>
+        </div>
+      </a>
+
+      <a href="/products/cucumber.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/cucumber/hero.png" alt="Cucumber Powder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Vegetable</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Cucumber</h3>
+          <p class="text-sm text-stone-500 mb-3">Powder for cosmetics/food.</p>
+        </div>
+      </a>
+
+      <a href="/products/rose.html" class="product-card group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative overflow-hidden flex items-center justify-center">
+           <img src="/assets/products/rose/hero.png" alt="Rose Petals" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Flower</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Rose</h3>
+          <p class="text-sm text-stone-500 mb-3">Dried petals & powder.</p>
         </div>
       </a>
 
@@ -234,30 +446,31 @@
 
   <script src="/assets/js/includes.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
   <script>
-    // Simple Search Script
+    // Search Functionality
     document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("productSearch");
-      const countEl = document.getElementById("searchCount");
-      const grid = document.querySelector('main .grid');
-      const cards = Array.from(grid.children);
+      const countEl = document.getElementById("productSearchCount");
+      const cards = document.querySelectorAll(".product-card");
 
-      function update() {
-        const q = input.value.toLowerCase().trim();
+      input.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase().trim();
         let visible = 0;
 
         cards.forEach(card => {
           const text = card.innerText.toLowerCase();
-          const show = !q || text.includes(q);
-          card.style.display = show ? "" : "none";
-          if (show) visible++;
+          if (text.includes(query)) {
+            card.style.display = "";
+            visible++;
+          } else {
+            card.style.display = "none";
+          }
         });
 
-        countEl.textContent = q ? `${visible} found` : "";
-      }
-
-      if (input) input.addEventListener("input", update);
+        countEl.textContent = query 
+          ? `Showing ${visible} result${visible !== 1 ? 's' : ''}` 
+          : "Showing all products";
+      });
     });
   </script>
 </body>
