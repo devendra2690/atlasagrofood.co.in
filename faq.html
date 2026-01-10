@@ -19,9 +19,22 @@
   <meta property="og:description" content="Answers to your questions about bulk sourcing dehydrated vegetables and fruits.">
   <meta property="og:url" content="https://atlasagrofood.co.in/faq.html">
   <meta property="og:image" content="https://atlasagrofood.co.in/assets/atlas-agrofood-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 700: '#0f7a4a' }, ink: '#0f172a', slateish: '#475569' } } } }</script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 700: '#0f7a4a' },
+            ink: '#0f172a',
+            slateish: '#475569'
+          }
+        }
+      }
+    }
+  </script>
   
   <script type="application/ld+json">
   {
@@ -54,13 +67,25 @@
 
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style>
-    .card-hover{transition:all .25s ease;} .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(34,179,106,.15);}
+    /* Consistent Design System */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
-    .sticky-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
     .sticky-cta .quote{background:#0f7a4a;color:#ffffff}
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px}}
+    
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+
+    /* FAQ Specific */
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
+    details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+    @keyframes sweep { 0% {opacity: 0; transform: translateY(-6px)} 100% {opacity: 1; transform: translateY(0)} }
   </style>
 </head>
 <body class="bg-brand-50 text-ink antialiased">
@@ -69,60 +94,66 @@
 
   <div class="sticky-cta">
     <a class="quote" href="/contact.html">Get Quote</a>
-    <a class="wa" href="https://wa.me/917738505687" target="_blank">WhatsApp</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Quote</a>
+      <a class="wa" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
   </div>
 
   <main class="max-w-4xl mx-auto px-4 py-10">
     <div class="text-center mb-10">
       <div class="text-sm font-bold text-brand uppercase tracking-wider mb-2">Support</div>
-      <h1 class="text-3xl md:text-5xl font-extrabold text-ink">Frequently Asked Questions</h1>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-ink tracking-tight">Frequently Asked Questions</h1>
       <p class="mt-4 text-lg text-slateish">Common questions about ordering, shipping, and product specifications.</p>
     </div>
 
     <div class="space-y-4">
-      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover">
+      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 transition open:ring-2 open:ring-brand-100">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-lg text-ink">
           What is your MOQ for bulk orders?
           <span class="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-brand group-open:rotate-180 transition">▼</span>
         </summary>
-        <p class="mt-4 text-slateish leading-relaxed">
+        <div class="mt-4 text-slateish leading-relaxed">
           MOQ depends on the product category and packaging. Typically ranges from 100kg to 500kg for exports. For high-value items like fruit powders, MOQs can be lower. Contact us for specifics.
-        </p>
+        </div>
       </details>
 
-      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover">
+      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 transition open:ring-2 open:ring-brand-100">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-lg text-ink">
           Do you support different mesh sizes?
           <span class="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-brand group-open:rotate-180 transition">▼</span>
         </summary>
-        <p class="mt-4 text-slateish leading-relaxed">
+        <div class="mt-4 text-slateish leading-relaxed">
           Yes. We generally supply:
           <ul class="list-disc pl-5 mt-2 space-y-1">
              <li><strong>Flakes/Kibbled:</strong> For soups and ready-to-eat mixes.</li>
              <li><strong>Granules/Minced:</strong> For seasonings.</li>
              <li><strong>Powder:</strong> 60 to 100 mesh for bakery and spice blends.</li>
           </ul>
-        </p>
+        </div>
       </details>
 
-      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover">
+      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 transition open:ring-2 open:ring-brand-100">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-lg text-ink">
           Do you provide samples?
           <span class="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-brand group-open:rotate-180 transition">▼</span>
         </summary>
-        <p class="mt-4 text-slateish leading-relaxed">
+        <div class="mt-4 text-slateish leading-relaxed">
           Yes, we provide samples for quality verification to genuine B2B buyers. Courier charges may apply depending on the location.
-        </p>
+        </div>
       </details>
 
-      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover">
+      <details class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 transition open:ring-2 open:ring-brand-100">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-lg text-ink">
           What documents do you provide for export?
           <span class="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-brand group-open:rotate-180 transition">▼</span>
         </summary>
-        <p class="mt-4 text-slateish leading-relaxed">
+        <div class="mt-4 text-slateish leading-relaxed">
           We provide Commercial Invoice, Packing List, Certificate of Analysis (COA), Certificate of Origin, and Phytosanitary Certificate (if required by the importing country).
-        </p>
+        </div>
       </details>
     </div>
 
@@ -130,7 +161,7 @@
       <h2 class="text-2xl font-bold">Still have questions?</h2>
       <p class="mt-2 text-brand-100">Our team is ready to assist you with specs and pricing.</p>
       <div class="mt-6 flex justify-center gap-4 flex-wrap">
-        <a href="https://wa.me/917738505687" class="rounded-xl bg-white px-6 py-3 font-bold text-brand-700 hover:bg-brand-50 transition">Chat on WhatsApp</a>
+        <a href="https://wa.me/917738505687" class="rounded-xl bg-white px-6 py-3 font-bold text-brand-700 hover:bg-brand-50 transition shadow-lg">Chat on WhatsApp</a>
         <a href="/contact.html" class="rounded-xl border border-white/30 px-6 py-3 font-bold text-white hover:bg-white/10 transition">Contact Us</a>
       </div>
     </div>

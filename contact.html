@@ -17,9 +17,22 @@
   <meta property="og:title" content="Contact Atlas AgroFood | Bulk Supplier">
   <meta property="og:description" content="Request pricing for bulk dehydrated ingredients. Fast response via WhatsApp or Email.">
   <meta property="og:url" content="https://atlasagrofood.co.in/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 700: '#0f7a4a' }, ink: '#0f172a', slateish: '#475569' } } } }</script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 700: '#0f7a4a' },
+            ink: '#0f172a',
+            slateish: '#475569'
+          }
+        }
+      }
+    }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -43,46 +56,60 @@
 
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style>
-    .card-hover{transition:all .25s ease;} .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(34,179,106,.15);}
+    /* Consistent Design System */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
-    .sticky-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
     .sticky-cta .quote{background:#0f7a4a;color:#ffffff}
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px}}
+    
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
   </style>
 </head>
 <body class="bg-brand-50 text-ink antialiased">
 
   <div id="site-header"></div>
   
-  <div class="sticky-cta md:hidden">
+  <div class="sticky-cta hidden md:flex">
     <a class="quote" href="#quick-quote">Get Quote</a>
-    <a class="wa" href="https://wa.me/917738505687" target="_blank">WhatsApp</a>
+    <a class="wa" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="#quick-quote">Get Quote</a>
+      <a class="wa" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
   </div>
 
   <main class="max-w-7xl mx-auto px-4 py-10">
-    <div class="mb-8 inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm">
+    <div class="mb-8 inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm shadow-sm">
       <a href="/" class="text-slateish hover:text-brand">Home</a><span class="text-slate-300">/</span>
       <span class="font-semibold text-brand">Contact</span>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-8 items-start">
       <div>
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
-          <h1 class="text-3xl font-extrabold text-ink">Get a Bulk Quote</h1>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover shadow-sm">
+          <h1 class="text-3xl font-extrabold text-ink tracking-tight">Get a Bulk Quote</h1>
           <p class="mt-2 text-slateish">
             We supply B2B and Export markets. Share your requirements below, and we will respond with availability and pricing within 24 hours.
           </p>
           
           <div class="mt-8 grid gap-4">
-             <a href="tel:+917738505687" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-50 border border-brand-100 card-hover">
-                <div class="bg-white p-3 rounded-full text-2xl">📞</div>
+             <a href="tel:+917738505687" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-50 border border-brand-100 card-hover hover:border-brand-200 transition">
+                <div class="bg-white p-3 rounded-full text-2xl shadow-sm">📞</div>
                 <div>
                    <div class="text-xs text-brand-700 font-bold uppercase">Call Us</div>
                    <div class="font-bold text-lg">+91 77385 05687</div>
                 </div>
              </a>
-             <a href="mailto:sales@atlasagrofood.co.in" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-200 card-hover">
-                <div class="bg-brand-50 p-3 rounded-full text-2xl">✉️</div>
+             <a href="mailto:sales@atlasagrofood.co.in" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-200 card-hover hover:border-slate-300 transition">
+                <div class="bg-brand-50 p-3 rounded-full text-2xl shadow-sm">✉️</div>
                 <div>
                    <div class="text-xs text-slate-500 font-bold uppercase">Email</div>
                    <div class="font-bold text-lg">sales@atlasagrofood.co.in</div>
@@ -91,17 +118,17 @@
           </div>
         </div>
 
-        <div id="quick-quote" class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+        <div id="quick-quote" class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover shadow-sm">
            <h2 class="text-xl font-bold mb-4">Quick Enquiry</h2>
            <div class="grid gap-4">
              <div class="grid grid-cols-2 gap-4">
-               <input id="qqProduct" type="text" placeholder="Product (e.g., Onion Powder)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:outline-none">
-               <input id="qqMoq" type="text" placeholder="MOQ (e.g., 500 kg)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:outline-none">
+               <input id="qqProduct" type="text" placeholder="Product (e.g., Onion Powder)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
+               <input id="qqMoq" type="text" placeholder="MOQ (e.g., 500 kg)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
              </div>
-             <input id="qqPack" type="text" placeholder="Packaging (e.g., 20kg Bag)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:outline-none">
-             <input id="qqDest" type="text" placeholder="Destination (City/Country)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:outline-none">
+             <input id="qqPack" type="text" placeholder="Packaging (e.g., 20kg Bag)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
+             <input id="qqDest" type="text" placeholder="Destination (City/Country)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
              
-             <button id="qqSendBtn" class="w-full bg-brand text-white font-bold py-4 rounded-xl hover:bg-brand-700 transition shadow-lg shadow-brand/20">
+             <button id="qqSendBtn" class="w-full bg-brand text-white font-bold py-4 rounded-xl hover:bg-brand-700 transition shadow-lg shadow-brand/20 active:scale-[0.98]">
                Send via WhatsApp
              </button>
              <p class="text-xs text-center text-slate-400">This will open WhatsApp with your pre-filled details.</p>
@@ -109,7 +136,7 @@
         </div>
       </div>
 
-      <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-sm h-full flex flex-col">
+      <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-sm h-full flex flex-col card-hover">
         <div class="h-64 lg:h-80 bg-slate-200 relative">
              <iframe 
                title="Atlas AgroFood Location"

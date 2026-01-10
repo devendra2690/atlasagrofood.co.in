@@ -12,13 +12,40 @@
   <meta name="theme-color" content="#22b36a" />
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 700: '#0f7a4a' }, ink: '#0f172a', slateish: '#475569' } } } }</script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 700: '#0f7a4a' },
+            ink: '#0f172a',
+            slateish: '#475569'
+          }
+        }
+      }
+    }
+  </script>
   
   <style>
-    .btn-primary { background-color: #22b36a; color: white; padding: 12px 24px; border-radius: 9999px; font-weight: 700; transition: background 0.2s; }
-    .btn-primary:hover { background-color: #0f7a4a; }
-    .btn-outline { background-color: white; border: 1px solid #cbd5e1; color: #0f172a; padding: 12px 24px; border-radius: 9999px; font-weight: 700; transition: all 0.2s; }
-    .btn-outline:hover { border-color: #22b36a; color: #22b36a; }
+    /* Button Styles from Design System */
+    .btn-primary { 
+        display: inline-flex; align-items: center; justify-content: center;
+        background-color: #22b36a; color: white; padding: 12px 24px; 
+        border-radius: 9999px; font-weight: 700; transition: all 0.2s ease;
+        box-shadow: 0 4px 6px -1px rgba(34,179,106, 0.2);
+    }
+    .btn-primary:hover { background-color: #0f7a4a; transform: translateY(-1px); }
+    
+    .btn-outline { 
+        display: inline-flex; align-items: center; justify-content: center;
+        background-color: white; border: 1px solid #cbd5e1; color: #0f172a; 
+        padding: 12px 24px; border-radius: 9999px; font-weight: 700; 
+        transition: all 0.2s ease; 
+    }
+    .btn-outline:hover { border-color: #22b36a; color: #22b36a; transform: translateY(-1px); }
+    
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
   </style>
 </head>
 <body class="bg-brand-50 text-ink antialiased flex flex-col min-h-screen">
@@ -27,12 +54,12 @@
 
   <main class="flex-grow flex items-center justify-center px-4 py-20">
     <div class="max-w-2xl w-full text-center">
-      <div class="inline-block p-4 rounded-full bg-white shadow-lg mb-6">
-        <span class="text-4xl">🥑</span>
+      <div class="inline-block p-6 rounded-full bg-white shadow-xl shadow-brand/10 mb-6 card-hover">
+        <span class="text-6xl">🥑</span>
       </div>
       <h1 class="text-6xl font-extrabold text-brand-700 tracking-tight">404</h1>
       <h2 class="mt-4 text-2xl font-bold text-ink">Page not found</h2>
-      <p class="mt-4 text-lg text-slateish">
+      <p class="mt-4 text-lg text-slateish max-w-md mx-auto">
         The page you are looking for doesn't exist or has been moved. <br class="hidden md:block">
         Check our product catalog or head back home.
       </p>
@@ -42,13 +69,13 @@
         <a href="/products/" class="btn-outline">Browse Products</a>
       </div>
 
-      <div class="mt-12 p-6 bg-white rounded-3xl border border-slate-200">
-        <h3 class="font-bold text-lg mb-4">Looking for something specific?</h3>
+      <div class="mt-12 p-6 bg-white rounded-3xl border border-slate-200 card-hover shadow-sm">
+        <h3 class="font-bold text-lg mb-4 text-ink">Looking for something specific?</h3>
         <div class="flex flex-wrap justify-center gap-2">
-          <a href="/products/dehydrated-products.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100">Vegetables</a>
-          <a href="/products/fruit-powders.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100">Fruit Powders</a>
-          <a href="/products/spices.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100">Spices</a>
-          <a href="/contact.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100">Contact Sales</a>
+          <a href="/products/dehydrated-products.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Vegetables</a>
+          <a href="/products/fruit-powders.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Fruit Powders</a>
+          <a href="/products/spices.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Spices</a>
+          <a href="/contact.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Contact Sales</a>
         </div>
       </div>
     </div>
