@@ -27,8 +27,37 @@
 
     <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
       <div class="grid lg:grid-cols-2 gap-8">
-        <div class="rounded-3xl bg-slate-50 overflow-hidden aspect-[4/3] relative">
-           <img src="../assets/products/spices/black-pepper.png" onerror="this.src='../assets/products/black-pepper/hero.png'; this.onerror=null; this.src='/assets/atlas-agrofood-logo.png';" alt="Black Pepper Powder" class="w-full h-full object-cover">
+                <div class="bg-stone-50 relative h-full min-h-[350px] md:min-h-[450px] w-full overflow-hidden group rounded-3xl md:rounded-l-[3rem] md:rounded-r-none border-r border-stone-100"
+            x-data="{ 
+                active: 0, 
+                images: [
+                  '/assets/products/spices/black-pepper.png'
+                ],
+                prev() {
+                    this.active = (this.active === 0) ? this.images.length - 1 : this.active - 1;
+                },
+                next() {
+                    this.active = (this.active === this.images.length - 1) ? 0 : this.active + 1;
+                }
+            }">
+            <div class="absolute inset-0 flex items-center justify-center bg-stone-50">
+                <div class="w-full h-full relative">
+                    <img :src="images[active]" 
+                          alt="Product Detail" 
+                          class="w-full h-full object-contain transition-transform duration-500">
+                </div>
+            </div>
+            <button @click="prev()" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button @click="next()" 
+                    class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <div class="absolute bottom-4 right-6 z-20 bg-stone-900/10 backdrop-blur-md text-stone-600 text-[10px] font-bold px-3 py-1 rounded-full pointer-events-none tracking-widest border border-white/20">
+                <span x-text="active + 1"></span> / <span x-text="images.length"></span>
+            </div>
         </div>
         <div>
           <div class="text-sm text-slate-500 font-bold uppercase tracking-wider">Spices</div>

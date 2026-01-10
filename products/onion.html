@@ -127,44 +127,42 @@
     <section class="max-w-7xl mx-auto mb-16">
       <div class="bg-white rounded-[3rem] border border-stone-200 shadow-xl overflow-hidden">
         <div class="grid md:grid-cols-2 gap-0">
-          
-          <div class="bg-white p-6 md:p-8 flex flex-col items-center justify-center" 
-              x-data="{ activeImage: '/assets/products/onion/hero.png' }">
-              
-              <div class="w-full h-64 md:h-80 flex items-center justify-center mb-6">
-                  <img :src="activeImage" 
-                      alt="Product Detail" 
-                      class="w-full h-full object-contain transition-all duration-300 hover:scale-105">
-              </div>
-
-              <div class="flex gap-4 overflow-x-auto pb-2 px-2">
-                  
-                  <button @click="activeImage = '/assets/products/onion/thumb-1.png'" 
-                          class="w-16 h-16 rounded-lg border-2 overflow-hidden shrink-0 transition"
-                          :class="activeImage === '/assets/products/onion/thumb-1.png' ? 'border-brand-600 ring-1 ring-brand-600' : 'border-stone-100 hover:border-stone-300'">
-                      <img src="/assets/products/onion/thumb-1.png" class="w-full h-full object-cover">
-                  </button>
-
-                  <button @click="activeImage = '/assets/products/onion/thumb-2.png'" 
-                          class="w-16 h-16 rounded-lg border-2 overflow-hidden shrink-0 transition"
-                          :class="activeImage === '/assets/products/onion/thumb-2.png' ? 'border-brand-600 ring-1 ring-brand-600' : 'border-stone-100 hover:border-stone-300'">
-                      <img src="/assets/products/onion/thumb-2.png" class="w-full h-full object-cover">
-                  </button>
-
-                  <button @click="activeImage = '/assets/products/onion/thumb-3.png'" 
-                          class="w-16 h-16 rounded-lg border-2 overflow-hidden shrink-0 transition"
-                          :class="activeImage === '/assets/products/onion/thumb-3.png' ? 'border-brand-600 ring-1 ring-brand-600' : 'border-stone-100 hover:border-stone-300'">
-                      <img src="/assets/products/onion/thumb-3.png" class="w-full h-full object-cover opacity-70">
-                  </button>
-
-                  <button @click="activeImage = '/assets/products/onion/hero.png'" 
-                          class="w-16 h-16 rounded-lg border-2 overflow-hidden shrink-0 transition"
-                          :class="activeImage === '/assets/products/onion/hero.png' ? 'border-brand-600 ring-1 ring-brand-600' : 'border-stone-100 hover:border-stone-300'">
-                      <img src="/assets/products/onion/hero.png" class="w-full h-full object-cover opacity-70">
-                  </button>
-
-              </div>
-          </div>
+        
+                  <div class="bg-stone-50 relative h-full min-h-[350px] md:min-h-[450px] w-full overflow-hidden group rounded-3xl md:rounded-l-[3rem] md:rounded-r-none border-r border-stone-100"
+            x-data="{ 
+                active: 0, 
+                images: [
+                  '/assets/products/onion/hero.png',
+                  '/assets/products/onion/thumb-1.png', 
+                  '/assets/products/onion/thumb-2.png',
+                  '/assets/products/onion/thumb-3.png'
+                ],
+                prev() {
+                    this.active = (this.active === 0) ? this.images.length - 1 : this.active - 1;
+                },
+                next() {
+                    this.active = (this.active === this.images.length - 1) ? 0 : this.active + 1;
+                }
+            }">
+            <div class="absolute inset-0 flex items-center justify-center bg-stone-50">
+                <div class="w-full h-full relative">
+                    <img :src="images[active]" 
+                          alt="Product Detail" 
+                          class="w-full h-full object-contain transition-transform duration-500">
+                </div>
+            </div>
+            <button @click="prev()" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button @click="next()" 
+                    class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <div class="absolute bottom-4 right-6 z-20 bg-stone-900/10 backdrop-blur-md text-stone-600 text-[10px] font-bold px-3 py-1 rounded-full pointer-events-none tracking-widest border border-white/20">
+                <span x-text="active + 1"></span> / <span x-text="images.length"></span>
+            </div>
+        </div>
           <div class="p-8 md:p-12 flex flex-col justify-center">
             <div class="inline-block text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Best Seller</div>
             <h1 class="text-4xl md:text-5xl font-serif-display font-bold text-brand-900 mb-6">
