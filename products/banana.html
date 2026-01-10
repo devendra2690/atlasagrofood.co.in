@@ -109,7 +109,7 @@
     <div class="rounded-3xl border border-stone-200 bg-white p-6 md:p-8 card-hover shadow-sm">
       <div class="grid lg:grid-cols-2 gap-8">
         
-        <div class="bg-white relative h-full min-h-[400px] w-full overflow-hidden group"
+        <div class="bg-stone-50 relative h-full min-h-[400px] w-full overflow-hidden group rounded-3xl md:rounded-l-[3rem] md:rounded-r-none border-r border-stone-100"
             x-data="{ 
                 active: 0, 
                 images: [
@@ -126,22 +126,26 @@
                 }
             }">
 
-            <div class="absolute inset-0 flex items-center justify-center bg-white">
-                <div class="w-full h-full p-4 relative">
+            <div class="absolute inset-0 bg-stone-100">
+                <div class="w-full h-full relative transition-transform duration-500 ease-out"
+                    x-bind:key="active">
                     <img :src="images[active]" 
                           alt="Product Detail" 
-                          class="w-full h-full object-contain transition-transform duration-500 hover:scale-105 cursor-pointer">
+                          class="w-full h-full object-cover transition-opacity duration-300">
                 </div>
             </div>
-            <button @click="prev()" 
-                    class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 shadow-lg border border-stone-100 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition hover:scale-110">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            </button>
-            <button @click="next()" 
-                    class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 shadow-lg border border-stone-100 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition hover:scale-110">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            </button>
-            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-4 py-1.5 rounded-full pointer-events-none tracking-widest">
+
+            <div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">      
+                <button @click="prev()" 
+                        class="w-10 h-10 rounded-full bg-black/20 backdrop-blur-md text-white border border-white/20 flex items-center justify-center hover:bg-brand-700 hover:border-brand-700 transition transform hover:scale-110">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button @click="next()" 
+                        class="w-10 h-10 rounded-full bg-black/20 backdrop-blur-md text-white border border-white/20 flex items-center justify-center hover:bg-brand-700 hover:border-brand-700 transition transform hover:scale-110">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+            <div class="absolute bottom-6 right-6 z-20 bg-black/40 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full pointer-events-none tracking-widest border border-white/10">
                 <span x-text="active + 1"></span> / <span x-text="images.length"></span>
             </div>
         </div>
