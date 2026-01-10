@@ -160,6 +160,10 @@
         <div class="mt-6 text-center z-20">
             <h3 id="lbTitle" class="text-3xl font-serif-display text-white"></h3>
             <p id="lbCategory" class="text-earth-gold font-medium mt-2 uppercase tracking-widest text-sm"></p>
+            
+            <a id="lbProductLink" href="#" class="hidden inline-block mt-6 bg-brand-700 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+                View Product Details
+            </a>
         </div>
         
         <div class="md:hidden flex gap-8 mt-4 z-20">
@@ -301,6 +305,7 @@
     const lbImg = document.getElementById('lbImg');
     const lbTitle = document.getElementById('lbTitle');
     const lbCategory = document.getElementById('lbCategory');
+    const lbProductLink = document.getElementById('lbProductLink'); // Reference to the new button
     let currentLightboxList = [];
     let currentLightboxIndex = 0;
 
@@ -322,6 +327,14 @@
         lbImg.src = getImageUrl(item);
         lbTitle.textContent = item.name;
         lbCategory.textContent = item.category;
+
+        // Logic to show/hide and update the product link button
+        if (item.slug && item.category !== 'facility' && item.category !== 'packaging') {
+            lbProductLink.href = `/products/${item.slug}.html`;
+            lbProductLink.classList.remove('hidden');
+        } else {
+            lbProductLink.classList.add('hidden');
+        }
     }
 
     function nextImage() {
