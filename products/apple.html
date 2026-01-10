@@ -12,58 +12,142 @@
   <meta name="keywords" content="apple powder, dehydrated apple chips, dried apple, fruit powder, baby food ingredients, bakery ingredients" />
   <meta name="theme-color" content="#22b36a" />
 
-  <link rel="canonical" href="https://atlasagrofood.co.inproducts/apple.html"/>
+  <link rel="canonical" href="https://atlasagrofood.co.in/products/apple.html"/>
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dehydrated Apple Powder & Chips | Atlas AgroFood">
   <meta property="og:description" content="Premium dehydrated apple powder and chips for bakery fillings, baby food, cereals, and nutrition bars. Natural sweetness, bulk supply.">
-  <meta property="og:image" content="https://atlasagrofood.co.inassets/products/apple/hero.png">
+  <meta property="og:image" content="https://atlasagrofood.co.in/assets/products/apple/hero.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 200: '#c9efd9', 300: '#9fe2bd', 400: '#5ecc8f', 500: '#22b36a', 600: '#129457', 700: '#0f7a4a', 800: '#0f623c', 900: '#0c4f31' },
+            ink: '#0f172a', slateish: '#475569',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365'
+          },
+          fontFamily: {
+             sans: ['Lato', 'sans-serif'],
+             serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Standard Design System CSS */
+    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800;box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,.3)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;font-weight:800}
+    .mobile-cta .quote{background:#15803d;color:#ffffff}
+    .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+    html { scroll-behavior: smooth; }
+
+    /* Responsive Hiding Logic */
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px} .sticky-cta{display:none !important;}}
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Dehydrated Apple Powder / Chips",
     "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
-    "image": "https://atlasagrofood.co.inassets/products/apple/hero.png",
-    "description": "Dehydrated apple powder and chips for bakery, cereals, and baby food applications.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "availability": "https://schema.org/InStock" }
+    "image": [
+      "https://atlasagrofood.co.in/assets/products/apple/hero.png",
+      "https://atlasagrofood.co.in/assets/products/apple/thumb-1.png"
+    ],
+    "description": "Dehydrated apple powder and chips for bakery, cereals, and baby food applications. Natural and preservative-free options available.",
+    "offers": { 
+      "@type": "AggregateOffer", 
+      "priceCurrency": "INR", 
+      "availability": "https://schema.org/InStock",
+      "offerCount": "2"
+    }
   }
   </script>
-
-  <script>
-    tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 700: '#0f7a4a' }, ink: '#0f172a', slateish: '#475569' } } } }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Do you add sugar to the apple powder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer both natural (no added sugar) and sweetened variants depending on your requirement. Our standard export quality is 100% natural."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What is the shelf life?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typically 12-18 months when stored in sealed bulk packaging in cool, dry conditions."
+      }
+    }]
+  }
   </script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <style>
-    .card-hover{transition:all .25s ease;} .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(34,179,106,.15);}
-    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
-    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
-    .sticky-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
-    .sticky-cta .quote{background:#0f7a4a;color:#ffffff}
-  </style>
 </head>
-<body class="bg-brand-50 text-ink antialiased" x-data="{ modalOpen: false }">
 
-  <div id="site-header"></div> <div class="sticky-cta">
-    <a class="quote" href="/contact.html">Get Quote</a>
-    <a class="wa" href="https://wa.me/917738505687?text=Hi%2C+interested+in+bulk+Apple+Powder." target="_blank">WhatsApp</a>
+<body class="bg-brand-50 text-ink antialiased">
+
+  <div id="site-header"></div>
+
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+Apple+Powder." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+Apple+Powder." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
   </div>
 
   <main class="max-w-7xl mx-auto px-4 py-10">
-    <div class="mb-8 inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm">
-      <a href="/" class="text-slateish hover:text-brand">Home</a><span class="text-slate-300">/</span>
-      <a href="/products/" class="text-slateish hover:text-brand">Products</a><span class="text-slate-300">/</span>
-      <span class="font-semibold text-brand">Apple Powder</span>
+    
+    <div class="max-w-3xl mb-8">
+      <div class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm shadow-sm">
+        <a href="/" class="text-slateish hover:text-brand-700 font-bold">Home</a>
+        <span class="text-slate-300">/</span>
+        <a href="/products/" class="text-slateish hover:text-brand-700 font-bold">Products</a>
+        <span class="text-slate-300">/</span>
+        <span class="text-brand-700 font-bold">Apple Powder</span>
+      </div>
     </div>
 
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <div class="grid lg:grid-cols-2 gap-8">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+      
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-earth-gold mb-2">Dehydrated Fruit</div>
+          <h1 class="text-3xl md:text-4xl font-serif-display font-bold text-brand-900">Apple Powder / Chips</h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-3xl leading-relaxed">
+            Naturally sweet, dehydrated apple powder and chips made from selected apples. Ideal for baby food formulations, bakery fillings, oatmeal, and healthy snack mixes. Preserves natural aroma and nutrients.
+          </p>
+        </div>
+      </div>
 
-                <div class="bg-stone-50 relative h-full min-h-[350px] md:min-h-[450px] w-full overflow-hidden group rounded-3xl md:rounded-l-[3rem] md:rounded-r-none border-r border-stone-100"
-                x-data="{ 
+      <div class="mb-10 w-full rounded-3xl overflow-hidden border border-slate-100 bg-stone-50">
+        <div class="relative h-[350px] md:h-[500px] w-full group"
+             x-data="{ 
                 active: 0, 
                 images: [
                   '/assets/products/apple/hero.png',
@@ -77,14 +161,16 @@
                 next() {
                     this.active = (this.active === this.images.length - 1) ? 0 : this.active + 1;
                 }
-            }">
+             }">
+
             <div class="absolute inset-0 flex items-center justify-center bg-stone-50">
                 <div class="w-full h-full relative">
                     <img :src="images[active]" 
-                          alt="Product Detail" 
+                          alt="Apple Product Detail" 
                           class="w-full h-full object-contain transition-transform duration-500">
                 </div>
             </div>
+
             <button @click="prev()" 
                     class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
                 <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -93,87 +179,101 @@
                     class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
                 <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </button>
+
             <div class="absolute bottom-4 right-6 z-20 bg-stone-900/10 backdrop-blur-md text-stone-600 text-[10px] font-bold px-3 py-1 rounded-full pointer-events-none tracking-widest border border-white/20">
                 <span x-text="active + 1"></span> / <span x-text="images.length"></span>
             </div>
         </div>
-        
-        <div>
-          <div class="text-sm text-slate-500 font-bold uppercase tracking-wider">Dehydrated Fruit</div>
-          <h1 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-ink">Apple Powder / Chips</h1>
-          <p class="mt-4 text-lg text-slateish">
-            Naturally sweet, dehydrated apple powder and chips made from selected apples. Ideal for baby food formulations, bakery fillings, oatmeal, and healthy snack mixes. Preserves natural aroma and nutrients.
-          </p>
-
-          <div class="mt-8 grid grid-cols-2 gap-4">
-            <div class="p-4 rounded-2xl bg-brand-50 border border-brand-100">
-              <div class="text-xs text-brand-700 font-bold uppercase">Form</div>
-              <div class="text-ink font-semibold">Powder / Diced / Chips</div>
-            </div>
-            <div class="p-4 rounded-2xl bg-brand-50 border border-brand-100">
-              <div class="text-xs text-brand-700 font-bold uppercase">Packaging</div>
-              <div class="text-ink font-semibold">10kg / 20kg Bulk</div>
-            </div>
-          </div>
-
-          <div class="mt-8 flex gap-3">
-             <a href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+need+pricing+for+Apple+Powder." class="flex-1 bg-brand text-white font-bold py-3 px-6 rounded-xl text-center hover:bg-brand-700 transition">Get Best Price</a>
-             <a href="/contact.html" class="px-6 py-3 rounded-xl border border-slate-200 font-bold hover:bg-slate-50 transition">Email Us</a>
-          </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Forms Available</div>
+          <div class="text-lg font-bold text-brand-900">Powder / Diced / Chips</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Standard Packing</div>
+          <div class="text-lg font-bold text-brand-900">10kg / 20kg Bulk</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Export Quality</div>
+          <div class="text-lg font-bold text-brand-900">Low Moisture (<5%)</div>
         </div>
       </div>
     </div>
 
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
+    <div class="mt-8 grid md:grid-cols-2 gap-8">
       <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
-        <h2 class="text-xl font-bold mb-4">Common Applications</h2>
-        <ul class="list-disc pl-5 space-y-2 text-slateish">
-          <li><strong>Baby Food:</strong> Natural sweetener and fiber source.</li>
-          <li><strong>Bakery:</strong> Apple pies, muffins, cakes, and cookies.</li>
-          <li><strong>Cereals & Bars:</strong> Muesli, granola, and energy bars.</li>
-          <li><strong>Confectionery:</strong> Fruit jellies and candies.</li>
+        <h2 class="text-xl font-serif-display font-bold text-brand-900 mb-4">Common Applications</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Baby Food:</strong> Natural sweetener and safe fiber source for infant mixes.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Bakery:</strong> Perfect for apple pies, muffins, cakes, and cookie fillings.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Cereals & Bars:</strong> Adds chewy texture to muesli, granola, and energy bars.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Confectionery:</strong> Natural flavoring for fruit jellies and candies.</span>
+            </li>
         </ul>
       </div>
-      
+
       <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
-        <h2 class="text-xl font-bold mb-4">Why Choose Us?</h2>
+        <h2 class="text-xl font-serif-display font-bold text-brand-900 mb-4">Why Choose Us?</h2>
         <ul class="space-y-3">
-          <li class="flex items-start gap-3">
-            <span class="text-brand">✔</span> <span class="text-slateish">100% Natural, no added sugar available.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-brand">✔</span> <span class="text-slateish">Low moisture content (<5%) for long shelf life.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-brand">✔</span> <span class="text-slateish">Consistent color and mesh size batches.</span>
-          </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">🛡️</span>
+                <span><strong>100% Natural:</strong> No artificial additives. Sugar-free options available.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">💧</span>
+                <span><strong>Low Moisture:</strong> Processed to &lt;5% moisture to prevent clumping.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">📦</span>
+                <span><strong>Consistent Quality:</strong> Uniform color and mesh size in every batch.</span>
+            </li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-8">
-      <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-      <div class="space-y-4">
-        <details class="group border-b border-slate-100 pb-4">
-          <summary class="font-semibold cursor-pointer flex justify-between items-center text-ink">
-            Do you add sugar to the apple powder?
-            <span class="text-brand group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="mt-3 text-slateish">We offer both natural (no added sugar) and sweetened variants depending on your requirement.</p>
-        </details>
-        <details class="group border-b border-slate-100 pb-4">
-          <summary class="font-semibold cursor-pointer flex justify-between items-center text-ink">
-            What is the shelf life?
-            <span class="text-brand group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="mt-3 text-slateish">Typically 12-18 months when stored in sealed bulk packaging in cool, dry conditions.</p>
-        </details>
+    <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+      <h2 class="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-3" x-data="{ active: null }">
+        
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 1 ? null : 1" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>Do you add sugar to the apple powder?</span>
+            <span class="text-brand-500" x-text="active === 1 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 1" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             We offer both natural (no added sugar) and sweetened variants depending on your requirement. Our standard export product is 100% natural.
+          </div>
+        </div>
+
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 2 ? null : 2" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>What is the shelf life?</span>
+            <span class="text-brand-500" x-text="active === 2 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 2" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             Typically 12-18 months when stored in sealed bulk packaging in cool, dry conditions.
+          </div>
+        </div>
+
       </div>
     </div>
 
   </main>
   
   <div id="site-footer"></div>
-  <script defer src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/assets/js/includes.js"></script>
 </body>
 </html>
