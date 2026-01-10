@@ -85,7 +85,7 @@
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
   </style>
 </head>
-<body class="bg-brand-50 text-ink antialiased">
+<body class="bg-brand-50 text-ink antialiased" x-data="siteApp()" x-init="init()">
 
   <div id="site-header"></div>
   
@@ -173,6 +173,29 @@
       </div>
     </div>
   </main>
+  
+  <script>
+    function siteApp() {
+      return {
+        init() { },
+        whatsappNumber: "917738505687"
+      };
+    }
+    
+    (function(){
+      function setActiveNav(){
+        var path = (location.pathname || "/").toLowerCase();
+        var links = document.querySelectorAll('#site-header a');
+        links.forEach(link => {
+            if(link.getAttribute('href') === path || (path.includes('contact') && link.getAttribute('href').includes('contact'))) {
+                link.classList.add("text-brand", "font-semibold");
+            }
+        });
+      }
+      if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
+      else { setActiveNav(); }
+    })();
+  </script>
 
   <div id="site-footer"></div>
 

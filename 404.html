@@ -37,6 +37,7 @@
       }
     }
   </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   
   <style>
     /* Consistent Button Styles */
@@ -60,7 +61,7 @@
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
   </style>
 </head>
-<body class="bg-brand-50 text-ink antialiased flex flex-col min-h-screen">
+<body class="bg-brand-50 text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()" x-init="init()">
 
   <div id="site-header"></div>
 
@@ -92,6 +93,12 @@
       </div>
     </div>
   </main>
+
+  <script>
+    function siteApp() {
+      return { init() { } };
+    }
+  </script>
 
   <div id="site-footer"></div>
   <script defer src="/assets/js/includes.js"></script>
