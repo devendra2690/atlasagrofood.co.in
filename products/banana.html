@@ -94,6 +94,49 @@
     details[open] summary ~ * { animation: sweep .3s ease-in-out; }
     @keyframes sweep { 0% {opacity: 0; transform: translateY(-6px)} 100% {opacity: 1; transform: translateY(0)} }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Banana Powder (Raw & Ripe)",
+  "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+  "image": [
+    "https://atlasagrofood.co.in/assets/products/banana/hero.png",
+    "https://atlasagrofood.co.in/assets/products/banana/thumb-1.png",
+    "https://atlasagrofood.co.in/assets/products/banana/thumb-2.png",
+    "https://atlasagrofood.co.in/assets/products/banana/thumb-3.png"
+  ],
+  "description": "Premium Raw Green Banana Flour and Ripe Banana Powder. Gluten-free, high resistant starch, and perfect for baby food or bakery applications.",
+  "offers": { 
+    "@type": "AggregateOffer", 
+    "priceCurrency": "INR", 
+    "availability": "https://schema.org/InStock",
+    "offerCount": "2" 
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the difference between Raw and Ripe banana powder?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Raw powder is made from green bananas and is high in resistant starch, acting as a gluten-free flour. Ripe powder is made from yellow bananas and is sweet, used for flavoring."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is this suitable for baby food?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, our Banana Powder is 100% natural and widely used as a primary ingredient in infant food mixes due to its digestibility and nutrient profile."
+    }
+  }]
+}
+</script>
 </head>
 
 <body class="bg-earth-cream text-ink antialiased" x-data="siteApp()">
