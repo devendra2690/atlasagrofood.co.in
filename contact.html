@@ -15,7 +15,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
-
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // We listen on the whole document for clicks
+    document.addEventListener('click', (e) => {
+      
+      // Check if the clicked element (or its parent) is the menu button
+      // CHANGE 'mobile-menu-btn' to match the ID in your header.html if different
+      const toggleBtn = e.target.closest('#mobile-menu-btn');
+      
+      if (toggleBtn) {
+        // Prevent default link behavior if it's an <a> tag
+        e.preventDefault(); 
+        
+        // Find the menu element
+        // CHANGE 'mobile-menu' to match the ID of your hidden menu list
+        const menu = document.getElementById('mobile-menu');
+        
+        if (menu) {
+          // Toggle the hidden class (Tailwind standard)
+          menu.classList.toggle('hidden');
+          
+          // Optional: Toggle an 'open' icon if you have one
+          // toggleBtn.querySelector('.icon-open').classList.toggle('hidden');
+          // toggleBtn.querySelector('.icon-close').classList.toggle('hidden');
+        } else {
+          console.warn('Mobile menu element not found. Check IDs.');
+        }
+      }
+    });
+  });
+</script>
   <script>
     tailwind.config = {
       theme: {
