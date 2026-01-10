@@ -67,7 +67,6 @@
     @media (min-width: 768px){.mobile-cta{display:none}}
     @media (max-width: 767px){body{padding-bottom:70px}}
     
-    /* Prevent flash of unstyled content */
     [x-cloak] { display: none !important; }
   </style>
 </head>
@@ -191,21 +190,20 @@
     </div>
   </main>
 
-  <div id="site-footer"></div>
-
-  <script src="/assets/js/includes.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
   <script>
     function galleryApp() {
       return {
+        // --- Header Compatibility State ---
+        mobileOpen: false,
+        whatsappLink: "https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+products.",
+        
+        // --- Gallery State ---
         filter: 'all',
         lightboxOpen: false,
         activeItem: null,
         
-        // FULL DATASET: All 33 products + Facility + Packaging
+        // --- Gallery Items ---
         items: [
-          // --- Dehydrated Products ---
           { slug: "banana", name: "Banana Powder", category: "Dehydrated", src: "/assets/products/banana/hero.png" },
           { slug: "onion", name: "Red Onion Powder", category: "Dehydrated", src: "/assets/products/onion/hero.png" },
           { slug: "garlic", name: "Garlic Powder", category: "Dehydrated", src: "/assets/products/garlic/hero.png" },
@@ -236,13 +234,8 @@
           { slug: "green-pepper", "name: "Green Bell Pepper", category: "Dehydrated", src: "/assets/products/green-pepper/hero.png" },
           { slug: "mint", "name: "Dried Mint", category: "Dehydrated", src: "/assets/products/mint/hero.png" },
           { slug: "cucumber", "name: "Dried Cucumber", category: "Dehydrated", src: "/assets/products/cucumber/hero.png" },
-          { slug: "mixed-veg", name: "Mixed Vegetable Blend", category: "Dehydrated", src: "/assets/products/mixed-veg/hero.png" },
-
-          // --- Special Ranges ---
           { slug: "spray-dried", name: "Spray Dried Fruit Powders", category: "Spray Dried", src: "/assets/products/spray-dried/hero.png" },
           { slug: "spices", name: "Indian Spices Range", category: "Spices", src: "/assets/products/spices/hero.png" },
-
-          // --- Facility & Packaging ---
           { slug: "facility-drying", name: "Drying Units", category: "facility", src: "/assets/gallery/drying-unit.jpg" },
           { slug: "facility-sorting", name: "Sorting & Grading", category: "facility", src: "/assets/gallery/sorting-line.jpg" },
           { slug: "facility-grinding", name: "Grinding & Pulverizing", category: "facility", src: "/assets/gallery/grinding-unit.jpg" },
@@ -285,5 +278,10 @@
       }
     }
   </script>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
