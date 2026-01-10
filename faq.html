@@ -10,7 +10,7 @@
   <title>FAQ | Bulk Buying Guide | Atlas AgroFood</title>
   <meta name="description" content="Frequently asked questions about bulk dehydrated food procurement: MOQ, packaging, export documentation, shelf life, and shipping details."/>
   <meta name="keywords" content="dehydrated food faq, bulk food buying guide, export documentation, food packaging options, MOQ dehydrated vegetables" />
-  <meta name="theme-color" content="#22b36a" />
+  <meta name="theme-color" content="#0f7a4a" />
   
   <link rel="canonical" href="https://atlasagrofood.co.in/faq.html"/>
 
@@ -27,7 +27,19 @@
       theme: {
         extend: {
           colors: {
-            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 700: '#0f7a4a' },
+            brand: {
+              DEFAULT: '#22b36a',
+              50: '#f5fbf7',
+              100: '#e7f7ee',
+              200: '#c9efd9',
+              300: '#9fe2bd',
+              400: '#5ecc8f',
+              500: '#22b36a',
+              600: '#129457',
+              700: '#0f7a4a',
+              800: '#0f623c',
+              900: '#0c4f31'
+            },
             ink: '#0f172a',
             slateish: '#475569'
           }
@@ -66,12 +78,14 @@
   </script>
 
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <style>
-    /* Consistent Design System */
+    /* Exact CSS from Product Pages */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
-    .sticky-cta .quote{background:#0f7a4a;color:#ffffff}
+    .sticky-cta .quote{background:var(--brand-700,#0f7a4a);color:#ffffff}
+    
     .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
     .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
@@ -81,7 +95,7 @@
     .card-hover{transition:all .25s ease;}
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
 
-    /* FAQ Specific */
+    /* FAQ Animation */
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
     details[open] summary ~ * { animation: sweep .3s ease-in-out; }
@@ -92,7 +106,7 @@
 
   <div id="site-header"></div>
 
-  <div class="sticky-cta">
+  <div class="sticky-cta hidden md:flex">
     <a class="quote" href="/contact.html">Get Quote</a>
     <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
   </div>
