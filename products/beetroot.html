@@ -3,31 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
-  <title>Beetroot Powder | Atlas AgroFood</title>
-  <meta name="description" content="100% Natural Beetroot Powder. Deep red color, excellent for natural food coloring, smoothies, and nutraceuticals. Nitrate-rich."/>
-  <meta name="keywords" content="beetroot powder, natural food color, red vegetable powder, superfood ingredients" />
+  <link rel="apple-touch-icon" href="/assets/atlas-agrofood-logo.png" />
+
+  <title>Beetroot Powder | Natural Food Color | Atlas AgroFood</title>
+  <meta name="description" content="100% Natural Dehydrated Beetroot Powder. Deep red color, nitrate-rich, and excellent for natural food coloring, smoothies, and nutraceuticals. Bulk supply."/>
+  <meta name="keywords" content="beetroot powder, natural food color, red vegetable powder, superfood ingredients, dehydrated beetroot" />
   <meta name="theme-color" content="#22b36a" />
-  <link rel="canonical" href="https://atlasagrofood.co.inproducts/beetroot.html"/>
+
+  <link rel="canonical" href="https://atlasagrofood.co.in/products/beetroot.html"/>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Beetroot Powder | Natural Food Color | Atlas AgroFood">
+  <meta property="og:description" content="100% Natural Beetroot Powder. Deep red color, excellent for natural food coloring and health mixes.">
+  <meta property="og:image" content="https://atlasagrofood.co.in/assets/products/beetroot/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 700: '#0f7a4a' }, ink: '#0f172a', slateish: '#475569' } } } }</script>
-  <style>.card-hover{transition:all .25s ease;}.card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(34,179,106,.15);}.sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}.sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}.sticky-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}.sticky-cta .quote{background:#0f7a4a;color:#ffffff}</style>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 200: '#c9efd9', 300: '#9fe2bd', 400: '#5ecc8f', 500: '#22b36a', 600: '#129457', 700: '#0f7a4a', 800: '#0f623c', 900: '#0c4f31' },
+            ink: '#0f172a', slateish: '#475569',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365'
+          },
+          fontFamily: {
+             sans: ['Lato', 'sans-serif'],
+             serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Standard Design System CSS */
+    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800;box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,.3)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;font-weight:800}
+    .mobile-cta .quote{background:#15803d;color:#ffffff}
+    .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+    html { scroll-behavior: smooth; }
+
+    /* Responsive Hiding Logic */
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px} .sticky-cta{display:none !important;}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Beetroot Powder",
+    "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+    "image": [
+      "https://atlasagrofood.co.in/assets/products/beetroot/hero.png"
+    ],
+    "description": "100% Natural Dehydrated Beetroot Powder. Deep red color, nitrate-rich, and excellent for natural food coloring.",
+    "offers": { 
+      "@type": "AggregateOffer", 
+      "priceCurrency": "INR", 
+      "availability": "https://schema.org/InStock",
+      "offerCount": "1"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is this beetroot powder water soluble?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our beetroot powder is fine (80-100 Mesh) and dispersible, making it excellent for beverages, soups, and smoothies."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Does it contain artificial color?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Our product is 100% natural dehydrated beetroot with no added artificial colors or preservatives."
+      }
+    }]
+  }
+  </script>
 </head>
+
 <body class="bg-brand-50 text-ink antialiased">
+
   <div id="site-header"></div>
-  <div class="sticky-cta"><a class="quote" href="/contact.html">Get Quote</a><a class="wa" href="https://wa.me/917738505687">WhatsApp</a></div>
+
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+interested+in+Beetroot+Powder." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+interested+in+Beetroot+Powder." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
 
   <main class="max-w-7xl mx-auto px-4 py-10">
-    <div class="mb-8 inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm">
-      <a href="/" class="text-slateish hover:text-brand">Home</a><span class="text-slate-300">/</span>
-      <a href="/products/" class="text-slateish hover:text-brand">Products</a><span class="text-slate-300">/</span>
-      <span class="font-semibold text-brand">Beetroot Powder</span>
+    
+    <div class="max-w-3xl mb-8">
+      <div class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm shadow-sm">
+        <a href="/" class="text-slateish hover:text-brand-700 font-bold">Home</a>
+        <span class="text-slate-300">/</span>
+        <a href="/products/" class="text-slateish hover:text-brand-700 font-bold">Products</a>
+        <span class="text-slate-300">/</span>
+        <span class="text-brand-700 font-bold">Beetroot Powder</span>
+      </div>
     </div>
 
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <div class="grid lg:grid-cols-2 gap-8">
-                <div class="bg-stone-50 relative h-full min-h-[350px] md:min-h-[450px] w-full overflow-hidden group rounded-3xl md:rounded-l-[3rem] md:rounded-r-none border-r border-stone-100"
-            x-data="{ 
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+      
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-earth-gold mb-2">Natural Food Color</div>
+          <h1 class="text-3xl md:text-4xl font-serif-display font-bold text-brand-900">Beetroot Powder</h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-3xl leading-relaxed">
+            High-quality dehydrated beetroot powder with intense natural red color. Rich in nitrates and antioxidants. Widely used as a clean-label natural food colorant, in bakery products (Red Velvet), and health supplements.
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-10 w-full rounded-3xl overflow-hidden border border-slate-100 bg-stone-50">
+        <div class="relative h-[350px] md:h-[500px] w-full group"
+             x-data="{ 
                 active: 0, 
                 images: [
                   '/assets/products/beetroot/hero.png'
@@ -38,14 +157,17 @@
                 next() {
                     this.active = (this.active === this.images.length - 1) ? 0 : this.active + 1;
                 }
-            }">
+             }">
+
             <div class="absolute inset-0 flex items-center justify-center bg-stone-50">
                 <div class="w-full h-full relative">
                     <img :src="images[active]" 
-                          alt="Product Detail" 
+                          onerror="this.src='/assets/atlas-agrofood-logo.png'"
+                          alt="Beetroot Product Detail" 
                           class="w-full h-full object-contain transition-transform duration-500">
                 </div>
             </div>
+
             <button @click="prev()" 
                     class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
                 <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -54,43 +176,97 @@
                     class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
                 <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </button>
+
             <div class="absolute bottom-4 right-6 z-20 bg-stone-900/10 backdrop-blur-md text-stone-600 text-[10px] font-bold px-3 py-1 rounded-full pointer-events-none tracking-widest border border-white/20">
                 <span x-text="active + 1"></span> / <span x-text="images.length"></span>
             </div>
         </div>
-        <div>
-          <div class="text-sm text-slate-500 font-bold uppercase tracking-wider">Vegetable Powder</div>
-          <h1 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-ink">Beetroot Powder</h1>
-          <p class="mt-4 text-lg text-slateish">
-             High-quality dehydrated beetroot powder with intense natural red color. Rich in nitrates and antioxidants. Used widely as a clean-label natural food colorant and in health supplements.
-          </p>
-          <div class="mt-8 grid grid-cols-2 gap-4">
-            <div class="p-4 rounded-2xl bg-brand-50 border border-brand-100">
-              <div class="text-xs text-brand-700 font-bold uppercase">Mesh</div>
-              <div class="text-ink font-semibold">80 - 100 Mesh</div>
-            </div>
-            <div class="p-4 rounded-2xl bg-brand-50 border border-brand-100">
-              <div class="text-xs text-brand-700 font-bold uppercase">Solubility</div>
-              <div class="text-ink font-semibold">Dispersible</div>
-            </div>
-          </div>
-          <div class="mt-8 flex gap-3">
-             <a href="https://wa.me/917738505687?text=Hi%2C+interested+in+Beetroot+Powder." class="flex-1 bg-brand text-white font-bold py-3 px-6 rounded-xl text-center hover:bg-brand-700 transition">Get Best Price</a>
-          </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Mesh Size</div>
+          <div class="text-lg font-bold text-brand-900">80 - 100 Mesh</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Solubility</div>
+          <div class="text-lg font-bold text-brand-900">Dispersible</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Origin</div>
+          <div class="text-lg font-bold text-brand-900">India</div>
         </div>
       </div>
     </div>
-    
-    <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-8 card-hover">
-        <h2 class="text-xl font-bold mb-4">Applications</h2>
-        <ul class="list-disc pl-5 space-y-2 text-slateish">
-          <li><strong>Natural Coloring:</strong> Red velvet cakes, sauces, and soups.</li>
-          <li><strong>Nutraceuticals:</strong> Pre-workout mixes (nitrate source).</li>
-          <li><strong>Beverages:</strong> Smoothies and detox drinks.</li>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-8">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
+        <h2 class="text-xl font-serif-display font-bold text-brand-900 mb-4">Common Applications</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Natural Coloring:</strong> Ideal for red velvet cakes, sauces, and tomato pastes.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Nutraceuticals:</strong> Used in pre-workout mixes as a natural nitrate source.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Beverages:</strong> Adds nutrition and color to smoothies and detox drinks.</span>
+            </li>
         </ul>
+      </div>
+
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
+        <h2 class="text-xl font-serif-display font-bold text-brand-900 mb-4">Why Choose Us?</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">🛡️</span>
+                <span><strong>100% Pure:</strong> Made from fresh, sorted beetroots. No fillers.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">💧</span>
+                <span><strong>Low Moisture:</strong> Processed to &lt;5% moisture to prevent clumping.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">📦</span>
+                <span><strong>Bulk Supply:</strong> Available in 10kg/20kg bulk packs for manufacturers.</span>
+            </li>
+        </ul>
+      </div>
     </div>
+
+    <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+      <h2 class="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-3" x-data="{ active: null }">
+        
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 1 ? null : 1" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>Is this beetroot powder water soluble?</span>
+            <span class="text-brand-500" x-text="active === 1 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 1" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             Yes, our beetroot powder is fine (80-100 Mesh) and dispersible, making it excellent for beverages, soups, and smoothies.
+          </div>
+        </div>
+
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 2 ? null : 2" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>Does it contain artificial color?</span>
+            <span class="text-brand-500" x-text="active === 2 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 2" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             No. Our product is 100% natural dehydrated beetroot with no added artificial colors or preservatives.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </main>
+  
   <div id="site-footer"></div>
-  <script defer src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/assets/js/includes.js"></script>
 </body>
 </html>
