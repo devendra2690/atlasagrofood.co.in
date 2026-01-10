@@ -48,6 +48,12 @@
     .card-hover { transition: all .3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(21, 128, 61, 0.15); border-color: #c5a365; }
     
+    /* Image Zoom */
+    .img-zoom-container { overflow: hidden; }
+    .img-zoom-container img { transition: transform 0.5s ease; }
+    .group:hover .img-zoom-container img { transform: scale(1.1); }
+
+    /* Sticky Mobile CTA */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
@@ -113,69 +119,101 @@
 
     <section class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">🌶️</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Red Chilli</h3>
-          <p class="text-sm text-stone-500 mt-1">Whole / Powder / Flakes</p>
+      <a href="/products/red-chilli.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative img-zoom-container">
+           <img src="/assets/products/spices/red-chilli.png" alt="Red Chilli Powder" class="w-full h-full object-cover">
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Guntur / Byadgi</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Red Chilli</h3>
+          <p class="text-sm text-stone-500 mb-3">Whole / Powder / Flakes</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">High Heat</span>
+        </div>
+      </a>
 
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">🟡</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Turmeric</h3>
-          <p class="text-sm text-stone-500 mt-1">High Curcumin Erode/Salem</p>
+      <a href="/products/turmeric.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative img-zoom-container">
+           <img src="/assets/products/spices/turmeric.png" alt="Turmeric Powder" class="w-full h-full object-cover">
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Salem / Erode</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Turmeric</h3>
+          <p class="text-sm text-stone-500 mb-3">High Curcumin Content</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">3% - 5% Curcumin</span>
+        </div>
+      </a>
 
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">🌿</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Coriander</h3>
-          <p class="text-sm text-stone-500 mt-1">Seeds & Powder</p>
+      <a href="/products/coriander-seeds.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative img-zoom-container">
+           <img src="/assets/products/spices/coriander.png" alt="Coriander Seeds" class="w-full h-full object-cover">
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Eagle / Scooter</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Coriander</h3>
+          <p class="text-sm text-stone-500 mb-3">Whole Seeds & Powder</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">Aromatic</span>
+        </div>
+      </a>
 
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">⚫</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Black Pepper</h3>
-          <p class="text-sm text-stone-500 mt-1">Whole & Coarse Ground</p>
+      <a href="/products/black-pepper.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative img-zoom-container">
+           <img src="/assets/products/spices/black-pepper.png" alt="Black Pepper" class="w-full h-full object-cover">
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Malabar / Coorg</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Black Pepper</h3>
+          <p class="text-sm text-stone-500 mb-3">Whole & Coarse Ground</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">500-550 GL</span>
+        </div>
+      </a>
 
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">🪵</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Cinnamon</h3>
-          <p class="text-sm text-stone-500 mt-1">Cassia / Verum</p>
+      <a href="/products/cinnamon.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative img-zoom-container">
+           <img src="/assets/products/spices/cinnamon.png" alt="Cinnamon Sticks" class="w-full h-full object-cover">
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Cassia / Verum</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Cinnamon</h3>
+          <p class="text-sm text-stone-500 mb-3">Sticks & Powder</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">Sweet Aroma</span>
+        </div>
+      </a>
 
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">🌱</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Sesame Seeds</h3>
-          <p class="text-sm text-stone-500 mt-1">Natural / Hulled</p>
+      <a href="/products/sesame.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative img-zoom-container">
+           <img src="/assets/products/spices/sesame.png" alt="Sesame Seeds" class="w-full h-full object-cover">
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">White / Black</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Sesame Seeds</h3>
+          <p class="text-sm text-stone-500 mb-3">Natural & Hulled</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">99.9% Purity</span>
+        </div>
+      </a>
 
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">🍃</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Mint (Pudina)</h3>
-          <p class="text-sm text-stone-500 mt-1">Dried Leaves & Powder</p>
+      <a href="/products/mint.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-stone-100 relative img-zoom-container">
+           <img src="/assets/products/spices/mint.png" alt="Mint Leaves" class="w-full h-full object-cover">
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Herb</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Mint (Pudina)</h3>
+          <p class="text-sm text-stone-500 mb-3">Dried Leaves & Powder</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">Cooling</span>
+        </div>
+      </a>
 
-      <div class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover">
-        <div class="h-48 bg-stone-100 flex items-center justify-center text-5xl">🥗</div>
-        <div class="p-5 text-center">
-          <h3 class="text-xl font-bold text-brand-900">Oregano/Herbs</h3>
-          <p class="text-sm text-stone-500 mt-1">Pizza Seasoning Mix</p>
+      <a href="/contact.html" class="group bg-white rounded-3xl border border-stone-200 overflow-hidden card-hover block">
+        <div class="h-48 bg-brand-900 relative img-zoom-container flex items-center justify-center">
+           <div class="text-5xl">🥣</div>
         </div>
-      </div>
+        <div class="p-5">
+          <div class="text-xs font-bold text-earth-gold uppercase tracking-wider mb-1">Masala</div>
+          <h3 class="text-xl font-bold text-brand-900 mb-1">Custom Blends</h3>
+          <p class="text-sm text-stone-500 mb-3">Garam Masala, Curry Powder</p>
+          <span class="text-[10px] bg-brand-50 text-brand-800 px-2 py-1 rounded border border-brand-100 font-bold">Made to Order</span>
+        </div>
+      </a>
 
     </section>
 
