@@ -7,104 +7,60 @@
   <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
   <link rel="apple-touch-icon" href="/assets/atlas-agrofood-logo.png" />
 
-  <title>Cucumber Powder / Granules | Atlas AgroFood</title>
-  <meta name="description" content="Dehydrated cucumber powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label & export-ready."/>
-  <meta name="keywords" content="cucumber powder, dehydrated cucumber, cucumber granules, vegetable powder supplier, dried cucumber, seasoning ingredients" />
-  <meta name="theme-color" content="#0f7a4a" />
+  <title>Cucumber Powder / Granules | Bulk Supplier | Atlas AgroFood</title>
+  <meta name="description" content="Dehydrated Cucumber Powder and Granules for beverages, bakery, cosmetics, and seasoning mixes. Bulk B2B supplier, natural fresh aroma preserved."/>
+  <meta name="keywords" content="cucumber powder, dehydrated cucumber, cucumber granules, dried cucumber, bakery ingredients, cosmetic ingredients, bulk cucumber supplier" />
+  <meta name="theme-color" content="#22b36a" />
 
-  <link rel="canonical" href="https://atlasagro.co.in/products/cucumber.html"/>
-  
-  <link rel="alternate" href="https://atlasagro.co.in/products/cucumber.html" hreflang="en-IN">
-  <link rel="alternate" href="https://atlasagro.co.in/products/cucumber.html" hreflang="x-default">
+  <link rel="canonical" href="https://atlasagrofood.co.in/products/cucumber.html"/>
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Atlas AgroFood">
   <meta property="og:title" content="Cucumber Powder / Granules | Atlas AgroFood">
-  <meta property="og:description" content="Dehydrated cucumber powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label & export-ready.">
-  <meta property="og:url" content="https://atlasagro.co.in/products/cucumber.html">
-  <meta property="og:image" content="https://atlasagro.co.in/assets/products/cucumber/hero.png">
-
+  <meta property="og:description" content="Dehydrated Cucumber Powder and Granules for bakery, beverages, and cosmetics. Bulk supply, OEM/private label & export-ready.">
+  <meta property="og:image" content="https://atlasagrofood.co.in/assets/products/cucumber/hero.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dehydrated Cucumber Powder | Atlas AgroFood">
-  <meta name="twitter:description" content="Manufacturer and supplier of dehydrated cucumber powder and granules for food processors and exporters.">
-  <meta name="twitter:image" content="https://atlasagro.co.in/assets/products/cucumber/hero.png">
-
-  <meta name="robots" content="index,follow" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-
+  
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              DEFAULT: '#22b36a',
-              50: '#f5fbf7',
-              100: '#e7f7ee',
-              200: '#c9efd9',
-              300: '#9fe2bd',
-              400: '#5ecc8f',
-              500: '#22b36a',
-              600: '#129457',
-              700: '#0f7a4a',
-              800: '#0f623c',
-              900: '#0c4f31'
-            },
-            ink: '#0f172a',
-            slateish: '#475569'
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 200: '#c9efd9', 300: '#9fe2bd', 400: '#5ecc8f', 500: '#22b36a', 600: '#129457', 700: '#0f7a4a', 800: '#0f623c', 900: '#0c4f31' },
+            ink: '#0f172a', slateish: '#475569',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365'
+          },
+          fontFamily: {
+             sans: ['Lato', 'sans-serif'],
+             serif: ['Playfair Display', 'serif'],
           }
         }
       }
     }
   </script>
 
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
   <style>
-    /* Sticky CTA */
+    /* Standard Design System CSS from Corn Template */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
-    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800;box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
     .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
     
-    /* Mobile CTA */
-    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,.3)}
     .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
-    @media (min-width: 768px){.mobile-cta{display:none}}
-    @media (max-width: 767px){body{padding-bottom:70px}}
-    
-    /* Cards & Hover Effects */
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;font-weight:800}
+    .mobile-cta .quote{background:#15803d;color:#ffffff}
+    .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+
     .card-hover{transition:all .25s ease;}
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
-    .card-hover:hover{background-color:rgb(34 179 106 / 0.08);border-color:rgb(34 179 106 / 0.35);}
-
-    /* Smooth Scroll */
     html { scroll-behavior: smooth; }
-    ::selection { background: rgba(34,179,106,.25); }
 
-    /* Product Zoom */
-    .product-hero-zoom img{transition:transform .5s cubic-bezier(.2,.8,.2,1);}
-    @media (hover:hover) and (pointer:fine){
-      .product-hero-zoom:hover img{transform:scale(1.06);}
-    }
-    
-    /* Breadcrumbs */
-    .breadcrumb-pill{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:10px 14px;border-radius:999px;
-      background: #ffffff;
-      border:1px solid rgba(15,23,42,0.08);
-      box-shadow: 0 8px 22px rgba(15,23,42,0.06);
-      color: rgba(15,23,42,0.75);
-      font-weight: 600;
-      font-size: 0.875rem;
-    }
-    .breadcrumb-pill a{color:inherit;text-decoration:none;}
-    .breadcrumb-pill a:hover{text-decoration:underline;}
-    .breadcrumb-pill .sep{opacity:.55;font-weight:700;}
-    .breadcrumb-pill .current{color: #0f7a4a; font-weight:700;}
+    /* Responsive Hiding Logic */
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px} .sticky-cta{display:none !important;}}
   </style>
 
   <script type="application/ld+json">
@@ -112,337 +68,211 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Cucumber Powder / Granules",
+    "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
     "image": [
-      "https://atlasagro.co.in/assets/products/cucumber/hero.png"
+      "https://atlasagrofood.co.in/assets/products/cucumber/hero.png",
+      "https://atlasagrofood.co.in/assets/products/cucumber/thumb-1.png",
+      "https://atlasagrofood.co.in/assets/products/cucumber/thumb-2.png"
     ],
-    "brand": {
-      "@type": "Brand",
-      "name": "Atlas AgroFood"
-    },
-    "category": "Dehydrated Products",
-    "description": "Dehydrated cucumber powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label & export-ready.",
-    "url": "https://atlasagro.co.in/products/cucumber.html",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "price": "0",
+    "description": "Dehydrated cucumber powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications.",
+    "offers": { 
+      "@type": "AggregateOffer", 
+      "priceCurrency": "INR", 
       "availability": "https://schema.org/InStock",
-      "url": "https://atlasagro.co.in/contact.html"
+      "offerCount": "2"
     }
   }
   </script>
-
+  
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Atlas AgroFood Pvt Ltd",
-    "url":"https://atlasagro.co.in",
-    "contactPoint":{
-      "@type":"ContactPoint",
-      "contactType":"sales",
-      "url":"https://atlasagro.co.in/contact.html",
-      "telephone": "+91-7738505687"
-    }
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What mesh sizes are available for cucumber?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We supply Fine Powder (60-80 mesh) for beverages/mixes and Medium/Coarse Granules for soups, salads, and seasoning blends."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is this suitable for cosmetic use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our cucumber powder is produced without additives, making it suitable for face masks, scrubs, and skincare formulations."
+      }
+    }]
   }
   </script>
 </head>
 
-<body class="bg-brand-50 text-ink antialiased" x-data="siteApp()" x-init="init()">
+<body class="bg-brand-50 text-ink antialiased">
 
   <div id="site-header"></div>
 
   <div class="sticky-cta">
     <a class="quote" href="/contact.html">Get Bulk Quote</a>
-    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+Cucumber+Powder.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+interested+in+bulk+Cucumber+Powder." target="_blank" rel="noopener">WhatsApp</a>
   </div>
+
   <div class="mobile-cta">
     <div class="wrap">
       <a class="quote" href="/contact.html">Get Bulk Quote</a>
-      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+Cucumber+Powder.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="wa" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+interested+in+bulk+Cucumber+Powder." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
   <main class="max-w-7xl mx-auto px-4 py-10">
     
     <div class="max-w-3xl mb-8">
-      <div class="breadcrumb-pill">
-        <a href="/">Home</a>
-        <span class="sep">/</span>
-        <a href="/products/">Products</a>
-        <span class="sep">/</span>
-        <a href="/products/dehydrated-products.html">Dehydrated Products</a>
-        <span class="sep">/</span>
-        <span class="current" aria-current="page">Cucumber Powder</span>
+      <div class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm shadow-sm">
+        <a href="/" class="text-slateish hover:text-brand-700 font-bold">Home</a>
+        <span class="text-slate-300">/</span>
+        <a href="/products/" class="text-slateish hover:text-brand-700 font-bold">Products</a>
+        <span class="text-slate-300">/</span>
+        <span class="text-brand-700 font-bold">Cucumber Powder</span>
       </div>
     </div>
 
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-      <div class="flex flex-wrap items-start justify-between gap-4">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+      
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
         <div>
-          <div class="text-sm text-slate-500 font-semibold uppercase tracking-wider">Dehydrated Products</div>
-          <h1 class="mt-2 text-3xl font-extrabold tracking-tight">Cucumber Powder / Granules</h1>
-          <p class="mt-2 text-slate-600">Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html" class="text-brand-700 underline decoration-brand-300 hover:decoration-brand-700">bulk packaging</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html" class="text-brand-700 underline decoration-brand-300 hover:decoration-brand-700">export quality standards</a>.</p>
-          <p class="mt-3 text-slateish max-w-3xl leading-relaxed">
+          <div class="text-xs font-bold uppercase tracking-widest text-earth-gold mb-2">Dehydrated Products</div>
+          <h1 class="text-3xl md:text-4xl font-serif font-bold text-brand-900">Cucumber Powder / Granules</h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-3xl leading-relaxed">
             Premium dehydrated cucumber powder retaining natural aroma and color. Ideal for bakery, beverages, baby food, nutrition mixes, and ready-to-eat applications. Bulk supply, OEM/private label & export-ready.
           </p>
         </div>
-        <a class="shrink-0 inline-flex items-center justify-center px-5 py-2 rounded-full bg-brand text-white font-semibold card-hover" href="/products/dehydrated-products.html">
-          View category
-        </a>
       </div>
 
-      <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-7">
-          <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden product-hero-zoom">
-            <div class="aspect-[16/9] bg-slate-50 relative">
-              <img
-                id="productMainImage"
-                src="../assets/products/cucumber/hero.png"
-                onerror="this.onerror=null;this.src='/assets/atlas-agrofood-logo.png';"
-                alt="Dehydrated Cucumber Powder Product Image"
-                class="h-full w-full object-cover"
-                loading="lazy"
-              />
+      <div class="mb-10 w-full rounded-3xl overflow-hidden border border-slate-100 bg-stone-50">
+        <div class="relative h-[350px] md:h-[500px] w-full group"
+             x-data="{ 
+                active: 0, 
+                images: [
+                  '../assets/products/cucumber/hero.png',
+                  '../assets/products/cucumber/thumb-1.png',
+                  '../assets/products/cucumber/thumb-2.png'
+                ],
+                prev() {
+                    this.active = (this.active === 0) ? this.images.length - 1 : this.active - 1;
+                },
+                next() {
+                    this.active = (this.active === this.images.length - 1) ? 0 : this.active + 1;
+                }
+             }">
+
+            <div class="absolute inset-0 flex items-center justify-center bg-stone-50">
+                <div class="w-full h-full relative">
+                    <img :src="images[active]" 
+                          onerror="this.src='/assets/atlas-agrofood-logo.png'"
+                          alt="Cucumber Powder Product Detail" 
+                          class="w-full h-full object-contain transition-transform duration-500">
+                </div>
             </div>
+
+            <button @click="prev()" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button @click="next()" 
+                    class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
+            <div class="absolute bottom-4 right-6 z-20 bg-stone-900/10 backdrop-blur-md text-stone-600 text-[10px] font-bold px-3 py-1 rounded-full pointer-events-none tracking-widest border border-white/20">
+                <span x-text="active + 1"></span> / <span x-text="images.length"></span>
+            </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Mesh Size</div>
+          <div class="text-lg font-bold text-brand-900">Fine / Medium / Coarse</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Packaging</div>
+          <div class="text-lg font-bold text-brand-900">5 - 25 kg Bulk</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">MOQ</div>
+          <div class="text-lg font-bold text-brand-900">As per order</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-8">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
+        <h2 class="text-xl font-serif font-bold text-brand-900 mb-4">Common Applications</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Beverages:</strong> Smoothies, detox drinks, and health mixes.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Seasonings:</strong> Dips (like Tzatziki), salad dressings, and sauces.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Cosmetics:</strong> Natural ingredient for face masks and scrubs.</span>
+            </li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
+        <h2 class="text-xl font-serif font-bold text-brand-900 mb-4">Why Choose Us?</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">🛡️</span>
+                <span><strong>Premium Quality:</strong> Made from fresh, sorted cucumbers.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">💧</span>
+                <span><strong>Shelf Stable:</strong> Low moisture content ensures long storage life.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">📦</span>
+                <span><strong>Bulk Supply:</strong> Consistent batches for large-scale manufacturing.</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+      <h2 class="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-3" x-data="{ active: null }">
+        
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 1 ? null : 1" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>What mesh sizes are available?</span>
+            <span class="text-brand-500" x-text="active === 1 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 1" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             We supply Fine Powder for beverages/mixes and Medium Granules for soups/seasoning based on your application.
           </div>
         </div>
 
-        <div class="lg:col-span-5">
-          <div class="grid grid-cols-3 gap-4">
-            <button type="button"
-              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ring-2 ring-emerald-500"
-              data-src="../assets/products/cucumber/hero.png"
-              aria-label="View main image">
-              <img src="../assets/products/cucumber/hero.png" alt="Cucumber powder main view" class="h-full w-full object-cover" loading="lazy"/>
-            </button>
-            <button type="button"
-              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/products/cucumber/thumb-1.png"
-              aria-label="View texture detail">
-              <img src="../assets/products/cucumber/thumb-1.png" alt="Cucumber powder texture closeup" class="h-full w-full object-cover" loading="lazy"/>
-            </button>
-            <button type="button"
-              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/products/cucumber/thumb-2.png"
-              aria-label="View packaging">
-              <img src="../assets/products/cucumber/thumb-2.png" alt="Cucumber powder packaging" class="h-full w-full object-cover" loading="lazy"/>
-            </button>
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 2 ? null : 2" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>Is this suitable for cosmetic use?</span>
+            <span class="text-brand-500" x-text="active === 2 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 2" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             Yes, our cucumber powder is natural and additive-free, making it excellent for face packs, scrubs, and skincare formulations.
           </div>
         </div>
-      </div>
 
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="card-hover rounded-3xl border border-slate-200 bg-brand-50/50 p-6">
-          <div class="text-xs text-slateish font-bold uppercase tracking-wide">Mesh size</div>
-          <div class="mt-2 text-lg font-bold text-ink leading-snug">Fine / Medium / Coarse</div>
-        </div>
-        <div class="card-hover rounded-3xl border border-slate-200 bg-brand-50/50 p-6">
-          <div class="text-xs text-slateish font-bold uppercase tracking-wide">Packaging</div>
-          <div class="mt-2 text-lg font-bold text-ink leading-snug">5–25 kg bulk packs</div>
-        </div>
-        <div class="card-hover rounded-3xl border border-slate-200 bg-brand-50/50 p-6">
-          <div class="text-xs text-slateish font-bold uppercase tracking-wide">MOQ</div>
-          <div class="mt-2 text-lg font-bold text-ink leading-snug">Variable (Per Grade)</div>
-        </div>
       </div>
     </div>
-
-    <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-      <h2 class="text-xl font-bold">Typical Applications</h2>
-      <ul class="mt-4 grid md:grid-cols-2 gap-2 list-none text-slateish">
-        <li class="flex items-center gap-2"><span class="text-brand-500">●</span> Bakery and confectionery</li>
-        <li class="flex items-center gap-2"><span class="text-brand-500">●</span> Beverage mixes & smoothies</li>
-        <li class="flex items-center gap-2"><span class="text-brand-500">●</span> Baby food and nutrition mixes</li>
-        <li class="flex items-center gap-2"><span class="text-brand-500">●</span> Ice creams, desserts & yogurts</li>
-        <li class="flex items-center gap-2"><span class="text-brand-500">●</span> Instant mixes and ready meals</li>
-        <li class="flex items-center gap-2"><span class="text-brand-500">●</span> Cosmetic & skincare formulations</li>
-      </ul>
-    </div>
-
-    <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-      <h2 class="text-xl font-bold">Quality & Compliance</h2>
-      <ul class="mt-4 space-y-2 text-slateish list-disc list-inside">
-        <li>Food-grade processing and hygienic packing environment.</li>
-        <li>Strict batch-wise quality checks for moisture, color, and aroma consistency.</li>
-        <li>Suitable for B2B bulk supply with full export documentation support (COA, Phytosanitary).</li>
-        <li>Private label (OEM) packaging options available.</li>
-      </ul>
-    </div>
-
-    <div class="mt-10 rounded-3xl border border-brand-200 bg-brand-50 p-6 md:p-8">
-      <div class="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h2 class="text-xl font-bold text-brand-900">Need a quote for Cucumber Powder?</h2>
-          <p class="mt-2 text-slate-700">Share application, mesh size, packing, and monthly volume — we’ll reply with specs & pricing.</p>
-        </div>
-        <div class="flex gap-3">
-          <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition" href="/contact.html">Get a Quote</a>
-          <a class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-slate-300 bg-white font-bold hover:border-brand-500 hover:text-brand-700 transition" href="/products/">Browse Products</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
-      <h2 class="text-xl font-bold mb-6">Related Products</h2>
-      <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
-        <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/onion.html">
-          <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Dehydrated</div>
-          <div class="mt-1 text-lg font-bold group-hover:text-brand text-ink">Onion Flakes</div>
-          <div class="mt-3 text-sm text-brand font-semibold">View details →</div>
-        </a>
-        <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/garlic-granules.html">
-          <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Dehydrated</div>
-          <div class="mt-1 text-lg font-bold group-hover:text-brand text-ink">Garlic Granules</div>
-          <div class="mt-3 text-sm text-brand font-semibold">View details →</div>
-        </a>
-        <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/ginger.html">
-          <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Dehydrated</div>
-          <div class="mt-1 text-lg font-bold group-hover:text-brand text-ink">Ginger Powder</div>
-          <div class="mt-3 text-sm text-brand font-semibold">View details →</div>
-        </a>
-        <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/mixed-veg.html">
-          <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Blends</div>
-          <div class="mt-1 text-lg font-bold group-hover:text-brand text-ink">Mixed Veg Powder</div>
-          <div class="mt-3 text-sm text-brand font-semibold">View details →</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-      <h2 class="text-xl font-bold mb-4">FAQs</h2>
-      <div class="space-y-3">
-        <details class="group rounded-2xl border border-slate-200 p-4 open:bg-brand-50 open:border-brand-200 transition">
-          <summary class="font-semibold cursor-pointer list-none flex justify-between items-center text-ink">
-            <span>What is your MOQ for Cucumber Powder?</span>
-            <span class="text-brand-500 transition-transform group-open:rotate-180">▼</span>
-          </summary>
-          <p class="mt-3 text-slateish">MOQ depends on packing, mesh size, and shipment destination. Typically starts from 50-100kg for standard packs. Share your monthly volume and we’ll confirm a fast quote.</p>
-        </details>
-        <details class="group rounded-2xl border border-slate-200 p-4 open:bg-brand-50 open:border-brand-200 transition">
-          <summary class="font-semibold cursor-pointer list-none flex justify-between items-center text-ink">
-            <span>Do you support different mesh sizes?</span>
-            <span class="text-brand-500 transition-transform group-open:rotate-180">▼</span>
-          </summary>
-          <p class="mt-3 text-slateish">Yes. We can supply fine powder (for beverages/mixes) and coarser granules (for soups/seasonings) based on your application.</p>
-        </details>
-        <details class="group rounded-2xl border border-slate-200 p-4 open:bg-brand-50 open:border-brand-200 transition">
-          <summary class="font-semibold cursor-pointer list-none flex justify-between items-center text-ink">
-            <span>What packaging options do you offer?</span>
-            <span class="text-brand-500 transition-transform group-open:rotate-180">▼</span>
-          </summary>
-          <p class="mt-3 text-slateish">Common bulk packs are 5–25 kg in HDPE bags with liner or carton boxes. We also support OEM/private label packing based on requirements.</p>
-        </details>
-      </div>
-    </div>
-
-    <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
-      <div class="flex items-start justify-between gap-4 flex-wrap mb-6">
-        <div>
-          <h2 class="text-2xl font-extrabold tracking-tight">Used in industries</h2>
-          <p class="mt-2 text-slateish">Explore application pages where this product is commonly used.</p>
-        </div>
-        <a class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-brand text-white font-semibold card-hover" href="/industries/">
-          Browse industries
-        </a>
-      </div>
-      <div class="grid md:grid-cols-2 gap-5">
-        <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/food-manufacturing-and-export.html">
-          <div class="text-sm text-slate-500 font-semibold uppercase">Industry</div>
-          <div class="mt-1 text-lg font-bold group-hover:text-brand">Food Manufacturing & Bulk Export</div>
-          <div class="mt-2 text-sm text-slateish">Bulk sourcing & export →</div>
-        </a>
-        <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/bakery-and-savoury-snacks.html">
-          <div class="text-sm text-slate-500 font-semibold uppercase">Industry</div>
-          <div class="mt-1 text-lg font-bold group-hover:text-brand">Bakery & Savoury Snacks</div>
-          <div class="mt-2 text-sm text-slateish">Mixes and applications →</div>
-        </a>
-      </div>
-    </section>
 
   </main>
-
-  <div x-show="modalOpen" x-transition class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50" @click.self="modalOpen=false" style="display: none;">
-    <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 card-hover shadow-2xl">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <div class="text-xs text-brand-800 font-bold uppercase" x-text="modalProduct?.category"></div>
-          <div class="text-2xl font-bold mt-1" x-text="modalProduct?.name"></div>
-          <div class="text-slateish text-sm mt-2" x-text="modalProduct?.desc"></div>
-        </div>
-        <button class="rounded-full w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 transition text-slate-600 font-bold" @click="modalOpen=false">✕</button>
-      </div>
-      <div class="mt-5 grid gap-3 text-sm">
-        <template x-for="s in (modalProduct?.specs || [])" :key="s.k">
-          <div class="flex items-center justify-between border-b border-slate-100 py-3">
-            <span class="text-slate-500" x-text="s.k"></span>
-            <span class="text-ink font-semibold" x-text="s.v"></span>
-          </div>
-        </template>
-      </div>
-      <div class="mt-6 flex items-center justify-between gap-3 flex-wrap">
-        <a class="text-brand-700 font-bold hover:underline" :href="whatsappLinkForProduct(modalProduct?.name || '')">Enquire on WhatsApp →</a>
-        <button class="rounded-xl px-5 py-2 border border-slate-200 hover:bg-slate-50 transition font-semibold" @click="modalOpen=false">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function siteApp() {
-      return {
-        init() {
-          this.refreshFaqs();
-          window.addEventListener("atlasLangChanged", () => this.refreshFaqs());
-        },
-        whatsappNumber: "917738505687",
-        modalOpen: false,
-        modalProduct: null,
-        faqBank: {
-          en: [
-            { q: "Do you supply in bulk for manufacturers?", a: "Yes — we support bulk supply with packaging options and repeatable batches.", open: true },
-            { q: "Can you make custom blends?", a: "Yes. Share your target recipe and taste profile; we can create custom blends.", open: false },
-            { q: "What packaging do you support?", a: "Common options include 5–25 kg liners/laminated pouches and bulk packs. Private label is possible.", open: false }
-          ]
-        },
-        faqs: [],
-        refreshFaqs() {
-          this.faqs = this.faqBank.en.map((x, i) => ({ ...x, open: i === 0 }));
-        },
-        whatsappLinkForProduct(productName) {
-          const base = `Hello! I’m interested in: ${productName}. Please share pricing, MOQ, specs, and lead time.`;
-          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(base)}`;
-        }
-      };
-    }
-  </script>
-
-  <script>
-    (function () {
-      const main = document.getElementById("productMainImage");
-      const thumbs = Array.from(document.querySelectorAll(".product-thumb"));
-      if (!main || thumbs.length === 0) return;
-
-      function setActive(btn) {
-        thumbs.forEach(b => {
-          b.classList.remove("ring-emerald-500", "ring-2");
-        });
-        btn.classList.add("ring-2", "ring-emerald-500");
-      }
-
-      thumbs.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const nextSrc = btn.getAttribute("data-src");
-          if (nextSrc) {
-            main.src = nextSrc;
-            setActive(btn);
-          }
-        });
-      });
-    })();
-  </script>
-
+  
   <div id="site-footer"></div>
-  <script defer src="/assets/js/includes.js"></script>
-
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/assets/js/includes.js"></script>
 </body>
 </html>
