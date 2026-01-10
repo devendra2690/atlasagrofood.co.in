@@ -3,65 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
-  <link rel="apple-touch-icon" href="/assets/atlas-agrofood-logo.png" />
+
+  <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
 
   <title>Page Not Found | Atlas AgroFood</title>
   <meta name="robots" content="noindex,follow" />
-  <meta name="theme-color" content="#0f7a4a" />
-  
+  <meta name="theme-color" content="#15803d" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              DEFAULT: '#22b36a',
-              50: '#f5fbf7',
-              100: '#e7f7ee',
-              200: '#c9efd9',
-              300: '#9fe2bd',
-              400: '#5ecc8f',
-              500: '#22b36a',
-              600: '#129457',
-              700: '#0f7a4a',
-              800: '#0f623c',
-              900: '#0c4f31'
-            },
-            ink: '#0f172a',
-            slateish: '#475569'
+            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            ink: '#1e293b',
+            slateish: '#64748b',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365',
+            'earth-brown': '#5d4037',
+            'earth-green': '#556b2f',
+          },
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
           }
         }
       }
     }
   </script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
   <style>
-    /* Consistent Button Styles */
+    body { font-family: 'Lato', sans-serif; }
+    .font-serif-display { font-family: 'Playfair Display', serif; }
+    
     .btn-primary { 
         display: inline-flex; align-items: center; justify-content: center;
-        background-color: #22b36a; color: white; padding: 12px 24px; 
-        border-radius: 9999px; font-weight: 700; transition: all 0.2s ease;
-        box-shadow: 0 4px 6px -1px rgba(34,179,106, 0.2);
+        background-color: #15803d; color: white; padding: 12px 24px; 
+        border-radius: 12px; font-weight: 700; transition: all 0.2s ease;
+        box-shadow: 0 4px 6px -1px rgba(21,128,61, 0.3);
     }
-    .btn-primary:hover { background-color: #0f7a4a; transform: translateY(-1px); }
+    .btn-primary:hover { background-color: #166534; transform: translateY(-1px); }
     
     .btn-outline { 
         display: inline-flex; align-items: center; justify-content: center;
-        background-color: white; border: 1px solid #cbd5e1; color: #0f172a; 
-        padding: 12px 24px; border-radius: 9999px; font-weight: 700; 
+        background-color: white; border: 1px solid #d6d3d1; color: #1e293b; 
+        padding: 12px 24px; border-radius: 12px; font-weight: 700; 
         transition: all 0.2s ease; 
     }
-    .btn-outline:hover { border-color: #22b36a; color: #22b36a; transform: translateY(-1px); }
+    .btn-outline:hover { border-color: #15803d; color: #15803d; transform: translateY(-1px); }
     
     .card-hover{transition:all .25s ease;}
-    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,0.1);}
   </style>
 </head>
-<body class="bg-brand-50 text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()" x-init="init()">
+
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
 
   <div id="site-header"></div>
 
@@ -70,9 +72,9 @@
       <div class="inline-block p-6 rounded-full bg-white shadow-xl shadow-brand/10 mb-6 card-hover">
         <span class="text-6xl">🥑</span>
       </div>
-      <h1 class="text-6xl font-extrabold text-brand-700 tracking-tight">404</h1>
+      <h1 class="text-6xl font-serif-display font-bold text-brand-900 tracking-tight">404</h1>
       <h2 class="mt-4 text-2xl font-bold text-ink">Page not found</h2>
-      <p class="mt-4 text-lg text-slateish max-w-md mx-auto">
+      <p class="mt-4 text-lg text-stone-600 max-w-md mx-auto">
         The page you are looking for doesn't exist or has been moved. <br class="hidden md:block">
         Check our product catalog or head back home.
       </p>
@@ -82,7 +84,7 @@
         <a href="/products/" class="btn-outline">Browse Products</a>
       </div>
 
-      <div class="mt-12 p-6 bg-white rounded-3xl border border-slate-200 card-hover shadow-sm">
+      <div class="mt-12 p-6 bg-white rounded-3xl border border-stone-200 card-hover shadow-sm">
         <h3 class="font-bold text-lg mb-4 text-ink">Looking for something specific?</h3>
         <div class="flex flex-wrap justify-center gap-2">
           <a href="/products/dehydrated-products.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Vegetables</a>
@@ -94,13 +96,9 @@
     </div>
   </main>
 
-  <script>
-    function siteApp() {
-      return { init() { } };
-    }
-  </script>
-
   <div id="site-footer"></div>
-  <script defer src="/assets/js/includes.js"></script>
+
+  <script src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

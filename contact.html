@@ -3,94 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
-  <link rel="apple-touch-icon" href="/assets/atlas-agrofood-logo.png" />
+
+  <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
 
   <title>Contact Us | Bulk Dehydrated Food Supplier | Atlas AgroFood</title>
   <meta name="description" content="Get a quote for bulk dehydrated vegetables, fruit powders, and spices. Contact Atlas AgroFood for MOQ, pricing, and export enquiries."/>
-  <meta name="theme-color" content="#0f7a4a" />
-  
-  <link rel="canonical" href="https://atlasagrofood.co.in/contact.html"/>
+  <meta name="theme-color" content="#15803d" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact Atlas AgroFood | Bulk Supplier">
-  <meta property="og:description" content="Request pricing for bulk dehydrated ingredients. Fast response via WhatsApp or Email.">
-  <meta property="og:url" content="https://atlasagrofood.co.in/contact.html">
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              DEFAULT: '#22b36a',
-              50: '#f5fbf7',
-              100: '#e7f7ee',
-              200: '#c9efd9',
-              300: '#9fe2bd',
-              400: '#5ecc8f',
-              500: '#22b36a',
-              600: '#129457',
-              700: '#0f7a4a',
-              800: '#0f623c',
-              900: '#0c4f31'
-            },
-            ink: '#0f172a',
-            slateish: '#475569'
+            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            ink: '#1e293b',
+            slateish: '#64748b',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365',
+            'earth-brown': '#5d4037',
+            'earth-green': '#556b2f',
+          },
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
           }
         }
       }
     }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Atlas AgroFood",
-      "telephone": "+91-7738505687",
-      "email": "sales@atlasagrofood.co.in",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Khamgaon",
-        "addressRegion": "Maharashtra",
-        "postalCode": "444303",
-        "addressCountry": "IN"
-      }
-    }
-  }
-  </script>
-
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
   <style>
-    /* Sticky CTA & Layout */
+    body { font-family: 'Lato', sans-serif; }
+    .font-script { font-family: 'Dancing Script', cursive; }
+    .font-serif-display { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+
+    .card-hover { transition: all .3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
-    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
-    .sticky-cta .quote{background:var(--brand-700,#0f7a4a);color:#ffffff}
-    
-    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .sticky-cta .quote{background:#15803d;color:#ffffff}
+
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid rgba(148,163,184,.3)}
     .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;font-weight:800}
+    .mobile-cta .quote{background:#15803d;color:#ffffff}
+    .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+
     @media (min-width: 768px){.mobile-cta{display:none}}
     @media (max-width: 767px){body{padding-bottom:70px}}
-    
-    .card-hover{transition:all .25s ease;}
-    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
   </style>
 </head>
-<body class="bg-brand-50 text-ink antialiased" x-data="siteApp()" x-init="init()">
 
-  <div id="site-header"></div>
-  
-  <div class="sticky-cta hidden md:flex">
-    <a class="quote" href="#quick-quote">Get Quote</a>
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
+
+  <div class="sticky-cta">
+    <a class="quote" href="#quick-quote">Get Bulk Quote</a>
     <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
   </div>
   <div class="mobile-cta">
@@ -100,116 +76,70 @@
     </div>
   </div>
 
-  <main class="max-w-7xl mx-auto px-4 py-10">
-    <div class="mb-8 inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm shadow-sm">
-      <a href="/" class="text-slateish hover:text-brand">Home</a><span class="text-slate-300">/</span>
-      <span class="font-semibold text-brand">Contact</span>
-    </div>
+  <div id="site-header"></div>
 
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
-      <div>
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover shadow-sm">
-          <h1 class="text-3xl font-extrabold text-ink tracking-tight">Get a Bulk Quote</h1>
-          <p class="mt-2 text-slateish">
-            We supply B2B and Export markets. Share your requirements below, and we will respond with availability and pricing within 24 hours.
-          </p>
-          
-          <div class="mt-8 grid gap-4">
-             <a href="tel:+917738505687" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-50 border border-brand-100 card-hover hover:border-brand-200 transition">
-                <div class="bg-white p-3 rounded-full text-2xl shadow-sm">📞</div>
-                <div>
-                   <div class="text-xs text-brand-700 font-bold uppercase">Call Us</div>
-                   <div class="font-bold text-lg">+91 77385 05687</div>
-                </div>
-             </a>
-             <a href="mailto:sales@atlasagrofood.co.in" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-200 card-hover hover:border-slate-300 transition">
-                <div class="bg-brand-50 p-3 rounded-full text-2xl shadow-sm">✉️</div>
-                <div>
-                   <div class="text-xs text-slate-500 font-bold uppercase">Email</div>
-                   <div class="font-bold text-lg">sales@atlasagrofood.co.in</div>
-                </div>
-             </a>
-          </div>
-        </div>
-
-        <div id="quick-quote" class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover shadow-sm">
-           <h2 class="text-xl font-bold mb-4">Quick Enquiry</h2>
-           <div class="grid gap-4">
-             <div class="grid grid-cols-2 gap-4">
-               <input id="qqProduct" type="text" placeholder="Product (e.g., Onion Powder)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
-               <input id="qqMoq" type="text" placeholder="MOQ (e.g., 500 kg)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
-             </div>
-             <input id="qqPack" type="text" placeholder="Packaging (e.g., 20kg Bag)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
-             <input id="qqDest" type="text" placeholder="Destination (City/Country)" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition">
-             
-             <button id="qqSendBtn" class="w-full bg-brand text-white font-bold py-4 rounded-xl hover:bg-brand-700 transition shadow-lg shadow-brand/20 active:scale-[0.98]">
-               Send via WhatsApp
-             </button>
-             <p class="text-xs text-center text-slate-400">This will open WhatsApp with your pre-filled details.</p>
-           </div>
-        </div>
+  <main class="flex-grow pt-10 pb-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-serif-display font-bold text-brand-900 leading-tight">
+          Contact <span class="text-earth-gold italic">Us</span>
+        </h1>
+        <p class="mt-4 text-stone-600 text-lg">We supply B2B and Export markets. Get a response within 24 hours.</p>
       </div>
 
-      <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-sm h-full flex flex-col card-hover">
-        <div class="h-64 lg:h-80 bg-slate-200 relative">
-             <iframe 
-               title="Atlas AgroFood Location"
-               class="w-full h-full object-cover"
-               src="https://maps.google.com/maps?q=Khamgaon%2C%20Maharashtra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-               frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-             </iframe>
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div class="space-y-8">
+           <div class="bg-white p-8 rounded-3xl border border-stone-200 shadow-sm card-hover">
+              <h2 class="font-serif-display text-2xl font-bold text-brand-900 mb-6">Reach Out</h2>
+              <div class="space-y-4">
+                 <a href="tel:+917738505687" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-50 border border-brand-100 transition hover:bg-brand-100">
+                    <div class="text-2xl">📞</div>
+                    <div>
+                       <div class="text-xs text-brand-700 font-bold uppercase">Call Us</div>
+                       <div class="font-bold text-lg text-brand-900">+91 77385 05687</div>
+                    </div>
+                 </a>
+                 <a href="mailto:sales@atlasagrofood.co.in" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200 transition hover:bg-stone-50">
+                    <div class="text-2xl">✉️</div>
+                    <div>
+                       <div class="text-xs text-stone-500 font-bold uppercase">Email</div>
+                       <div class="font-bold text-lg text-stone-800">sales@atlasagrofood.co.in</div>
+                    </div>
+                 </a>
+              </div>
+           </div>
+
+           <div class="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden card-hover">
+              <div class="h-64 bg-stone-200">
+                <iframe title="Atlas AgroFood Location" class="w-full h-full object-cover" src="https://maps.google.com/maps?q=Khamgaon%2C%20Maharashtra&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="font-bold text-lg text-brand-900">Factory / Office</h3>
+                <p class="text-stone-600 mt-2">Khamgaon, District Buldhana, Maharashtra, India - 444303</p>
+              </div>
+           </div>
         </div>
-        <div class="p-8 flex-grow">
-          <h2 class="text-xl font-bold">Factory / Office Location</h2>
-          <address class="mt-4 not-italic text-slateish space-y-2">
-            <p class="font-semibold text-ink">Atlas AgroFood Private Ltd.</p>
-            <p>Khamgaon, District Buldhana</p>
-            <p>Maharashtra, India - 444303</p>
-          </address>
-          <div class="mt-6 p-4 rounded-2xl bg-yellow-50 border border-yellow-100 text-sm text-yellow-800">
-            <strong>Note:</strong> Visits are by appointment only. Please contact sales to schedule a factory visit.
-          </div>
+
+        <div id="quick-quote" class="bg-white p-8 rounded-3xl border border-stone-200 shadow-lg card-hover">
+           <h2 class="font-serif-display text-2xl font-bold text-brand-900 mb-6">Quick Enquiry</h2>
+           <div class="grid gap-5">
+             <div class="grid grid-cols-2 gap-4">
+               <input id="qqProduct" type="text" placeholder="Product (e.g., Onion Powder)" class="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition">
+               <input id="qqMoq" type="text" placeholder="MOQ (e.g., 500 kg)" class="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition">
+             </div>
+             <input id="qqPack" type="text" placeholder="Packaging (e.g., 20kg Bag)" class="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition">
+             <input id="qqDest" type="text" placeholder="Destination (City/Country)" class="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition">
+             
+             <button id="qqSendBtn" class="w-full bg-brand-700 text-white font-bold py-4 rounded-xl hover:bg-brand-800 transition shadow-lg">
+               Send via WhatsApp
+             </button>
+             <p class="text-xs text-center text-stone-400">This will open WhatsApp with your pre-filled details.</p>
+           </div>
         </div>
       </div>
     </div>
   </main>
-  
-  <script>
-    function siteApp() {
-      return {
-        init() { },
-        modalOpen: false,
-        modalProduct: null,
-        whatsappNumber: "917738505687",
-        whatsappDefaultText: "Hello! I’m interested in dehydrated products.",
-        get whatsappLink() {
-          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappDefaultText)}`;
-        },
-        whatsappLinkForProduct(productName) {
-          const base = `Hello! I’m interested in: ${productName}. Please share pricing, MOQ, and packing details.`;
-          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(base)}`;
-        }
-      };
-    }
-    
-    (function(){
-      function setActiveNav(){
-        var path = (location.pathname || "/").toLowerCase();
-        // Wait for includes.js to load header, then run this
-        setTimeout(() => {
-            var links = document.querySelectorAll('#site-header a');
-            links.forEach(link => {
-                // Highlight if href contains 'contact'
-                if(link.getAttribute('href') && link.getAttribute('href').includes('contact')) {
-                    link.classList.add("text-brand", "font-semibold");
-                }
-            });
-        }, 100); 
-      }
-      if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
-      else { setActiveNav(); }
-    })();
-  </script>
 
   <div id="site-footer"></div>
 
@@ -225,6 +155,8 @@
       window.open(`https://wa.me/917738505687?text=${msg}`, '_blank');
     });
   </script>
-  <script defer src="/assets/js/includes.js"></script>
+
+  <script src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
