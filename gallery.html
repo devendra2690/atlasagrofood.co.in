@@ -73,6 +73,19 @@
     @media (max-width: 767px){body{padding-bottom:70px}}
     
     [x-cloak] { display: none !important; }
+        /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
   </style>
 
   <script>

@@ -62,6 +62,20 @@
     @media (min-width: 768px){.mobile-cta{display:none}}
     @media (max-width: 767px){body{padding-bottom:70px}}
 
+        /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
+
     /* FAQ Specific Animation */
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }

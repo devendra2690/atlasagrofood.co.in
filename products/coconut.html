@@ -76,6 +76,20 @@
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
     html { scroll-behavior: smooth; }
     ::selection { background: rgba(34,179,106,.25); }
+
+        /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
