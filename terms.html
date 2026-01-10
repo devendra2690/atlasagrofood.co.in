@@ -17,6 +17,21 @@
     tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 900: '#14532d' }, ink: '#1e293b', 'earth-cream': '#f9f7f2', 'earth-gold': '#c5a365' }, fontFamily: { sans: ['Lato', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
     function siteApp() { return { mobileOpen: false, whatsappLink: "https://wa.me/917738505687", init() { console.log('Site App Initialized'); } }; }
   </script>
+  <style>
+            /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">

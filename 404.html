@@ -58,6 +58,20 @@
     }
     .btn-outline:hover { border-color: #15803d; color: #15803d; transform: translateY(-1px); }
     
+            /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
+    
     .card-hover{transition:all .25s ease;}
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,0.1);}
   </style>
