@@ -47,10 +47,16 @@
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
     
     /* Filter Buttons */
-    .filter-btn { transition: all 0.3s; position: relative; padding-bottom: 4px; white-space: nowrap; }
+    .filter-btn { transition: all 0.3s; position: relative; padding-bottom: 4px; white-space: nowrap; font-size: 1.125rem; color: #64748b; font-weight: 500; }
+    .filter-btn:hover { color: #15803d; }
     .filter-btn.active { color: #15803d; font-weight: 700; }
     .filter-btn.active::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 24px; height: 3px; background: #c5a365; border-radius: 2px; }
 
+    /* Lightbox Styles */
+    .lightbox{ position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .lightbox.open{ opacity: 1; pointer-events: auto; }
+    .lightbox-backdrop{ position:absolute; inset:0; background: rgba(20, 83, 45, 0.95); backdrop-filter: blur(8px); }
+    
     /* Sticky CTAs */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
@@ -68,99 +74,9 @@
     
     [x-cloak] { display: none !important; }
   </style>
-
-  <script>
-    function galleryApp() {
-      return {
-        // --- Header/Footer State (Required for includes.js) ---
-        mobileOpen: false,
-        whatsappLink: "https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+products.",
-
-        // --- Gallery State ---
-        filter: 'all',
-        lightboxOpen: false,
-        activeItem: null,
-        
-        // --- Data ---
-        items: [
-          { slug: "banana", name: "Banana Powder", category: "Dehydrated", src: "/assets/products/banana/hero.png" },
-          { slug: "onion", name: "Red Onion Powder", category: "Dehydrated", src: "/assets/products/onion/hero.png" },
-          { slug: "garlic", name: "Garlic Powder", category: "Dehydrated", src: "/assets/products/garlic/hero.png" },
-          { slug: "ginger", name: "Ginger Powder", category: "Dehydrated", src: "/assets/products/ginger/hero.png" },
-          { slug: "methi", name: "Dried Methi (Fenugreek)", category: "Dehydrated", src: "/assets/products/methi/hero.png" },
-          { slug: "spinach", name: "Spinach Powder", category: "Dehydrated", src: "/assets/products/spinach/hero.png" },
-          { slug: "beetroot", name: "Beetroot Powder", category: "Dehydrated", src: "/assets/products/beetroot/hero.png" },
-          { slug: "moringa", name: "Moringa Powder", category: "Dehydrated", src: "/assets/products/moringa/hero.png" },
-          { slug: "curry-leaves", name: "Dried Curry Leaves", category: "Dehydrated", src: "/assets/products/curry-leaves/hero.png" },
-          { slug: "coriander", name: "Coriander Leaves", category: "Dehydrated", src: "/assets/products/coriander/hero.png" },
-          { slug: "rose", name: "Dried Rose Petals", category: "Dehydrated", src: "/assets/products/rose/hero.png" },
-          { slug: "marigold", name: "Dried Marigold", category: "Dehydrated", src: "/assets/products/marigold/hero.png" },
-          { slug: "tomato", name: "Tomato Powder", category: "Dehydrated", src: "/assets/products/tomato/hero.png" },
-          { slug: "carrot", name: "Carrot Powder", category: "Dehydrated", src: "/assets/products/carrot/hero.png" },
-          { slug: "green-chilli", name: "Green Chilli Powder", category: "Dehydrated", src: "/assets/products/green-chilli/hero.png" },
-          { slug: "bitter-gourd", name: "Dried Bitter Gourd", category: "Dehydrated", src: "/assets/products/bitter-gourd/hero.png" },
-          { slug: "corn", name: "Sweet Corn", category: "Dehydrated", src: "/assets/products/corn/hero.png" },
-          { slug: "mango", name: "Mango Powder (Amchur)", category: "Dehydrated", src: "/assets/products/mango/hero.png" },
-          { slug: "coconut", name: "Desiccated Coconut", category: "Dehydrated", src: "/assets/products/coconut/hero.png" },
-          { slug: "apple", name: "Apple Powder", category: "Dehydrated", src: "/assets/products/apple/hero.png" },
-          { slug: "papaya", name: "Papaya Powder", category: "Dehydrated", src: "/assets/products/papaya/hero.png" },
-          { slug: "guava", name: "Guava Powder", category: "Dehydrated", src: "/assets/products/guava/hero.png" },
-          { slug: "orange", name: "Orange Powder", category: "Dehydrated", src: "/assets/products/orange/hero.png" },
-          { slug: "potato", name: "Potato Flakes/Powder", category: "Dehydrated", src: "/assets/products/potato/hero.png" },
-          { slug: "mushroom", name: "Dried Mushroom", category: "Dehydrated", src: "/assets/products/mushroom/hero.png" },
-          { slug: "okra", name: "Dried Okra (Lady Finger)", category: "Dehydrated", src: "/assets/products/okra/hero.png" },
-          { slug: "red-pepper", "name: "Red Bell Pepper", category: "Dehydrated", src: "/assets/products/red-pepper/hero.png" },
-          { slug: "green-pepper", "name: "Green Bell Pepper", category: "Dehydrated", src: "/assets/products/green-pepper/hero.png" },
-          { slug: "mint", "name: "Dried Mint", category: "Dehydrated", src: "/assets/products/mint/hero.png" },
-          { slug: "cucumber", "name: "Dried Cucumber", category: "Dehydrated", src: "/assets/products/cucumber/hero.png" },
-          { slug: "mixed-veg", name: "Mixed Vegetable Blend", category: "Dehydrated", src: "/assets/products/mixed-veg/hero.png" },
-          { slug: "spray-dried", name: "Spray Dried Fruit Powders", category: "Spray Dried", src: "/assets/products/spray-dried/hero.png" },
-          { slug: "spices", name: "Indian Spices Range", category: "Spices", src: "/assets/products/spices/hero.png" },
-          { slug: "facility-drying", name: "Drying Units", category: "facility", src: "/assets/gallery/drying-unit.jpg" },
-          { slug: "facility-sorting", name: "Sorting & Grading", category: "facility", src: "/assets/gallery/sorting-line.jpg" },
-          { slug: "facility-grinding", name: "Grinding Unit", category: "facility", src: "/assets/gallery/grinding-unit.jpg" },
-          { slug: "packaging-bulk", name: "Bulk Bags (25kg)", category: "packaging", src: "/assets/gallery/bulk-bag.jpg" },
-          { slug: "packaging-retail", name: "Retail Pouches", category: "packaging", src: "/assets/gallery/retail-pouch.jpg" }
-        ],
-
-        get filteredItems() {
-          if (this.filter === 'all') return this.items;
-          return this.items.filter(i => i.category === this.filter);
-        },
-
-        setFilter(val) {
-          this.filter = val;
-        },
-
-        openLightbox(item) {
-          this.activeItem = item;
-          this.lightboxOpen = true;
-          document.body.style.overflow = 'hidden'; 
-        },
-
-        closeLightbox() {
-          this.lightboxOpen = false;
-          setTimeout(() => { this.activeItem = null; }, 200);
-          document.body.style.overflow = '';
-        },
-
-        nextImage() {
-          const list = this.filteredItems;
-          const idx = list.indexOf(this.activeItem);
-          this.activeItem = list[(idx + 1) % list.length];
-        },
-
-        prevImage() {
-          const list = this.filteredItems;
-          const idx = list.indexOf(this.activeItem);
-          this.activeItem = list[(idx - 1 + list.length) % list.length];
-        }
-      }
-    }
-  </script>
 </head>
 
-<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="galleryApp()">
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
 
   <div class="sticky-cta">
     <a class="quote" href="/contact.html">Get Bulk Quote</a>
@@ -187,101 +103,245 @@
     </section>
 
     <section class="max-w-6xl mx-auto mb-10 overflow-x-auto">
-      <div class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-6 md:gap-10 text-stone-500 font-medium text-lg px-2 pb-2">
-        <button @click="setFilter('all')" :class="{'active': filter === 'all'}" class="filter-btn hover:text-brand-700">All</button>
-        <button @click="setFilter('Dehydrated')" :class="{'active': filter === 'Dehydrated'}" class="filter-btn hover:text-brand-700">Dehydrated</button>
-        <button @click="setFilter('Spices')" :class="{'active': filter === 'Spices'}" class="filter-btn hover:text-brand-700">Spices</button>
-        <button @click="setFilter('Spray Dried')" :class="{'active': filter === 'Spray Dried'}" class="filter-btn hover:text-brand-700">Spray Dried</button>
-        <button @click="setFilter('facility')" :class="{'active': filter === 'facility'}" class="filter-btn hover:text-brand-700">Facility</button>
-        <button @click="setFilter('packaging')" :class="{'active': filter === 'packaging'}" class="filter-btn hover:text-brand-700">Packaging</button>
+      <div class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-6 md:gap-10 px-2 pb-2" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Dehydrated">Dehydrated</button>
+        <button class="filter-btn" data-filter="Spices">Spices</button>
+        <button class="filter-btn" data-filter="Spray Dried">Spray Dried</button>
+        <button class="filter-btn" data-filter="facility">Facility</button>
+        <button class="filter-btn" data-filter="packaging">Packaging</button>
+      </div>
+      
+      <div class="max-w-md mx-auto mt-6 relative">
+        <input type="text" id="gallerySearch" placeholder="Search products..." class="w-full pl-10 pr-4 py-3 rounded-full border border-stone-300 bg-white focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition shadow-sm">
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400">🔍</span>
       </div>
     </section>
 
     <section class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-        <template x-for="(item, index) in filteredItems" :key="index">
-          <div 
-            class="group relative aspect-square bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm cursor-pointer card-hover"
-            @click="openLightbox(item)"
-          >
-            <img :src="item.src" :alt="item.name" 
-                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
-                 loading="lazy"
-                 onerror="this.src='/assets/atlas-agro-logo.png'; this.style.objectFit='contain'; this.style.padding='24px';"
-            >
-            
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-300">
-                <p class="text-white font-bold font-serif-display text-xl leading-tight" x-text="item.name"></p>
-                <p class="text-earth-gold text-xs uppercase tracking-widest mt-1 font-bold" x-text="item.category"></p>
-              </div>
-            </div>
-          </div>
-        </template>
-      </div>
-      
-      <div x-show="filteredItems.length === 0" class="text-center py-20 text-stone-500" x-cloak>
-        No images found in this category.
+      <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        </div>
+      <div id="emptyState" class="hidden text-center py-20 text-stone-500">
+        No images found matching your search.
       </div>
     </section>
+  </main>
 
-    <div 
-        x-show="lightboxOpen" 
-        class="fixed inset-0 z-[100] flex items-center justify-center bg-brand-950/95 backdrop-blur-md p-4"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-in duration-200"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        x-cloak
-        @keydown.escape.window="closeLightbox()"
-    >
-        <button @click="closeLightbox()" class="absolute top-4 right-4 z-10 text-white/60 hover:text-white transition bg-black/20 hover:bg-black/40 rounded-full p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-backdrop" id="lbBackdrop"></div>
+    
+    <div class="relative w-full max-w-6xl h-full flex flex-col items-center justify-center p-4">
+        <button id="lbClose" class="absolute top-4 right-4 z-20 bg-black/20 hover:bg-black/40 text-white rounded-full p-2 transition">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
-        <div class="relative max-w-6xl w-full h-full flex flex-col justify-center items-center" @click.away="closeLightbox()">
-        
-        <div class="relative max-h-[80vh] w-auto flex justify-center">
-            <img :src="activeItem?.src" class="max-h-[80vh] max-w-full rounded-lg shadow-2xl object-contain bg-white" 
-                onerror="this.src='/assets/atlas-agro-logo.png'">
+        <div class="relative max-h-[80vh] w-auto">
+            <img id="lbImg" src="" alt="Gallery Image" class="max-h-[80vh] max-w-full rounded-lg shadow-2xl object-contain bg-white">
             
-            <button @click.stop="prevImage()" class="hidden md:block absolute -left-20 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:scale-110 transition p-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            <button id="lbPrev" class="hidden md:block absolute -left-20 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:scale-110 transition p-4">
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             </button>
-            <button @click.stop="nextImage()" class="hidden md:block absolute -right-20 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:scale-110 transition p-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            <button id="lbNext" class="hidden md:block absolute -right-20 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:scale-110 transition p-4">
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </button>
         </div>
 
-        <div class="mt-6 text-center max-w-2xl">
-            <h3 class="text-3xl font-serif-display text-white" x-text="activeItem?.name"></h3>
-            <p class="text-earth-gold font-medium mt-2 uppercase tracking-widest text-sm" x-text="activeItem?.category"></p>
-            <a x-show="activeItem?.slug && !['facility','packaging'].includes(activeItem?.category)" 
-            :href="'/products/' + activeItem?.slug + '.html'" 
-            class="inline-block mt-4 text-white/80 hover:text-white underline underline-offset-4 text-sm">
-            View Product Details →
-            </a>
+        <div class="mt-6 text-center z-20">
+            <h3 id="lbTitle" class="text-3xl font-serif-display text-white"></h3>
+            <p id="lbCategory" class="text-earth-gold font-medium mt-2 uppercase tracking-widest text-sm"></p>
         </div>
-
-        <div class="md:hidden flex gap-8 mt-4">
-            <button @click.stop="prevImage()" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-            </button>
-            <button @click.stop="nextImage()" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-            </button>
-        </div>
+        
+        <div class="md:hidden flex gap-8 mt-4 z-20">
+            <button id="lbPrevMob" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">Prev</button>
+            <button id="lbNextMob" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">Next</button>
         </div>
     </div>
-  </main>
+  </div>
 
   <div id="site-footer"></div>
 
   <script src="/assets/js/includes.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    // 1. Full Data Set
+    const GALLERY_ITEMS = [
+      { slug: "banana", name: "Banana Powder", category: "Dehydrated" },
+      { slug: "onion", name: "Red Onion Powder", category: "Dehydrated" },
+      { slug: "garlic", name: "Garlic Powder", category: "Dehydrated" },
+      { slug: "ginger", name: "Ginger Powder", category: "Dehydrated" },
+      { slug: "methi", name: "Dried Methi (Fenugreek)", category: "Dehydrated" },
+      { slug: "spinach", name: "Spinach Powder", category: "Dehydrated" },
+      { slug: "beetroot", name: "Beetroot Powder", category: "Dehydrated" },
+      { slug: "moringa", name: "Moringa Powder", category: "Dehydrated" },
+      { slug: "curry-leaves", name: "Dried Curry Leaves", category: "Dehydrated" },
+      { slug: "coriander", name: "Coriander Leaves", category: "Dehydrated" },
+      { slug: "rose", name: "Dried Rose Petals", category: "Dehydrated" },
+      { slug: "marigold", name: "Dried Marigold", category: "Dehydrated" },
+      { slug: "tomato", name: "Tomato Powder", category: "Dehydrated" },
+      { slug: "carrot", name: "Carrot Powder", category: "Dehydrated" },
+      { slug: "green-chilli", name: "Green Chilli Powder", category: "Dehydrated" },
+      { slug: "bitter-gourd", name: "Dried Bitter Gourd", category: "Dehydrated" },
+      { slug: "corn", name: "Sweet Corn", category: "Dehydrated" },
+      { slug: "mango", name: "Mango Powder (Amchur)", category: "Dehydrated" },
+      { slug: "coconut", name: "Desiccated Coconut", category: "Dehydrated" },
+      { slug: "apple", name: "Apple Powder", category: "Dehydrated" },
+      { slug: "papaya", name: "Papaya Powder", category: "Dehydrated" },
+      { slug: "guava", name: "Guava Powder", category: "Dehydrated" },
+      { slug: "orange", name: "Orange Powder", category: "Dehydrated" },
+      { slug: "potato", name: "Potato Flakes/Powder", category: "Dehydrated" },
+      { slug: "mushroom", name: "Dried Mushroom", category: "Dehydrated" },
+      { slug: "okra", name: "Dried Okra (Lady Finger)", category: "Dehydrated" },
+      { slug: "red-pepper", "name: "Red Bell Pepper", category: "Dehydrated" },
+      { slug: "green-pepper", "name: "Green Bell Pepper", category: "Dehydrated" },
+      { slug: "mint", "name: "Dried Mint", category: "Dehydrated" },
+      { slug: "cucumber", "name: "Dried Cucumber", category: "Dehydrated" },
+      { slug: "spray-dried", name: "Spray Dried Fruit Powders", category: "Spray Dried" },
+      { slug: "spices", name: "Indian Spices Range", category: "Spices" },
+      { slug: "facility-drying", name: "Drying Units", category: "facility", src: "/assets/gallery/drying-unit.jpg" },
+      { slug: "facility-sorting", name: "Sorting & Grading", category: "facility", src: "/assets/gallery/sorting-line.jpg" },
+      { slug: "facility-grinding", name: "Grinding Unit", category: "facility", src: "/assets/gallery/grinding-unit.jpg" },
+      { slug: "packaging-bulk", name: "Bulk Bags (25kg)", category: "packaging", src: "/assets/gallery/bulk-bag.jpg" },
+      { slug: "packaging-retail", name: "Retail Pouches", category: "packaging", src: "/assets/gallery/retail-pouch.jpg" }
+    ];
+
+    // 2. Helper Functions
+    function getImageUrl(item) {
+        if (item.src) return item.src;
+        return `/assets/products/${item.slug}/hero.png`;
+    }
+
+    // 3. Render Function (Matches New Design)
+    const grid = document.getElementById('galleryGrid');
+    const emptyState = document.getElementById('emptyState');
+    let activeFilter = 'all';
+    let searchQuery = '';
+
+    function renderGallery() {
+        grid.innerHTML = '';
+        
+        const filtered = GALLERY_ITEMS.filter(item => {
+            const matchesFilter = activeFilter === 'all' || item.category === activeFilter;
+            const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesFilter && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+            emptyState.classList.remove('hidden');
+        } else {
+            emptyState.classList.add('hidden');
+            filtered.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'group relative aspect-square bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm cursor-pointer card-hover';
+                
+                // HTML Template for Card
+                card.innerHTML = `
+                    <img src="${getImageUrl(item)}" alt="${item.name}" 
+                         class="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+                         loading="lazy"
+                         onerror="this.src='/assets/atlas-agro-logo.png'; this.style.objectFit='contain'; this.style.padding='24px';">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <p class="text-white font-bold font-serif-display text-xl leading-tight">${item.name}</p>
+                            <p class="text-earth-gold text-xs uppercase tracking-widest mt-1 font-bold">${item.category}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-3 right-3 bg-white/90 text-brand-900 p-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300 shadow-lg scale-75 group-hover:scale-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => openLightbox(filtered, index));
+                grid.appendChild(card);
+            });
+        }
+    }
+
+    // 4. Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeFilter = btn.dataset.filter;
+            renderGallery();
+        });
+    });
+
+    // 5. Search Logic
+    const searchInput = document.getElementById('gallerySearch');
+    searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        renderGallery();
+    });
+
+    // 6. Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbCategory = document.getElementById('lbCategory');
+    let currentLightboxList = [];
+    let currentLightboxIndex = 0;
+
+    function openLightbox(list, index) {
+        currentLightboxList = list;
+        currentLightboxIndex = index;
+        updateLightboxContent();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+        const item = currentLightboxList[currentLightboxIndex];
+        lbImg.src = getImageUrl(item);
+        lbTitle.textContent = item.name;
+        lbCategory.textContent = item.category;
+    }
+
+    function nextImage() {
+        currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxList.length;
+        updateLightboxContent();
+    }
+
+    function prevImage() {
+        currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxList.length) % currentLightboxList.length;
+        updateLightboxContent();
+    }
+
+    // Lightbox Event Listeners
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbBackdrop').addEventListener('click', closeLightbox);
+    document.getElementById('lbNext').addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+    document.getElementById('lbPrev').addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+    document.getElementById('lbNextMob').addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+    document.getElementById('lbPrevMob').addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    });
+
+    // Initial Render
+    renderGallery();
+
+    // 7. Site App Logic (For Header/Includes compatibility)
+    function siteApp() {
+        return {
+            mobileOpen: false,
+            init() {}
+        };
+    }
+  </script>
 </body>
 </html>
