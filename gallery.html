@@ -8,6 +8,7 @@
 
   <title>Gallery | Products, Facility & Packaging | Atlas AgroFood</title>
   <meta name="description" content="View our complete gallery of dehydrated vegetables, fruit powders, spices, and spray-dried ingredients. Explore our manufacturing facility and export packaging." />
+  <meta name="keywords" content="dehydrated food gallery, onion powder images, dried fruit photos, spice processing facility, bulk food packaging, spray dried powder images" />
   <meta name="theme-color" content="#15803d" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,11 +67,12 @@
     @media (min-width: 768px){.mobile-cta{display:none}}
     @media (max-width: 767px){body{padding-bottom:70px}}
     
+    /* Prevent flash of unstyled content */
     [x-cloak] { display: none !important; }
   </style>
 </head>
 
-<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="galleryApp()">
 
   <div class="sticky-cta">
     <a class="quote" href="/contact.html">Get Bulk Quote</a>
@@ -85,7 +87,7 @@
 
   <div id="site-header"></div>
 
-  <main class="flex-grow pt-10 pb-20 px-4" x-data="galleryApp()">
+  <main class="flex-grow pt-10 pb-20 px-4">
     
     <section class="max-w-4xl mx-auto mb-12 text-center">
       <h1 class="text-4xl md:text-5xl font-serif-display font-bold text-brand-900 leading-tight">
@@ -201,9 +203,9 @@
         lightboxOpen: false,
         activeItem: null,
         
-        // FULL DATASET: Merged from your "old gallery" file + Facility/Packaging additions
+        // FULL DATASET: All 33 products + Facility + Packaging
         items: [
-          // --- Dehydrated Products (Exact list from uploaded gallery.html) ---
+          // --- Dehydrated Products ---
           { slug: "banana", name: "Banana Powder", category: "Dehydrated", src: "/assets/products/banana/hero.png" },
           { slug: "onion", name: "Red Onion Powder", category: "Dehydrated", src: "/assets/products/onion/hero.png" },
           { slug: "garlic", name: "Garlic Powder", category: "Dehydrated", src: "/assets/products/garlic/hero.png" },
@@ -234,6 +236,7 @@
           { slug: "green-pepper", "name: "Green Bell Pepper", category: "Dehydrated", src: "/assets/products/green-pepper/hero.png" },
           { slug: "mint", "name: "Dried Mint", category: "Dehydrated", src: "/assets/products/mint/hero.png" },
           { slug: "cucumber", "name: "Dried Cucumber", category: "Dehydrated", src: "/assets/products/cucumber/hero.png" },
+          { slug: "mixed-veg", name: "Mixed Vegetable Blend", category: "Dehydrated", src: "/assets/products/mixed-veg/hero.png" },
 
           // --- Special Ranges ---
           { slug: "spray-dried", name: "Spray Dried Fruit Powders", category: "Spray Dried", src: "/assets/products/spray-dried/hero.png" },
@@ -242,6 +245,7 @@
           // --- Facility & Packaging ---
           { slug: "facility-drying", name: "Drying Units", category: "facility", src: "/assets/gallery/drying-unit.jpg" },
           { slug: "facility-sorting", name: "Sorting & Grading", category: "facility", src: "/assets/gallery/sorting-line.jpg" },
+          { slug: "facility-grinding", name: "Grinding & Pulverizing", category: "facility", src: "/assets/gallery/grinding-unit.jpg" },
           { slug: "packaging-bulk", name: "Bulk Bags (25kg)", category: "packaging", src: "/assets/gallery/bulk-bag.jpg" },
           { slug: "packaging-retail", name: "Retail Pouches", category: "packaging", src: "/assets/gallery/retail-pouch.jpg" }
         ],
