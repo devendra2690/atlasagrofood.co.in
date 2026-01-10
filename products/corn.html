@@ -5,16 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
-  
-  <title>Dehydrated Sweet Corn | Kernels & Powder | Atlas AgroFood</title>
-  <meta name="description" content="Sweet and crunchy dehydrated corn kernels for instant cup noodles, soup premixes, and snacks. Long shelf life and rapid rehydration." />
-  <meta name="theme-color" content="#15803d" />
-  
-  <link rel="canonical" href="https://atlasagro.co.in/products/corn.html" />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/assets/atlas-agrofood-logo.png" />
+
+  <title>Corn Powder / Granules | Bulk Supplier | Atlas AgroFood</title>
+  <meta name="description" content="Dehydrated Corn Powder and Granules for bakery, beverages, baby food, and nutrition mixes. Bulk B2B supplier, sweet corn flavor preserved."/>
+  <meta name="keywords" content="corn powder, dehydrated corn, corn granules, sweet corn powder, bakery ingredients, baby food ingredients, bulk corn supplier" />
+  <meta name="theme-color" content="#22b36a" />
+
+  <link rel="canonical" href="https://atlasagrofood.co.in/products/corn.html"/>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Corn Powder / Granules | Atlas AgroFood">
+  <meta property="og:description" content="Dehydrated Corn Powder and Granules for bakery, beverages, and baby food. Bulk supply, OEM/private label & export-ready.">
+  <meta property="og:image" content="https://atlasagrofood.co.in/assets/products/corn/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -23,17 +27,14 @@
       theme: {
         extend: {
           colors: {
-            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
-            ink: '#1e293b',
-            slateish: '#64748b',
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 200: '#c9efd9', 300: '#9fe2bd', 400: '#5ecc8f', 500: '#22b36a', 600: '#129457', 700: '#0f7a4a', 800: '#0f623c', 900: '#0c4f31' },
+            ink: '#0f172a', slateish: '#475569',
             'earth-cream': '#f9f7f2',
-            'earth-gold': '#c5a365', 
-            'earth-brown': '#5d4037',
-            'earth-green': '#556b2f',
+            'earth-gold': '#c5a365'
           },
           fontFamily: {
-            sans: ['Lato', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
+             sans: ['Lato', 'sans-serif'],
+             serif: ['Playfair Display', 'serif'],
           }
         }
       }
@@ -41,144 +42,237 @@
   </script>
 
   <style>
-    body { font-family: 'Lato', sans-serif; }
-    .font-script { font-family: 'Dancing Script', cursive; }
-    .font-serif-display { font-family: 'Playfair Display', serif; }
-    html { scroll-behavior: smooth; }
-    .card-hover { transition: all .3s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(21, 128, 61, 0.15); border-color: #c5a365; }
-    
+    /* Standard Design System CSS */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
-    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800;box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
-    .sticky-cta .quote{background:#15803d;color:#ffffff}
-    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid rgba(148,163,184,.3)}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,.3)}
     .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;font-weight:800}
     .mobile-cta .quote{background:#15803d;color:#ffffff}
     .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+    html { scroll-behavior: smooth; }
+
+    /* Responsive Hiding Logic */
     @media (min-width: 768px){.mobile-cta{display:none}}
-    @media (max-width: 767px){body{padding-bottom:70px}}
-
-        /* 1. HIDE the Vertical Buttons on Mobile */
-    @media (max-width: 767px) {
-      .sticky-cta {
-        display: none !important;
-      }
-    }
-
-    /* 2. HIDE the Bottom Bar on Desktop */
-    @media (min-width: 768px) {
-      .mobile-cta {
-        display: none !important;
-      }
-    }
+    @media (max-width: 767px){body{padding-bottom:70px} .sticky-cta{display:none !important;}}
   </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Dehydrated Sweet Corn",
-    "image": "https://atlasagro.co.in/assets/products/corn/hero.png",
-    "description": "Dried sweet corn kernels and powder for instant foods.",
+    "name": "Corn Powder / Granules",
     "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
-    "sku": "CORN-001",
-    "offers": { "@type": "AggregateOffer", "availability": "https://schema.org/InStock", "priceCurrency": "INR", "lowPrice": "200", "highPrice": "400" }
+    "image": [
+      "https://atlasagrofood.co.in/assets/products/corn/hero.png",
+      "https://atlasagrofood.co.in/assets/products/corn/thumb-1.png",
+      "https://atlasagrofood.co.in/assets/products/corn/thumb-2.png",
+      "https://atlasagrofood.co.in/assets/products/corn/thumb-2.png"
+    ],
+    "description": "Dehydrated corn powder for bakery, beverages, baby food, and nutrition mixes. Sweet corn flavor preserved.",
+    "offers": { 
+      "@type": "AggregateOffer", 
+      "priceCurrency": "INR", 
+      "availability": "https://schema.org/InStock",
+      "offerCount": "2"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is this sweet corn powder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we process sweet corn varieties to ensure the natural sweetness and aroma are retained in the powder and granules."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What mesh sizes are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We supply Fine Powder (for beverages/bakery), Medium Granules (for soups/mixes), and Coarse options based on your application."
+      }
+    }]
   }
   </script>
 </head>
 
-<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
-
-  <div class="sticky-cta">
-    <a class="quote" href="/contact.html">Get Bulk Quote</a>
-    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-  <div class="mobile-cta">
-    <div class="wrap">
-      <a class="quote" href="/contact.html">Get Quote</a>
-      <a class="wa" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
-  </div>
+<body class="bg-brand-50 text-ink antialiased">
 
   <div id="site-header"></div>
 
-  <main class="flex-grow pt-8 pb-20 px-4">
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+interested+in+bulk+Corn+Powder." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+interested+in+bulk+Corn+Powder." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 py-10">
     
-    <div class="max-w-7xl mx-auto mb-8">
-      <nav class="flex text-sm text-slateish bg-white px-4 py-2 rounded-full border border-stone-200 inline-flex shadow-sm">
-        <a href="/" class="hover:text-brand-700">Home</a>
-        <span class="mx-2">/</span>
-        <a href="/products/" class="hover:text-brand-700">Products</a>
-        <span class="mx-2 text-stone-300">/</span>
-        <span class="text-brand-800 font-bold">Sweet Corn</span>
-      </nav>
+    <div class="max-w-3xl mb-8">
+      <div class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm shadow-sm">
+        <a href="/" class="text-slateish hover:text-brand-700 font-bold">Home</a>
+        <span class="text-slate-300">/</span>
+        <a href="/products/" class="text-slateish hover:text-brand-700 font-bold">Products</a>
+        <span class="text-slate-300">/</span>
+        <span class="text-brand-700 font-bold">Corn Powder</span>
+      </div>
     </div>
 
-    <section class="max-w-7xl mx-auto mb-16 grid md:grid-cols-2 gap-12 items-center">
-      <div class="order-2 md:order-1">
-        <div class="inline-block text-earth-gold font-bold tracking-widest uppercase text-xs mb-3">Instant & Sweet</div>
-        <h1 class="text-4xl md:text-5xl font-serif-display font-bold text-brand-900 leading-tight mb-6">
-          Dehydrated <span class="italic text-brand-700">Sweet Corn</span>
-        </h1>
-        <p class="text-stone-600 text-lg leading-relaxed mb-8">
-          Whole kernels that plump up perfectly when rehydrated. The gold standard for cup noodles, instant soup mixes, and fried rice seasonings. Also available in powder form for sweet flavor.
-        </p>
-        
-        <div class="flex flex-wrap gap-4">
-          <a href="/contact.html" class="px-8 py-4 bg-brand-700 text-white rounded-xl font-bold hover:bg-brand-800 transition shadow-lg">Get Quote</a>
-        </div>
-      </div>
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
       
-      <div class="order-1 md:order-2 relative">
-        <div class="absolute inset-0 bg-earth-gold/10 rounded-[3rem] rotate-2"></div>
-        <div class="relative bg-white rounded-[3rem] border border-stone-200 p-8 shadow-2xl flex items-center justify-center">
-          <img src="/assets/products/corn/hero.png" alt="Dried Sweet Corn" class="w-full max-w-sm object-contain">
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-earth-gold mb-2">Dehydrated Products</div>
+          <h1 class="text-3xl md:text-4xl font-serif-display font-bold text-brand-900">Corn Powder / Granules</h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-3xl leading-relaxed">
+            Premium dehydrated corn powder and granules made from sweet corn. Retains natural sweetness and bright yellow color. Ideal for bakery, beverages, baby food, nutrition mixes, and ready-to-eat applications.
+          </p>
         </div>
       </div>
-    </section>
 
-    <section class="max-w-4xl mx-auto mb-20">
-      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
-        <div class="bg-brand-50 px-8 py-4 border-b border-brand-100">
-          <h2 class="text-xl font-bold text-brand-900">Product Specifications</h2>
+      <div class="mb-10 w-full rounded-3xl overflow-hidden border border-slate-100 bg-stone-50">
+        <div class="relative h-[350px] md:h-[500px] w-full group"
+             x-data="{ 
+                active: 0, 
+                images: [
+                  '/assets/products/corn/hero.png',
+                  '/assets/products/corn/thumb-1.png',
+                  '/assets/products/corn/thumb-2.png',
+                  '/assets/products/corn/thumb-3.png'
+                ],
+                prev() {
+                    this.active = (this.active === 0) ? this.images.length - 1 : this.active - 1;
+                },
+                next() {
+                    this.active = (this.active === this.images.length - 1) ? 0 : this.active + 1;
+                }
+             }">
+
+            <div class="absolute inset-0 flex items-center justify-center bg-stone-50">
+                <div class="w-full h-full relative">
+                    <img :src="images[active]" 
+                          onerror="this.src='/assets/atlas-agrofood-logo.png'"
+                          alt="Corn Powder Product Detail" 
+                          class="w-full h-full object-contain transition-transform duration-500">
+                </div>
+            </div>
+
+            <button @click="prev()" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button @click="next()" 
+                    class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
+            <div class="absolute bottom-4 right-6 z-20 bg-stone-900/10 backdrop-blur-md text-stone-600 text-[10px] font-bold px-3 py-1 rounded-full pointer-events-none tracking-widest border border-white/20">
+                <span x-text="active + 1"></span> / <span x-text="images.length"></span>
+            </div>
         </div>
-        <div class="p-8">
-          <div class="grid md:grid-cols-2 gap-y-4 gap-x-12">
-            <div class="flex justify-between border-b border-stone-100 pb-2">
-              <span class="text-slateish">Form</span>
-              <span class="font-bold text-ink">Whole Kernels / Powder</span>
-            </div>
-            <div class="flex justify-between border-b border-stone-100 pb-2">
-              <span class="text-slateish">Color</span>
-              <span class="font-bold text-ink">Golden Yellow</span>
-            </div>
-            <div class="flex justify-between border-b border-stone-100 pb-2">
-              <span class="text-slateish">Moisture</span>
-              <span class="font-bold text-ink">Max 5%</span>
-            </div>
-            <div class="flex justify-between border-b border-stone-100 pb-2">
-              <span class="text-slateish">Rehydration Ratio</span>
-              <span class="font-bold text-ink">1:4 (approx)</span>
-            </div>
-            <div class="flex justify-between border-b border-stone-100 pb-2">
-              <span class="text-slateish">Shelf Life</span>
-              <span class="font-bold text-ink">12 Months</span>
-            </div>
-            <div class="flex justify-between border-b border-stone-100 pb-2">
-              <span class="text-slateish">Packing</span>
-              <span class="font-bold text-ink">20kg Carton with Liner</span>
-            </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Mesh Size</div>
+          <div class="text-lg font-bold text-brand-900">Fine / Medium / Coarse</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">Packaging</div>
+          <div class="text-lg font-bold text-brand-900">5 - 25 kg Bulk</div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-brand-50/50 p-6 text-center md:text-left">
+          <div class="text-xs uppercase font-bold text-slate-400 mb-1">MOQ</div>
+          <div class="text-lg font-bold text-brand-900">As per order</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-8">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
+        <h2 class="text-xl font-serif-display font-bold text-brand-900 mb-4">Common Applications</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Bakery:</strong> Adds sweetness and texture to breads, muffins, and cookies.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Baby Food:</strong> Natural, digestible ingredient for infant nutrition mixes.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">✓</span>
+                <span><strong>Soup Mixes:</strong> Thickener and flavor enhancer for instant soups.</span>
+            </li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 card-hover">
+        <h2 class="text-xl font-serif-display font-bold text-brand-900 mb-4">Why Choose Us?</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">🛡️</span>
+                <span><strong>Sweet Corn:</strong> Made from high-quality sweet corn varieties.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">💧</span>
+                <span><strong>Low Moisture:</strong> Processed to &lt;5% moisture for shelf stability.</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+                <span class="text-brand-500 mt-1">📦</span>
+                <span><strong>Bulk Supply:</strong> Consistent quality for large-scale manufacturing.</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+      <h2 class="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-3" x-data="{ active: null }">
+        
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 1 ? null : 1" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>Is this sweet corn powder?</span>
+            <span class="text-brand-500" x-text="active === 1 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 1" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             Yes, we process sweet corn varieties to ensure the natural sweetness and aroma are retained in the powder and granules.
           </div>
         </div>
+
+        <div class="border border-slate-100 rounded-2xl">
+          <button @click="active = active === 2 ? null : 2" class="w-full flex justify-between items-center p-4 text-left font-semibold text-slate-800">
+            <span>What mesh sizes are available?</span>
+            <span class="text-brand-500" x-text="active === 2 ? '−' : '+'"></span>
+          </button>
+          <div x-show="active === 2" class="px-4 pb-4 text-slate-600 text-sm" x-collapse>
+             We supply Fine Powder (for beverages/bakery), Medium Granules (for soups/mixes), and Coarse options based on your application.
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
 
   </main>
-
+  
   <div id="site-footer"></div>
-  <script src="/assets/js/includes.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/assets/js/includes.js"></script>
 </body>
 </html>
