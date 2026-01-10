@@ -4,55 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
-  <title>Privacy Policy | Atlas AgroFood</title>
-  <meta name="description" content="Privacy Policy for Atlas AgroFood."/>
+  <title>Sitemap | Atlas AgroFood</title>
+  <meta name="description" content="Complete overview of Atlas AgroFood's website structure. Quickly find products, buyer guides, and industry solutions."/>
   <meta name="theme-color" content="#15803d" />
-  <link rel="canonical" href="https://atlasagrofood.co.in/privacy-policy.html"/>
+  <link rel="canonical" href="https://atlasagrofood.co.in/sitemap.html"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 900: '#14532d' }, ink: '#1e293b', 'earth-cream': '#f9f7f2', 'earth-gold': '#c5a365' }, fontFamily: { sans: ['Lato', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            ink: '#1e293b',
+            slateish: '#64748b',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365',
+            'earth-brown': '#5d4037',
+            'earth-green': '#556b2f',
+          },
+          fontFamily: { sans: ['Lato', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+        }
+      }
+    }
     function siteApp() { return { mobileOpen: false, whatsappLink: "https://wa.me/917738505687", init() { console.log('Site App Initialized'); } }; }
   </script>
 </head>
 
 <body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
+
   <div id="site-header"></div>
 
-  <main class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-brand-900 mb-8">Privacy Policy</h1>
-    <div class="text-stone-600 mb-8">Last Updated: January 2026</div>
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <div class="text-center mb-16">
+      <div class="text-sm text-earth-gold font-bold uppercase tracking-widest mb-3">Overview</div>
+      <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-brand-900">Sitemap</h1>
+    </div>
 
-    <div class="prose prose-lg prose-stone max-w-none bg-white p-8 md:p-12 rounded-3xl border border-stone-200 shadow-sm">
-      <p>At Atlas AgroFood, accessible from https://atlasagrofood.co.in, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Atlas AgroFood and how we use it.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      
+      <div>
+        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Company</h2>
+        <ul class="space-y-3">
+          <li><a href="/" class="hover:text-earth-gold transition font-medium">Home</a></li>
+          <li><a href="/why-atlas-agro.html" class="hover:text-earth-gold transition">Why Atlas AgroFood</a></li>
+          <li><a href="/quality.html" class="hover:text-earth-gold transition">Quality Assurance</a></li>
+          <li><a href="/gallery.html" class="hover:text-earth-gold transition">Gallery</a></li>
+          <li><a href="/contact.html" class="hover:text-earth-gold transition">Contact Us</a></li>
+          <li><a href="/privacy-policy.html" class="hover:text-earth-gold transition">Privacy Policy</a></li>
+          <li><a href="/terms.html" class="hover:text-earth-gold transition">Terms of Service</a></li>
+        </ul>
+      </div>
 
-      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">1. Information We Collect</h3>
-      <p>We collect information you provide directly to us when you request a quote, fill out a contact form, or communicate with us via WhatsApp. This may include your name, company name, email address, phone number, and specific product requirements.</p>
+      <div>
+        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Products</h2>
+        <ul class="space-y-3">
+          <li><a href="/products/" class="hover:text-earth-gold transition font-bold">All Products</a></li>
+          <li><a href="/products/onion.html" class="hover:text-earth-gold transition">Onion Products</a></li>
+          <li><a href="/products/garlic.html" class="hover:text-earth-gold transition">Garlic Products</a></li>
+          <li><a href="/products/ginger.html" class="hover:text-earth-gold transition">Ginger Powder</a></li>
+          <li><a href="/products/banana.html" class="hover:text-earth-gold transition">Banana Powder</a></li>
+          <li><a href="/products/spices.html" class="hover:text-earth-gold transition">Indian Spices</a></li>
+          <li><a href="/products/spray-dried.html" class="hover:text-earth-gold transition">Spray Dried Powders</a></li>
+          <li><a href="/products/dehydrated-products.html" class="hover:text-earth-gold transition">Dehydrated Vegetables</a></li>
+          <li><a href="/products/black-pepper.html" class="hover:text-earth-gold transition pl-4 border-l-2 border-brand-100">Black Pepper</a></li>
+          <li><a href="/products/turmeric.html" class="hover:text-earth-gold transition pl-4 border-l-2 border-brand-100">Turmeric</a></li>
+          <li><a href="/products/cinnamon.html" class="hover:text-earth-gold transition pl-4 border-l-2 border-brand-100">Cinnamon</a></li>
+        </ul>
+      </div>
 
-      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">2. How We Use Your Information</h3>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>To provide, operate, and maintain our website.</li>
-        <li>To improve, personalize, and expand our website content.</li>
-        <li>To understand and analyze how you use our website.</li>
-        <li>To communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes.</li>
-        <li>To send you emails regarding your orders or inquiries.</li>
-      </ul>
+      <div>
+        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Industries</h2>
+        <ul class="space-y-3">
+          <li><a href="/industries/" class="hover:text-earth-gold transition font-bold">Overview</a></li>
+          <li><a href="/industries/soups-noodles-ready-meals.html" class="hover:text-earth-gold transition">Soups & Noodles</a></li>
+          <li><a href="/industries/seasoning-and-spice-blends.html" class="hover:text-earth-gold transition">Seasonings & Spices</a></li>
+          <li><a href="/industries/bakery-and-savoury-snacks.html" class="hover:text-earth-gold transition">Bakery & Snacks</a></li>
+          <li><a href="/industries/food-manufacturing-and-export.html" class="hover:text-earth-gold transition">Manufacturing & Export</a></li>
+        </ul>
+      </div>
 
-      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">3. Log Files & Analytics</h3>
-      <p>Atlas AgroFood follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+      <div>
+        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Buyer Resources</h2>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/buyers-guide/" class="hover:text-earth-gold transition font-bold text-base">All Guides</a></li>
+          <li><a href="/buyers-guide/dehydrated-onion-powder-supplier.html" class="hover:text-earth-gold transition">Onion Powder Supplier</a></li>
+          <li><a href="/buyers-guide/garlic-granules-exporter-india.html" class="hover:text-earth-gold transition">Garlic Exporter</a></li>
+          <li><a href="/buyers-guide/ginger-powder-bulk-supplier.html" class="hover:text-earth-gold transition">Ginger Supplier</a></li>
+          <li><a href="/buyers-guide/mixed-vegetable-powder-manufacturer.html" class="hover:text-earth-gold transition">Mixed Veg Manufacturer</a></li>
+          <li><a href="/buyers-guide/export-quality-standards-dehydrated-products.html" class="hover:text-earth-gold transition">Export Standards</a></li>
+          <li><a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html" class="hover:text-earth-gold transition">Packaging Options</a></li>
+          <li><a href="/buyers-guide/private-label-oem-dehydrated-products.html" class="hover:text-earth-gold transition">Private Label / OEM</a></li>
+        </ul>
+      </div>
 
-      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">4. Data Protection</h3>
-      <p>We implement a variety of security measures to maintain the safety of your personal information. We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.</p>
-
-      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">5. Contact Us</h3>
-      <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-      <ul class="list-none pl-0 mt-2 font-bold text-brand-900">
-        <li>By email: info@atlasagrofood.co.in</li>
-        <li>By phone: +91 77385 05687</li>
-      </ul>
     </div>
   </main>
 
