@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/atlas-agro-logo.png" />
+
+  <title>Gallery | Atlas AgroFood</title>
+  <meta name="description" content="Explore Atlas AgroFood’s facility, packaging, quality checks, and product formats for bulk B2B supply."/>
+  
+  <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
+  <meta name="theme-color" content="#0f7a4a" />
+
+  
+
+  <link rel="canonical" href="https://atlasagrofood.co.ingallery.html">
+
+          <link rel="alternate" href="https://atlasagrofood.co.inproducts/" hreflang="en-IN">
+    <link rel="alternate" href="https://atlasagrofood.co.inproducts/" hreflang="x-default">
+<!-- Social previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Atlas AgroFood">
+    <meta property="og:title" content="Gallery | Atlas AgroFood">
+    <meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+    <meta property="og:url" content="https://atlasagrofood.co.ingallery.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery | Atlas AgroFood">
+    <meta name="twitter:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+<meta name="robots" content="index,follow" />
+
+<!-- Open Graph (for WhatsApp/LinkedIn preview) -->
+<meta property="og:title" content="Gallery | Atlas AgroFood">
+<meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+<meta property="og:url" content="https://atlasagrofood.co.ingallery.html">
+<meta property="og:type" content="website">
+<!-- Optional: add your logo image URL if you have one -->
+<!-- <meta property="og:image" content="https://atlasagrofood.co.inassets/atlas-agro-logo.png"> -->
+
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallery | Atlas AgroFood">
+  <meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://atlasagrofood.co.inassets/atlas-agro-logo.png">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Atlas AgroFood",
+  "url": "https://atlasagrofood.co.in",
+  "description": "Manufacturer and bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets.",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "areaServed": ["IN", "Global"],
+    "availableLanguage": ["English", "Hindi", "Marathi"]
+  }]
+}
+</script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#22b36a',
+            50: '#f5fbf7',
+            100: '#e7f7ee',
+            200: '#c9efd9',
+            300: '#9fe2bd',
+            400: '#5ecc8f',
+            500: '#22b36a',
+            600: '#129457',
+            700: '#0f7a4a',
+            800: '#0f623c',
+            900: '#0c4f31'
+          },
+          ink: '#0f172a',
+          slateish: '#475569'
+        }
+      }
+    }
+  }
+
+  function galleryMagic() {
+  return {
+    base: "/assets/products",
+    // cards represent folders under /assets/products/<folder>/
+    items: [
+        { group: "Fruits", folder: "apple", title: "Apple" },
+        { group: "Fruits", folder: "banana", title: "Banana" },
+        { group: "Vegetables", folder: "beetroot", title: "Beetroot" },
+        { group: "Vegetables", folder: "bitter-gourd", title: "Bitter Gourd" },
+        { group: "Vegetables", folder: "carrot", title: "Carrot" },
+        { group: "Fruits", folder: "coconut", title: "Coconut" },
+        { group: "Herbs & Leaves", folder: "coriander", title: "Coriander" },
+        { group: "Vegetables", folder: "corn", title: "Corn" },
+        { group: "Vegetables", folder: "cucumber", title: "Cucumber" },
+        { group: "Herbs & Leaves", folder: "curry-leaves", title: "Curry Leaves" },
+        { group: "Vegetables", folder: "garlic", title: "Garlic" },
+        { group: "Vegetables", folder: "ginger", title: "Ginger" },
+        { group: "Vegetables", folder: "green-chilli", title: "Green Chilli" },
+        { group: "Vegetables", folder: "green-pepper", title: "Green Pepper" },
+        { group: "Fruits", folder: "guava", title: "Guava" },
+        { group: "Fruits", folder: "mango", title: "Mango" },
+        { group: "Flowers", folder: "marigold", title: "Marigold" },
+        { group: "Herbs & Leaves", folder: "methi", title: "Methi" },
+        { group: "Herbs & Leaves", folder: "mint", title: "Mint" },
+        { group: "Special", folder: "mixed-veg", title: "Mixed Veg" },
+        { group: "Herbs & Leaves", folder: "moringa", title: "Moringa" },
+        { group: "Vegetables", folder: "mushroom", title: "Mushroom" },
+        { group: "Vegetables", folder: "okra", title: "Okra" },
+        { group: "Vegetables", folder: "onion", title: "Onion" },
+        { group: "Fruits", folder: "orange", title: "Orange" },
+        { group: "Fruits", folder: "papaya", title: "Papaya" },
+        { group: "Vegetables", folder: "potato", title: "Potato" },
+        { group: "Vegetables", folder: "red-pepper", title: "Red Pepper" },
+        { group: "Flowers", folder: "rose", title: "Rose" },
+        { group: "Special", folder: "spices", title: "Spices" },
+        { group: "Vegetables", folder: "spinach", title: "Spinach" },
+        { group: "Special", folder: "spray-dried", title: "Spray Dried" },
+        { group: "Vegetables", folder: "tomato", title: "Tomato" }
+      ],
+    isOpen: false,
+    activeIndex: 0,
+    activeImage: "",
+
+    q: "",
+    activeGroup: "All",
+    groups: ["All", "Vegetables", "Fruits", "Herbs & Leaves", "Flowers", "Special"],
+
+    init() {
+      // default active image for first item
+      const it = this.items[0];
+      this.activeImage = this.cover(it);
+    },
+
+    cover(it) {
+      return `${this.base}/${it.folder}/hero.png`;
+    },
+
+    imageList(it) {
+      // Common pattern: hero.png + thumb-1..thumb-3 (many folders follow this)
+      const list = [
+        `${this.base}/${it.folder}/hero.png`,
+        `${this.base}/${it.folder}/thumb-1.png`,
+        `${this.base}/${it.folder}/thumb-2.png`,
+        `${this.base}/${it.folder}/thumb-3.png`,
+      ];
+      // Dedupe
+      return Array.from(new Set(list));
+    },
+
+    filtered() {
+      const q = (this.q || "").trim().toLowerCase();
+      return this.items.filter(it => {
+        const grpOk = (this.activeGroup === "All") || (it.group === this.activeGroup);
+        if (!grpOk) return false;
+        if (!q) return true;
+        const hay = `${it.group} ${it.title} ${it.folder}`.toLowerCase();
+        return hay.includes(q);
+      });
+    },
+
+    openByFolder(folder) {
+      const idx = this.items.findIndex(x => x.folder === folder);
+      this.open(idx >= 0 ? idx : 0);
+    },
+
+    open(i) {
+      this.activeIndex = i;
+      this.isOpen = true;
+      const it = this.items[this.activeIndex];
+      this.activeImage = this.cover(it);
+
+      // keyboard nav
+      this._onKey = (e) => {
+        if (!this.isOpen) return;
+        if (e.key === "ArrowRight") this.next();
+        if (e.key === "ArrowLeft") this.prev();
+        if (e.key === "Escape") this.close();
+      };
+      window.addEventListener("keydown", this._onKey);
+    },
+
+    close() {
+      this.isOpen = false;
+      if (this._onKey) window.removeEventListener("keydown", this._onKey);
+      this._onKey = null;
+    },
+
+    prev() {
+      this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
+      this.activeImage = this.cover(this.items[this.activeIndex]);
+    },
+
+    next() {
+      this.activeIndex = (this.activeIndex + 1) % this.items.length;
+      this.activeImage = this.cover(this.items[this.activeIndex]);
+    },
+
+    activeItem() {
+      return this.items[this.activeIndex] || this.items[0];
+    },
+
+    setImage(src) {
+      this.activeImage = src;
+    }
+  };
+}
+</script>
+<style>
+.breadcrumb-pill a{color:inherit;text-decoration:none;}
+.breadcrumb-pill a:hover{text-decoration:underline;}
+.breadcrumb-pill .sep{opacity:.55;font-weight:700;}
+
+  .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
+
+
+    .hero-strip{margin:14px 0 18px;padding:14px 16px;border-radius:22px;border:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(34,179,106,.16), rgba(255,255,255,.78));
+      display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .hero-pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.70);border:1px solid rgba(148,163,184,.45);
+      font-size:12px;color:rgba(15,23,42,.72);font-weight:800}
+    .hero-pill strong{color:rgba(15,23,42,.92)}
+    .fade-in{animation:fadeInUp .55s ease both}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+</style>
+<style>
+  [x-cloak]{ display:none !important; }
+  .no-scroll{ overflow:hidden; }
+
+  .mobile-menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .35);
+    backdrop-filter: blur(2px);
+    z-index: 60;
+  }
+  .mobile-menu-panel{
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: 88px;
+    max-height: calc(100vh - 112px);
+    overflow: auto;
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(16, 185, 129, .18);
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(2, 6, 23, .18);
+    z-index: 61;
+    padding: 14px;
+  }
+  .mobile-menu-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 4px 4px 10px 4px;
+  }
+  .mobile-menu-title{
+    font-weight: 700;
+    font-size: 16px;
+    color: #0f172a;
+  }
+  .mobile-menu-close{
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,.55);
+    background: rgba(255,255,255,.75);
+    color: #0f172a;
+    font-size: 18px;
+    line-height: 1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-menu-nav{
+    display:grid;
+    gap: 10px;
+    padding: 6px 4px 12px 4px;
+  }
+  .mobile-menu-nav a{
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(148,163,184,.35);
+    background: rgba(255,255,255,.6);
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .mobile-menu-nav a:active{
+    transform: translateY(1px);
+  }
+  .mobile-menu-actions{
+    display:grid;
+    gap: 10px;
+    padding: 4px;
+  }
+  .w-full{ width:100%; }
+</style>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is your MOQ for bulk orders?", "acceptedAnswer": {"@type": "Answer", "text": "MOQ depends on the product category and packaging. Share your requirement on WhatsApp and we’ll confirm MOQ and pricing."}}, {"@type": "Question", "name": "Do you support different mesh sizes and granulation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share available mesh sizes/grades for powders, flakes and granules depending on the product."}}, {"@type": "Question", "name": "Do you offer packaging options and private label?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We support bulk packs and selected packaging options. Private label/OEM can be discussed for repeat orders."}}, {"@type": "Question", "name": "Are your products suitable for export?", "acceptedAnswer": {"@type": "Answer", "text": "We can support export-oriented supply based on buyer requirements. Share destination country and specifications to align documents and packing."}}]}</script>
+
+    <meta name="twitter:image" content="https://atlasagrofood.co.inassets/atlas-agro-logo.png">  <!-- schema-organization -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://atlasagrofood.co.in#organization", "name": "Atlas AgroFood Private Ltd", "url": "https://atlasagrofood.co.in", "logo": "https://atlasagrofood.co.inassets/atlas-agro-logo.png", "email": "sales@atlasagrofood.co.in", "telephone": "+91-7738505687"}</script>
+  <!-- schema-website -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://atlasagrofood.co.in#website", "url": "https://atlasagrofood.co.in", "name": "Atlas AgroFood", "publisher": {"@id": "https://atlasagrofood.co.in#organization"}, "inLanguage": "en"}</script>
+  <!-- schema-webpage:https://atlasagrofood.co.inproducts -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://atlasagrofood.co.inproducts#webpage", "url": "https://atlasagrofood.co.inproducts", "name": "Products | Dehydrated, Spray Dried & Spices | Atlas AgroFood", "description": "Explore our product range: dehydrated vegetables & fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.", "isPartOf": {"@id": "https://atlasagrofood.co.in#website"}, "about": {"@id": "https://atlasagrofood.co.in#organization"}, "inLanguage": "en"}</script>
+
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Product Categories", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dehydrated Products", "url": "https://atlasagrofood.co.inproducts/dehydrated-products.html"}, {"@type": "ListItem", "position": 2, "name": "Spray Dried Products", "url": "https://atlasagrofood.co.inproducts/spray-dried.html"}, {"@type": "ListItem", "position": 3, "name": "Spices", "url": "https://atlasagrofood.co.inproducts/spices.html"}]}</script>
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://atlasagrofood.co.in"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Products", "url": "https://atlasagrofood.co.inproducts/"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Dehydrated Products", "url": "https://atlasagrofood.co.inproducts/dehydrated-products.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "Spray Dried Products", "url": "https://atlasagrofood.co.inproducts/spray-dried.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Spices", "url": "https://atlasagrofood.co.inproducts/spices.html"}]}</script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Atlas AgroFood Pvt Ltd",
+    "url":"https://atlasagrofood.co.in",
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"sales",
+      "url":"https://atlasagrofood.co.incontact.html"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-brand-50 text-ink antialiased"
+      :class="{\'no-scroll\': mobileOpen}"
+      x-data="siteApp()"
+      x-init="init()">
+
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+<div id="site-header"></div>
+<!-- Mobile menu (drawer) -->
+<div x-cloak x-show="mobileOpen" class="mobile-menu-overlay" @click="mobileOpen=false" x-transition.opacity></div>
+<div x-cloak x-show="mobileOpen" class="mobile-menu-panel" @click.stop
+     x-transition:enter="transition ease-out duration-200"
+     x-transition:enter-start="opacity-0 translate-y-2"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-150"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 translate-y-2">
+  <div class="mobile-menu-header">
+    <div class="mobile-menu-title">Menu</div>
+    <button class="mobile-menu-close" @click="mobileOpen=false" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-menu-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products/index.html">Products</a>
+    <a href="industries/index.html">Industries</a>
+    <a href="quality.html">Quality</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="/assets/brochure.pdf" download>📄 Download Brochure</a>
+  </nav>
+
+  <div class="mobile-menu-actions">
+    <a class="btn btn-primary w-full" href="#quote" @click="mobileOpen=false">Get Bulk Quote</a>
+    <a class="btn btn-outline w-full" href="https://wa.me/917738505687" target="_blank" rel="noopener" @click="mobileOpen=false">WhatsApp</a>
+  </div>
+</div>
+
+
+<main class="max-w-7xl mx-auto px-4 py-10">
+  <section class="card-shell p-6 md:p-8">
+    <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-semibold tracking-tight text-ink">Gallery</h1>
+        <p class="mt-2 text-slateish max-w-2xl">
+          Browse product visuals, packaging shots and application references. Click any image to open a larger viewer.
+        </p>
+      </div>
+      <div class="mt-4 md:mt-0 flex flex-col sm:flex-row gap-3 sm:items-center">
+        <div class="relative">
+          <input id="gallerySearch" type="text" placeholder="Search (banana, onion, moringa...)"
+                 class="w-full sm:w-80 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-300" />
+          <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slateish text-sm">⌘K</span>
+        </div>
+        <div class="flex flex-wrap gap-2" id="galleryFilters">
+          <button class="pill pill-active" data-filter="all">All</button>
+          <button class="pill" data-filter="Dehydrated">Dehydrated</button>
+          <button class="pill" data-filter="Spray Dried">Spray Dried</button>
+          <button class="pill" data-filter="Spices">Spices</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 grid gap-4 sm:gap-5 gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close="1"></div>
+
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+      <button class="lightbox-close" type="button" aria-label="Close" data-close="1">✕</button>
+
+      <div class="lightbox-body">
+        <div class="lightbox-imageWrap">
+          <img id="lightboxImg" alt="" class="lightbox-img" />
+          <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous">‹</button>
+          <button class="lightbox-nav lightbox-next" type="button" aria-label="Next">›</button>
+        </div>
+
+        <div class="lightbox-meta">
+          <div class="text-sm text-slateish" id="lightboxCat"></div>
+          <div class="text-lg font-semibold text-ink" id="lightboxTitle"></div>
+
+          <div class="mt-4 grid grid-cols-3 gap-3" id="lightboxThumbs"></div>
+
+          <div class="mt-5 flex gap-3">
+            <a id="lightboxProductLink" class="btn btn-primary" href="#">Open product page</a>
+            <button id="lightboxCloseBtn" class="btn btn-ghost" type="button" data-close="1">Close</button>
+          </div>
+
+          <p class="mt-4 text-xs text-slateish">
+            Tip: Use <span class="font-mono">←</span>/<span class="font-mono">→</span> to navigate and <span class="font-mono">Esc</span> to close.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+
+      .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px}}
+    
+  /* Keep styles local to gallery (won’t disturb other pages) */
+  .card-shell{ border: 1px solid rgba(148, 163, 184, .35); border-radius: 24px; background: rgba(236,253,245,.55); }
+  .pill{ border: 1px solid rgba(148,163,184,.35); background: #fff; border-radius: 9999px; padding: 8px 14px; font-size: 13px; color: #334155; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  .pill:hover{ transform: translateY(-1px); box-shadow: 0 10px 25px rgba(2,6,23,.06); }
+  .pill-active{ border-color: rgba(16,185,129,.55); box-shadow: 0 0 0 3px rgba(16,185,129,.12); color: #065f46; }
+
+  .gallery-grid{ grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  @media (min-width: 640px){ .gallery-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px){ .gallery-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+  .gcard{ border: 1px solid rgba(148,163,184,.35); border-radius: 22px; background: #fff; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  .gcard:hover{ transform: translateY(-2px); border-color: rgba(16,185,129,.45); box-shadow: 0 18px 50px rgba(2,6,23,.10); }
+  .gimgWrap{ position: relative; aspect-ratio: 16/10; background: linear-gradient(180deg, rgba(236,253,245,.8), rgba(255,255,255,1)); overflow: hidden; }
+  .gimg{ width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .22s ease; }
+  .gcard:hover .gimg{ transform: scale(1.08); }
+  .gbadge{ position: absolute; left: 14px; top: 14px; font-size: 12px; padding: 6px 10px; border-radius: 9999px; background: rgba(255,255,255,.88); border: 1px solid rgba(148,163,184,.35); color: #0f172a; }
+  .gbody{ padding: 14px 16px 16px; }
+  .gtitle{ font-weight: 700; color: #0f172a; line-height: 1.2; }
+  .gsub{ margin-top: 6px; font-size: 13px; color: #64748b; }
+  .gopen{ margin-top: 10px; display: inline-flex; gap: 8px; align-items: center; font-size: 13px; color: #0f766e; font-weight: 600; }
+  .gopen span{ transition: transform .18s ease; }
+  .gcard:hover .gopen span{ transform: translateX(2px); }
+
+  .lightbox{ position: fixed; inset: 0; z-index: 60; }
+  .lightbox.hidden{ display:none; }
+  .lightbox-backdrop{ position:absolute; inset:0; background: rgba(2,6,23,.55); backdrop-filter: blur(4px); }
+  .lightbox-panel{ position: relative; max-width: 1100px; margin: 5vh auto; background: #fff; border-radius: 24px; overflow: hidden; border: 1px solid rgba(148,163,184,.35); box-shadow: 0 40px 120px rgba(2,6,23,.35); }
+  @media (max-width: 640px){ .lightbox-panel{ margin: 0; height: 100vh; border-radius: 0; } }
+
+  .lightbox-close{ position: absolute; right: 14px; top: 14px; width: 42px; height: 42px; border-radius: 9999px; border: 1px solid rgba(148,163,184,.35); background: rgba(255,255,255,.9); }
+  .lightbox-body{ display: grid; grid-template-columns: 1.4fr .9fr; }
+  @media (max-width: 900px){ .lightbox-body{ grid-template-columns: 1fr; } }
+
+  .lightbox-imageWrap{ position: relative; background: #0b1220; min-height: 360px; }
+  .lightbox-img{ width: 100%; height: 100%; object-fit: contain; display: block; background: #0b1220; }
+  .lightbox-nav{ position:absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 9999px; border: 1px solid rgba(148,163,184,.25); background: rgba(255,255,255,.12); color: #fff; font-size: 24px; line-height: 42px; }
+  .lightbox-prev{ left: 14px; }
+  .lightbox-next{ right: 14px; }
+  .lightbox-meta{ padding: 18px 18px 20px; background: rgba(236,253,245,.55); border-left: 1px solid rgba(148,163,184,.25); }
+  @media (max-width: 900px){ .lightbox-meta{ border-left: none; border-top: 1px solid rgba(148,163,184,.25); } }
+
+  .thumb{ border-radius: 16px; border: 1px solid rgba(148,163,184,.35); background: #fff; overflow: hidden; cursor: pointer; }
+  .thumb img{ width: 100%; height: 90px; object-fit: cover; display:block; transition: transform .2s ease; }
+  .thumb:hover img{ transform: scale(1.08); }
+  .thumb-active{ border-color: rgba(16,185,129,.55); box-shadow: 0 0 0 3px rgba(16,185,129,.12); }
+
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding: 10px 14px; border-radius: 9999px; font-weight: 600; font-size: 14px; border: 1px solid rgba(148,163,184,.35); }
+  .btn-primary{ background: #2ea76b; border-color: rgba(46,167,107,.7); color: #fff; }
+  .btn-primary:hover{ filter: brightness(.98); }
+  .btn-ghost{ background: #fff; color: #0f172a; }
+</style>
+
+<script>
+  // Gallery dataset (kept small + predictable; you can expand anytime)
+  const GALLERY_ITEMS = [{"slug": "banana", "name": "Banana", "category": "Dehydrated"}, {"slug": "onion", "name": "Onion", "category": "Dehydrated"}, {"slug": "garlic", "name": "Garlic", "category": "Dehydrated"}, {"slug": "ginger", "name": "Ginger", "category": "Dehydrated"}, {"slug": "methi", "name": "Methi", "category": "Dehydrated"}, {"slug": "spinach", "name": "Spinach", "category": "Dehydrated"}, {"slug": "beetroot", "name": "Beetroot", "category": "Dehydrated"}, {"slug": "moringa", "name": "Moringa", "category": "Dehydrated"}, {"slug": "curry-leaves", "name": "Curry Leaves", "category": "Dehydrated"}, {"slug": "coriander", "name": "Coriander", "category": "Dehydrated"}, {"slug": "rose", "name": "Rose", "category": "Dehydrated"}, {"slug": "marigold", "name": "Marigold", "category": "Dehydrated"}, {"slug": "tomato", "name": "Tomato", "category": "Dehydrated"}, {"slug": "carrot", "name": "Carrot", "category": "Dehydrated"}, {"slug": "green-chilli", "name": "Green Chilli", "category": "Dehydrated"}, {"slug": "bitter-gourd", "name": "Bitter Gourd", "category": "Dehydrated"}, {"slug": "corn", "name": "Corn", "category": "Dehydrated"}, {"slug": "mango", "name": "Mango", "category": "Dehydrated"}, {"slug": "coconut", "name": "Coconut", "category": "Dehydrated"}, {"slug": "apple", "name": "Apple", "category": "Dehydrated"}, {"slug": "papaya", "name": "Papaya", "category": "Dehydrated"}, {"slug": "guava", "name": "Guava", "category": "Dehydrated"}, {"slug": "orange", "name": "Orange", "category": "Dehydrated"}, {"slug": "potato", "name": "Potato", "category": "Dehydrated"}, {"slug": "mushroom", "name": "Mushroom", "category": "Dehydrated"}, {"slug": "okra", "name": "Lady Finger (Okra)", "category": "Dehydrated"}, {"slug": "red-pepper", "name": "Red Pepper", "category": "Dehydrated"}, {"slug": "green-pepper", "name": "Green Pepper", "category": "Dehydrated"}, {"slug": "mint", "name": "Mint", "category": "Dehydrated"}, {"slug": "cucumber", "name": "Cucumber", "category": "Dehydrated"}, {"slug": "spray-dried", "name": "Spray Dried Range", "category": "Spray Dried"}, {"slug": "spices", "name": "Spices Range", "category": "Spices"}];
+
+  function heroUrl(slug) {
+    // Preferred: /assets/products/<slug>/hero.png (or hero.jpg)
+    return `/assets/products/${slug}/hero.png`;
+  }
+
+  function productPageUrl(slug) {
+    // Pages are in /products/<slug>.html in this project
+    return `/products/${slug}.html`;
+  }
+
+  function createCard(item) {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'gcard text-left';
+    card.setAttribute('data-category', item.category);
+    card.setAttribute('data-name', item.name.toLowerCase());
+
+    const imgWrap = document.createElement('div');
+    imgWrap.className = 'gimgWrap';
+
+    const badge = document.createElement('div');
+    badge.className = 'gbadge';
+    badge.textContent = item.category;
+
+    const img = document.createElement('img');
+    img.className = 'gimg';
+    img.loading = 'lazy';
+    img.alt = `${item.name}`;
+    img.src = heroUrl(item.slug);
+
+    img.onerror = () => {
+      // Fall back to placeholders (two common locations in this repo)
+      const fallbacks = ['/placeholders/hero.png', '/assets/placeholders/hero.png', '/assets/placeholder.png'];
+      const current = img.getAttribute('data-fallback-i') ? parseInt(img.getAttribute('data-fallback-i'), 10) : 0;
+      if (current < fallbacks.length) {
+        img.setAttribute('data-fallback-i', String(current + 1));
+        img.src = fallbacks[current];
+      } else {
+        // If nothing exists, hide image to avoid broken icon
+        img.style.display = 'none';
+      }
+    };
+
+    imgWrap.appendChild(img);
+    imgWrap.appendChild(badge);
+
+    const body = document.createElement('div');
+    body.className = 'gbody';
+    body.innerHTML = `
+      <div class="gtitle">${item.name}</div>
+      <div class="gsub">Click to view image</div>
+      <div class="gopen">Open <span>→</span></div>
+    `;
+
+    card.appendChild(imgWrap);
+    card.appendChild(body);
+
+    card.addEventListener('click', () => openLightbox(item));
+
+    return card;
+  }
+
+  const grid = document.getElementById('galleryGrid');
+  const search = document.getElementById('gallerySearch');
+  const filters = document.getElementById('galleryFilters');
+
+  let activeFilter = 'all';
+  let filtered = [...GALLERY_ITEMS];
+  let currentIndex = 0;
+
+  function render() {
+    grid.innerHTML = '';
+    filtered.forEach(it => grid.appendChild(createCard(it)));
+  }
+
+  function applyFilters() {
+    const q = (search.value || '').trim().toLowerCase();
+    filtered = GALLERY_ITEMS.filter(it => {
+      const matchesText = !q || it.name.toLowerCase().includes(q) || it.slug.includes(q);
+      const matchesCat = activeFilter === 'all' || it.category === activeFilter;
+      return matchesText && matchesCat;
+    });
+    render();
+  }
+
+  // Filter pills
+  filters.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-filter]');
+    if (!btn) return;
+    activeFilter = btn.getAttribute('data-filter');
+    [...filters.querySelectorAll('.pill')].forEach(b => b.classList.remove('pill-active'));
+    btn.classList.add('pill-active');
+    applyFilters();
+  });
+
+  // Search
+  search.addEventListener('input', applyFilters);
+
+  // Cmd/Ctrl+K focus
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      search.focus();
+    }
+  });
+
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbTitle = document.getElementById('lightboxTitle');
+  const lbCat = document.getElementById('lightboxCat');
+  const lbThumbs = document.getElementById('lightboxThumbs');
+  const lbLink = document.getElementById('lightboxProductLink');
+  const lbCloseBtn = document.getElementById('lightboxCloseBtn');
+
+  function setBodyScroll(lock) {
+    document.documentElement.style.overflow = lock ? 'hidden' : '';
+    document.body.style.overflow = lock ? 'hidden' : '';
+  }
+
+  function openLightbox(item) {
+    currentIndex = filtered.findIndex(x => x.slug === item.slug);
+    if (currentIndex < 0) currentIndex = 0;
+
+    lb.classList.remove('hidden');
+    lb.setAttribute('aria-hidden', 'false');
+    setBodyScroll(true);
+
+    lbCat.textContent = item.category;
+    lbTitle.textContent = item.name;
+    lbLink.href = productPageUrl(item.slug);
+
+    loadLightboxImage(item.slug);
+    loadThumbs(item.slug);
+  }
+
+  function closeLightbox() {
+    lb.classList.add('hidden');
+    lb.setAttribute('aria-hidden', 'true');
+    setBodyScroll(false);
+  }
+
+  function loadLightboxImage(slug, variant = 'hero') {
+    // variant: 'hero' or 'thumb-1' etc
+    const url = variant === 'hero'
+      ? heroUrl(slug)
+      : `/assets/products/${slug}/${variant}.png`;
+
+    lbImg.src = url;
+    lbImg.onerror = () => {
+      // try jpg for hero
+      if (variant === 'hero' && url.endsWith('.png')) {
+        lbImg.src = `/assets/products/${slug}/hero.jpg`;
+      }
+    };
+  }
+
+  function loadThumbs(slug) {
+    lbThumbs.innerHTML = '';
+    const candidates = ['thumb-1', 'thumb-2', 'thumb-3'];
+
+    // Always include hero as first "thumb"
+    const heroThumb = createThumb(slug, 'hero', true);
+    lbThumbs.appendChild(heroThumb);
+
+    candidates.forEach(v => {
+      const t = createThumb(slug, v, false);
+      lbThumbs.appendChild(t);
+    });
+  }
+
+  function createThumb(slug, variant, isActive) {
+    const wrap = document.createElement('div');
+    wrap.className = 'thumb' + (isActive ? ' thumb-active' : '');
+
+    const img = document.createElement('img');
+    img.alt = variant === 'hero' ? 'Hero' : variant;
+
+    img.src = variant === 'hero'
+      ? heroUrl(slug)
+      : `/assets/products/${slug}/${variant}.png`;
+
+    img.onerror = () => {
+      // If thumb missing, remove it from UI (except hero)
+      if (variant !== 'hero') {
+        wrap.remove();
+      } else {
+        img.style.display = 'none';
+      }
+    };
+
+    wrap.addEventListener('click', () => {
+      [...lbThumbs.querySelectorAll('.thumb')].forEach(x => x.classList.remove('thumb-active'));
+      wrap.classList.add('thumb-active');
+
+      if (variant === 'hero') loadLightboxImage(slug, 'hero');
+      else loadLightboxImage(slug, variant);
+    });
+
+    wrap.appendChild(img);
+    return wrap;
+  }
+
+  function go(delta) {
+    if (!filtered.length) return;
+    currentIndex = (currentIndex + delta + filtered.length) % filtered.length;
+    const item = filtered[currentIndex];
+
+    lbCat.textContent = item.category;
+    lbTitle.textContent = item.name;
+    lbLink.href = productPageUrl(item.slug);
+    loadLightboxImage(item.slug);
+    loadThumbs(item.slug);
+  }
+
+  lb.addEventListener('click', (e) => {
+    if (e.target && e.target.getAttribute && e.target.getAttribute('data-close') === '1') {
+      closeLightbox();
+    }
+  });
+
+  document.querySelector('.lightbox-prev').addEventListener('click', () => go(-1));
+  document.querySelector('.lightbox-next').addEventListener('click', () => go(1));
+  lbCloseBtn.addEventListener('click', closeLightbox);
+
+  window.addEventListener('keydown', (e) => {
+    if (lb.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') go(-1);
+    if (e.key === 'ArrowRight') go(1);
+  });
+
+  // Initial render
+  applyFilters();
+</script>
+<div id="site-footer"></div>
+<script>
+  // Minimal Alpine data for header/mobile menu on this page.
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('siteApp', () => ({
+      mobileOpen: false,
+      whatsappLink: "https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing.",
+      init() {}
+    }));
+  });
+
+  // Safe language switch stub (prevents errors if i18n bundle isn't present)
+  window.setLang = window.setLang || function(lang){
+    try { localStorage.setItem("atlas_lang", lang); } catch(e){}
+  };
+</script>
+
+
+<script defer src="/assets/js/includes.js"></script>
+</body>
+</html>

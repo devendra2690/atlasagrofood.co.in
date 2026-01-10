@@ -1,0 +1,75 @@
+<div class="bg-earth-gold text-white text-xs md:text-sm py-2">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+    <div class="font-medium tracking-wide">
+      ✅ Bulk Supply • ✅ Export-Ready • ✅ Custom Blends
+    </div>
+    <div class="hidden sm:flex gap-4 font-semibold">
+      <a href="#quote" class="hover:underline opacity-90 hover:opacity-100">Get a Quote</a>
+      <span>|</span>
+      <a href="/assets/brochure.pdf" download class="hover:underline opacity-90 hover:opacity-100">Download Brochure</a>
+    </div>
+  </div>
+</div>
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 h-24 md:h-32 flex items-center justify-between">
+    
+    <a href="/" class="flex items-center gap-4 group">
+      <div class="h-20 w-20 md:h-24 md:w-24 shrink-0 transition-transform duration-300 group-hover:scale-105">
+         <img src="/assets/atlas-agrofood-logo.png" 
+              alt="Atlas AgroFood - Dehydrated Onion & Garlic Manufacturer" 
+              class="w-full h-full object-contain">
+      </div>
+      <div class="flex flex-col justify-center">
+        <span class="font-serif-display font-bold text-xl md:text-3xl text-brand-900 leading-none group-hover:text-brand-700 transition">
+          ATLAS AGROFOOD
+        </span>
+        <span class="text-[10px] md:text-xs tracking-[0.15em] text-earth-brown uppercase font-bold mt-1">
+          Premium Dehydrated Ingredients
+        </span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+      <a href="/" class="hover:text-brand-700 transition">Home</a>
+      <a href="/products/" class="hover:text-brand-700 transition">Products</a>
+      <a href="/industries/" class="hover:text-brand-700 transition">Industries</a>
+      <a href="/quality.html" class="hover:text-brand-700 transition">Quality</a>
+      <a href="/contact.html" class="hover:text-brand-700 transition">Contact</a>
+    </nav>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a :href="whatsappLink" target="_blank" class="rounded-full border-2 border-brand-700 text-brand-700 px-6 py-2 text-sm font-bold hover:bg-brand-700 hover:text-white transition duration-300">
+        WhatsApp
+      </a>
+    </div>
+
+    <button class="md:hidden text-brand-900 p-2" @click="mobileOpen = !mobileOpen">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+</header>
+
+<div x-show="mobileOpen" class="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm" @click="mobileOpen = false" x-transition.opacity style="display:none;"></div>
+<div x-show="mobileOpen" class="fixed right-0 top-0 bottom-0 w-[80%] max-w-sm bg-earth-cream z-[70] shadow-2xl p-6 flex flex-col gap-6 border-l border-stone-200" 
+     x-transition:enter="transition transform duration-300"
+     x-transition:enter-start="translate-x-full"
+     x-transition:enter-end="translate-x-0"
+     x-transition:leave="transition transform duration-300"
+     x-transition:leave-start="translate-x-0"
+     x-transition:leave-end="translate-x-full"
+     style="display:none;">
+    <div class="flex justify-between items-center mb-4">
+      <span class="font-serif-display font-bold text-xl text-brand-900">Menu</span>
+      <button @click="mobileOpen = false" class="text-stone-500 text-2xl">✕</button>
+    </div>
+    <nav class="flex flex-col gap-4 text-lg font-medium text-stone-700">
+      <a href="/" class="text-brand-700">Home</a>
+      <a href="/products/">Products</a>
+      <a href="/industries/">Industries</a>
+      <a href="/quality.html">Quality</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a :href="whatsappLink" class="mt-auto w-full bg-brand-700 text-white text-center py-4 rounded-xl font-bold">Chat on WhatsApp</a>
+</div>

@@ -1,0 +1,87 @@
+/* =====================================================
+   ATLAS AGROFOOD – GLOBAL DESIGN SYSTEM (LOCKED)
+   Do NOT override in page-level CSS
+   ===================================================== */
+
+/* ---------- ROOT COLORS ---------- */
+:root {
+  --atlas-green-bg: #f4fbf6;
+  --atlas-green-soft: #e6f6ec;
+  --atlas-green-border: #d7efe0;
+  --atlas-green-primary: #4fa86a;
+  --atlas-text-dark: #0f172a;
+  --atlas-text-muted: #64748b;
+  --card-bg: #ffffff;
+}
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--atlas-green-bg);
+  color: var(--atlas-text-dark);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+}
+
+/* ---------- TOP STRIP ---------- */
+.top-strip,
+.announcement-bar {
+  background: linear-gradient(90deg, #e6f6ec, #f2fbf5);
+  border-bottom: 1px solid var(--atlas-green-border);
+}
+
+/* ---------- HEADER / NAV ---------- */
+.site-header,
+.header-wrapper {
+  background-color: var(--atlas-green-bg);
+}
+
+.navbar {
+  background: transparent;
+}
+
+/* ---------- PAGE WRAPPERS ---------- */
+.page,
+.page-wrapper,
+.container-bg {
+  background-color: var(--atlas-green-bg);
+}
+
+/* ---------- CARDS ---------- */
+.card,
+.product-card,
+.feature-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--atlas-green-border);
+  border-radius: 16px;
+}
+
+/* ---------- SECTION CONTAINERS ---------- */
+.section,
+.section-box {
+  background-color: transparent;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary,
+.btn-green {
+  background-color: var(--atlas-green-primary);
+  color: #fff;
+  border-radius: 999px;
+}
+
+/* ---------- IMAGES ---------- */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- SAFETY LOCK ---------- */
+/* Prevent accidental white backgrounds */
+body > div {
+  background-color: transparent;
+}

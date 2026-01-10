@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <link rel="stylesheet" href="/assets/css/base.css">
+
+
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/atlas-agro-logo.png" />
+
+  <title>Mesh Size & Grade Guide for Powders, Flakes & Granules | Atlas AgroFood</title>
+  <meta name="description" content="A practical guide for procurement: how to specify mesh size/grade for powders, flakes and granules for your application."/>
+  <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
+  <meta name="theme-color" content="#0f7a4a" />
+
+  <meta name="description" content="A practical guide for procurement: how to specify mesh size/grade for powders, flakes and granules for your application."/>
+
+  <link rel="canonical" href="https://atlasagrofood.co.inbuyers-guide/mesh-size-grade-guide-powder-flakes-granules.html"/>
+
+          <link rel="alternate" href="https://atlasagrofood.co.inproducts/dehydrated-products.html" hreflang="en-IN">
+    <link rel="alternate" href="https://atlasagrofood.co.inproducts/dehydrated-products.html" hreflang="x-default">
+<!-- Social previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Atlas AgroFood">
+    <meta property="og:title" content="Banana Powder | Atlas AgroFood">
+    <meta property="og:description" content="Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label &amp; export-ready.">
+    <meta property="og:url" content="https://atlasagrofood.co.inproducts/banana.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dehydrated Vegetables &amp; Fruit Powders | Bulk B2B Supplier | Atlas AgroFood">
+    <meta name="twitter:description" content="Manufacturer and supplier of dehydrated vegetables, fruit powders, flakes and blends for food processors, HORECA buyers, and exporters.">
+<meta name="robots" content="index,follow" />
+
+<!-- Open Graph (for WhatsApp/LinkedIn preview) -->
+<meta property="og:title" content="Banana Powder | Atlas AgroFood">
+<meta property="og:description" content="Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label &amp; export-ready.">
+<meta property="og:url" content="https://atlasagrofood.co.inproducts/banana.html">
+<meta property="og:type" content="website">
+<!-- Optional: add your logo image URL if you have one -->
+<!-- <meta property="og:image" content="https://atlasagrofood.co.inassets/atlas-agro-logo.png"> -->
+
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Banana Powder | Atlas AgroFood">
+  <meta property="og:description" content="Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label &amp; export-ready.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://atlasagrofood.co.inassets/atlas-agro-logo.png">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Atlas AgroFood",
+  "url": "https://atlasagrofood.co.in",
+  "description": "Manufacturer and bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets.",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "areaServed": ["IN", "Global"],
+    "availableLanguage": ["English", "Hindi", "Marathi"]
+  }]
+}
+</script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#22b36a',
+            50: '#f5fbf7',
+            100: '#e7f7ee',
+            200: '#c9efd9',
+            300: '#9fe2bd',
+            400: '#5ecc8f',
+            500: '#22b36a',
+            600: '#129457',
+            700: '#0f7a4a',
+            800: '#0f623c',
+            900: '#0c4f31'
+          },
+          ink: '#0f172a',
+          slateish: '#475569'
+        }
+      }
+    }
+  }
+
+  function galleryMagic() {
+    return {
+      isOpen: false,
+      activeIndex: 0,
+
+      items: [
+        { title: "Fruit Chips", desc: "Assorted chips & pieces", src: "assets/gallery/fruit-chips.png", alt: "Dehydrated Fruit Chips" },
+        { title: "Vegetable Mix", desc: "Ready meal blends", src: "assets/gallery/vegetable-mix.jpg", alt: "Dehydrated Vegetable Mix" },
+        { title: "Onion / Garlic", desc: "Powders & granules", src: "assets/gallery/onion-garlic.jpg", alt: "Onion Garlic Powder" },
+        { title: "Custom Blends", desc: "Soup & noodle mixes", src: "assets/gallery/custom-blends.jpg", alt: "Custom Food Blends" },
+        { title: "Herbs", desc: "Leafy greens & flakes", src: "assets/gallery/herbs.jpg", alt: "Dehydrated Herbs" },
+        { title: "Packaging", desc: "Bulk & retail options", src: "assets/gallery/packaging.jpg", alt: "Food Packaging" },
+        { title: "Quality Checks", desc: "Batch consistency", src: "assets/gallery/quality-checks.jpg", alt: "Quality Checks" },
+        { title: "Dispatch", desc: "Reliable shipments", src: "assets/gallery/dispatch.jpg", alt: "Dispatch & Logistics" },
+      ],
+
+      init() {
+        // Scroll reveal with IntersectionObserver
+        const cards = this.$root.querySelectorAll("button.group");
+        cards.forEach((el) => el.classList.add("reveal"));
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        }, { threshold: 0.12 });
+
+        cards.forEach((el) => io.observe(el));
+      },
+
+      open(i) {
+        this.activeIndex = i;
+        this.isOpen = true;
+        document.body.style.overflow = "hidden";
+      },
+      close() {
+        this.isOpen = false;
+        document.body.style.overflow = "";
+      },
+      activeItem() {
+        return this.items[this.activeIndex] || this.items[0];
+      },
+      next() {
+        this.activeIndex = (this.activeIndex + 1) % this.items.length;
+      },
+      prev() {
+        this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
+      }
+    };
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach((el) => io.observe(el));
+  });
+</script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+
+    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px}}
+    
+
+    .section-divider-top{border-top:1px solid rgba(148,163,184,.6);}
+    
+    
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+
+/* Smooth scroll + nicer selection */
+    html { scroll-behavior: smooth; }
+    ::selection { background: rgba(34,179,106,.25); }
+    /* Gallery reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px) scale(.98);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+      will-change: transform, opacity;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  
+    /* Gallery hover depth & tilt */
+    .gallery-card {
+      transform-style: preserve-3d;
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .gallery-card img {
+      transition: transform .6s cubic-bezier(.2,.8,.2,1);
+    }
+    .gallery-card:hover img {
+      transform: scale(1.12);
+    }
+    /* Who we supply hover (match Products) */
+    .supply-card {
+      transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .supply-card:hover {
+      background-color: rgb(34 179 106 / 0.08); /* brand green, subtle */
+      border-color: rgb(34 179 106 / 0.35);
+    }
+
+  /* Universal card hover */
+  .card-hover {
+    transition: background-color .25s ease,
+                border-color .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+  }
+  .card-hover:hover {
+    background-color: rgb(34 179 106 / 0.08);
+    border-color: rgb(34 179 106 / 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
+  }
+
+
+  /* Touch-friendly: show feedback on tap/focus as well */
+  .card-hover:active,
+  .card-hover:focus,
+  .card-hover:focus-visible {
+    background-color: rgb(34 179 106 / 0.10);
+    border-color: rgb(34 179 106 / 0.45);
+    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
+    outline: none;
+  }
+
+    .section-divider{
+      border: none;
+      border-top: 1px solid #e6edf3;
+      margin: 48px 0;
+    }
+
+    .section-faq-gap{
+      margin-top: 72px;
+    }
+    
+
+
+/* consistent breadcrumb pill */
+.breadcrumb-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:999px;
+  background: #ffffff;
+  border:1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 8px 22px rgba(15,23,42,0.06);
+  color: rgba(15,23,42,0.75);
+  font-weight: 600;
+}
+.breadcrumb-pill a{color:inherit;text-decoration:none;}
+.breadcrumb-pill a:hover{text-decoration:underline;}
+.breadcrumb-pill .sep{opacity:.55;font-weight:700;}
+
+  .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
+</style>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What products do you supply under dehydrated range?", "acceptedAnswer": {"@type": "Answer", "text": "Dehydrated vegetables, fruit powders, flakes and custom blends depending on seasonal availability and requirement."}}, {"@type": "Question", "name": "Can you share moisture/specification sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share typical specs and can align to buyer specs where feasible."}}, {"@type": "Question", "name": "How do I request a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Use the WhatsApp button on this page and send product + MOQ + packaging + destination details for a quick quotation."}}, {"@type": "Question", "name": "Do you supply for food processing and HORECA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply B2B ingredients for food manufacturers, HORECA and exporters."}}]}</script>
+
+    <meta name="twitter:image" content="https://atlasagrofood.co.inassets/atlas-agro-logo.png">  <!-- schema-organization -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://atlasagrofood.co.in#organization", "name": "Atlas AgroFood Private Ltd", "url": "https://atlasagrofood.co.in", "logo": "https://atlasagrofood.co.inassets/atlas-agro-logo.png", "email": "sales@atlasagrofood.co.in", "telephone": "+91-7738505687"}</script>
+  <!-- schema-website -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://atlasagrofood.co.in#website", "url": "https://atlasagrofood.co.in", "name": "Atlas AgroFood", "publisher": {"@id": "https://atlasagrofood.co.in#organization"}, "inLanguage": "en"}</script>
+  <!-- schema-webpage:https://atlasagrofood.co.inproducts/dehydrated-products.html -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://atlasagrofood.co.inproducts/dehydrated-products.html#webpage", "url": "https://atlasagrofood.co.inproducts/dehydrated-products.html", "name": "Dehydrated Vegetables & Fruit Powders | Bulk B2B Supplier | Atlas AgroFood", "description": "Manufacturer and supplier of dehydrated vegetables, fruit powders, flakes and blends for food processors, HORECA buyers, and exporters.", "isPartOf": {"@id": "https://atlasagrofood.co.in#website"}, "about": {"@id": "https://atlasagrofood.co.in#organization"}, "inLanguage": "en"}</script>
+
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://atlasagrofood.co.in"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Products", "url": "https://atlasagrofood.co.inproducts/"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Dehydrated Products", "url": "https://atlasagrofood.co.inproducts/dehydrated-products.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "Spray Dried Products", "url": "https://atlasagrofood.co.inproducts/spray-dried.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Spices", "url": "https://atlasagrofood.co.inproducts/spices.html"}]}</script>
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Banana Powder", "brand": {"@type": "Brand", "name": "Atlas AgroFood"}, "url": "https://atlasagrofood.co.inproducts/banana.html", "category": "Dehydrated Products", "description": "Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label & export-ready.", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "INR", "price": "0", "url": "https://atlasagrofood.co.incontact.html"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://atlasagrofood.co.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Industries",
+      "item": "https://atlasagrofood.co.inindustries/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Food Manufacturing & Bulk Export",
+      "item": "https://atlasagrofood.co.inindustries/food-manufacturing-and-export.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you ship pan-India and export?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can support pan-India dispatch and export requirements based on destination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you share COA/specs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can share product specifications and quality parameters as per requirement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Share your product list, specs, packing and monthly volume for quotation and availability."
+      }
+    }
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Atlas AgroFood Pvt Ltd",
+    "url":"https://atlasagrofood.co.in",
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"sales",
+      "url":"https://atlasagrofood.co.incontact.html"
+    }
+  }
+  </script>
+
+</head>
+<body>
+
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+read+your+buyer+guide+on+Mesh+Size+%26+Grade+Guide+for+Powders%2C+Flakes+%26+Granules.+I+am+looking+for+bulk+supply.+Please+share+MOQ%2C+specs%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+read+your+buyer+guide+on+Mesh+Size+%26+Grade+Guide+for+Powders%2C+Flakes+%26+Granules.+I+am+looking+for+bulk+supply.+Please+share+MOQ%2C+specs%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+<div id="site-header"></div>
+<main class="mx-auto w-full max-w-6xl px-4 pb-16 pt-10">
+  <div class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">
+    <a class="hover:text-brand-700" href="/">Home</a>
+    <span class="text-slate-300">/</span>
+    <a class="hover:text-brand-700" href="/buyers-guide/">Buyer Guides</a>
+    <span class="text-slate-300">/</span>
+    <span class="text-brand-700 font-medium">Mesh Size & Grade Guide for Powders, Flakes & Granules</span>
+  </div>
+
+  <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-10">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Mesh Size & Grade Guide for Powders, Flakes & Granules</h1>
+    <p<p>Relevant products include <a href="/products/dehydrated-products.html">dehydrated products</a> and <a href="/products/spices.html">spices</a>. Learn more <a href="/why-atlas-agro.html">why buyers choose Atlas AgroFood</a>.</p>
+<p class="mt-3 text-lg text-slateish">A practical guide for procurement: how to specify mesh size/grade for powders, flakes and granules for your application.</p>
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <div class="text-sm text-slate-500">For bulk enquiries</div>
+        <div class="mt-2 text-slateish">Share MOQ, mesh/grade, packing size and destination. We’ll confirm availability and quote.</div>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a class="inline-flex items-center justify-center px-5 py-2 rounded-2xl bg-brand-700 text-white font-semibold hover:bg-brand-600 transition" href="/contact.html">Get a Quote</a>
+          <a class="inline-flex items-center justify-center px-5 py-2 rounded-2xl border border-slate-200 bg-white text-slate-700 font-semibold card-hover hover:border-slate-300 transition" href="/products/">Browse Products</a>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <div class="text-sm text-slate-500">What buyers usually ask</div>
+        <div class="mt-2 text-slateish">MOQ • Mesh/grade • Packaging • Destination & compliance • Lead time</div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+    <h2 class="text-2xl font-extrabold tracking-tight">Recommended products</h2>
+    <p<p>Relevant products include <a href="/products/dehydrated-products.html">dehydrated products</a> and <a href="/products/spices.html">spices</a>. Learn more <a href="/why-atlas-agro.html">why buyers choose Atlas AgroFood</a>.</p>
+<p class="mt-2 text-slateish">Related pages to review specs and enquiry options.</p>
+    <div class="mt-6 grid md:grid-cols-2 gap-5">
+      <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/onion.html">
+  <div class="text-sm text-slate-500">Product</div>
+  <div class="mt-1 text-lg font-bold group-hover:text-brand">Dehydrated Onion Flakes</div>
+  <div class="mt-2 text-sm text-slateish">Open product details →</div>
+</a>
+<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/garlic-granules.html">
+  <div class="text-sm text-slate-500">Product</div>
+  <div class="mt-1 text-lg font-bold group-hover:text-brand">Garlic Granules</div>
+  <div class="mt-2 text-sm text-slateish">Open product details →</div>
+</a>
+    </div>
+  </section>
+
+  <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+    <h2 class="text-2xl font-extrabold tracking-tight">Related industries</h2>
+    <p<p>Relevant products include <a href="/products/dehydrated-products.html">dehydrated products</a> and <a href="/products/spices.html">spices</a>. Learn more <a href="/why-atlas-agro.html">why buyers choose Atlas AgroFood</a>.</p>
+<p class="mt-2 text-slateish">Common applications and buyer requirements by industry.</p>
+    <div class="mt-6 grid md:grid-cols-2 gap-5">
+      <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/seasoning-and-spice-blends.html">
+  <div class="text-sm text-slate-500">Industry</div>
+  <div class="mt-1 text-lg font-bold group-hover:text-brand">Seasoning & Spice Blends</div>
+  <div class="mt-2 text-sm text-slateish">Explore applications →</div>
+</a>
+<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/bakery-and-savoury-snacks.html">
+  <div class="text-sm text-slate-500">Industry</div>
+  <div class="mt-1 text-lg font-bold group-hover:text-brand">Bakery & Savoury Snacks</div>
+  <div class="mt-2 text-sm text-slateish">Explore applications →</div>
+</a>
+    </div>
+  </section>
+
+  <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 section-divider-top">
+    <h2 class="text-2xl font-extrabold tracking-tight">FAQs</h2>
+    <p<p>Relevant products include <a href="/products/dehydrated-products.html">dehydrated products</a> and <a href="/products/spices.html">spices</a>. Learn more <a href="/why-atlas-agro.html">why buyers choose Atlas AgroFood</a>.</p>
+<p class="mt-2 text-slateish">Quick answers for procurement and bulk buying.</p>
+    <div class="mt-6 grid gap-4">
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 card-hover hover:border-slate-300 transition">
+  <div class="font-semibold text-slate-700">What should I mention for mesh/grade?</div>
+  <div class="mt-2 text-slateish">Your use-case (mixing, seasoning, rehydration), preferred fineness, and processing method.</div>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-white p-5 card-hover hover:border-slate-300 transition">
+  <div class="font-semibold text-slate-700">Do you support fine/medium/coarse?</div>
+  <div class="mt-2 text-slateish">Yes—availability varies by product; share requirement and volume.</div>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-white p-5 card-hover hover:border-slate-300 transition">
+  <div class="font-semibold text-slate-700">How do I avoid mismatch in texture?</div>
+  <div class="mt-2 text-slateish">Share sample reference or target spec; we can confirm suitability.</div>
+</div>
+    </div>
+  </section>
+</main></main>
+<div id="site-footer"></div>
+<script src="/assets/js/cta-tracking.js"></script>
+  <script defer src="/assets/js/includes.js"></script>
+</body>
+</html>

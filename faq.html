@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ | Atlas AgroFood</title>
+  <meta name="description" content="FAQs for bulk buying dehydrated products, spray dried ingredients and spices. MOQ, mesh size/grade, packaging, documentation, export readiness and enquiry process." />
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="canonical" href="https://atlasagrofood.co.infaq.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#22b36a',
+            50: '#f5fbf7',
+            100: '#e7f7ee',
+            200: '#c9efd9',
+            300: '#9fe2bd',
+            400: '#5ecc8f',
+            500: '#22b36a',
+            600: '#129457',
+            700: '#0f7a4a',
+            800: '#0f623c',
+            900: '#0c4f31'
+          },
+          ink: '#0f172a',
+          slateish: '#475569'
+        }
+      }
+    }
+  }
+
+  function galleryMagic() {
+  return {
+    base: "/assets/products",
+    // cards represent folders under /assets/products/<folder>/
+    items: [
+        { group: "Fruits", folder: "apple", title: "Apple" },
+        { group: "Fruits", folder: "banana", title: "Banana" },
+        { group: "Vegetables", folder: "beetroot", title: "Beetroot" },
+        { group: "Vegetables", folder: "bitter-gourd", title: "Bitter Gourd" },
+        { group: "Vegetables", folder: "carrot", title: "Carrot" },
+        { group: "Fruits", folder: "coconut", title: "Coconut" },
+        { group: "Herbs & Leaves", folder: "coriander", title: "Coriander" },
+        { group: "Vegetables", folder: "corn", title: "Corn" },
+        { group: "Vegetables", folder: "cucumber", title: "Cucumber" },
+        { group: "Herbs & Leaves", folder: "curry-leaves", title: "Curry Leaves" },
+        { group: "Vegetables", folder: "garlic", title: "Garlic" },
+        { group: "Vegetables", folder: "ginger", title: "Ginger" },
+        { group: "Vegetables", folder: "green-chilli", title: "Green Chilli" },
+        { group: "Vegetables", folder: "green-pepper", title: "Green Pepper" },
+        { group: "Fruits", folder: "guava", title: "Guava" },
+        { group: "Fruits", folder: "mango", title: "Mango" },
+        { group: "Flowers", folder: "marigold", title: "Marigold" },
+        { group: "Herbs & Leaves", folder: "methi", title: "Methi" },
+        { group: "Herbs & Leaves", folder: "mint", title: "Mint" },
+        { group: "Special", folder: "mixed-veg", title: "Mixed Veg" },
+        { group: "Herbs & Leaves", folder: "moringa", title: "Moringa" },
+        { group: "Vegetables", folder: "mushroom", title: "Mushroom" },
+        { group: "Vegetables", folder: "okra", title: "Okra" },
+        { group: "Vegetables", folder: "onion", title: "Onion" },
+        { group: "Fruits", folder: "orange", title: "Orange" },
+        { group: "Fruits", folder: "papaya", title: "Papaya" },
+        { group: "Vegetables", folder: "potato", title: "Potato" },
+        { group: "Vegetables", folder: "red-pepper", title: "Red Pepper" },
+        { group: "Flowers", folder: "rose", title: "Rose" },
+        { group: "Special", folder: "spices", title: "Spices" },
+        { group: "Vegetables", folder: "spinach", title: "Spinach" },
+        { group: "Special", folder: "spray-dried", title: "Spray Dried" },
+        { group: "Vegetables", folder: "tomato", title: "Tomato" }
+      ],
+    isOpen: false,
+    activeIndex: 0,
+    activeImage: "",
+
+    q: "",
+    activeGroup: "All",
+    groups: ["All", "Vegetables", "Fruits", "Herbs & Leaves", "Flowers", "Special"],
+
+    init() {
+      // default active image for first item
+      const it = this.items[0];
+      this.activeImage = this.cover(it);
+    },
+
+    cover(it) {
+      return `${this.base}/${it.folder}/hero.png`;
+    },
+
+    imageList(it) {
+      // Common pattern: hero.png + thumb-1..thumb-3 (many folders follow this)
+      const list = [
+        `${this.base}/${it.folder}/hero.png`,
+        `${this.base}/${it.folder}/thumb-1.png`,
+        `${this.base}/${it.folder}/thumb-2.png`,
+        `${this.base}/${it.folder}/thumb-3.png`,
+      ];
+      // Dedupe
+      return Array.from(new Set(list));
+    },
+
+    filtered() {
+      const q = (this.q || "").trim().toLowerCase();
+      return this.items.filter(it => {
+        const grpOk = (this.activeGroup === "All") || (it.group === this.activeGroup);
+        if (!grpOk) return false;
+        if (!q) return true;
+        const hay = `${it.group} ${it.title} ${it.folder}`.toLowerCase();
+        return hay.includes(q);
+      });
+    },
+
+    openByFolder(folder) {
+      const idx = this.items.findIndex(x => x.folder === folder);
+      this.open(idx >= 0 ? idx : 0);
+    },
+
+    open(i) {
+      this.activeIndex = i;
+      this.isOpen = true;
+      const it = this.items[this.activeIndex];
+      this.activeImage = this.cover(it);
+
+      // keyboard nav
+      this._onKey = (e) => {
+        if (!this.isOpen) return;
+        if (e.key === "ArrowRight") this.next();
+        if (e.key === "ArrowLeft") this.prev();
+        if (e.key === "Escape") this.close();
+      };
+      window.addEventListener("keydown", this._onKey);
+    },
+
+    close() {
+      this.isOpen = false;
+      if (this._onKey) window.removeEventListener("keydown", this._onKey);
+      this._onKey = null;
+    },
+
+    prev() {
+      this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
+      this.activeImage = this.cover(this.items[this.activeIndex]);
+    },
+
+    next() {
+      this.activeIndex = (this.activeIndex + 1) % this.items.length;
+      this.activeImage = this.cover(this.items[this.activeIndex]);
+    },
+
+    activeItem() {
+      return this.items[this.activeIndex] || this.items[0];
+    },
+
+    setImage(src) {
+      this.activeImage = src;
+    }
+  };
+}
+</script>
+  <style>
+    
+    .pill{background:rgba(255,255,255,.75);border:1px solid rgba(148,163,184,.45);backdrop-filter:blur(8px)}
+    details>summary{list-style:none}
+    details>summary::-webkit-details-marker{display:none}
+  
+
+    .hero-strip{margin:14px 0 18px;padding:14px 16px;border-radius:22px;border:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(34,179,106,.16), rgba(255,255,255,.78));
+      display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .hero-pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.70);border:1px solid rgba(148,163,184,.45);
+      font-size:12px;color:rgba(15,23,42,.72);font-weight:800}
+    .hero-pill strong{color:rgba(15,23,42,.92)}
+    .fade-in{animation:fadeInUp .55s ease both}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+</style>
+  <style>
+  .card-hover{transition:transform .18s ease, box-shadow .18s ease;}
+  .card-hover:hover{transform:translateY(-2px); box-shadow:0 12px 30px rgba(16,24,40,.10);}
+</style>
+<style>
+  [x-cloak]{ display:none !important; }
+  .no-scroll{ overflow:hidden; }
+
+  .mobile-menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .35);
+    backdrop-filter: blur(2px);
+    z-index: 60;
+  }
+  .mobile-menu-panel{
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: 88px;
+    max-height: calc(100vh - 112px);
+    overflow: auto;
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(16, 185, 129, .18);
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(2, 6, 23, .18);
+    z-index: 61;
+    padding: 14px;
+  }
+  .mobile-menu-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 4px 4px 10px 4px;
+  }
+  .mobile-menu-title{
+    font-weight: 700;
+    font-size: 16px;
+    color: #0f172a;
+  }
+  .mobile-menu-close{
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,.55);
+    background: rgba(255,255,255,.75);
+    color: #0f172a;
+    font-size: 18px;
+    line-height: 1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-menu-nav{
+    display:grid;
+    gap: 10px;
+    padding: 6px 4px 12px 4px;
+  }
+  .mobile-menu-nav a{
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(148,163,184,.35);
+    background: rgba(255,255,255,.6);
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .mobile-menu-nav a:active{
+    transform: translateY(1px);
+  }
+  .mobile-menu-actions{
+    display:grid;
+    gap: 10px;
+    padding: 4px;
+  }
+  .w-full{ width:100%; }
+</style>
+
+  <style>
+    /* FAQ enhancements */
+    .faq-wrap{display:grid;gap:18px}
+    @media (min-width: 1024px){ .faq-wrap{grid-template-columns: 1.15fr .85fr; align-items:start;} }
+    .faq-hero{
+      border:1px solid rgba(15,23,42,.10);
+      background: radial-gradient(900px 300px at 15% 10%, rgba(34,179,106,.22), transparent 55%),
+                  radial-gradient(700px 260px at 85% 30%, rgba(34,179,106,.16), transparent 55%),
+                  linear-gradient(135deg, rgba(255,255,255,.85), rgba(34,179,106,.08));
+      border-radius: 28px;
+      overflow:hidden;
+    }
+    .faq-hero-inner{padding: 26px 22px;}
+    @media (min-width: 768px){ .faq-hero-inner{padding: 34px 30px;} }
+    .faq-kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .faq-kpi{padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(148,163,184,.45);
+      font-size:12px;color:rgba(15,23,42,.72);font-weight:800}
+    .faq-kpi strong{color:rgba(15,23,42,.92)}
+    .faq-card{border:1px solid rgba(148,163,184,.35);background: rgba(255,255,255,.92);border-radius: 22px; padding: 16px;}
+    .faq-side{position:sticky; top: 96px;}
+    .faq-side .cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:999px;
+      font-weight:800;text-decoration:none}
+    .faq-side .cta-primary{background: var(--brand-700,#1f6f4a); color:#fff;}
+    .faq-side .cta-primary:hover{filter:brightness(1.03)}
+    .faq-side .cta-ghost{background: rgba(255,255,255,.85); border:1px solid rgba(15,23,42,0.12); color: rgba(15,23,42,.88);}
+    .faq-side .cta-ghost:hover{background: rgba(255,255,255,.95)}
+    .faq-acc details{border:1px solid rgba(148,163,184,.28); background: rgba(34,179,106,.06); border-radius: 18px; padding: 14px 14px;}
+    .faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .faq-acc summary .q{font-weight:800;color:rgba(15,23,42,.92)}
+    .faq-acc summary .icon{width:34px;height:34px;border-radius:999px;border:1px solid rgba(148,163,184,.40);
+      background: rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;color: rgba(15,23,42,.70); flex:0 0 auto}
+    details[open] summary .icon{transform: rotate(45deg);}
+    .faq-acc p{margin-top:10px;color:rgba(71,85,105,1)}
+    .soft-divider{height:1px;background:rgba(148,163,184,.25);margin: 12px 0}
+  </style>
+
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is your MOQ for bulk orders?","acceptedAnswer":{"@type":"Answer","text":"MOQ depends on the product and packaging format. Share product, grade/mesh, packaging and monthly volume and we’ll confirm MOQ and availability."}},
+      {"@type":"Question","name":"Do you support different mesh sizes and granulation?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can supply powders, flakes and granules with specification confirmation before bulk supply."}},
+      {"@type":"Question","name":"Do you offer packaging options and private label?","acceptedAnswer":{"@type":"Answer","text":"We support bulk/export packing formats. Private label options can be discussed based on order quantity and destination requirements."}},
+      {"@type":"Question","name":"Are your products suitable for export?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support export-ready packing guidance and documentation on request (e.g., COA / batch documentation)."}},
+      {"@type":"Question","name":"Can you share specification sheets (moisture, mesh, etc.)?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share the product and intended application, and we’ll share typical specs and confirm against your requirement."}},
+      {"@type":"Question","name":"How do you ensure consistent batch quality?","acceptedAnswer":{"@type":"Answer","text":"We confirm sample + specs before bulk supply and follow consistency checks per production lot."}},
+      {"@type":"Question","name":"How do I request a quote quickly?","acceptedAnswer":{"@type":"Answer","text":"Send product name, grade/mesh, packaging, monthly volume and destination via WhatsApp or the Get a Quote form. We reply with availability and pricing."}}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://atlasagrofood.co.in"},
+      {"@type":"ListItem","position":2,"name":"FAQ","item":"https://atlasagrofood.co.infaq.html"}
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-brand-50 text-ink antialiased"
+      :class="{\'no-scroll\': mobileOpen}"
+      x-data="siteApp()"
+      x-init="init()">
+<div id="site-header"></div>
+<!-- Mobile menu (drawer) -->
+<div x-cloak x-show="mobileOpen" class="mobile-menu-overlay" @click="mobileOpen=false" x-transition.opacity></div>
+<div x-cloak x-show="mobileOpen" class="mobile-menu-panel" @click.stop
+     x-transition:enter="transition ease-out duration-200"
+     x-transition:enter-start="opacity-0 translate-y-2"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-150"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 translate-y-2">
+  <div class="mobile-menu-header">
+    <div class="mobile-menu-title">Menu</div>
+    <button class="mobile-menu-close" @click="mobileOpen=false" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-menu-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products/index.html">Products</a>
+    <a href="industries/index.html">Industries</a>
+    <a href="quality.html">Quality</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="/assets/brochure.pdf" download>📄 Download Brochure</a>
+  </nav>
+
+  <div class="mobile-menu-actions">
+    <a class="btn btn-primary w-full" href="#quote" @click="mobileOpen=false">Get Bulk Quote</a>
+    <a class="btn btn-outline w-full" href="https://wa.me/917738505687" target="_blank" rel="noopener" @click="mobileOpen=false">WhatsApp</a>
+  </div>
+</div>
+
+
+<main class="mx-auto max-w-6xl px-4 md:px-8 py-10">
+  <nav aria-label="Breadcrumb" class="mb-6">
+    <div class="inline-flex items-center gap-2 pill rounded-full px-4 py-2 text-sm">
+      <a class="text-slateish hover:text-brand" href="/">Home</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-brand font-semibold">FAQ</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="faq-hero card-hover fade-in">
+    <div class="faq-hero-inner">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">FAQs</h1>
+          <p class="mt-3 text-slateish max-w-2xl">
+            Quick answers for bulk buying — MOQ, mesh/grade, packaging, documentation, export readiness and enquiry process.
+          </p>
+          <div class="faq-kpis">
+            <span class="faq-kpi">⚡ Typical reply: <strong>same day</strong></span>
+            <span class="faq-kpi">📦 MOQ + packaging confirmed</span>
+            <span class="faq-kpi">🌍 Export-ready support</span>
+            <span class="faq-kpi">🧾 COA / batch docs on request</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="faq-side cta-btn cta-primary"
+             href="/contact.html"
+             style="display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--brand-700,#1f6f4a);color:#fff;text-decoration:none;font-weight:800;">
+            Ask on WhatsApp →
+          </a>
+          <a class="faq-side cta-btn cta-ghost"
+             href="/buyers-guide/"
+             style="display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid rgba(15,23,42,0.12);color:rgba(15,23,42,.88);text-decoration:none;font-weight:800;">
+            Buyer guide →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mt-8 faq-wrap">
+    <!-- Left: FAQ sections -->
+    <div class="grid gap-8">
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-extrabold">Bulk buying &amp; ordering</h2>
+            <p class="mt-2 text-slateish max-w-2xl">Common questions about MOQ, formats, and how to place a bulk enquiry.</p>
+          </div>
+          <span class="hidden md:inline-flex px-3 py-1 text-xs rounded-full bg-brand-50 border border-brand-200 text-brand-800 font-semibold">B2B</span>
+        </div>
+
+        <div class="soft-divider"></div>
+
+        <div class="faq-acc grid gap-3">
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">What is your MOQ for bulk orders?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>MOQ depends on product and packing format. Share product, grade/mesh, packaging, monthly volume and destination — we’ll confirm MOQ &amp; availability.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Do you support different mesh sizes and granulation?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>Yes. We can supply powders, flakes and granules. We confirm specs (mesh/grade) before bulk production.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Do you offer packaging options and private label?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>We support bulk/export packaging formats. Private label can be discussed based on quantity, destination and compliance needs.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Are your products suitable for export?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>Yes. We support export-friendly labeling &amp; packing guidance and documentation on request.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-extrabold">Quality &amp; compliance</h2>
+            <p class="mt-2 text-slateish max-w-2xl">Specs, batch consistency, and typical documentation support for buyers.</p>
+          </div>
+          <span class="hidden md:inline-flex px-3 py-1 text-xs rounded-full bg-slate-50 border border-slate-200 text-slate-700 font-semibold">QC</span>
+        </div>
+
+        <div class="soft-divider"></div>
+
+        <div class="faq-acc grid gap-3">
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Can you share specification sheets (moisture, mesh, etc.)?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>Yes. Share the product and intended application and we’ll share typical specs and confirm against your requirement.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">How do you ensure consistent batch quality?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>We confirm sample + specs before bulk supply and follow consistency checks per production lot.</p>
+          </details>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-brand-50 p-4">
+          <div class="text-sm font-extrabold text-ink">Tip for faster approval</div>
+          <p class="mt-1 text-sm text-slateish">
+            Send your target <b>mesh/grade</b>, <b>moisture</b>, <b>packaging</b>, and <b>destination country</b>.
+            We’ll align sample + spec confirmation quickly.
+          </p>
+        </div>
+      </section>
+
+      <section id="fast-enquiry" class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-extrabold">Fast enquiry</h2>
+            <p class="mt-2 text-slateish max-w-3xl">
+              For quotation, share <b>product</b>, <b>grade/mesh</b>, <b>packaging</b>, <b>monthly volume</b> and <b>destination</b>.
+              We’ll respond with availability and pricing.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="https://wa.me/917738505687"
+             class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-5 py-2 text-white text-sm font-extrabold hover:bg-brand-600">
+            Chat on WhatsApp →
+          </a>
+          <a href="/contact.html"
+             class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-ink text-sm font-extrabold hover:bg-brand-50">
+            Open contact page →
+          </a>
+          <a href="/buyers-guide/"
+             class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-ink text-sm font-extrabold hover:bg-brand-50">
+            Read buyer guide →
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right: Sticky helper -->
+    <aside class="faq-side">
+      <div class="faq-card card-hover">
+        <div class="flex items-center justify-between">
+          <div class="text-base font-extrabold">Need pricing fast?</div>
+          <span class="px-3 py-1 text-xs rounded-full bg-brand-50 border border-brand-200 text-brand-800 font-semibold">B2B Quote</span>
+        </div>
+
+        <p class="mt-2 text-sm text-slateish">
+          Send these 5 details and we’ll reply quickly:
+        </p>
+
+        <ul class="mt-3 text-sm text-slateish list-disc list-inside">
+          <li>Product name</li>
+          <li>Mesh / grade</li>
+          <li>Packaging (5–25kg / custom)</li>
+          <li>Monthly volume</li>
+          <li>Destination</li>
+        </ul>
+
+        <div class="mt-4 grid gap-3">
+          <a class="cta-btn cta-primary" href="https://wa.me/917738505687" target="_blank" rel="noopener">
+            WhatsApp now →
+          </a>
+          <a class="cta-btn cta-ghost" href="/contact.html">
+            Use quote form →
+          </a>
+        </div>
+
+        <div class="soft-divider"></div>
+
+        <div class="text-sm font-extrabold">Helpful links</div>
+        <div class="mt-2 grid gap-2 text-sm">
+          <a class="underline text-slate-700 hover:text-brand" href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">Bulk packaging options</a>
+          <a class="underline text-slate-700 hover:text-brand" href="/buyers-guide/export-quality-standards-dehydrated-products.html">Export quality standards</a>
+          <a class="underline text-slate-700 hover:text-brand" href="/quality.html">Quality &amp; documentation</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/cta-tracking.js"></script>
+
+  <script>
+  // Minimal Alpine data for header/mobile menu on this page.
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('siteApp', () => ({
+      mobileOpen: false,
+      whatsappLink: "https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing.",
+      init() {}
+    }));
+  });
+
+  // Safe language switch stub (prevents errors if i18n bundle isn't present)
+  window.setLang = window.setLang || function(lang){
+    try { localStorage.setItem("atlas_lang", lang); } catch(e){}
+  };
+</script>
+
+<script defer src="/assets/js/includes.js"></script>
+</body>
+</html>
