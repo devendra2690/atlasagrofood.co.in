@@ -74,6 +74,20 @@
     @media (min-width: 768px){.mobile-cta{display:none}}
     @media (max-width: 767px){body{padding-bottom:70px}}
 
+            /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
+
     /* FAQ Animation */
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
@@ -130,17 +144,17 @@
         <div class="w-full h-full relative">
             <img :src="images[active]" 
                   alt="Product Detail" 
-                  class="w-full h-full object-contain transition-transform duration-500 hover:scale-105 cursor-pointer">
+                  class="w-full h-full object-contain transition-transform duration-500">
         </div>
     </div>
 
     <button @click="prev()" 
-            class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/60 backdrop-blur-sm shadow-sm border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition hover:scale-110 opacity-0 group-hover:opacity-100 duration-300">
+            class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
         <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
     </button>
     
     <button @click="next()" 
-            class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/60 backdrop-blur-sm shadow-sm border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition hover:scale-110 opacity-0 group-hover:opacity-100 duration-300">
+            class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-stone-200 text-brand-900 flex items-center justify-center hover:bg-brand-700 hover:text-white transition active:scale-95">
         <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
     </button>
 
