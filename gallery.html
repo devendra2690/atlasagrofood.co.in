@@ -47,7 +47,7 @@
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
     
     /* Filter Buttons */
-    .filter-btn { transition: all 0.3s; position: relative; padding-bottom: 4px; white-space: nowrap; font-size: 1.125rem; color: #64748b; font-weight: 500; }
+    .filter-btn { transition: all 0.3s; position: relative; padding-bottom: 4px; white-space: nowrap; font-size: 1.125rem; color: #64748b; font-weight: 500; cursor: pointer; }
     .filter-btn:hover { color: #15803d; }
     .filter-btn.active { color: #15803d; font-weight: 700; }
     .filter-btn.active::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 24px; height: 3px; background: #c5a365; border-radius: 2px; }
@@ -74,6 +74,16 @@
     
     [x-cloak] { display: none !important; }
   </style>
+
+  <script>
+    function siteApp() {
+      return {
+        mobileOpen: false,
+        whatsappLink: "https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+products.",
+        init() { console.log('Site App Initialized'); }
+      };
+    }
+  </script>
 </head>
 
 <body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
@@ -113,15 +123,16 @@
       </div>
       
       <div class="max-w-md mx-auto mt-6 relative">
-        <input type="text" id="gallerySearch" placeholder="Search products..." class="w-full pl-10 pr-4 py-3 rounded-full border border-stone-300 bg-white focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition shadow-sm">
-        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400">🔍</span>
+        <input type="text" id="gallerySearch" placeholder="Search (e.g. Onion, Mango, Packaging)..." 
+               class="w-full pl-12 pr-4 py-3 rounded-full border border-stone-300 bg-white focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition shadow-sm font-sans">
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-lg">🔍</span>
       </div>
     </section>
 
     <section class="max-w-7xl mx-auto">
       <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         </div>
-      <div id="emptyState" class="hidden text-center py-20 text-stone-500">
+      <div id="emptyState" class="hidden text-center py-20 text-stone-500 font-medium">
         No images found matching your search.
       </div>
     </section>
@@ -152,8 +163,12 @@
         </div>
         
         <div class="md:hidden flex gap-8 mt-4 z-20">
-            <button id="lbPrevMob" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">Prev</button>
-            <button id="lbNextMob" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">Next</button>
+            <button id="lbPrevMob" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button id="lbNextMob" class="p-3 rounded-full bg-white/10 text-white hover:bg-white/20">
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
         </div>
     </div>
   </div>
@@ -164,40 +179,40 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <script>
-    // 1. Full Data Set
+    // 1. Full Data Set (Fixed Quotes & Commas)
     const GALLERY_ITEMS = [
-      { slug: "banana", name: "Banana Powder", category: "Dehydrated" },
-      { slug: "onion", name: "Red Onion Powder", category: "Dehydrated" },
-      { slug: "garlic", name: "Garlic Powder", category: "Dehydrated" },
-      { slug: "ginger", name: "Ginger Powder", category: "Dehydrated" },
-      { slug: "methi", name: "Dried Methi (Fenugreek)", category: "Dehydrated" },
-      { slug: "spinach", name: "Spinach Powder", category: "Dehydrated" },
-      { slug: "beetroot", name: "Beetroot Powder", category: "Dehydrated" },
-      { slug: "moringa", name: "Moringa Powder", category: "Dehydrated" },
-      { slug: "curry-leaves", name: "Dried Curry Leaves", category: "Dehydrated" },
-      { slug: "coriander", name: "Coriander Leaves", category: "Dehydrated" },
-      { slug: "rose", name: "Dried Rose Petals", category: "Dehydrated" },
-      { slug: "marigold", name: "Dried Marigold", category: "Dehydrated" },
-      { slug: "tomato", name: "Tomato Powder", category: "Dehydrated" },
-      { slug: "carrot", name: "Carrot Powder", category: "Dehydrated" },
-      { slug: "green-chilli", name: "Green Chilli Powder", category: "Dehydrated" },
-      { slug: "bitter-gourd", name: "Dried Bitter Gourd", category: "Dehydrated" },
-      { slug: "corn", name: "Sweet Corn", category: "Dehydrated" },
-      { slug: "mango", name: "Mango Powder (Amchur)", category: "Dehydrated" },
-      { slug: "coconut", name: "Desiccated Coconut", category: "Dehydrated" },
-      { slug: "apple", name: "Apple Powder", category: "Dehydrated" },
-      { slug: "papaya", name: "Papaya Powder", category: "Dehydrated" },
-      { slug: "guava", name: "Guava Powder", category: "Dehydrated" },
-      { slug: "orange", name: "Orange Powder", category: "Dehydrated" },
-      { slug: "potato", name: "Potato Flakes/Powder", category: "Dehydrated" },
-      { slug: "mushroom", name: "Dried Mushroom", category: "Dehydrated" },
-      { slug: "okra", name: "Dried Okra (Lady Finger)", category: "Dehydrated" },
-      { slug: "red-pepper", "name: "Red Bell Pepper", category: "Dehydrated" },
-      { slug: "green-pepper", "name: "Green Bell Pepper", category: "Dehydrated" },
-      { slug: "mint", "name: "Dried Mint", category: "Dehydrated" },
-      { slug: "cucumber", "name: "Dried Cucumber", category: "Dehydrated" },
-      { slug: "spray-dried", name: "Spray Dried Fruit Powders", category: "Spray Dried" },
-      { slug: "spices", name: "Indian Spices Range", category: "Spices" },
+      { slug: "banana", name: "Banana Powder", category: "Dehydrated", src: "/assets/products/banana/hero.png" },
+      { slug: "onion", name: "Red Onion Powder", category: "Dehydrated", src: "/assets/products/onion/hero.png" },
+      { slug: "garlic", name: "Garlic Powder", category: "Dehydrated", src: "/assets/products/garlic/hero.png" },
+      { slug: "ginger", name: "Ginger Powder", category: "Dehydrated", src: "/assets/products/ginger/hero.png" },
+      { slug: "methi", name: "Dried Methi (Fenugreek)", category: "Dehydrated", src: "/assets/products/methi/hero.png" },
+      { slug: "spinach", name: "Spinach Powder", category: "Dehydrated", src: "/assets/products/spinach/hero.png" },
+      { slug: "beetroot", name: "Beetroot Powder", category: "Dehydrated", src: "/assets/products/beetroot/hero.png" },
+      { slug: "moringa", name: "Moringa Powder", category: "Dehydrated", src: "/assets/products/moringa/hero.png" },
+      { slug: "curry-leaves", name: "Dried Curry Leaves", category: "Dehydrated", src: "/assets/products/curry-leaves/hero.png" },
+      { slug: "coriander", name: "Coriander Leaves", category: "Dehydrated", src: "/assets/products/coriander/hero.png" },
+      { slug: "rose", name: "Dried Rose Petals", category: "Dehydrated", src: "/assets/products/rose/hero.png" },
+      { slug: "marigold", name: "Dried Marigold", category: "Dehydrated", src: "/assets/products/marigold/hero.png" },
+      { slug: "tomato", name: "Tomato Powder", category: "Dehydrated", src: "/assets/products/tomato/hero.png" },
+      { slug: "carrot", name: "Carrot Powder", category: "Dehydrated", src: "/assets/products/carrot/hero.png" },
+      { slug: "green-chilli", name: "Green Chilli Powder", category: "Dehydrated", src: "/assets/products/green-chilli/hero.png" },
+      { slug: "bitter-gourd", name: "Dried Bitter Gourd", category: "Dehydrated", src: "/assets/products/bitter-gourd/hero.png" },
+      { slug: "corn", name: "Sweet Corn", category: "Dehydrated", src: "/assets/products/corn/hero.png" },
+      { slug: "mango", name: "Mango Powder (Amchur)", category: "Dehydrated", src: "/assets/products/mango/hero.png" },
+      { slug: "coconut", name: "Desiccated Coconut", category: "Dehydrated", src: "/assets/products/coconut/hero.png" },
+      { slug: "apple", name: "Apple Powder", category: "Dehydrated", src: "/assets/products/apple/hero.png" },
+      { slug: "papaya", name: "Papaya Powder", category: "Dehydrated", src: "/assets/products/papaya/hero.png" },
+      { slug: "guava", name: "Guava Powder", category: "Dehydrated", src: "/assets/products/guava/hero.png" },
+      { slug: "orange", name: "Orange Powder", category: "Dehydrated", src: "/assets/products/orange/hero.png" },
+      { slug: "potato", name: "Potato Flakes/Powder", category: "Dehydrated", src: "/assets/products/potato/hero.png" },
+      { slug: "mushroom", name: "Dried Mushroom", category: "Dehydrated", src: "/assets/products/mushroom/hero.png" },
+      { slug: "okra", name: "Dried Okra (Lady Finger)", category: "Dehydrated", src: "/assets/products/okra/hero.png" },
+      { slug: "red-pepper", "name: "Red Bell Pepper", category: "Dehydrated", src: "/assets/products/red-pepper/hero.png" },
+      { slug: "green-pepper", "name: "Green Bell Pepper", category: "Dehydrated", src: "/assets/products/green-pepper/hero.png" },
+      { slug: "mint", "name: "Dried Mint", category: "Dehydrated", src: "/assets/products/mint/hero.png" },
+      { slug: "cucumber", "name: "Dried Cucumber", category: "Dehydrated", src: "/assets/products/cucumber/hero.png" },
+      { slug: "spray-dried", name: "Spray Dried Fruit Powders", category: "Spray Dried", src: "/assets/products/spray-dried/hero.png" },
+      { slug: "spices", name: "Indian Spices Range", category: "Spices", src: "/assets/products/spices/hero.png" },
       { slug: "facility-drying", name: "Drying Units", category: "facility", src: "/assets/gallery/drying-unit.jpg" },
       { slug: "facility-sorting", name: "Sorting & Grading", category: "facility", src: "/assets/gallery/sorting-line.jpg" },
       { slug: "facility-grinding", name: "Grinding Unit", category: "facility", src: "/assets/gallery/grinding-unit.jpg" },
@@ -208,10 +223,11 @@
     // 2. Helper Functions
     function getImageUrl(item) {
         if (item.src) return item.src;
+        // Fallback for missing src items
         return `/assets/products/${item.slug}/hero.png`;
     }
 
-    // 3. Render Function (Matches New Design)
+    // 3. Render Function (Injects HTML for new design)
     const grid = document.getElementById('galleryGrid');
     const emptyState = document.getElementById('emptyState');
     let activeFilter = 'all';
@@ -255,6 +271,7 @@
                     </div>
                 `;
                 
+                // Bind click event to open lightbox with correct list
                 card.addEventListener('click', () => openLightbox(filtered, index));
                 grid.appendChild(card);
             });
@@ -334,14 +351,6 @@
 
     // Initial Render
     renderGallery();
-
-    // 7. Site App Logic (For Header/Includes compatibility)
-    function siteApp() {
-        return {
-            mobileOpen: false,
-            init() {}
-        };
-    }
   </script>
 </body>
 </html>
