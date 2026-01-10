@@ -69,7 +69,7 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <style>
-    /* Exact CSS from Product Pages */
+    /* Sticky CTA & Layout */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
@@ -178,19 +178,33 @@
     function siteApp() {
       return {
         init() { },
-        whatsappNumber: "917738505687"
+        modalOpen: false,
+        modalProduct: null,
+        whatsappNumber: "917738505687",
+        whatsappDefaultText: "Hello! I’m interested in dehydrated products.",
+        get whatsappLink() {
+          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappDefaultText)}`;
+        },
+        whatsappLinkForProduct(productName) {
+          const base = `Hello! I’m interested in: ${productName}. Please share pricing, MOQ, and packing details.`;
+          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(base)}`;
+        }
       };
     }
     
     (function(){
       function setActiveNav(){
         var path = (location.pathname || "/").toLowerCase();
-        var links = document.querySelectorAll('#site-header a');
-        links.forEach(link => {
-            if(link.getAttribute('href') === path || (path.includes('contact') && link.getAttribute('href').includes('contact'))) {
-                link.classList.add("text-brand", "font-semibold");
-            }
-        });
+        // Wait for includes.js to load header, then run this
+        setTimeout(() => {
+            var links = document.querySelectorAll('#site-header a');
+            links.forEach(link => {
+                // Highlight if href contains 'contact'
+                if(link.getAttribute('href') && link.getAttribute('href').includes('contact')) {
+                    link.classList.add("text-brand", "font-semibold");
+                }
+            });
+        }, 100); 
       }
       if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
       else { setActiveNav(); }
