@@ -1,401 +1,267 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="/assets/css/base.css" rel="stylesheet"/>
-<!-- Favicon / Tab Icon -->
-<link href="/assets/atlas-agro-logo.png" rel="icon" type="image/png">
-<link href="/assets/atlas-agro-logo.png" rel="apple-touch-icon"/>
-<title>Industries We Serve | Atlas AgroFood</title>
-<meta content="Application-focused pages for food manufacturers, HoReCa and exporters. Explore recommended dehydrated and spray dried ingredients by industry." name="description"/>
-<meta content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" name="keywords"/>
-<meta content="#0f7a4a" name="theme-color"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://atlasagrofood.co.inindustries/" rel="canonical"/>
+  <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
+  
+  <title>Industries We Serve | Atlas AgroFood</title>
+  <meta name="description" content="Explore our dehydrated ingredients by industry: Food Manufacturing, HoReCa, Seasonings, Sauces, and Export solutions." />
+  <meta name="theme-color" content="#15803d" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-
-<!-- Social previews -->
-<meta content="website" property="og:type"/>
-<meta content="Atlas AgroFood" property="og:site_name"/>
-
-
-
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Dehydrated Vegetables &amp; Fruit Powders | Bulk B2B Supplier | Atlas AgroFood" name="twitter:title"/>
-<meta content="Manufacturer and supplier of dehydrated vegetables, fruit powders, flakes and blends for food processors, HORECA buyers, and exporters." name="twitter:description"/>
-<meta content="index,follow" name="robots">
-<!-- Open Graph (for WhatsApp/LinkedIn preview) -->
-
-
-
-
-<!-- Optional: add your logo image URL if you have one -->
-<!-- <meta property="og:image" content="https://atlasagrofood.co.inassets/atlas-agro-logo.png"> -->
-<!-- Open Graph -->
-
-
-
-<meta content="https://atlasagrofood.co.inassets/atlas-agro-logo.png" property="og:image"/>
-<!-- Tailwind (CDN) -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Atlas AgroFood",
-  "url": "https://atlasagrofood.co.in",
-  "description": "Manufacturer and bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets.",
-  "sameAs": [],
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "areaServed": ["IN", "Global"],
-    "availableLanguage": ["English", "Hindi", "Marathi"]
-  }]
-}
-</script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            DEFAULT: '#22b36a',
-            50: '#f5fbf7',
-            100: '#e7f7ee',
-            200: '#c9efd9',
-            300: '#9fe2bd',
-            400: '#5ecc8f',
-            500: '#22b36a',
-            600: '#129457',
-            700: '#0f7a4a',
-            800: '#0f623c',
-            900: '#0c4f31'
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            ink: '#1e293b',
+            slateish: '#64748b',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365', 
+            'earth-brown': '#5d4037',
+            'earth-green': '#556b2f',
           },
-          ink: '#0f172a',
-          slateish: '#475569'
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
         }
       }
     }
-  }
+  </script>
 
-  function galleryMagic() {
-    return {
-      isOpen: false,
-      activeIndex: 0,
-
-      items: [
-        { title: "Fruit Chips", desc: "Assorted chips & pieces", src: "assets/gallery/fruit-chips.png", alt: "Dehydrated Fruit Chips" },
-        { title: "Vegetable Mix", desc: "Ready meal blends", src: "assets/gallery/vegetable-mix.jpg", alt: "Dehydrated Vegetable Mix" },
-        { title: "Onion / Garlic", desc: "Powders & granules", src: "assets/gallery/onion-garlic.jpg", alt: "Onion Garlic Powder" },
-        { title: "Custom Blends", desc: "Soup & noodle mixes", src: "assets/gallery/custom-blends.jpg", alt: "Custom Food Blends" },
-        { title: "Herbs", desc: "Leafy greens & flakes", src: "assets/gallery/herbs.jpg", alt: "Dehydrated Herbs" },
-        { title: "Packaging", desc: "Bulk & retail options", src: "assets/gallery/packaging.jpg", alt: "Food Packaging" },
-        { title: "Quality Checks", desc: "Batch consistency", src: "assets/gallery/quality-checks.jpg", alt: "Quality Checks" },
-        { title: "Dispatch", desc: "Reliable shipments", src: "assets/gallery/dispatch.jpg", alt: "Dispatch & Logistics" },
-      ],
-
-      init() {
-        // Scroll reveal with IntersectionObserver
-        const cards = this.$root.querySelectorAll("button.group");
-        cards.forEach((el) => el.classList.add("reveal"));
-
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add("in");
-          });
-        }, { threshold: 0.12 });
-
-        cards.forEach((el) => io.observe(el));
-      },
-
-      open(i) {
-        this.activeIndex = i;
-        this.isOpen = true;
-        document.body.style.overflow = "hidden";
-      },
-      close() {
-        this.isOpen = false;
-        document.body.style.overflow = "";
-      },
-      activeItem() {
-        return this.items[this.activeIndex] || this.items[0];
-      },
-      next() {
-        this.activeIndex = (this.activeIndex + 1) % this.items.length;
-      },
-      prev() {
-        this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
-      }
-    };
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach((el) => io.observe(el));
-  });
-</script>
-<!-- Alpine.js -->
-<script defer="" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<style>
-
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .font-script { font-family: 'Dancing Script', cursive; }
+    .font-serif-display { font-family: 'Playfair Display', serif; }
+    
+    [x-cloak] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    
+    .card-hover { transition: all .3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -5px rgba(21, 128, 61, 0.15); border-color: #c5a365; }
+    
+    /* Sticky Mobile CTA */
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
-    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
     .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
-    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
-    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .sticky-cta .quote{background:#15803d;color:#ffffff}
+    
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid rgba(148,163,184,.3)}
     .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;font-weight:800}
+    .mobile-cta .quote{background:#15803d;color:#ffffff}
+    .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
+    
     @media (min-width: 768px){.mobile-cta{display:none}}
     @media (max-width: 767px){body{padding-bottom:70px}}
-    
 
-    
-    .card-hover{transition:all .25s ease;}
-    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
-
-/* Smooth scroll + nicer selection */
-    html { scroll-behavior: smooth; }
-    ::selection { background: rgba(34,179,106,.25); }
-    /* Gallery reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px) scale(.98);
-      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
-      will-change: transform, opacity;
-    }
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  
-    /* Gallery hover depth & tilt */
-    .gallery-card {
-      transform-style: preserve-3d;
-    }
-    .gallery-card:hover {
-      transform: translateY(-6px) scale(1.01);
-    }
-    .gallery-card img {
-      transition: transform .6s cubic-bezier(.2,.8,.2,1);
-    }
-    .gallery-card:hover img {
-      transform: scale(1.12);
-    }
-    /* Who we supply hover (match Products) */
-    .supply-card {
-      transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
-    }
-
-    .supply-card:hover {
-      background-color: rgb(34 179 106 / 0.08); /* brand green, subtle */
-      border-color: rgb(34 179 106 / 0.35);
-    }
-
-  /* Universal card hover */
-  .card-hover {
-    transition: background-color .25s ease,
-                border-color .25s ease,
-                transform .25s ease,
-                box-shadow .25s ease;
-  }
-  .card-hover:hover {
-    background-color: rgb(34 179 106 / 0.08);
-    border-color: rgb(34 179 106 / 0.35);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
-  }
-
-
-  /* Touch-friendly: show feedback on tap/focus as well */
-  .card-hover:active,
-  .card-hover:focus,
-  .card-hover:focus-visible {
-    background-color: rgb(34 179 106 / 0.10);
-    border-color: rgb(34 179 106 / 0.45);
-    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
-    outline: none;
-  }
-
-    .section-divider{
-      border: none;
-      border-top: 1px solid #e6edf3;
-      margin: 48px 0;
-    }
-
-    .section-faq-gap{
-      margin-top: 72px;
-    }
-    
-
-
-/* consistent breadcrumb pill */
-.breadcrumb-pill{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:10px 14px;border-radius:999px;
-  background: #ffffff;
-  border:1px solid rgba(15,23,42,0.08);
-  box-shadow: 0 8px 22px rgba(15,23,42,0.06);
-  color: rgba(15,23,42,0.75);
-  font-weight: 600;
-}
-.breadcrumb-pill a{color:inherit;text-decoration:none;}
-.breadcrumb-pill a:hover{text-decoration:underline;}
-.breadcrumb-pill .sep{opacity:.55;font-weight:700;}
-
-  .breadcrumb-pill .current{color: rgb(34 179 106 / var(--tw-text-opacity, 1)); font-weight:700;}
-</style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What products do you supply under dehydrated range?", "acceptedAnswer": {"@type": "Answer", "text": "Dehydrated vegetables, fruit powders, flakes and custom blends depending on seasonal availability and requirement."}}, {"@type": "Question", "name": "Can you share moisture/specification sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share typical specs and can align to buyer specs where feasible."}}, {"@type": "Question", "name": "How do I request a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Use the WhatsApp button on this page and send product + MOQ + packaging + destination details for a quick quotation."}}, {"@type": "Question", "name": "Do you supply for food processing and HORECA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply B2B ingredients for food manufacturers, HORECA and exporters."}}]}</script>
-<meta content="https://atlasagrofood.co.inassets/atlas-agro-logo.png" name="twitter:image"/> <!-- schema-organization -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://atlasagrofood.co.in#organization", "name": "Atlas AgroFood Private Ltd", "url": "https://atlasagrofood.co.in", "logo": "https://atlasagrofood.co.inassets/atlas-agro-logo.png", "email": "sales@atlasagrofood.co.in", "telephone": "+91-7738505687"}</script>
-<!-- schema-website -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://atlasagrofood.co.in#website", "url": "https://atlasagrofood.co.in", "name": "Atlas AgroFood", "publisher": {"@id": "https://atlasagrofood.co.in#organization"}, "inLanguage": "en"}</script>
-<!-- schema-webpage:https://atlasagrofood.co.inproducts/dehydrated-products.html -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://atlasagrofood.co.inproducts/dehydrated-products.html#webpage", "url": "https://atlasagrofood.co.inproducts/dehydrated-products.html", "name": "Dehydrated Vegetables & Fruit Powders | Bulk B2B Supplier | Atlas AgroFood", "description": "Manufacturer and supplier of dehydrated vegetables, fruit powders, flakes and blends for food processors, HORECA buyers, and exporters.", "isPartOf": {"@id": "https://atlasagrofood.co.in#website"}, "about": {"@id": "https://atlasagrofood.co.in#organization"}, "inLanguage": "en"}</script>
-<link href="/site.webmanifest" rel="manifest"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://atlasagrofood.co.in"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Products", "url": "https://atlasagrofood.co.inproducts/"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Dehydrated Products", "url": "https://atlasagrofood.co.inproducts/dehydrated-products.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "Spray Dried Products", "url": "https://atlasagrofood.co.inproducts/spray-dried.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Spices", "url": "https://atlasagrofood.co.inproducts/spices.html"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Banana Powder", "brand": {"@type": "Brand", "name": "Atlas AgroFood"}, "url": "https://atlasagrofood.co.inproducts/banana.html", "category": "Dehydrated Products", "description": "Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label & export-ready.", "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "INR", "price": "0", "url": "https://atlasagrofood.co.incontact.html"}}</script>
-<script type="application/ld+json">
+    /* Reveal Animation */
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
+  "@type": "ItemList",
+  "name": "Industries We Serve",
+  "description": "Sectors supplied by Atlas AgroFood including Food Manufacturing, HoReCa, and Export.",
   "itemListElement": [
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
-      "item": "https://atlasagrofood.co.in"
+      "name": "Soups, Noodles & Ready Meals",
+      "url": "https://atlasagro.co.in/industries/soups-noodles-ready-meals.html"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Industries",
-      "item": "https://atlasagrofood.co.inindustries/"
+      "name": "Seasonings & Spice Blends",
+      "url": "https://atlasagro.co.in/industries/seasoning-and-spice-blends.html"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Industries We Serve",
-      "item": "https://atlasagrofood.co.inindustries/"
+      "name": "Bakery & Savoury Snacks",
+      "url": "https://atlasagro.co.in/industries/bakery-and-savoury-snacks.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Sauces & Dressings",
+      "url": "https://atlasagro.co.in/industries/sauces-dressings-condiments.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Food Manufacturing & Export",
+      "url": "https://atlasagro.co.in/industries/food-manufacturing-and-export.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "HoReCa & Institutional Buyers",
+      "url": "https://atlasagro.co.in/industries/horeca-institutional-buyers.html"
     }
   ]
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do you supply for manufacturers and exporters?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we support B2B bulk supply and export-ready requirements based on product and destination."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I request a custom blend for my application?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, share your use-case and target profile; we can discuss options and feasibility."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get a quotation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Share product list, specs, packing and monthly volume for pricing and availability."
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Atlas AgroFood Pvt Ltd",
-    "url":"https://atlasagrofood.co.in",
-    "contactPoint":{
-      "@type":"ContactPoint",
-      "contactType":"sales",
-      "url":"https://atlasagrofood.co.incontact.html"
-    }
-  }
+</head>
+
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
+
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Quote</a>
+      <a class="wa" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main class="flex-grow pt-12 pb-24 px-4">
+    
+    <section class="max-w-7xl mx-auto text-center mb-16 relative">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-full bg-radial-gradient from-white/50 to-transparent -z-10 pointer-events-none"></div>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-earth-gold/30 bg-white/50 text-xs text-brand-800 font-bold mb-4 uppercase tracking-widest">
+        Applications
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-serif-display font-bold text-brand-900 leading-tight">
+        Industries We <span class="text-earth-gold italic">Serve</span>
+      </h1>
+      
+      <p class="mt-6 text-stone-600 text-lg max-w-2xl mx-auto leading-relaxed">
+        Ingredients designed for consistent taste, low moisture, and stable shelf life. 
+        Select your industry to see recommended dehydrated products.
+      </p>
+    </section>
+
+    <section class="max-w-7xl mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      
+      <a href="/industries/soups-noodles-ready-meals.html" class="reveal group block bg-white p-8 rounded-[2rem] border border-stone-100 shadow-sm card-hover relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -mr-8 -mt-8 transition-colors group-hover:bg-earth-gold/10"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-brand-50 text-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">🍜</div>
+          <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-2 group-hover:text-earth-gold transition">Soups, Noodles & Ready Meals</h2>
+          <p class="text-stone-500 mb-6 text-sm leading-relaxed">Perfect for tastemakers, seasoning sachets, and instant premixes requiring consistent flavor profiles.</p>
+          <div class="inline-flex items-center text-sm font-bold text-brand-700 uppercase tracking-wide group-hover:underline decoration-earth-gold underline-offset-4">
+            View Solutions <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/industries/seasoning-and-spice-blends.html" class="reveal group block bg-white p-8 rounded-[2rem] border border-stone-100 shadow-sm card-hover relative overflow-hidden" style="transition-delay: 100ms;">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -mr-8 -mt-8 transition-colors group-hover:bg-earth-gold/10"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-brand-50 text-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">🌶️</div>
+          <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-2 group-hover:text-earth-gold transition">Seasonings & Spice Blends</h2>
+          <p class="text-stone-500 mb-6 text-sm leading-relaxed">High-potency garlic and onion powders for dry rubs, masala blends, and sprinkler spices.</p>
+          <div class="inline-flex items-center text-sm font-bold text-brand-700 uppercase tracking-wide group-hover:underline decoration-earth-gold underline-offset-4">
+            View Solutions <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/industries/bakery-and-savoury-snacks.html" class="reveal group block bg-white p-8 rounded-[2rem] border border-stone-100 shadow-sm card-hover relative overflow-hidden" style="transition-delay: 200ms;">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -mr-8 -mt-8 transition-colors group-hover:bg-earth-gold/10"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-brand-50 text-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">🥨</div>
+          <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-2 group-hover:text-earth-gold transition">Bakery & Savoury Snacks</h2>
+          <p class="text-stone-500 mb-6 text-sm leading-relaxed">Savoury coatings for chips, nachos, and crackers. Fruit powders for natural bakery flavoring.</p>
+          <div class="inline-flex items-center text-sm font-bold text-brand-700 uppercase tracking-wide group-hover:underline decoration-earth-gold underline-offset-4">
+            View Solutions <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/industries/sauces-dressings-condiments.html" class="reveal group block bg-white p-8 rounded-[2rem] border border-stone-100 shadow-sm card-hover relative overflow-hidden" style="transition-delay: 300ms;">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -mr-8 -mt-8 transition-colors group-hover:bg-earth-gold/10"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-brand-50 text-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">🥣</div>
+          <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-2 group-hover:text-earth-gold transition">Sauces & Dressings</h2>
+          <p class="text-stone-500 mb-6 text-sm leading-relaxed">Rehydratable flakes and fine powders for ketchup, mayonnaise, dips, and salad dressings.</p>
+          <div class="inline-flex items-center text-sm font-bold text-brand-700 uppercase tracking-wide group-hover:underline decoration-earth-gold underline-offset-4">
+            View Solutions <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/industries/food-manufacturing-and-export.html" class="reveal group block bg-white p-8 rounded-[2rem] border border-stone-100 shadow-sm card-hover relative overflow-hidden" style="transition-delay: 400ms;">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -mr-8 -mt-8 transition-colors group-hover:bg-earth-gold/10"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-brand-50 text-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">🏭</div>
+          <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-2 group-hover:text-earth-gold transition">Manufacturing & Export</h2>
+          <p class="text-stone-500 mb-6 text-sm leading-relaxed">Bulk supply with export-ready documentation (COA, Phyto) and private label options.</p>
+          <div class="inline-flex items-center text-sm font-bold text-brand-700 uppercase tracking-wide group-hover:underline decoration-earth-gold underline-offset-4">
+            View Solutions <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/industries/horeca-institutional-buyers.html" class="reveal group block bg-white p-8 rounded-[2rem] border border-stone-100 shadow-sm card-hover relative overflow-hidden" style="transition-delay: 500ms;">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -mr-8 -mt-8 transition-colors group-hover:bg-earth-gold/10"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-brand-50 text-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">👨‍🍳</div>
+          <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-2 group-hover:text-earth-gold transition">HoReCa & Institutions</h2>
+          <p class="text-stone-500 mb-6 text-sm leading-relaxed">Cost-effective bulk packs for hotels, restaurants, catering, and institutional kitchens.</p>
+          <div class="inline-flex items-center text-sm font-bold text-brand-700 uppercase tracking-wide group-hover:underline decoration-earth-gold underline-offset-4">
+            View Solutions <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+    <section class="max-w-4xl mx-auto mt-20">
+      <div class="bg-brand-900 rounded-[3rem] p-10 text-center relative overflow-hidden shadow-2xl">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+        <div class="relative z-10">
+          <h2 class="text-3xl font-serif-display font-bold text-earth-gold mb-4">Don't see your industry?</h2>
+          <p class="text-brand-100 mb-8 max-w-xl mx-auto">
+            We specialize in custom dehydration. If you have a specific requirement or a new product idea, let's discuss feasibility.
+          </p>
+          <a href="/contact.html" class="inline-block bg-white text-brand-900 px-8 py-3 rounded-xl font-bold hover:bg-earth-gold hover:text-white transition shadow-lg">
+            Consult with our Expert
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <script>
+    // Simple Reveal Animation Script
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
   </script>
-</meta></link></head>
-<body><div id="site-header"></div>
-
-<!-- Top announcement -->
-
-
-
-
-<main class="max-w-7xl mx-auto px-4 py-10">
-<div class="mx-auto max-w-6xl px-4 py-10 md:py-12">
-<div aria-label="Breadcrumb" class="breadcrumb-pill"><a href="/">Home</a><span class="sep">/</span><span class="current">Industries</span></div>
-<div class="mt-4">
-<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Industries We Serve</h1>
-<p<p>Commonly used products include <a href="/products/dehydrated-products.html">dehydrated powders &amp; flakes</a>. Procurement teams can also review our <a href="/buyers-guide/mesh-size-grade-guide-powder-flakes-granules.html">mesh &amp; grade guide</a>.
-<p class="mt-3 text-slateish max-w-3xl">Application-focused pages for food manufacturers, HoReCa and exporters. Explore recommended dehydrated and spray dried ingredients by industry.</p>
-</p<p></div>
-<section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
-<h2 class="text-2xl font-extrabold tracking-tight">Browse by application</h2>
-<p<p>Commonly used products include <a href="/products/dehydrated-products.html">dehydrated powders &amp; flakes</a>. Procurement teams can also review our <a href="/buyers-guide/mesh-size-grade-guide-powder-flakes-granules.html">mesh &amp; grade guide</a>.
-<p class="mt-2 text-slateish">Choose an industry to see recommended products and typical buyer requirements.</p>
-<div class="mt-6 grid md:grid-cols-2 gap-5">
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/soups-noodles-ready-meals.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Soups, Noodles &amp; Ready Meals</div>
-<div class="mt-2 text-sm text-slateish">Seasoning sachets, premixes and ready meals →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/seasoning-and-spice-blends.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Seasonings &amp; Spice Blends</div>
-<div class="mt-2 text-sm text-slateish">Blends, rubs and flavour systems →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/bakery-and-savoury-snacks.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Bakery &amp; Savoury Snacks</div>
-<div class="mt-2 text-sm text-slateish">Snack coatings and savoury mixes →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/sauces-dressings-condiments.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Sauces, Dressings &amp; Condiments</div>
-<div class="mt-2 text-sm text-slateish">Sauce bases and condiments →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/food-manufacturing-and-export.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Food Manufacturing &amp; Bulk Export</div>
-<div class="mt-2 text-sm text-slateish">Bulk supply and export sourcing →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/horeca-institutional-buyers.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">HoReCa &amp; Institutional Buyers</div>
-<div class="mt-2 text-sm text-slateish">Hotels, restaurants and caterers →</div>
-</a>
-</div>
-</p<p></section>
-</div>
-</main>
-
-<script src="/assets/js/cta-tracking.js"></script>
-
-<div id="site-footer"></div>
-<script defer="" src="/assets/js/includes.js"></script>
 </body>
 </html>
