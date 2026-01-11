@@ -12,6 +12,19 @@
   
   <link rel="canonical" href="https://atlasagro.co.in/products/marigold.html" />
   
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="Atlas AgroFood" />
+  <meta property="og:title" content="Marigold Powder | Natural Color & Lutein | Atlas AgroFood" />
+  <meta property="og:description" content="Premium dehydrated Marigold Flower powder. Rich source of Lutein for nutraceutical extraction, natural food coloring, and poultry feed pigment." />
+  <meta property="og:url" content="https://atlasagro.co.in/products/marigold.html" />
+  <meta property="og:image" content="https://atlasagro.co.in/assets/products/marigold/hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Marigold Powder | Natural Color & Lutein | Atlas AgroFood" />
+  <meta name="twitter:description" content="Premium dehydrated Marigold Flower powder. Rich source of Lutein for nutraceutical extraction, natural food coloring, and poultry feed pigment." />
+  <meta name="twitter:image" content="https://atlasagro.co.in/assets/products/marigold/hero.png" />
+
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -77,12 +90,26 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Dehydrated Marigold Powder",
-    "image": "https://atlasagro.co.in/assets/products/marigold/hero.png",
-    "description": "High-grade Marigold powder rich in Lutein. Used for extraction, natural food coloring, and poultry feed additives.",
-    "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
-    "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "INR", "price": "0" }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atlasagro.co.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://atlasagro.co.in/products/" },
+          { "@type": "ListItem", "position": 3, "name": "Marigold", "item": "https://atlasagro.co.in/products/marigold.html" }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Dehydrated Marigold Powder",
+        "image": [
+          "https://atlasagro.co.in/assets/products/marigold/hero.png"
+        ],
+        "description": "Premium dehydrated Marigold Flower powder rich in Lutein & Zeaxanthin. Used for nutraceutical extraction, natural food coloring, and poultry feed pigment.",
+        "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+        "category": "Dehydrated Flower Powder"
+      }
+    ]
   }
   </script>
 </head>
@@ -109,6 +136,8 @@
         <a href="/" class="hover:text-brand-700">Home</a>
         <span class="mx-2">/</span>
         <a href="/products/" class="hover:text-brand-700">Products</a>
+        <span class="mx-2 text-stone-300">/</span>
+        <a href="/products/dehydrated-products.html" class="text-slateish hover:text-brand-700 font-bold">Dehydrated Products</a>
         <span class="mx-2 text-stone-300">/</span>
         <span class="text-brand-800 font-bold">Marigold</span>
       </nav>
@@ -149,7 +178,29 @@
       </div>
     </section>
 
-    <section class="max-w-5xl mx-auto mb-20">
+    
+    <!-- Product Images -->
+    <section id="product-images" class="max-w-5xl mx-auto mb-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-end justify-between gap-4 mb-6">
+          <div>
+            <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Gallery</div>
+            <h2 class="text-2xl font-serif-display font-bold text-brand-900">Product Images</h2>
+            <p class="text-stone-600 mt-2 text-sm">Swipe or use arrows to browse.</p>
+          </div>
+
+          <div class="hidden md:flex gap-2" x-data>
+            <button type="button" class="px-4 py-2 rounded-2xl border border-stone-200 hover:border-stone-300 bg-white text-brand-900"
+                    @click="$dispatch('gallery-prev')" aria-label="Previous image">‹</button>
+            <button type="button" class="px-4 py-2 rounded-2xl border border-stone-200 hover:border-stone-300 bg-white text-brand-900"
+                    @click="$dispatch('gallery-next')" aria-label="Next image">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<section class="max-w-5xl mx-auto mb-20">
       <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm">
         <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">Product Specifications</h2>
         <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
@@ -201,6 +252,122 @@
         </div>
       </div>
     </section>
+
+  
+    <!-- Why Choose Us (separate from Applications) -->
+    <section id="why-choose-us" class="max-w-5xl mx-auto mb-20 mt-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm card-hover">
+        <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Why Choose Us</div>
+        <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">Quality & Pigment Stability</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">🛡️</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">Low-Temp Dehydration</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Helps preserve natural pigments and aroma for industrial applications.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">🔬</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">Mesh & Batch Consistency</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Uniform milling (40–80 mesh) with controlled moisture for repeatable results.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">🌿</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">Clean, Sorted Petals</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Careful cleaning and sorting reduces impurities and supports extraction yield.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">📦</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">Bulk Packaging</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">25kg HDPE bags suitable for manufacturers, integrators, and exporters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Related Products -->
+    <section id="related-products" class="max-w-7xl mx-auto mb-24">
+      <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-10 shadow-sm">
+        <div class="flex items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Explore</div>
+            <h2 class="text-2xl md:text-3xl font-serif-display font-bold text-brand-900">Related Products</h2>
+            <p class="mt-3 text-stone-600 max-w-2xl">
+              Need more natural powders for color, aroma, or extraction use? Explore these popular options.
+            </p>
+          </div>
+          <a href="/products/" class="hidden md:inline-flex px-5 py-2.5 rounded-2xl border border-stone-200 hover:border-stone-300 text-brand-900 bg-white">
+            View All Products
+          </a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/products/turmeric.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+              <span class="text-2xl">🟡</span>
+            </div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Turmeric Powder</h3>
+            <p class="text-sm text-stone-600 mt-2">Natural color, food processing, nutraceutical use.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+
+          <a href="/products/curry-leaves.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+              <span class="text-2xl">🌿</span>
+            </div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Curry Leaves Powder</h3>
+            <p class="text-sm text-stone-600 mt-2">Aroma-rich herb powder for blends and RTC foods.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+
+          <a href="/products/coriander.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+              <span class="text-2xl">🧂</span>
+            </div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Coriander Powder</h3>
+            <p class="text-sm text-stone-600 mt-2">Core base spice for masalas and seasonings.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+
+          <a href="/products/green-chilli.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4">
+              <span class="text-2xl">🌶️</span>
+            </div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Green Chilli</h3>
+            <p class="text-sm text-stone-600 mt-2">Consistent heat for snacks, sauces, and mixes.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+        </div>
+
+        <div class="mt-8 md:hidden">
+          <a href="/products/" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-stone-200 hover:border-stone-300 text-brand-900 bg-white">
+            View All Products
+          </a>
+        </div>
+      </div>
+    </section>
+
 
   </main>
 
