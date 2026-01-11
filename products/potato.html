@@ -12,6 +12,19 @@
   
   <link rel="canonical" href="https://atlasagro.co.in/products/potato.html" />
   
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="Atlas AgroFood" />
+  <meta property="og:title" content="Potato Powder, Flakes & Granules | Bulk Supplier | Atlas AgroFood" />
+  <meta property="og:description" content="Dehydrated potato powder and flakes for bakery binding, snack seasoning, and instant mash. Bulk B2B supply with consistent moisture and mesh size." />
+  <meta property="og:url" content="https://atlasagro.co.in/products/potato.html" />
+  <meta property="og:image" content="https://atlasagro.co.in/assets/products/potato/hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Potato Powder, Flakes & Granules | Atlas AgroFood" />
+  <meta name="twitter:description" content="Dehydrated potato powder and flakes for bakery binding, snack seasoning, and instant mash. Bulk supply." />
+  <meta name="twitter:image" content="https://atlasagro.co.in/assets/products/potato/hero.png" />
+
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -77,22 +90,27 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Dehydrated Potato Powder",
-    "image": "https://atlasagro.co.in/assets/products/potato/hero.png",
-    "description": "Bulk dehydrated potato powder and flakes for food binding, bakery, and snack seasoning applications.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Atlas AgroFood"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "url": "https://atlasagro.co.in/products/potato.html",
-      "priceCurrency": "INR",
-      "lowPrice": "150", 
-      "highPrice": "300", 
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atlasagro.co.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://atlasagro.co.in/products/" },
+          { "@type": "ListItem", "position": 3, "name": "Potato", "item": "https://atlasagro.co.in/products/potato.html" }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Dehydrated Potato (Powder & Flakes)",
+        "image": [
+          "https://atlasagro.co.in/assets/products/potato/hero.png"
+        ],
+        "description": "Dehydrated potato powder and flakes for bakery binding, snack seasoning, and instant mash. Bulk B2B supply with consistent moisture and mesh size.",
+        "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+        "sku": "POT-001",
+        "category": "Dehydrated Vegetable"
+      }
+    ]
   }
   </script>
 </head>
@@ -113,16 +131,29 @@
   <div id="site-header"></div>
 
   <main class="flex-grow pt-8 pb-20 px-4">
-    
+
     <div class="max-w-7xl mx-auto mb-8">
-      <nav class="flex text-sm text-slateish bg-white px-4 py-2 rounded-full border border-stone-200 inline-flex shadow-sm">
+      <nav class="inline-flex items-center gap-2 text-sm text-slateish
+           bg-white px-5 py-2 rounded-2xl
+           border border-stone-200 shadow-sm
+           whitespace-nowrap">
+
         <a href="/" class="hover:text-brand-700">Home</a>
-        <span class="mx-2">/</span>
+        <span class="text-stone-300">/</span>
+
         <a href="/products/" class="hover:text-brand-700">Products</a>
-        <span class="mx-2 text-stone-300">/</span>
-        <span class="text-brand-800 font-bold">Potato</span>
+        <span class="text-stone-300">/</span>
+
+        <a href="/products/dehydrated-products.html"
+           class="hover:text-brand-700 font-medium">
+          Dehydrated Products
+        </a>
+        <span class="text-stone-300">/</span>
+
+        <span class="text-brand-800 font-semibold">Potato</span>
       </nav>
     </div>
+
 
     <section class="max-w-7xl mx-auto mb-16 grid md:grid-cols-2 gap-12 items-center">
       <div class="order-2 md:order-1 relative">
@@ -167,7 +198,81 @@
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto mb-20">
+    
+    <!-- Product Images -->
+    <section id="product-images" class="max-w-5xl mx-auto mb-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-end justify-between gap-4 mb-6">
+          <div>
+            <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Gallery</div>
+            <h2 class="text-2xl font-serif-display font-bold text-brand-900">Product Images</h2>
+            <p class="text-stone-600 mt-2 text-sm">Use arrows or dots to browse.</p>
+          </div>
+
+          <div class="hidden md:flex gap-2" x-data>
+            <button type="button"
+              class="px-4 py-2 rounded-2xl border border-stone-200 hover:border-stone-300 bg-white text-brand-900"
+              @click="$dispatch('gallery-prev')" aria-label="Previous image">‹</button>
+            <button type="button"
+              class="px-4 py-2 rounded-2xl border border-stone-200 hover:border-stone-300 bg-white text-brand-900"
+              @click="$dispatch('gallery-next')" aria-label="Next image">›</button>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-2xl border border-stone-100"
+             x-data="{
+               active: 0,
+               slides: [
+                 { src: '/assets/products/potato/thumb-1.png', alt: 'Potato Powder & Flakes - Bulk Supply' },
+                 { src: '/assets/products/potato/thumb-2.png', alt: 'Potato Flakes - Instant Mash Grade' },
+                 { src: '/assets/products/potato/thumb-3.png', alt: 'Potato Powder - Bakery & Snack Use' }
+               ],
+               next() { this.active = (this.active + 1) % this.slides.length },
+               prev() { this.active = (this.active - 1 + this.slides.length) % this.slides.length },
+               go(i) { this.active = i }
+             }"
+             @gallery-next.window="next()"
+             @gallery-prev.window="prev()"
+             @keydown.window.left.prevent="prev()"
+             @keydown.window.right.prevent="next()">
+
+          <div class="aspect-[16/9] md:aspect-[21/9] bg-stone-50 relative">
+            <template x-for="(s, i) in slides" :key="i">
+              <img
+                x-show="active === i"
+                x-transition.opacity.duration.250ms
+                :src="s.src"
+                :alt="s.alt"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </template>
+          </div>
+
+          <!-- Mobile arrows -->
+          <button type="button"
+                  class="md:hidden absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 border border-stone-200 flex items-center justify-center"
+                  @click="prev()" aria-label="Previous image">‹</button>
+          <button type="button"
+                  class="md:hidden absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 border border-stone-200 flex items-center justify-center"
+                  @click="next()" aria-label="Next image">›</button>
+
+          <!-- Dots -->
+          <div class="flex justify-center gap-2 py-4 bg-white">
+            <template x-for="(s, i) in slides" :key="'dot-'+i">
+              <button type="button"
+                      class="w-2.5 h-2.5 rounded-full border border-stone-300"
+                      :class="active === i ? 'bg-brand-600' : 'bg-white'"
+                      @click="go(i)"
+                      :aria-label="'Go to image ' + (i+1)"></button>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<section class="max-w-4xl mx-auto mb-20">
       <div class="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
         <div class="bg-brand-50 p-6 border-b border-stone-100">
           <h2 class="text-2xl font-serif-display font-bold text-brand-900">Technical Specifications</h2>
@@ -203,8 +308,8 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto mb-20">
-      <h2 class="text-3xl font-serif-display font-bold text-brand-900 mb-8 text-center">Common Applications</h2>
+    <section id="applications" class="max-w-7xl mx-auto mb-20">
+      <h2 class="text-3xl font-serif-display font-bold text-brand-900 mb-8 text-center">Applications</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-white p-6 rounded-3xl border border-stone-200 card-hover text-center">
           <div class="text-4xl mb-3">🍪</div>
@@ -228,6 +333,105 @@
         </div>
       </div>
     </section>
+
+  
+    
+    <!-- Why Choose Us -->
+    <section id="why-choose-us" class="max-w-5xl mx-auto mb-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm card-hover">
+        <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Why Choose Us</div>
+        <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">Excellent Water Absorption, Neutral Taste, Consistent Mesh</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0"><span class="text-2xl">💧</span></div>
+            <div>
+              <h3 class="font-bold text-brand-900">High Absorption</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Acts as a natural binder and thickener in mixes and doughs.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0"><span class="text-2xl">⚖️</span></div>
+            <div>
+              <h3 class="font-bold text-brand-900">Consistent Mesh / Cut</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Powder and flakes with reliable sizing for predictable results.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0"><span class="text-2xl">🧼</span></div>
+            <div>
+              <h3 class="font-bold text-brand-900">Clean Processing</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Food-grade handling suitable for large-scale supply chains.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0"><span class="text-2xl">📦</span></div>
+            <div>
+              <h3 class="font-bold text-brand-900">Bulk Packing</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">20–25kg bags with liners, ideal for manufacturers and exporters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section id="related-products" class="max-w-7xl mx-auto mb-24">
+      <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-10 shadow-sm">
+        <div class="flex items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Explore</div>
+            <h2 class="text-2xl md:text-3xl font-serif-display font-bold text-brand-900">Related Products</h2>
+            <p class="mt-3 text-stone-600 max-w-2xl">
+              Explore other dehydrated ingredients used in snacks, soups, and ready-to-cook formulations.
+            </p>
+          </div>
+          <a href="/products/" class="hidden md:inline-flex px-5 py-2.5 rounded-2xl border border-stone-200 hover:border-stone-300 text-brand-900 bg-white">
+            View All Products
+          </a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/products/onion.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4"><span class="text-2xl">🧅</span></div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Onion</h3>
+            <p class="text-sm text-stone-600 mt-2">Base aroma for soups and seasonings.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+
+          <a href="/products/garlic.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4"><span class="text-2xl">🧄</span></div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Garlic</h3>
+            <p class="text-sm text-stone-600 mt-2">Savory note for snacks and gravies.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+
+          <a href="/products/mixed-veg.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4"><span class="text-2xl">🥕</span></div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Mixed Veg</h3>
+            <p class="text-sm text-stone-600 mt-2">Blends for noodles, soups and mixes.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+
+          <a href="/products/tomato.html" class="group block rounded-3xl border border-stone-200 hover:border-stone-300 bg-white p-6 card-hover">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-4"><span class="text-2xl">🍅</span></div>
+            <h3 class="font-bold text-brand-900 group-hover:underline">Tomato</h3>
+            <p class="text-sm text-stone-600 mt-2">Color and tang for soups and seasonings.</p>
+            <div class="mt-4 text-sm font-semibold text-brand-700">Explore →</div>
+          </a>
+        </div>
+
+        <div class="mt-8 md:hidden">
+          <a href="/products/" class="inline-flex w-full justify-center px-5 py-3 rounded-2xl border border-stone-200 hover:border-stone-300 text-brand-900 bg-white">
+            View All Products
+          </a>
+        </div>
+      </div>
+    </section>
+
 
   </main>
 
