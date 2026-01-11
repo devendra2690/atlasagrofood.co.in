@@ -102,12 +102,22 @@
   }
   </script>
   <script>
-    (function () {
-      // Collect product cards by scanning anchors that contain an H3 (your current pattern)
+    document.addEventListener("DOMContentLoaded", function () {
+      const root = document.getElementById("product-search-root");
+      const input = document.getElementById("productSearchInput");
+      const dropdown = document.getElementById("productSearchDropdown");
+      const resultsBox = document.getElementById("productSearchResults");
+      const clearBtn = document.getElementById("productSearchClear");
+
+      // If any element is missing, stop silently (prevents console crashes)
+      if (!root || !input || !dropdown || !resultsBox || !clearBtn) {
+        console.warn("[Product Search] Missing elements. Check IDs and placement.");
+        return;
+      }
+
       const productAnchors = Array.from(document.querySelectorAll("a"))
         .filter(a => a.querySelector("h3") && a.getAttribute("href") && a.getAttribute("href").includes("/products/"));
 
-      // Try to infer category from the nearest section heading
       function getCategory(el) {
         const section = el.closest("section");
         if (!section) return "Products";
@@ -125,12 +135,6 @@
           href: a.getAttribute("href")
         };
       }).filter(p => p.name && p.href);
-
-      const root = document.getElementById("product-search-root");
-      const input = document.getElementById("productSearchInput");
-      const dropdown = document.getElementById("productSearchDropdown");
-      const resultsBox = document.getElementById("productSearchResults");
-      const clearBtn = document.getElementById("productSearchClear");
 
       function closeDropdown() {
         dropdown.classList.add("hidden");
@@ -159,28 +163,26 @@
           return;
         }
 
-        const html = list.slice(0, 12).map((p, idx) => {
-          return `
-            <a href="${escapeHtml(p.href)}"
-               class="block px-4 py-3 hover:bg-stone-50 transition ${idx === 0 ? "bg-brand-50" : ""}">
-              <div class="flex items-start justify-between gap-3">
-                <div>
-                  <div class="font-bold text-brand-900">${escapeHtml(p.name)}</div>
-                  <div class="text-xs text-stone-500 mt-0.5">
-                    <span class="inline-flex items-center gap-1">
-                      <span class="text-[11px] px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-200">
-                        ${escapeHtml(p.category)}
-                      </span>
-                      ${p.meta ? `<span class="text-stone-400">•</span><span>${escapeHtml(p.meta)}</span>` : ""}
+        resultsBox.innerHTML = list.slice(0, 12).map((p, idx) => `
+          <a href="${escapeHtml(p.href)}"
+             class="block px-4 py-3 hover:bg-stone-50 transition ${idx === 0 ? "bg-brand-50" : ""}">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-bold text-brand-900">${escapeHtml(p.name)}</div>
+                <div class="text-xs text-stone-500 mt-0.5">
+                  <span class="inline-flex items-center gap-1">
+                    <span class="text-[11px] px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-200">
+                      ${escapeHtml(p.category)}
                     </span>
-                  </div>
+                    ${p.meta ? `<span class="text-stone-400">•</span><span>${escapeHtml(p.meta)}</span>` : ""}
+                  </span>
                 </div>
-                <span class="text-stone-400">↗</span>
               </div>
-            </a>`;
-        }).join("");
+              <span class="text-stone-400">↗</span>
+            </div>
+          </a>
+        `).join("");
 
-        resultsBox.innerHTML = html;
         openDropdown();
       }
 
@@ -220,12 +222,10 @@
         input.focus();
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener("click", (e) => {
         if (!root.contains(e.target)) closeDropdown();
       });
-
-    })();
+    });
   </script>
 </head>
 
