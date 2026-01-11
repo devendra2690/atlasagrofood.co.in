@@ -110,80 +110,99 @@
       const resultsBox = document.getElementById("productSearchResults");
       const clearBtn = document.getElementById("productSearchClear");
 
-      // Prevent crashes if HTML block is not present on some pages
-      if (!root || !input || !dropdown || !resultsBox || !clearBtn) {
-        console.warn("[Product Search] Missing elements. Ensure the search HTML block is present and IDs match.");
-        return;
-      }
+      if (!root || !input || !dropdown || !resultsBox || !clearBtn) return;
 
-      // 1) Collect all candidate links that look like product pages
-      // Works for: mint.html, ./mint.html, /products/mint.html, products/mint.html, etc.
-      const productAnchors = Array.from(document.querySelectorAll("a"))
-        .filter(a => {
-          const href = (a.getAttribute("href") || "").trim();
+      // ✅ MASTER PRODUCT INDEX (site-wide)
+      // Add more items here anytime.
+      const STATIC_PRODUCTS = [
+        // Greens & Herbs
+        { name: "Mint", category: "Leafy Greens & Herbs", meta: "Dehydrated Leaves / Powder", href: "/products/mint.html" },
+        { name: "Spinach", category: "Leafy Greens & Herbs", meta: "Dehydrated Leaves / Powder", href: "/products/spinach.html" },
+        { name: "Methi", category: "Leafy Greens & Herbs", meta: "Dehydrated Leaves / Powder", href: "/products/methi.html" },
+        { name: "Moringa", category: "Leafy Greens & Herbs", meta: "Leaves / Powder", href: "/products/moringa.html" },
+        { name: "Curry Leaves", category: "Leafy Greens & Herbs", meta: "Leaves / Powder", href: "/products/curry-leaves.html" },
+        { name: "Coriander", category: "Leafy Greens & Herbs", meta: "Leaves / Powder", href: "/products/coriander.html" },
 
-          // ignore empty, anchors, tel/mail, external
-          if (!href) return false;
-          if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return false;
+        // Vegetables
+        { name: "Beetroot", category: "Dehydrated Vegetables", meta: "Slices / Flakes / Powder", href: "/products/beetroot.html" },
+        { name: "Onion", category: "Dehydrated Vegetables", meta: "Flakes / Powder", href: "/products/onion.html" },
+        { name: "Tomato", category: "Dehydrated Vegetables", meta: "Powder / Flakes", href: "/products/tomato.html" },
+        { name: "Potato", category: "Dehydrated Vegetables", meta: "Flakes / Powder", href: "/products/potato.html" },
+        { name: "Okra", category: "Dehydrated Vegetables", meta: "Slices / Powder", href: "/products/okra.html" },
+        { name: "Cucumber", category: "Dehydrated Vegetables", meta: "Slices / Powder", href: "/products/cucumber.html" },
+        { name: "Bitter Gourd", category: "Dehydrated Vegetables", meta: "Slices / Powder", href: "/products/bitter-gourd.html" },
+        { name: "Carrot", category: "Dehydrated Vegetables", meta: "Flakes / Powder", href: "/products/carrot.html" },
+        { name: "Corn", category: "Dehydrated Vegetables", meta: "Kernels / Powder", href: "/products/corn.html" },
+        { name: "Mushroom", category: "Dehydrated Vegetables", meta: "Slices / Powder", href: "/products/mushroom.html" },
+        { name: "Mixed Vegetables", category: "Dehydrated Vegetables", meta: "Custom Mix", href: "/products/mixed-veg.html" },
 
-          // ignore offsite links
-          if (href.startsWith("http") && !href.includes(location.host)) return false;
+        // Spices
+        { name: "Turmeric", category: "Spices", meta: "Powder", href: "/products/turmeric.html" },
+        { name: "Black Pepper", category: "Spices", meta: "Whole / Powder", href: "/products/black-pepper.html" },
+        { name: "Cinnamon", category: "Spices", meta: "Stick / Powder", href: "/products/cinnamon.html" },
+        { name: "Green Chilli", category: "Spices", meta: "Flakes / Powder", href: "/products/green-chilli.html" },
+        { name: "Red Pepper", category: "Spices", meta: "Flakes / Powder", href: "/products/red-pepper.html" },
+        { name: "Ginger", category: "Spices", meta: "Powder / Flakes", href: "/products/ginger.html" },
+        { name: "Garlic", category: "Spices", meta: "Powder / Flakes", href: "/products/garlic.html" },
 
-          // only HTML pages (most product pages)
-          if (!href.endsWith(".html")) return false;
+        // Fruits
+        { name: "Banana", category: "Fruits", meta: "Powder / Chips", href: "/products/banana.html" },
+        { name: "Mango", category: "Fruits", meta: "Powder / Slices", href: "/products/mango.html" },
+        { name: "Papaya", category: "Fruits", meta: "Powder / Slices", href: "/products/papaya.html" },
+        { name: "Orange", category: "Fruits", meta: "Powder / Peel", href: "/products/orange.html" },
+        { name: "Guava", category: "Fruits", meta: "Powder / Slices", href: "/products/guava.html" },
 
-          // exclude common non-product pages (adjust if you want these searchable too)
-          const h = href.toLowerCase();
-          if (h.includes("sitemap") || h.includes("privacy") || h.includes("terms")) return false;
+        // Seeds / Flowers / Blends
+        { name: "Sesame Seed", category: "Seeds", meta: "Whole", href: "/products/sesame-seed.html" },
+        { name: "Rose", category: "Flowers", meta: "Petals", href: "/products/rose.html" },
+        { name: "Marigold", category: "Flowers", meta: "Petals", href: "/products/marigold.html" },
+        { name: "Coconut", category: "Other", meta: "Slices / Powder", href: "/products/coconut.html" },
+        { name: "Custom Blends for Soups & Noodles", category: "Custom Blends", meta: "OEM / Private Label", href: "/products/custom-blends-soups-noodles.html" }
+      ];
 
-          return true;
-        });
-
-      // 2) Infer category from nearest section heading (if exists)
-      function getCategory(el) {
+      // OPTIONAL: merge products found on current page too
+      function getCategoryFromDom(el) {
         const section = el.closest("section");
         if (!section) return "Products";
         const h2 = section.querySelector("h2");
         return (h2 && h2.textContent.trim()) ? h2.textContent.trim() : "Products";
       }
 
-      // 3) Build product list (handles different card markup: h3/h4/span)
-      const products = productAnchors.map(a => {
-        const nameEl =
-          a.querySelector("h3") ||
-          a.querySelector("h4") ||
-          a.querySelector("span") ||
-          a;
+      const domProducts = Array.from(document.querySelectorAll("a"))
+        .map(a => {
+          const href = (a.getAttribute("href") || "").trim();
+          if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return null;
+          if (!href.endsWith(".html")) return null;
 
-        const metaEl = a.querySelector("p");
+          const nameEl = a.querySelector("h3") || a.querySelector("h4");
+          if (!nameEl) return null;
 
-        return {
-          name: (nameEl ? nameEl.textContent.trim() : "").replace(/\s+/g, " "),
-          meta: metaEl ? metaEl.textContent.trim() : "",
-          category: getCategory(a),
-          href: new URL(a.getAttribute("href"), window.location.href).toString()
-        };
-      }).filter(p => p.name && p.href);
+          const metaEl = a.querySelector("p");
+          return {
+            name: nameEl.textContent.trim(),
+            meta: metaEl ? metaEl.textContent.trim() : "",
+            category: getCategoryFromDom(a),
+            href
+          };
+        })
+        .filter(Boolean);
 
-      // Optional: remove duplicates by href
-      const seen = new Set();
-      const uniqueProducts = [];
-      for (const p of products) {
-        if (!seen.has(p.href)) {
-          seen.add(p.href);
-          uniqueProducts.push(p);
-        }
-      }
+      // ✅ Merge + dedupe by href
+      const merged = [...STATIC_PRODUCTS, ...domProducts];
+      const byHref = new Map();
+      merged.forEach(p => {
+        const abs = new URL(p.href, window.location.origin).toString();
+        byHref.set(abs, { ...p, href: abs });
+      });
+      const PRODUCTS = Array.from(byHref.values());
 
       function closeDropdown() {
         dropdown.classList.add("hidden");
         resultsBox.innerHTML = "";
       }
-
       function openDropdown() {
         dropdown.classList.remove("hidden");
       }
-
       function escapeHtml(str) {
         return String(str).replace(/[&<>"']/g, s => ({
           "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
@@ -192,7 +211,6 @@
 
       function renderResults(list, query) {
         resultsBox.innerHTML = "";
-
         if (!list.length) {
           resultsBox.innerHTML = `
             <div class="px-4 py-4 text-sm text-stone-500">
@@ -221,7 +239,6 @@
             </div>
           </a>
         `).join("");
-
         openDropdown();
       }
 
@@ -234,7 +251,7 @@
           return;
         }
 
-        const matches = uniqueProducts.filter(p => {
+        const matches = PRODUCTS.filter(p => {
           const hay = (p.name + " " + p.meta + " " + p.category).toLowerCase();
           return hay.includes(query);
         });
@@ -243,12 +260,8 @@
       }
 
       input.addEventListener("input", (e) => search(e.target.value));
-
       input.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          closeDropdown();
-          input.blur();
-        }
+        if (e.key === "Escape") closeDropdown();
         if (e.key === "Enter") {
           const first = resultsBox.querySelector("a");
           if (first) window.location.href = first.getAttribute("href");
@@ -266,6 +279,7 @@
       });
     });
   </script>
+
 </head>
 
 <body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
