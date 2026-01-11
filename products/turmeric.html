@@ -73,28 +73,29 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "Turmeric Powder (High Curcumin)",
-    "image": "https://atlasagro.co.in/assets/products/spices/turmeric.png",
-    "description": "Premium Turmeric Powder with 3-5% Curcumin content. Sourced from Erode/Salem. Ideal for food manufacturing, seasoning blends, and nutraceuticals.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Atlas AgroFood"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atlasagro.co.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://atlasagro.co.in/products/" },
+        { "@type": "ListItem", "position": 3, "name": "Turmeric", "item": "https://atlasagro.co.in/products/turmeric.html" }
+      ]
     },
-    "sku": "TURM-001",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://atlasagro.co.in/products/turmeric.html",
-      "priceCurrency": "INR",
-      "price": "0",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
+    {
+      "@type": "Product",
+      "name": "Turmeric Powder (High Curcumin)",
+      "image": ["https://atlasagro.co.in/assets/products/spices/turmeric.png"],
+      "description": "High curcumin turmeric powder sourced from Salem and Erode, suitable for food, beverage and nutraceutical manufacturing.",
+      "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+      "sku": "TURM-001",
+      "category": "Dehydrated Spices"
     }
-  }
-  </script>
+  ]
+}
+</script>
 </head>
 
 <body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
@@ -115,13 +116,13 @@
   <main class="flex-grow pt-8 pb-20 px-4">
     
     <div class="max-w-7xl mx-auto mb-8">
-      <nav class="flex text-sm text-slateish bg-white px-4 py-2 rounded-full border border-stone-200 inline-flex shadow-sm">
+      <nav class="inline-flex items-center gap-2 text-sm text-slateish bg-white px-5 py-2 rounded-2xl border border-stone-200 shadow-sm whitespace-nowrap">
         <a href="/" class="hover:text-brand-700">Home</a>
-        <span class="mx-2">/</span>
+        <span class="text-stone-300">/</span>
         <a href="/products/" class="hover:text-brand-700">Products</a>
-        <span class="mx-2">/</span>
+        <span class="text-stone-300">/</span>
         <a href="/products/spices.html" class="hover:text-brand-700">Spices</a>
-        <span class="mx-2 text-stone-300">/</span>
+        <span class="text-stone-300">/</span>
         <span class="text-brand-800 font-bold">Turmeric</span>
       </nav>
     </div>
@@ -206,28 +207,117 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto mt-20">
-      <h2 class="text-3xl font-serif-display font-bold text-brand-900 mb-8 text-center">Common Applications</h2>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-2xl border border-stone-200 text-center">
-          <div class="text-4xl mb-3">🍛</div>
-          <h3 class="font-bold text-lg mb-2">Culinary</h3>
-          <p class="text-sm text-stone-500">Curries, soups, and rice dishes.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl border border-stone-200 text-center">
-          <div class="text-4xl mb-3">💊</div>
-          <h3 class="font-bold text-lg mb-2">Nutraceuticals</h3>
-          <p class="text-sm text-stone-500">Extracts and health supplements.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl border border-stone-200 text-center">
-          <div class="text-4xl mb-3">🥛</div>
-          <h3 class="font-bold text-lg mb-2">Beverages</h3>
-          <p class="text-sm text-stone-500">Turmeric latte mixes and teas.</p>
+
+<!-- Product Images -->
+<section id="product-images" class="max-w-5xl mx-auto section-gap">
+  <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-8 shadow-sm">
+    <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Gallery</div>
+    <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">Product Images</h2>
+
+    <div class="relative overflow-hidden rounded-2xl border border-stone-100"
+         x-data="{
+           active: 0,
+           slides: [
+             { src: '/assets/products/spices/turmeric.png', alt: 'High Curcumin Turmeric Powder' }
+           ],
+           next(){ this.active=(this.active+1)%this.slides.length },
+           prev(){ this.active=(this.active-1+this.slides.length)%this.slides.length }
+         }">
+
+      <div class="aspect-[16/9] bg-stone-50 relative">
+        <template x-for="(s,i) in slides" :key="i">
+          <img x-show="active===i" :src="s.src" :alt="s.alt"
+               class="absolute inset-0 w-full h-full object-cover"
+               x-transition.opacity />
+        </template>
+      </div>
+
+      <button @click="prev()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 border rounded-full w-10 h-10">‹</button>
+      <button @click="next()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 border rounded-full w-10 h-10">›</button>
+
+      <div class="flex justify-center gap-2 py-3">
+        <template x-for="(s,i) in slides" :key="'d'+i">
+          <button @click="active=i"
+                  class="w-2.5 h-2.5 rounded-full border"
+                  :class="active===i?'bg-brand-600':'bg-white'"></button>
+        </template>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="applications" class="max-w-7xl mx-auto mt-20">
+  <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm">
+    <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Use Cases</div>
+    <h2 class="text-3xl font-serif-display font-bold text-brand-900 mb-8 text-center">Applications</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex gap-4 rounded-3xl border border-stone-200 p-6 card-hover">
+        <div class="text-3xl">🍛</div>
+        <div>
+          <h3 class="font-bold">Culinary</h3>
+          <p class="text-sm text-stone-500 mt-1">Curries, soups, gravies and ready meals.</p>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div class="flex gap-4 rounded-3xl border border-stone-200 p-6 card-hover">
+        <div class="text-3xl">💊</div>
+        <div>
+          <h3 class="font-bold">Nutraceuticals</h3>
+          <p class="text-sm text-stone-500 mt-1">Capsules, tablets and herbal formulations.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 rounded-3xl border border-stone-200 p-6 card-hover">
+        <div class="text-3xl">🥛</div>
+        <div>
+          <h3 class="font-bold">Beverages</h3>
+          <p class="text-sm text-stone-500 mt-1">Golden milk, turmeric latte and teas.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 rounded-3xl border border-stone-200 p-6 card-hover">
+        <div class="text-3xl">🧴</div>
+        <div>
+          <h3 class="font-bold">Cosmetics</h3>
+          <p class="text-sm text-stone-500 mt-1">Face packs, soaps and wellness products.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<section id="why-choose-us" class="max-w-5xl mx-auto section-gap">
+  <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm">
+    <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Why Choose Us</div>
+    <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">
+      High Curcumin, Clean Processing, Export-Ready
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex gap-4"><span class="text-2xl">🟡</span><p>Consistent golden-yellow color.</p></div>
+      <div class="flex gap-4"><span class="text-2xl">🌿</span><p>Salem & Erode origin rhizomes.</p></div>
+      <div class="flex gap-4"><span class="text-2xl">🧪</span><p>3–5% curcumin grades available.</p></div>
+      <div class="flex gap-4"><span class="text-2xl">📦</span><p>Bulk packing for exporters and brands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="related-products" class="max-w-7xl mx-auto section-gap mb-24">
+  <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm">
+    <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">Related Products</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="/products/ginger.html" class="p-6 border rounded-3xl card-hover">Ginger</a>
+      <a href="/products/black-pepper.html" class="p-6 border rounded-3xl card-hover">Black Pepper</a>
+      <a href="/products/cinnamon.html" class="p-6 border rounded-3xl card-hover">Cinnamon</a>
+      <a href="/products/red-pepper.html" class="p-6 border rounded-3xl card-hover">Red Pepper</a>
+    </div>
+  </div>
+</section>
+
+</main>
 
   <div id="site-footer"></div>
   <script src="/assets/js/includes.js"></script>
