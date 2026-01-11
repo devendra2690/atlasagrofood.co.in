@@ -12,6 +12,19 @@
   
   <link rel="canonical" href="https://atlasagro.co.in/products/mango.html" />
   
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="Atlas AgroFood" />
+  <meta property="og:title" content="Mango Powder (Amchur) & Spray Dried Mango | Atlas AgroFood" />
+  <meta property="og:description" content="Bulk supplier of Raw Mango Powder (Amchur) and Ripe Mango Spray Dried Powder. Authentic taste for seasoning, beverages, and bakery." />
+  <meta property="og:url" content="https://atlasagro.co.in/products/mango.html" />
+  <meta property="og:image" content="https://atlasagro.co.in/assets/products/mango/hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mango Powder (Amchur) & Spray Dried Mango | Atlas AgroFood" />
+  <meta name="twitter:description" content="Bulk supplier of Raw Mango Powder (Amchur) and Ripe Mango Spray Dried Powder. Authentic taste for seasoning, beverages, and bakery." />
+  <meta name="twitter:image" content="https://atlasagro.co.in/assets/products/mango/hero.png" />
+
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -77,12 +90,46 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Dehydrated Mango Powder (Amchur)",
-    "image": "https://atlasagro.co.in/assets/products/mango/hero.png",
-    "description": "Available in Raw Mango (Amchur) for tanginess and Ripe Mango Spray Dried powder for sweetness.",
-    "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
-    "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "INR", "price": "0" }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atlasagro.co.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://atlasagro.co.in/products/" },
+          { "@type": "ListItem", "position": 3, "name": "Mango", "item": "https://atlasagro.co.in/products/mango.html" }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Mango Powder (Amchur) & Spray Dried Mango Powder",
+        "image": [
+          "https://atlasagro.co.in/assets/products/mango/hero.png"
+        ],
+        "description": "Bulk supplier of Raw Mango Powder (Amchur) for tangy seasoning and Ripe Mango Spray Dried Powder for sweet beverage and dessert applications.",
+        "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+        "category": "Dehydrated Fruit Powder",
+        "hasVariant": [
+          {
+            "@type": "Product",
+            "name": "Raw Mango Powder (Amchur)",
+            "description": "Tangy souring agent made from raw green mangoes.",
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Mesh Size", "value": "60-80" },
+              { "@type": "PropertyValue", "name": "Moisture", "value": "< 5%" }
+            ]
+          },
+          {
+            "@type": "Product",
+            "name": "Ripe Mango Spray Dried Powder",
+            "description": "Sweet mango powder made from ripe mango pulp using spray drying.",
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Mesh Size", "value": "60-80" },
+              { "@type": "PropertyValue", "name": "Moisture", "value": "< 5%" }
+            ]
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -110,6 +157,8 @@
         <span class="mx-2">/</span>
         <a href="/products/" class="hover:text-brand-700">Products</a>
         <span class="mx-2 text-stone-300">/</span>
+        <a href="/products/dehydrated-products.html" class="text-slateish hover:text-brand-700 font-bold">Dehydrated Products</a>
+        <span class="text-slate-300">/</span>
         <span class="text-brand-800 font-bold">Mango</span>
       </nav>
     </div>
@@ -181,7 +230,7 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto">
+    <section class="max-w-7xl mx-auto mb-20">
       <h2 class="text-3xl font-serif-display font-bold text-brand-900 mb-8 text-center">Applications</h2>
       <div class="grid sm:grid-cols-3 gap-6">
         <div class="bg-white p-6 rounded-3xl border border-stone-200 card-hover text-center">
@@ -198,6 +247,57 @@
           <div class="text-4xl mb-3">🍬</div>
           <h3 class="text-lg font-bold text-brand-900">Confectionery</h3>
           <p class="text-sm text-stone-500 mt-2">Flavoring for candies, jellies, and ice cream.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Why Choose Us (separate from Applications) -->
+    <section class="max-w-5xl mx-auto mb-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm card-hover">
+        <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Why Choose Us</div>
+        <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">Quality & Consistency for Bulk Buyers</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">🛡️</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">100% Pure Ingredient</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">No artificial colors, fillers, or added preservatives—only mango.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">🔬</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">Batch Consistency</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Controlled mesh size and moisture for stable performance in production lines.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">💧</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">Low Moisture</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">Helps prevent clumping and supports longer shelf life in bulk storage.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center shrink-0">
+              <span class="text-2xl">📦</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-brand-900">Industrial Packaging</h3>
+              <p class="text-sm text-stone-600 mt-1 leading-relaxed">25kg cartons/drums suitable for manufacturers, exporters, and food service.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
