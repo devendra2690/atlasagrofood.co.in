@@ -66,6 +66,10 @@
       }
     }
 
+    .section-gap {
+      margin-top: 4rem; /* 64px */
+    }
+
     /* 2. HIDE the Bottom Bar on Desktop */
     @media (min-width: 768px) {
       .mobile-cta {
@@ -215,7 +219,7 @@
 
 
 <!-- Product Images -->
-<section id="product-images" class="max-w-5xl mx-auto mb-20">
+<section id="product-images" class="max-w-5xl mx-auto mb-20 section-gap">
   <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-8 shadow-sm">
     <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Gallery</div>
     <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-4">Product Images</h2>
@@ -224,9 +228,7 @@
          x-data="{
            active: 0,
            slides: [
-             { src: '/assets/products/spinach/hero.png', alt: 'Spinach Powder (Palak)' },
-             { src: '/assets/products/spinach/hero.png', alt: 'Dehydrated Spinach Powder (Bulk Supply)' },
-             { src: '/assets/products/spinach/hero.png', alt: 'Spinach Powder for Pasta, Smoothies & Soups' }
+             { src: '/assets/products/spinach/hero.png', alt: 'Spinach Powder (Palak)' }
            ],
            next(){ this.active=(this.active+1)%this.slides.length },
            prev(){ this.active=(this.active-1+this.slides.length)%this.slides.length }
