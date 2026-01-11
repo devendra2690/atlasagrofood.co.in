@@ -48,125 +48,229 @@
       }
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const grid = document.getElementById("sitemapGrid");
+      const statusEl = document.getElementById("sitemapStatus");
+      const searchInput = document.getElementById("sitemapSearch");
+
+      const SITE_ORIGIN = window.location.origin;
+
+      // --- Helpers ---
+      const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[c]));
+
+      const normalizeUrl = (raw) => {
+        try {
+          // Make absolute, then convert to pathname display
+          const u = new URL(raw, SITE_ORIGIN);
+          return u.toString();
+        } catch {
+          return raw;
+        }
+      };
+
+      const titleFromUrl = (url) => {
+        // Convert "/products/black-pepper.html" -> "Black Pepper"
+        try {
+          const u = new URL(url, SITE_ORIGIN);
+          const path = u.pathname.replace(/\/+$/, "");
+          const last = path.split("/").filter(Boolean).pop() || "Home";
+
+          if (last === "index.html") return "Home";
+          const clean = last.replace(/\.html$/i, "");
+          return clean
+            .replace(/[-_]+/g, " ")
+            .replace(/\b\w/g, (m) => m.toUpperCase());
+        } catch {
+          // fallback
+          return url;
+        }
+      };
+
+      // Customize grouping here if needed
+      const groupForUrl = (url) => {
+        let p = "";
+        try { p = new URL(url, SITE_ORIGIN).pathname; } catch { p = url; }
+
+        // Products
+        if (p.startsWith("/products/")) return "Products";
+
+        // Industries
+        if (p.startsWith("/industries/")) return "Industries";
+
+        // Buyers guide/resources
+        if (p.startsWith("/buyers-guide/") || p.includes("buyers-guide")) return "Buyer Resources";
+
+        // Applications
+        if (p.startsWith("/applications/")) return "Applications";
+
+        // Company (top-level pages)
+        const companySet = new Set([
+          "/", "/index.html", "/why-atlas-agro.html", "/quality.html", "/gallery.html", "/contact.html",
+          "/faq.html", "/privacy-policy.html", "/terms.html", "/sitemap.html"
+        ]);
+        if (companySet.has(p)) return "Company";
+
+        // Everything else
+        return "Other";
+      };
+
+      const sortUrlNice = (a, b) => titleFromUrl(a).localeCompare(titleFromUrl(b));
+
+      const sectionMeta = {
+        "Company": { icon: "🏢", subtitle: "Core pages and policies" },
+        "Products": { icon: "🥕", subtitle: "All product detail pages" },
+        "Industries": { icon: "🏭", subtitle: "Industries we serve" },
+        "Buyer Resources": { icon: "📘", subtitle: "Guides & buyer information" },
+        "Applications": { icon: "🍽️", subtitle: "Use-cases and applications" },
+        "Other": { icon: "🔗", subtitle: "Other pages" }
+      };
+
+      const renderSection = (name, urls) => {
+        const meta = sectionMeta[name] || { icon: "🔗", subtitle: "" };
+        const count = urls.length;
+
+        // Products in 2 columns on large lists, others simple list
+        const isTwoCol = name === "Products" && count >= 12;
+
+        const itemsHtml = urls.map((u) => {
+          const t = titleFromUrl(u);
+          return `
+            <li>
+              <a href="${escapeHtml(u)}"
+                 class="block rounded-xl px-3 py-2 hover:bg-stone-50 transition text-stone-700 hover:text-brand-700">
+                ${escapeHtml(t)}
+              </a>
+            </li>`;
+        }).join("");
+
+        return `
+          <section class="sitemap-section rounded-3xl border border-stone-200 bg-white p-7 shadow-sm"
+                   data-section="${escapeHtml(name)}">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <h2 class="font-serif-display text-xl text-brand-800 flex items-center gap-2">
+                  <span class="text-xl">${meta.icon}</span>
+                  <span>${escapeHtml(name)}</span>
+                </h2>
+                <p class="text-xs text-stone-500 mt-1">${escapeHtml(meta.subtitle)}</p>
+              </div>
+              <!-- Count badge -->
+              <div class="shrink-0">
+                <span class="inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-bold text-stone-600">
+                  ${count} ${count === 1 ? "link" : "links"}
+                </span>
+              </div>
+            </div>
+
+            <ul class="${isTwoCol ? "grid grid-cols-2 gap-x-3 gap-y-1" : "space-y-1"}">
+              ${itemsHtml}
+            </ul>
+          </section>`;
+      };
+
+      const applySearch = (q) => {
+        const query = (q || "").trim().toLowerCase();
+        const sections = Array.from(document.querySelectorAll(".sitemap-section"));
+
+        if (!query) {
+          sections.forEach(s => s.classList.remove("hidden"));
+          return;
+        }
+        sections.forEach(sec => {
+          const text = sec.innerText.toLowerCase();
+          sec.classList.toggle("hidden", !text.includes(query));
+        });
+      };
+
+      // --- Load sitemap.xml ---
+      try {
+        const res = await fetch("/sitemap.xml", { cache: "no-store" });
+        if (!res.ok) throw new Error("Could not load /sitemap.xml");
+        const xmlText = await res.text();
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlText, "application/xml");
+
+        // Detect XML parse errors
+        if (xml.querySelector("parsererror")) throw new Error("sitemap.xml is not valid XML");
+
+        const locNodes = Array.from(xml.getElementsByTagName("loc"));
+        const urls = locNodes
+          .map(n => (n.textContent || "").trim())
+          .filter(Boolean)
+          .map(normalizeUrl);
+
+        // Remove duplicates
+        const uniq = Array.from(new Set(urls));
+
+        // Group
+        const groups = {};
+        uniq.forEach((u) => {
+          const g = groupForUrl(u);
+          (groups[g] ||= []).push(u);
+        });
+
+        // Sort within each group
+        Object.keys(groups).forEach(g => groups[g].sort(sortUrlNice));
+
+        // Render in preferred order
+        const order = ["Company", "Products", "Industries", "Buyer Resources", "Applications", "Other"];
+        grid.innerHTML = order
+          .filter(k => groups[k] && groups[k].length)
+          .map(k => renderSection(k, groups[k]))
+          .join("");
+
+        statusEl.textContent = `Loaded ${uniq.length} URLs from sitemap.xml`;
+        statusEl.className = "text-sm text-stone-500 mb-8";
+
+        // Search
+        searchInput.addEventListener("input", (e) => applySearch(e.target.value));
+
+      } catch (err) {
+        statusEl.textContent = "Could not load sitemap.xml. Please ensure /sitemap.xml exists on the server.";
+        statusEl.className = "text-sm text-red-700 mb-8";
+        grid.innerHTML = "";
+        console.error(err);
+      }
+    });
+  </script>
 </head>
 
 <body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
 
   <div id="site-header"></div>
 
-  <main class="max-w-7xl mx-auto px-4 py-12">
-    <div class="text-center mb-16">
-      <div class="text-sm text-earth-gold font-bold uppercase tracking-widest mb-3">Overview</div>
-      <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-brand-900">Sitemap</h1>
+  <main class="max-w-7xl mx-auto px-4 py-14">
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="font-serif-display text-4xl md:text-5xl text-brand-800">Sitemap</h1>
+      <p class="text-stone-600 max-w-3xl mt-3">
+        Find products, industries, buyer resources, and applications. This page is generated automatically from our sitemap.xml.
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
-      <div>
-        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Company</h2>
-        <ul class="space-y-3">
-          <li><a href="/" class="hover:text-earth-gold transition font-bold">Home</a></li>
-          <li><a href="/why-atlas-agro.html" class="hover:text-earth-gold transition">Why Atlas AgroFood</a></li>
-          <li><a href="/quality.html" class="hover:text-earth-gold transition">Quality Assurance</a></li>
-          <li><a href="/industries/" class="hover:text-earth-gold transition">Industries Overview</a></li>
-          <li><a href="/buyers-guide/" class="hover:text-earth-gold transition">All Guides</a></li>
-          <li><a href="/products/" class="hover:text-earth-gold transition">All Products</a></li>
-          <li><a href="/gallery.html" class="hover:text-earth-gold transition">Gallery</a></li>
-          <li><a href="/faq.html" class="hover:text-earth-gold transition">FAQ</a></li>
-          <li><a href="/contact.html" class="hover:text-earth-gold transition">Contact Us</a></li>
-          <li><a href="/privacy-policy.html" class="hover:text-earth-gold transition">Privacy Policy</a></li>
-          <li><a href="/terms.html" class="hover:text-earth-gold transition">Terms of Service</a></li>
-          <li><a href="/sitemap.html" class="hover:text-earth-gold transition">Sitemap</a></li>
-          <li><a href="/includes/footer.html" class="hover:text-earth-gold transition">Footer</a></li>
-          <li><a href="/includes/header.html" class="hover:text-earth-gold transition">Header</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Products</h2>
-        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-2 text-sm">
-          <li><a href="/products/" class="hover:text-earth-gold transition font-bold">All Products</a></li>
-          <li><a href="/products/apple.html" class="hover:text-earth-gold transition">Apple</a></li>
-          <li><a href="/products/assorted-dehydrated-fruit-chips.html" class="hover:text-earth-gold transition">Assorted Dehydrated Fruit Chips</a></li>
-          <li><a href="/products/banana.html" class="hover:text-earth-gold transition">Banana</a></li>
-          <li><a href="/products/beetroot.html" class="hover:text-earth-gold transition">Beetroot</a></li>
-          <li><a href="/products/bitter-gourd.html" class="hover:text-earth-gold transition">Bitter Gourd</a></li>
-          <li><a href="/products/black-pepper.html" class="hover:text-earth-gold transition">Black Pepper</a></li>
-          <li><a href="/products/carrot.html" class="hover:text-earth-gold transition">Carrot</a></li>
-          <li><a href="/products/cinnamon.html" class="hover:text-earth-gold transition">Cinnamon</a></li>
-          <li><a href="/products/coconut.html" class="hover:text-earth-gold transition">Coconut</a></li>
-          <li><a href="/products/coriander.html" class="hover:text-earth-gold transition">Coriander</a></li>
-          <li><a href="/products/corn.html" class="hover:text-earth-gold transition">Corn</a></li>
-          <li><a href="/products/cucumber.html" class="hover:text-earth-gold transition">Cucumber</a></li>
-          <li><a href="/products/curry-leaves.html" class="hover:text-earth-gold transition">Curry Leaves</a></li>
-          <li><a href="/products/custom-blends-soups-noodles.html" class="hover:text-earth-gold transition">Custom Blends Soups Noodles</a></li>
-          <li><a href="/products/dehydrated-products.html" class="hover:text-earth-gold transition">Dehydrated Products</a></li>
-          <li><a href="/products/garlic.html" class="hover:text-earth-gold transition">Garlic</a></li>
-          <li><a href="/products/ginger.html" class="hover:text-earth-gold transition">Ginger</a></li>
-          <li><a href="/products/green-chilli.html" class="hover:text-earth-gold transition">Green Chilli</a></li>
-          <li><a href="/products/green-pepper.html" class="hover:text-earth-gold transition">Green Pepper</a></li>
-          <li><a href="/products/guava.html" class="hover:text-earth-gold transition">Guava</a></li>
-          <li><a href="/products/leafy-greens-herbs.html" class="hover:text-earth-gold transition">Leafy Greens Herbs</a></li>
-          <li><a href="/products/mango.html" class="hover:text-earth-gold transition">Mango</a></li>
-          <li><a href="/products/marigold.html" class="hover:text-earth-gold transition">Marigold</a></li>
-          <li><a href="/products/methi.html" class="hover:text-earth-gold transition">Methi</a></li>
-          <li><a href="/products/mint.html" class="hover:text-earth-gold transition">Mint</a></li>
-          <li><a href="/products/mixed-veg.html" class="hover:text-earth-gold transition">Mixed Veg</a></li>
-          <li><a href="/products/moringa.html" class="hover:text-earth-gold transition">Moringa</a></li>
-          <li><a href="/products/mushroom.html" class="hover:text-earth-gold transition">Mushroom</a></li>
-          <li><a href="/products/okra.html" class="hover:text-earth-gold transition">Okra</a></li>
-          <li><a href="/products/onion.html" class="hover:text-earth-gold transition">Onion</a></li>
-          <li><a href="/products/orange.html" class="hover:text-earth-gold transition">Orange</a></li>
-          <li><a href="/products/papaya.html" class="hover:text-earth-gold transition">Papaya</a></li>
-          <li><a href="/products/potato.html" class="hover:text-earth-gold transition">Potato</a></li>
-          <li><a href="/products/red-pepper.html" class="hover:text-earth-gold transition">Red Pepper</a></li>
-          <li><a href="/products/rose.html" class="hover:text-earth-gold transition">Rose</a></li>
-          <li><a href="/products/sesame-seed.html" class="hover:text-earth-gold transition">Sesame Seed</a></li>
-          <li><a href="/products/spices.html" class="hover:text-earth-gold transition">Spices</a></li>
-          <li><a href="/products/spinach.html" class="hover:text-earth-gold transition">Spinach</a></li>
-          <li><a href="/products/spray-dried.html" class="hover:text-earth-gold transition">Spray Dried Powders</a></li>
-          <li><a href="/products/tomato.html" class="hover:text-earth-gold transition">Tomato</a></li>
-          <li><a href="/products/turmeric.html" class="hover:text-earth-gold transition">Turmeric</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Industries</h2>
-        <ul class="space-y-3">
-          <li><a href="/industries/" class="hover:text-earth-gold transition font-bold">Industries Overview</a></li>
-          <li><a href="/industries/bakery-and-savoury-snacks.html" class="hover:text-earth-gold transition">Bakery And Savoury Snacks</a></li>
-          <li><a href="/industries/food-manufacturing-and-export.html" class="hover:text-earth-gold transition">Food Manufacturing And Export</a></li>
-          <li><a href="/industries/horeca-institutional-buyers.html" class="hover:text-earth-gold transition">HORECA Institutional Buyers</a></li>
-          <li><a href="/industries/sauces-dressings-condiments.html" class="hover:text-earth-gold transition">Sauces Dressings Condiments</a></li>
-          <li><a href="/industries/seasoning-and-spice-blends.html" class="hover:text-earth-gold transition">Seasoning And Spice Blends</a></li>
-          <li><a href="/industries/soups-noodles-ready-meals.html" class="hover:text-earth-gold transition">Soups Noodles Ready Meals</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Buyer Resources</h2>
-        <ul class="space-y-3 text-sm">
-          <li><a href="/buyers-guide/" class="hover:text-earth-gold transition font-bold">All Guides</a></li>
-          <li><a href="/buyers-guide/banana-powder-manufacturer-india.html" class="hover:text-earth-gold transition">Banana Powder Manufacturer India</a></li>
-          <li><a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html" class="hover:text-earth-gold transition">Bulk Packaging Options Dehydrated Products</a></li>
-          <li><a href="/buyers-guide/dehydrated-onion-powder-supplier.html" class="hover:text-earth-gold transition">Dehydrated Onion Powder Supplier</a></li>
-          <li><a href="/buyers-guide/export-quality-standards-dehydrated-products.html" class="hover:text-earth-gold transition">Export Quality Standards Dehydrated Products</a></li>
-          <li><a href="/buyers-guide/garlic-granules-exporter-india.html" class="hover:text-earth-gold transition">Garlic Granules Exporter India</a></li>
-          <li><a href="/buyers-guide/garlic-powder-bulk-supplier.html" class="hover:text-earth-gold transition">Garlic Powder Bulk Supplier</a></li>
-          <li><a href="/buyers-guide/ginger-powder-bulk-supplier.html" class="hover:text-earth-gold transition">Ginger Powder Bulk Supplier</a></li>
-          <li><a href="/buyers-guide/mesh-size-grade-guide-powder-flakes-granules.html" class="hover:text-earth-gold transition">Mesh Size Grade Guide Powder Flakes Granules</a></li>
-          <li><a href="/buyers-guide/minimum-order-quantity-packaging-dehydrated-products.html" class="hover:text-earth-gold transition">Minimum Order Quantity Packaging Dehydrated Products</a></li>
-          <li><a href="/buyers-guide/mixed-vegetable-powder-manufacturer.html" class="hover:text-earth-gold transition">Mixed Vegetable Powder Manufacturer</a></li>
-          <li><a href="/buyers-guide/onion-flakes-vs-onion-powder.html" class="hover:text-earth-gold transition">Onion Flakes Vs Onion Powder</a></li>
-          <li><a href="/buyers-guide/private-label-oem-dehydrated-products.html" class="hover:text-earth-gold transition">Private Label OEM Dehydrated Products</a></li>
-          <li><a href="/buyers-guide/shelf-life-storage-dehydrated-powders.html" class="hover:text-earth-gold transition">Shelf Life Storage Dehydrated Powders</a></li>
-          <li><a href="/buyers-guide/spray-dried-vs-dehydrated-powder.html" class="hover:text-earth-gold transition">Spray Dried Vs Dehydrated Powder</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="font-serif-display text-2xl font-bold text-brand-800 mb-6 border-b border-earth-gold/30 pb-2">Applications</h2>
-        <ul class="space-y-3">
-          <li><a href="/applications/instant-foods-ready-meals.html" class="hover:text-earth-gold transition">Instant Foods Ready Meals</a></li>
-          <li><a href="/applications/seasoning-spice-blends.html" class="hover:text-earth-gold transition">Seasoning Spice Blends</a></li>
-        </ul>
+    <!-- Search -->
+    <div class="mb-10 max-w-xl">
+      <div class="bg-white p-2 rounded-2xl border border-stone-200 shadow-sm">
+        <input
+                type="text"
+                id="sitemapSearch"
+                placeholder="Search pages… (e.g. Onion, Buyers Guide, Industries)"
+                class="w-full bg-stone-50 border border-stone-100 rounded-xl px-4 py-4 outline-none
+               focus:border-brand-500 focus:bg-white transition text-ink placeholder:text-stone-400"
+                style="font-size:16px; line-height:24px;"
+        />
       </div>
     </div>
+
+    <!-- Loading / Error -->
+    <div id="sitemapStatus" class="text-sm text-stone-500 mb-8">Loading sitemap…</div>
+
+    <!-- Grid -->
+    <div id="sitemapGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
   </main>
 
   <div id="site-footer"></div>
