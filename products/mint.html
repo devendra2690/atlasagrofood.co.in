@@ -12,6 +12,19 @@
   
   <link rel="canonical" href="https://atlasagro.co.in/products/mint.html" />
   
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="Atlas AgroFood" />
+  <meta property="og:title" content="Dehydrated Mint (Pudina) | Powder & Leaves | Atlas AgroFood" />
+  <meta property="og:description" content="Premium dehydrated mint leaves and powder with strong menthol aroma for chutneys, tea blends, and seasonings." />
+  <meta property="og:url" content="https://atlasagro.co.in/products/mint.html" />
+  <meta property="og:image" content="https://atlasagro.co.in/assets/products/mint/hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dehydrated Mint (Pudina) | Atlas AgroFood" />
+  <meta name="twitter:description" content="Cooling, aromatic dried mint leaves and powder for food processing and spice blends." />
+  <meta name="twitter:image" content="https://atlasagro.co.in/assets/products/mint/hero.png" />
+
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -77,12 +90,24 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Dehydrated Mint Powder",
-    "image": "https://atlasagro.co.in/assets/products/mint/hero.png",
-    "description": "Premium dried mint (pudina) leaves and powder. High essential oil content for refreshing aroma.",
-    "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
-    "sku": "MNT-001"
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atlasagro.co.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://atlasagro.co.in/products/" },
+          { "@type": "ListItem", "position": 3, "name": "Mint", "item": "https://atlasagro.co.in/products/mint.html" }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Dehydrated Mint (Pudina)",
+        "image": ["https://atlasagro.co.in/assets/products/mint/hero.png"],
+        "description": "Premium dehydrated mint leaves and powder with strong menthol aroma.",
+        "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+        "category": "Dehydrated Herbs"
+      }
+    ]
   }
   </script>
 </head>
@@ -103,14 +128,25 @@
   <div id="site-header"></div>
 
   <main class="flex-grow pt-8 pb-20 px-4">
-    
     <div class="max-w-7xl mx-auto mb-8">
-      <nav class="flex text-sm text-slateish bg-white px-4 py-2 rounded-full border border-stone-200 inline-flex shadow-sm">
+      <nav class="inline-flex items-center gap-2 text-sm text-slateish
+           bg-white px-5 py-2 rounded-2xl
+           border border-stone-200 shadow-sm
+           whitespace-nowrap">
+
         <a href="/" class="hover:text-brand-700">Home</a>
-        <span class="mx-2">/</span>
+        <span class="text-stone-300">/</span>
+
         <a href="/products/" class="hover:text-brand-700">Products</a>
-        <span class="mx-2 text-stone-300">/</span>
-        <span class="text-brand-800 font-bold">Mint</span>
+        <span class="text-stone-300">/</span>
+
+        <a href="/products/dehydrated-products.html"
+           class="hover:text-brand-700 font-medium">
+          Dehydrated Products
+        </a>
+        <span class="text-stone-300">/</span>
+
+        <span class="text-brand-800 font-semibold">Mint</span>
       </nav>
     </div>
 
@@ -150,7 +186,28 @@
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto mb-20">
+    
+    <!-- Product Images -->
+    <section id="product-images" class="max-w-4xl mx-auto mb-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-8 shadow-sm">
+        <div class="mb-6">
+          <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Gallery</div>
+          <h2 class="text-2xl font-serif-display font-bold text-brand-900">Product Images</h2>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl border border-stone-100"
+             x-data="{active:0,slides:['/assets/products/mint/thumb-1.png','/assets/products/mint/thumb-2.png'],
+                      next(){this.active=(this.active+1)%this.slides.length},
+                      prev(){this.active=(this.active-1+this.slides.length)%this.slides.length}}">
+          <template x-for="(s,i) in slides" :key="i">
+            <img x-show="active===i" :src="s" class="absolute inset-0 w-full h-full object-cover"
+                 x-transition.opacity />
+          </template>
+          <div class="aspect-[16/9]"></div>
+        </div>
+      </div>
+    </section>
+
+<section class="max-w-4xl mx-auto mb-20">
       <h2 class="text-3xl font-serif-display font-bold text-brand-900 mb-8 text-center">Specifications</h2>
       <div class="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden p-6">
         <table class="w-full text-left">
@@ -176,7 +233,50 @@
       </div>
     </section>
 
-  </main>
+  
+    <!-- Applications -->
+    <section class="max-w-7xl mx-auto mb-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-10 shadow-sm">
+        <div class="mb-8 max-w-3xl">
+          <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Applications</div>
+          <h2 class="text-2xl md:text-3xl font-serif-display font-bold text-brand-900">Where Mint Is Used</h2>
+          <p class="mt-4 text-stone-600">Widely used for cooling flavor and aroma across food and beverage applications.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl border bg-brand-50/40">🍵 Tea & Infusions</div>
+          <div class="p-6 rounded-2xl border bg-brand-50/40">🥣 Chutneys & Raita</div>
+          <div class="p-6 rounded-2xl border bg-brand-50/40">🍬 Confectionery</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="max-w-5xl mx-auto mb-20">
+      <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm card-hover">
+        <div class="text-earth-gold font-bold tracking-widest uppercase text-xs mb-2">Why Choose Us</div>
+        <h2 class="text-2xl font-serif-display font-bold text-brand-900 mb-6">Cooling Aroma, Consistent Quality</h2>
+        <ul class="space-y-3 text-stone-600">
+          <li>🌿 High menthol aroma retention</li>
+          <li>🧼 Machine-cleaned leaves</li>
+          <li>💧 Low moisture for shelf stability</li>
+          <li>📦 Bulk B2B packaging</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="max-w-7xl mx-auto mb-24">
+      <div class="bg-white rounded-3xl border border-stone-200 p-6 md:p-10 shadow-sm">
+        <h2 class="text-2xl md:text-3xl font-serif-display font-bold text-brand-900 mb-6">Related Products</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/products/coriander.html" class="card-hover p-6 border rounded-3xl">Coriander</a>
+          <a href="/products/methi.html" class="card-hover p-6 border rounded-3xl">Kasuri Methi</a>
+          <a href="/products/curry-leaves.html" class="card-hover p-6 border rounded-3xl">Curry Leaves</a>
+        </div>
+      </div>
+    </section>
+
+</main>
 
   <div id="site-footer"></div>
   <script src="/assets/js/includes.js"></script>
