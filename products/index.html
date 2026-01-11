@@ -101,6 +101,7 @@
     ]
   }
   </script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const root = document.getElementById("product-search-root");
@@ -109,15 +110,36 @@
       const resultsBox = document.getElementById("productSearchResults");
       const clearBtn = document.getElementById("productSearchClear");
 
-      // If any element is missing, stop silently (prevents console crashes)
+      // Prevent crashes if HTML block is not present on some pages
       if (!root || !input || !dropdown || !resultsBox || !clearBtn) {
-        console.warn("[Product Search] Missing elements. Check IDs and placement.");
+        console.warn("[Product Search] Missing elements. Ensure the search HTML block is present and IDs match.");
         return;
       }
 
+      // 1) Collect all candidate links that look like product pages
+      // Works for: mint.html, ./mint.html, /products/mint.html, products/mint.html, etc.
       const productAnchors = Array.from(document.querySelectorAll("a"))
-        .filter(a => a.querySelector("h3") && a.getAttribute("href") && a.getAttribute("href").includes("/products/"));
+        .filter(a => {
+          const href = (a.getAttribute("href") || "").trim();
 
+          // ignore empty, anchors, tel/mail, external
+          if (!href) return false;
+          if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return false;
+
+          // ignore offsite links
+          if (href.startsWith("http") && !href.includes(location.host)) return false;
+
+          // only HTML pages (most product pages)
+          if (!href.endsWith(".html")) return false;
+
+          // exclude common non-product pages (adjust if you want these searchable too)
+          const h = href.toLowerCase();
+          if (h.includes("sitemap") || h.includes("privacy") || h.includes("terms")) return false;
+
+          return true;
+        });
+
+      // 2) Infer category from nearest section heading (if exists)
       function getCategory(el) {
         const section = el.closest("section");
         if (!section) return "Products";
@@ -125,16 +147,33 @@
         return (h2 && h2.textContent.trim()) ? h2.textContent.trim() : "Products";
       }
 
+      // 3) Build product list (handles different card markup: h3/h4/span)
       const products = productAnchors.map(a => {
-        const nameEl = a.querySelector("h3");
+        const nameEl =
+          a.querySelector("h3") ||
+          a.querySelector("h4") ||
+          a.querySelector("span") ||
+          a;
+
         const metaEl = a.querySelector("p");
+
         return {
           name: (nameEl ? nameEl.textContent.trim() : "").replace(/\s+/g, " "),
           meta: metaEl ? metaEl.textContent.trim() : "",
           category: getCategory(a),
-          href: a.getAttribute("href")
+          href: new URL(a.getAttribute("href"), window.location.href).toString()
         };
       }).filter(p => p.name && p.href);
+
+      // Optional: remove duplicates by href
+      const seen = new Set();
+      const uniqueProducts = [];
+      for (const p of products) {
+        if (!seen.has(p.href)) {
+          seen.add(p.href);
+          uniqueProducts.push(p);
+        }
+      }
 
       function closeDropdown() {
         dropdown.classList.add("hidden");
@@ -195,7 +234,7 @@
           return;
         }
 
-        const matches = products.filter(p => {
+        const matches = uniqueProducts.filter(p => {
           const hay = (p.name + " " + p.meta + " " + p.category).toLowerCase();
           return hay.includes(query);
         });
@@ -270,12 +309,18 @@
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h2 class="text-2xl md:text-3xl font-serif-display font-bold text-brand-900">Find Products Fast</h2>
-            <p class="text-stone-500 mt-1 text-sm md:text-base">Search across all categories — spices, dehydrated, fruit chips, blends.</p>
+            <p class="text-stone-500 mt-1 text-sm md:text-base">
+              Search across all categories — spices, dehydrated, fruit chips, blends.
+            </p>
           </div>
 
-          <div class="relative w-full md:w-[420px]" id="product-search-root">
-            <div class="flex items-center gap-3 bg-stone-50 border border-stone-200 rounded-2xl px-4 py-3 focus-within:ring-2 focus-within:ring-brand-200">
+          <div class="relative w-full md:w-[460px]" id="product-search-root">
+            <div
+                    class="flex items-center gap-3 bg-stone-50 border border-stone-200 rounded-2xl px-4 py-3
+                 focus-within:ring-2 focus-within:ring-brand-200"
+            >
               <span class="text-xl">🔎</span>
+
               <input
                       id="productSearchInput"
                       type="text"
@@ -284,6 +329,7 @@
                       autocomplete="off"
                       aria-label="Search products"
               />
+
               <button
                       id="productSearchClear"
                       class="hidden text-sm px-3 py-1 rounded-xl border border-stone-200 bg-white hover:bg-stone-50 transition"
@@ -299,6 +345,7 @@
                     class="hidden absolute z-50 mt-2 w-full bg-white rounded-2xl border border-stone-200 shadow-lg overflow-hidden"
             >
               <div class="max-h-80 overflow-auto" id="productSearchResults"></div>
+
               <div class="border-t border-stone-100 px-4 py-3 text-xs text-stone-500">
                 Tip: Press <span class="font-bold text-brand-900">Enter</span> to open the first result.
               </div>
@@ -307,7 +354,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="max-w-7xl mx-auto mb-20 grid md:grid-cols-3 gap-6">
       <a href="#dehydrated" class="group bg-white p-6 rounded-3xl border border-stone-200 card-hover flex items-center gap-4">
