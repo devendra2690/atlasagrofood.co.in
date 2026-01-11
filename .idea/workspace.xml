@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33bcae26-f4e6-4a1c-8612-401abed4251b" name="Changes" comment="" />
+    <list default="true" id="33bcae26-f4e6-4a1c-8612-401abed4251b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SitemapGenerator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
