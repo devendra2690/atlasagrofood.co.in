@@ -237,6 +237,45 @@
       }
     });
   </script>
+  <style>
+    /* Limit tall sitemap panels */
+    .sitemap-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Scroll only when content is long */
+    .sitemap-section ul {
+      max-height: 420px; /* desktop */
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    /* Smaller sections should NOT look tall */
+    .sitemap-section[data-section="Company"] ul,
+    .sitemap-section[data-section="Applications"] ul,
+    .sitemap-section[data-section="Other"] ul {
+      max-height: none;
+      overflow: visible;
+    }
+
+    /* Subtle scrollbar (WebKit) */
+    .sitemap-section ul::-webkit-scrollbar {
+      width: 4px;
+    }
+    .sitemap-section ul::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 999px;
+    }
+
+    /* Mobile tuning */
+    @media (max-width: 768px) {
+      .sitemap-section ul {
+        max-height: none;
+        overflow: visible;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
