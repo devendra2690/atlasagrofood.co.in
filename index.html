@@ -78,6 +78,11 @@
         display: none !important;
       }
     }
+
+    /* Prevent hero thumbnails from colliding with decorative panels */
+    .hero-thumbs {
+      padding-right: clamp(1rem, 5vw, 4rem);
+    }
   </style>
 </head>
 
@@ -141,7 +146,7 @@
              <button @click="prev()" class="w-10 h-10 rounded-full bg-white/40 backdrop-blur text-brand-900 flex items-center justify-center shadow-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
              <button @click="next()" class="w-10 h-10 rounded-full bg-white/40 backdrop-blur text-brand-900 flex items-center justify-center shadow-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
           </div>
-          <div class="flex gap-4 pointer-events-auto overflow-x-auto max-w-full pb-2 md:pb-0">
+          <div class="flex gap-4 pointer-events-auto overflow-x-auto max-w-full pb-2 md:pb-0 pr-6 md:pr-16 hero-thumbs">
             <template x-for="(slide, index) in slides" :key="index">
               <button @click="goTo(index)" class="relative w-12 h-12 md:w-20 md:h-20 rounded-full overflow-hidden border-2 transition-all duration-300 transform" :class="active === index ? 'border-brand-900 scale-110 shadow-lg' : 'border-transparent opacity-60 grayscale hover:grayscale-0'"><img :src="slide.image" class="w-full h-full object-cover" alt="Thumb"></button>
             </template>
