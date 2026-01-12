@@ -91,7 +91,7 @@
        FACILITY IMAGE CONFIG
        ================================ */
 
-    const facilityImages = [
+    window.facilityImages = [
     {
       src: "/assets/gallery/facility/coming-soon-facility.compressed.jpg",
       title: "Manufacturing Facility",
@@ -212,7 +212,7 @@
         </div>
         
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-2xl bg-stone-200 group">
-           <img src="/assets/gallery/farm-sourcing.jpg" onerror="this.src='https://assets/gallery/direct-source-farming.png/photo-1595855709940-577265eb3793?q=80&w=1000&auto=format&fit=crop'" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Farm sourcing">
+           <img src="/assets/gallery/direct-source-farming.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Direct Farm Sourcing">
            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
              <div class="text-white font-bold text-lg">Direct Farm Sourcing</div>
            </div>
@@ -361,7 +361,79 @@
 
   <div id="site-footer"></div>
 
-  <script src="/assets/js/includes.js"></script>
+  
+<script>
+  // Facility slider (runs after DOM is ready)
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("facilityTrack");
+    const prev = document.getElementById("facilityPrev");
+    const next = document.getElementById("facilityNext");
+    const dotsWrap = document.getElementById("facilityDots");
+
+    if (!track || !dotsWrap || !Array.isArray(window.facilityImages) || window.facilityImages.length === 0) return;
+
+    let index = 0;
+    const slidesData = window.facilityImages;
+
+    // Build slides + dots
+    slidesData.forEach((img, i) => {
+      const slide = document.createElement("figure");
+      slide.className = "min-w-full relative";
+
+      const safeTitle = img.title || "Facility Image";
+      const safeSubtitle = img.subtitle || "";
+
+      slide.innerHTML = `
+        <img src="${img.src}" alt="${safeTitle}"
+             class="w-full h-[320px] md:h-[420px] object-cover" loading="lazy"
+             onerror="this.onerror=null; this.src='/assets/gallery/facility/coming-soon-facility.compressed.jpg';">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+        <figcaption class="absolute left-6 bottom-6 text-white">
+          <p class="text-sm opacity-90">${safeTitle}</p>
+          ${safeSubtitle ? `<p class="text-xl md:text-2xl font-serif-display font-bold">${safeSubtitle}</p>` : ""}
+        </figcaption>
+      `;
+      track.appendChild(slide);
+
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "w-2.5 h-2.5 rounded-full bg-white/30 border border-white/60";
+      dot.addEventListener("click", () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsWrap.children);
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => {
+        d.className =
+          "w-2.5 h-2.5 rounded-full border transition " +
+          (i === index ? "bg-white" : "bg-white/30 hover:bg-white/70");
+      });
+    }
+
+    function goTo(i) {
+      index = (i + slidesData.length) % slidesData.length;
+      update();
+    }
+
+    if (prev) prev.addEventListener("click", () => goTo(index - 1));
+    if (next) next.addEventListener("click", () => goTo(index + 1));
+
+    // Autoplay only if multiple images
+    if (slidesData.length > 1) {
+      let timer = setInterval(() => goTo(index + 1), 6000);
+      const wrapper = track.parentElement;
+      wrapper.addEventListener("mouseenter", () => clearInterval(timer));
+      wrapper.addEventListener("mouseleave", () => (timer = setInterval(() => goTo(index + 1), 6000)));
+    }
+
+    update();
+  });
+</script>
+
+<script src="/assets/js/includes.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
