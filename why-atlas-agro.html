@@ -1,439 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Why Atlas AgroFood</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
-  <link rel="apple-touch-icon" href="/assets/atlas-agrofood-logo.png" />
-
-  <title>About Us | Why Atlas AgroFood | Premium Dehydrated Ingredients</title>
-  <meta name="description" content="Learn about Atlas AgroFood's mission to connect Indian farms to global markets. State-of-the-art dehydration facility, sustainable sourcing, and export-quality standards."/>
-  <meta name="theme-color" content="#15803d" />
-
-  <link rel="canonical" href="https://atlasagrofood.co.in/why-atlas-agro.html"/>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
-            ink: '#1e293b',
-            slateish: '#64748b',
-            'earth-cream': '#f9f7f2',
-            'earth-gold': '#c5a365',
-            'earth-brown': '#5d4037',
-            'earth-green': '#556b2f',
-          },
-          fontFamily: {
-            sans: ['Lato', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <script>
-    function siteApp() {
-      return {
-        mobileOpen: false,
-        whatsappLink: "https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+want+to+know+more+about+your+company.",
-        init() { console.log('Site App Initialized'); }
-      };
-    }
-  </script>
-
   <style>
-    body { font-family: 'Lato', sans-serif; }
-    .font-serif-display { font-family: 'Playfair Display', serif; }
-    .card-hover { transition: all .3s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-color: #15803d; }
-    
-    /* Sticky CTAs */
-    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
-    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
-    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
-    .sticky-cta .quote{background:#15803d;color:#ffffff}
-
-    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid rgba(148,163,184,.3)}
-    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;font-weight:800}
-    .mobile-cta .quote{background:#15803d;color:#ffffff}
-    .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
-
-    @media (min-width: 768px){.mobile-cta{display:none}}
-    @media (max-width: 767px){body{padding-bottom:70px}}
-
-            /* 1. HIDE the Vertical Buttons on Mobile */
-    @media (max-width: 767px) {
-      .sticky-cta {
-        display: none !important;
-      }
+    /* Premium slider polish */
+    #facilityTrack figure {
+      transition: transform 0.6s ease;
     }
-
-    /* 2. HIDE the Bottom Bar on Desktop */
-    @media (min-width: 768px) {
-      .mobile-cta {
-        display: none !important;
-      }
+    #facilityTrack figure:hover img {
+      transform: scale(1.03);
     }
   </style>
-  <script>
-    /* ================================
-       FACILITY IMAGE CONFIG
-       ================================ */
-
-    window.facilityImages = [
-    {
-      src: "/assets/gallery/facility/coming-soon-facility.compressed.jpg",
-      title: "Manufacturing Facility",
-      subtitle: "Coming Soon"
-    }
-  ];
-
-    /* ================================
-       SLIDER LOGIC
-       ================================ */
-
-    (function () {
-      const track = document.getElementById("facilityTrack");
-      const prev = document.getElementById("facilityPrev");
-      const next = document.getElementById("facilityNext");
-      const dotsWrap = document.getElementById("facilityDots");
-
-      if (!track || !facilityImages.length) return;
-
-      let index = 0;
-
-      // Build slides dynamically
-      facilityImages.forEach(img => {
-        const slide = document.createElement("figure");
-        slide.className = "min-w-full relative";
-
-        slide.innerHTML = `
-          <img src="${img.src}" alt="${img.title}"
-               class="w-full h-[320px] md:h-[420px] object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
-          <figcaption class="absolute left-6 bottom-6 text-white">
-            <p class="text-sm opacity-90">${img.title}</p>
-            <p class="text-xl md:text-2xl font-serif-display font-bold">${img.subtitle}</p>
-          </figcaption>
-        `;
-        track.appendChild(slide);
-
-        const dot = document.createElement("button");
-        dot.className = "w-2.5 h-2.5 rounded-full bg-white/30 border border-white/60";
-        dot.onclick = () => goTo(facilityImages.indexOf(img));
-        dotsWrap.appendChild(dot);
-      });
-
-      const dots = [...dotsWrap.children];
-
-      function update() {
-        track.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach((d, i) =>
-          d.className = "w-2.5 h-2.5 rounded-full border transition " +
-          (i === index ? "bg-white" : "bg-white/30 hover:bg-white/70")
-        );
-      }
-
-      function goTo(i) {
-        index = (i + facilityImages.length) % facilityImages.length;
-        update();
-      }
-
-      prev.onclick = () => goTo(index - 1);
-      next.onclick = () => goTo(index + 1);
-
-      setInterval(() => goTo(index + 1), 6000);
-      update();
-    })();
-  </script>
 </head>
+<body class="bg-[#faf7f2] text-stone-700">
 
-<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
+  <main class="max-w-7xl mx-auto px-6 py-24">
 
-  <div id="site-header"></div>
+    <section class="grid md:grid-cols-2 gap-20 items-center">
 
-  <div class="sticky-cta">
-    <a class="quote" href="/contact.html">Get Quote</a>
-    <a class="wa" href="https://wa.me/917738505687" target="_blank">WhatsApp</a>
-  </div>
-  <div class="mobile-cta">
-    <div class="wrap">
-      <a class="quote" href="/contact.html">Get Quote</a>
-      <a class="wa" href="https://wa.me/917738505687" target="_blank">WhatsApp</a>
-    </div>
-  </div>
-
-  <section class="relative w-full py-20 bg-brand-900 text-white overflow-hidden">
-    <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 text-center">
-      <div class="text-sm text-earth-gold font-bold uppercase tracking-widest mb-4">Our Story</div>
-      <h1 class="font-serif-display text-4xl md:text-6xl font-bold mb-6">Rooted in Quality,<br>Growing with Trust.</h1>
-      <p class="text-lg md:text-xl text-brand-100 max-w-2xl mx-auto leading-relaxed">
-        Atlas AgroFood bridges the gap between Indian farmers and the global food industry, delivering premium dehydrated ingredients with integrity and innovation.
-      </p>
-    </div>
-  </section>
-
-  <main class="max-w-7xl mx-auto px-4 py-16">
-
-    <section class="mb-20">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="font-serif-display text-3xl md:text-4xl font-bold text-brand-900 mb-6">Connecting Farms to Factories</h2>
-          <p class="text-stone-600 text-lg mb-6 leading-relaxed">
-            Situated in the heart of Maharashtra's agricultural belt, Atlas AgroFood was founded with a single mission: to reduce post-harvest loss and provide the world with shelf-stable, high-nutrient food ingredients.
-          </p>
-          <p class="text-stone-600 text-lg mb-8 leading-relaxed">
-            We specialize in processing fresh harvests—Onions, Garlic, Ginger, and Fruits—into premium dehydrated forms that retain their natural aroma, taste, and nutritional value.
-          </p>
-          
-          <div class="grid grid-cols-2 gap-6">
-            <div class="p-4 bg-white rounded-xl border border-stone-200 shadow-sm">
-              <div class="text-3xl font-bold text-earth-gold mb-1">100%</div>
-              <div class="text-sm font-bold text-brand-900 uppercase">Natural Sourcing</div>
-            </div>
-            <div class="p-4 bg-white rounded-xl border border-stone-200 shadow-sm">
-              <div class="text-3xl font-bold text-earth-gold mb-1">Global</div>
-              <div class="text-sm font-bold text-brand-900 uppercase">Export Standard</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="relative h-96 rounded-3xl overflow-hidden shadow-2xl bg-stone-200 group">
-           <img src="/assets/gallery/direct-source-farming.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Direct Farm Sourcing">
-           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-             <div class="text-white font-bold text-lg">Direct Farm Sourcing</div>
-           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Manufacturing Facility (Dynamic Slider) -->
-    <section class="bg-white rounded-[2.5rem] border border-stone-200 shadow-sm overflow-hidden">
-      <div class="p-10 md:p-12">
-
-        <div class="flex items-start justify-between gap-6 flex-col md:flex-row">
-          <div>
-            <p class="text-xs tracking-widest text-earth-gold font-bold mb-2">FACILITY</p>
-            <h3 class="text-2xl md:text-3xl font-serif-display text-brand-800">
-              Manufacturing Facility
-            </h3>
-            <p class="text-stone-600 max-w-2xl mt-3">
-              Dehydration lines, washing units, optical sorting, clean-room practices, and scalable capacity.
-            </p>
-          </div>
-
-          <!-- Optional badge (remove later) -->
-          <span id="facilityBadge"
-                class="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold
-                   bg-amber-100 text-amber-800 border border-amber-200">
-        🚧 Coming Soon
-      </span>
-        </div>
-        <!-- Slider -->
-        <div class="mt-10 relative rounded-3xl border border-stone-200 bg-stone-50 overflow-hidden">
-          <div id="facilityTrack" class="flex transition-transform duration-500 ease-out"></div>
-          <!-- Controls -->
-          <button id="facilityPrev"
-                  class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 border shadow">
-            ‹
-          </button>
-          <button id="facilityNext"
-                  class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 border shadow">
-            ›
-          </button>
-          <!-- Dots -->
-          <div id="facilityDots" class="absolute bottom-4 right-6 flex gap-2"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-20">
-      <div class="bg-brand-900 rounded-[3rem] p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-earth-gold rounded-full opacity-20 blur-3xl"></div>
-
-        <div class="relative z-10 grid md:grid-cols-2 gap-12">
-          <div>
-            <div class="text-earth-gold font-bold uppercase tracking-widest text-sm mb-2">Our Standards</div>
-            <h2 class="font-serif-display text-3xl md:text-4xl font-bold mb-6">Quality You Can Trust</h2>
-            <p class="text-brand-100 text-lg leading-relaxed mb-6">
-              Quality is not just a checkpoint; it's our culture. From raw material sorting to final metal detection, every step is monitored to ensure zero-defect supplies.
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-earth-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>ISO 22000 Certified Processes</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-earth-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Automated Washing & Peeling</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-earth-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Metal Detection & Magnet Traps</span>
-              </li>
-            </ul>
-            <div class="mt-8">
-              <a href="/quality.html" class="inline-block bg-earth-gold text-brand-900 font-bold px-8 py-3 rounded-full hover:bg-white transition">View Certifications</a>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 gap-4">
-             <div class="bg-white/10 p-4 rounded-xl border border-white/20 flex gap-4 items-center">
-               <div class="text-2xl font-serif-display font-bold text-earth-gold">01</div>
-               <div>
-                 <div class="font-bold text-white">Sourcing</div>
-                 <div class="text-xs text-brand-200">Direct from contracted farms</div>
-               </div>
-             </div>
-             <div class="bg-white/10 p-4 rounded-xl border border-white/20 flex gap-4 items-center">
-               <div class="text-2xl font-serif-display font-bold text-earth-gold">02</div>
-               <div>
-                 <div class="font-bold text-white">Processing</div>
-                 <div class="text-xs text-brand-200">Washing, Cutting, Dehydration</div>
-               </div>
-             </div>
-             <div class="bg-white/10 p-4 rounded-xl border border-white/20 flex gap-4 items-center">
-               <div class="text-2xl font-serif-display font-bold text-earth-gold">03</div>
-               <div>
-                 <div class="font-bold text-white">Grading</div>
-                 <div class="text-xs text-brand-200">Sorting, Color Sorting, Metal Detection</div>
-               </div>
-             </div>
-             <div class="bg-white/10 p-4 rounded-xl border border-white/20 flex gap-4 items-center">
-               <div class="text-2xl font-serif-display font-bold text-earth-gold">04</div>
-               <div>
-                 <div class="font-bold text-white">Packing</div>
-                 <div class="text-xs text-brand-200">Moisture-proof Bulk Export Packing</div>
-               </div>
-             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="font-serif-display text-3xl font-bold text-brand-900 mb-4">Why Partner With Us?</h2>
-        <p class="text-stone-600">We don't just sell ingredients; we act as your manufacturing partner, ensuring supply chain stability and consistent flavor profiles.</p>
+      <div>
+        <h2 class="font-serif text-4xl md:text-5xl text-green-800 mb-6">
+          Connecting Farms to Factories
+        </h2>
+        <p class="mb-5 leading-relaxed">
+          Situated in the heart of Maharashtra's agricultural belt, Atlas AgroFood
+          was founded with a single mission: to reduce post-harvest loss and
+          provide the world with shelf-stable, high-nutrient food ingredients.
+        </p>
+        <p class="leading-relaxed">
+          We specialize in processing fresh harvests—Onions, Garlic, Ginger, and
+          Fruits—into premium dehydrated forms that retain their natural aroma,
+          taste, and nutritional value.
+        </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-8 rounded-3xl border border-stone-200 card-hover text-center">
-          <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-700">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <section class="bg-white rounded-[2.75rem] border border-stone-200 shadow-2xl overflow-hidden my-20">
+        <div class="relative overflow-hidden">
+          <div id="facilityTrack" class="flex">
+            <figure class="min-w-full relative">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+              <img
+                src="/assets/gallery/facility/coming-soon-facility.compressed.jpg"
+                alt="Manufacturing Facility Coming Soon"
+                class="w-full h-[460px] md:h-[520px] object-cover object-center transition-transform duration-700"
+                loading="lazy"
+              />
+              <figcaption class="absolute left-8 bottom-8 md:left-12 md:bottom-12 text-white max-w-md">
+                <p class="text-sm uppercase tracking-widest opacity-80">
+                  Manufacturing Facility
+                </p>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold mt-1">
+                  Coming Soon
+                </h3>
+              </figcaption>
+            </figure>
           </div>
-          <h3 class="font-bold text-xl text-brand-900 mb-2">Global Export Ready</h3>
-          <p class="text-sm text-stone-600">Experienced in handling export documentation, phytosanitary requirements, and logistics for 20+ countries.</p>
         </div>
+      </section>
 
-        <div class="bg-white p-8 rounded-3xl border border-stone-200 card-hover text-center">
-          <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-700">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          </div>
-          <h3 class="font-bold text-xl text-brand-900 mb-2">Customization</h3>
-          <p class="text-sm text-stone-600">Tailored mesh sizes (Powder, Granules, Flakes) and custom blends to match your product formulation.</p>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl border border-stone-200 card-hover text-center">
-          <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-700">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-bold text-xl text-brand-900 mb-2">Year-Round Supply</h3>
-          <p class="text-sm text-stone-600">Large warehousing capacity allows us to stock raw material and finished goods for consistent supply stability.</p>
-        </div>
-      </div>
     </section>
 
   </main>
 
-  <div id="site-footer"></div>
-
-  
-<script>
-  // Facility slider (runs after DOM is ready)
-  document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById("facilityTrack");
-    const prev = document.getElementById("facilityPrev");
-    const next = document.getElementById("facilityNext");
-    const dotsWrap = document.getElementById("facilityDots");
-
-    if (!track || !dotsWrap || !Array.isArray(window.facilityImages) || window.facilityImages.length === 0) return;
-
-    let index = 0;
-    const slidesData = window.facilityImages;
-
-    // Build slides + dots
-    slidesData.forEach((img, i) => {
-      const slide = document.createElement("figure");
-      slide.className = "min-w-full relative";
-
-      const safeTitle = img.title || "Facility Image";
-      const safeSubtitle = img.subtitle || "";
-
-      slide.innerHTML = `
-        <img src="${img.src}" alt="${safeTitle}"
-             class="w-full h-[320px] md:h-[420px] object-cover" loading="lazy"
-             onerror="this.onerror=null; this.src='/assets/gallery/facility/coming-soon-facility.compressed.jpg';">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
-        <figcaption class="absolute left-6 bottom-6 text-white">
-          <p class="text-sm opacity-90">${safeTitle}</p>
-          ${safeSubtitle ? `<p class="text-xl md:text-2xl font-serif-display font-bold">${safeSubtitle}</p>` : ""}
-        </figcaption>
-      `;
-      track.appendChild(slide);
-
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "w-2.5 h-2.5 rounded-full bg-white/30 border border-white/60";
-      dot.addEventListener("click", () => goTo(i));
-      dotsWrap.appendChild(dot);
-    });
-
-    const dots = Array.from(dotsWrap.children);
-
-    function update() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach((d, i) => {
-        d.className =
-          "w-2.5 h-2.5 rounded-full border transition " +
-          (i === index ? "bg-white" : "bg-white/30 hover:bg-white/70");
-      });
-    }
-
-    function goTo(i) {
-      index = (i + slidesData.length) % slidesData.length;
-      update();
-    }
-
-    if (prev) prev.addEventListener("click", () => goTo(index - 1));
-    if (next) next.addEventListener("click", () => goTo(index + 1));
-
-    // Autoplay only if multiple images
-    if (slidesData.length > 1) {
-      let timer = setInterval(() => goTo(index + 1), 6000);
-      const wrapper = track.parentElement;
-      wrapper.addEventListener("mouseenter", () => clearInterval(timer));
-      wrapper.addEventListener("mouseleave", () => (timer = setInterval(() => goTo(index + 1), 6000)));
-    }
-
-    update();
-  });
-</script>
-
-<script src="/assets/js/includes.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
