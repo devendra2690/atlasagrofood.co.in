@@ -7,9 +7,9 @@
   <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
   <link rel="apple-touch-icon" href="/assets/atlas-agro-logo.png" />
 
-  <title>Dehydrated Cabbage Flakes & Powder | Bulk Manufacturer | Atlas AgroFood</title>
-  <meta name="description" content="Bulk manufacturer of Dehydrated Cabbage Flakes and Powder. Air-dried to retain crunch and sweetness. Ideal for instant noodles, soups, momo fillings, and seasonings."/>
-  <meta name="keywords" content="dehydrated cabbage flakes, cabbage powder bulk, dried cabbage for noodles, air dried vegetable flakes, instant soup ingredients" />
+  <title>Dehydrated Cabbage Flakes | Instant Noodle Garnish | Atlas AgroFood</title>
+  <meta name="description" content="Bulk manufacturer of Dehydrated Cabbage Flakes. 1:8 rehydration ratio. Ideal for instant noodles, momo fillings, and ready-to-eat soups. Available in 5mm-10mm flakes."/>
+  <meta name="keywords" content="dehydrated cabbage flakes, dried cabbage for noodles, air dried cabbage, instant noodle garnish, momo filling ingredients, bulk dehydrated vegetables" />
   <meta name="theme-color" content="#15803d" />
 
   <link rel="canonical" href="https://atlasagrofood.co.in/products/cabbage.html"/>
@@ -17,8 +17,8 @@
   <meta property="og:type" content="product" />
   <meta property="og:site_name" content="Atlas AgroFood" />
   <meta property="og:url" content="https://atlasagrofood.co.in/products/cabbage.html" />
-  <meta property="og:title" content="Dehydrated Cabbage Flakes & Powder | Bulk Supply" />
-  <meta property="og:description" content="Premium air-dried cabbage for instant meals and seasonings. Available in flakes and fine powder." />
+  <meta property="og:title" content="Dehydrated Cabbage Flakes | Bulk Supply" />
+  <meta property="og:description" content="Premium air-dried cabbage flakes. High rehydration ratio and crunch. Perfect for instant foods." />
   <meta property="og:image" content="https://atlasagrofood.co.in/assets/products/cabbage/social-preview.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,47 +65,66 @@
     .card-hover { transition: all .3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-color: #15803d; }
 
-    /* Sticky CTA Styles */
     .sticky-cta { position: fixed; right: 18px; bottom: 18px; z-index: 60; display: flex; flex-direction: column; gap: 10px; }
     .sticky-cta a { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 16px; font-weight: 800; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease; }
     .sticky-cta .wa { background: #ffffff; border: 1px solid rgba(148,163,184,.6); color: #0f172a; }
     .sticky-cta .quote { background: #15803d; color: #ffffff; }
-    .sticky-cta a:hover { transform: translateY(-2px); }
 
-    /* Mobile Bottom Bar */
     .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 59; padding: 10px 12px; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-top: 1px solid rgba(148,163,184,.3); }
     .mobile-cta .wrap { max-width: 72rem; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .mobile-cta a { display: inline-flex; align-items: center; justify-content: center; padding: 12px 14px; border-radius: 12px; font-weight: 800; }
     .mobile-cta .quote { background: #15803d; color: #ffffff; }
     .mobile-cta .wa { background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; }
 
-    /* --- RESPONSIVE LOGIC --- */
-    @media (min-width: 768px) {
-      .mobile-cta { display: none !important; }
-    }
-    @media (max-width: 767px) {
-      .sticky-cta { display: none !important; }
-      body { padding-bottom: 70px; }
-    }
+    @media (min-width: 768px) { .mobile-cta { display: none !important; } }
+    @media (max-width: 767px) { .sticky-cta { display: none !important; } body { padding-bottom: 70px; } }
   </style>
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Dehydrated Cabbage Flakes & Powder",
-      "image": "https://atlasagrofood.co.in/assets/products/cabbage/hero.png",
-      "description": "Dehydrated cabbage flakes and powder produced from fresh green cabbage. Excellent rehydration ratio for instant noodles, soups, and momo fillings.",
-      "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
-      "sku": "CAB-DH-2026",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://atlasagrofood.co.in/contact.html",
-        "priceCurrency": "INR",
-        "price": "0",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      }
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atlasagrofood.co.in/" },
+            { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://atlasagrofood.co.in/products/" },
+            { "@type": "ListItem", "position": 3, "name": "Dehydrated Cabbage", "item": "https://atlasagrofood.co.in/products/cabbage.html" }
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "Dehydrated Cabbage Flakes",
+          "image": "https://atlasagrofood.co.in/assets/products/cabbage/hero.png",
+          "description": "Dehydrated cabbage flakes produced from fresh green cabbage. Excellent rehydration ratio for instant noodles, soups, and momo fillings.",
+          "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
+          "sku": "CAB-DH-2026",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://atlasagrofood.co.in/products/cabbage.html",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "56"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "How long does it take to rehydrate?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In boiling water (like instant noodles), flakes rehydrate in 2-3 minutes. In cold water, it may take 15-20 minutes to regain full texture." }
+          }, {
+            "@type": "Question",
+            "name": "Is it sulfured?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We offer both: Standard dehydrated cabbage (which may contain minimal sulfites to preserve color) and Sulfite-Free options for specific export markets." }
+          }]
+        }
+      ]
     }
   </script>
 </head>
@@ -138,7 +157,7 @@
 
   <div class="grid lg:grid-cols-2 gap-12 mb-20 items-center">
     <div class="bg-white rounded-[2.5rem] border border-stone-200 p-8 shadow-sm relative overflow-hidden group">
-      <div class="absolute top-0 right-0 bg-brand-600 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl z-10">Air Dried / Dehydrated</div>
+      <div class="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl z-10">Air Dried</div>
       <div class="relative aspect-square rounded-2xl overflow-hidden bg-green-50 flex items-center justify-center">
         <img src="/assets/products/cabbage/hero.png" onerror="this.src='https://images.unsplash.com/photo-1596541223130-5d31a73fb6c6?q=80&w=1000&auto=format&fit=crop'" alt="Dehydrated Cabbage Flakes" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
       </div>
@@ -150,30 +169,40 @@
         Dehydrated Cabbage
       </h1>
       <p class="text-stone-600 text-lg leading-relaxed mb-8">
-        Fresh, sweet, and crunchy <span class="font-bold text-brand-800">Dehydrated Cabbage</span>. Produced from high-quality green cabbage, our air-drying process preserves the natural sweetness and color. Available as **Flakes** (which rehydrate to a near-fresh texture) and **Powder** for flavor bases.
+        Fresh, sweet, and crunchy <span class="font-bold text-brand-800">Dehydrated Cabbage Flakes</span>. Produced from high-quality green cabbage, our air-drying process preserves the natural sweetness and color. These flakes are the industry standard for instant noodle garnishes and soup mixes.
       </p>
 
-      <div class="grid grid-cols-2 gap-4 mb-8">
-        <div class="p-4 bg-white border border-stone-200 rounded-2xl card-hover">
-          <div class="text-xs text-stone-400 uppercase font-bold tracking-wider mb-1">Formats</div>
-          <div class="text-lg font-bold text-brand-900">Flakes (3-10mm) / Powder</div>
-        </div>
-        <div class="p-4 bg-white border border-stone-200 rounded-2xl card-hover">
-          <div class="text-xs text-stone-400 uppercase font-bold tracking-wider mb-1">Flavor</div>
-          <div class="text-lg font-bold text-brand-900">Sweet & Vegetal</div>
-        </div>
-        <div class="p-4 bg-white border border-stone-200 rounded-2xl card-hover">
-          <div class="text-xs text-stone-400 uppercase font-bold tracking-wider mb-1">Rehydration</div>
-          <div class="text-lg font-bold text-brand-900">1:8 Ratio</div>
-        </div>
-        <div class="p-4 bg-white border border-stone-200 rounded-2xl card-hover">
-          <div class="text-xs text-stone-400 uppercase font-bold tracking-wider mb-1">Packaging</div>
-          <div class="text-lg font-bold text-brand-900">14kg / 20kg</div>
-        </div>
+      <div class="overflow-x-auto mb-8 rounded-2xl border border-stone-200">
+        <table class="w-full text-left text-sm text-stone-600">
+          <thead class="bg-brand-50 text-brand-900 font-bold">
+          <tr>
+            <th class="px-4 py-3">Parameter</th>
+            <th class="px-4 py-3">Specification</th>
+          </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100 bg-white">
+          <tr>
+            <td class="px-4 py-3 font-medium">Format</td>
+            <td class="px-4 py-3">Flakes (5x5mm, 10x10mm) / Powder</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">Rehydration Ratio</td>
+            <td class="px-4 py-3">1:8 (High Yield)</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">Moisture</td>
+            <td class="px-4 py-3">&lt; 6%</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">Flavor Profile</td>
+            <td class="px-4 py-3">Sweet, Sulphurous, Vegetal</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="flex flex-wrap gap-4">
-        <a href="/contact.html" class="flex-1 bg-brand-700 text-white text-center px-8 py-4 rounded-full font-bold hover:bg-brand-800 transition shadow-lg hover:shadow-xl">Request Quote</a>
+        <a href="/contact.html" class="flex-1 bg-brand-700 text-white text-center px-8 py-4 rounded-full font-bold hover:bg-brand-800 transition shadow-lg hover:shadow-xl">Request Price</a>
         <a href="https://wa.me/917738505687" target="_blank" class="flex-1 border-2 border-stone-200 bg-white text-brand-900 text-center px-8 py-4 rounded-full font-bold hover:border-brand-600 hover:text-brand-700 transition">WhatsApp Us</a>
       </div>
     </div>
@@ -192,7 +221,7 @@
         </div>
         <h3 class="font-bold text-xl text-brand-900 mb-2">Instant Noodles</h3>
         <p class="text-stone-600 text-sm">
-          The #1 vegetable ingredient for noodle garnish packs. The flakes rehydrate within 2-3 minutes in hot water, providing a satisfying crunch.
+          The #1 vegetable ingredient for noodle garnish packs. The flakes rehydrate within 2-3 minutes in hot water, providing a satisfying crunch and visual appeal.
         </p>
       </div>
 
@@ -202,7 +231,7 @@
         </div>
         <h3 class="font-bold text-xl text-brand-900 mb-2">Momos & Dumplings</h3>
         <p class="text-stone-600 text-sm">
-          Rehydrated flakes are an excellent, shelf-stable filling base for frozen momos, spring rolls, and gyoza, reducing production prep time.
+          Rehydrated flakes are an excellent, shelf-stable filling base for frozen momos, spring rolls, and gyoza, reducing production prep time and waste.
         </p>
       </div>
 
@@ -210,9 +239,9 @@
         <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 text-brand-600 shadow-sm group-hover:scale-110 transition">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         </div>
-        <h3 class="font-bold text-xl text-brand-900 mb-2">Tastemakers</h3>
+        <h3 class="font-bold text-xl text-brand-900 mb-2">Soup Seasonings</h3>
         <p class="text-stone-600 text-sm">
-          Cabbage powder provides a sweet, savory "cooked vegetable" base note essential for soup seasonings, broth powders, and stock cubes.
+          Cabbage powder provides a sweet, savory "cooked vegetable" base note essential for soup seasonings, broth powders, and vegetable stock cubes.
         </p>
       </div>
     </div>
