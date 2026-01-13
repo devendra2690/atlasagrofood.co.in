@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
+
+  <title>Page Not Found | Atlas AgroFood</title>
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#15803d" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            ink: '#1e293b',
+            slateish: '#64748b',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365',
+            'earth-brown': '#5d4037',
+            'earth-green': '#556b2f',
+          },
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .font-serif-display { font-family: 'Playfair Display', serif; }
+    
+    .btn-primary { 
+        display: inline-flex; align-items: center; justify-content: center;
+        background-color: #15803d; color: white; padding: 12px 24px; 
+        border-radius: 12px; font-weight: 700; transition: all 0.2s ease;
+        box-shadow: 0 4px 6px -1px rgba(21,128,61, 0.3);
+    }
+    .btn-primary:hover { background-color: #166534; transform: translateY(-1px); }
+    
+    .btn-outline { 
+        display: inline-flex; align-items: center; justify-content: center;
+        background-color: white; border: 1px solid #d6d3d1; color: #1e293b; 
+        padding: 12px 24px; border-radius: 12px; font-weight: 700; 
+        transition: all 0.2s ease; 
+    }
+    .btn-outline:hover { border-color: #15803d; color: #15803d; transform: translateY(-1px); }
+    
+            /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
+    
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,0.1);}
+  </style>
+</head>
+
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen">
+
+  <div id="site-header"></div>
+
+  <main class="flex-grow flex items-center justify-center px-4 py-20">
+    <div class="max-w-2xl w-full text-center">
+      <div class="inline-block p-6 rounded-full bg-white shadow-xl shadow-brand/10 mb-6 card-hover">
+        <span class="text-6xl">🥑</span>
+      </div>
+      <h1 class="text-6xl font-serif-display font-bold text-brand-900 tracking-tight">404</h1>
+      <h2 class="mt-4 text-2xl font-bold text-ink">Page not found</h2>
+      <p class="mt-4 text-lg text-stone-600 max-w-md mx-auto">
+        The page you are looking for doesn't exist or has been moved. <br class="hidden md:block">
+        Check our product catalog or head back home.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/" class="btn-primary">Go Home</a>
+        <a href="/products/" class="btn-outline">Browse Products</a>
+      </div>
+
+      <div class="mt-12 p-6 bg-white rounded-3xl border border-stone-200 card-hover shadow-sm">
+        <h3 class="font-bold text-lg mb-4 text-ink">Looking for something specific?</h3>
+        <div class="flex flex-wrap justify-center gap-2">
+          <a href="/products/dehydrated-products.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Vegetables</a>
+          <a href="/products/fruit-powders.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Fruit Powders</a>
+          <a href="/products/spices.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Spices</a>
+          <a href="/contact.html" class="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-semibold hover:bg-brand-100 transition">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

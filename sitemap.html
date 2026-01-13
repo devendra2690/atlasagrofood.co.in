@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
+  <title>Sitemap | Atlas AgroFood</title>
+  <meta name="description" content="Complete overview of Atlas AgroFood's website structure. Quickly find products, buyer guides, and industry solutions."/>
+  <meta name="theme-color" content="#15803d" />
+  <link rel="canonical" href="https://atlasagrofood.co.in/sitemap.html"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            ink: '#1e293b',
+            slateish: '#64748b',
+            'earth-cream': '#f9f7f2',
+            'earth-gold': '#c5a365',
+            'earth-brown': '#5d4037',
+            'earth-green': '#556b2f',
+          },
+          fontFamily: { sans: ['Lato', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+        }
+      }
+    }
+    function siteApp() { return { mobileOpen: false, whatsappLink: "https://wa.me/917738505687", init() { console.log('Site App Initialized'); } }; }
+  </script>
+  <style>
+            /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const grid = document.getElementById("sitemapGrid");
+      const statusEl = document.getElementById("sitemapStatus");
+      const searchInput = document.getElementById("sitemapSearch");
+
+      const SITE_ORIGIN = window.location.origin;
+
+      // --- Helpers ---
+      const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[c]));
+
+      const normalizeUrl = (raw) => {
+        try {
+          // Make absolute, then convert to pathname display
+          const u = new URL(raw, SITE_ORIGIN);
+          return u.toString();
+        } catch {
+          return raw;
+        }
+      };
+
+      const titleFromUrl = (url) => {
+        // Convert "/products/black-pepper.html" -> "Black Pepper"
+        try {
+          const u = new URL(url, SITE_ORIGIN);
+          const path = u.pathname.replace(/\/+$/, "");
+          const last = path.split("/").filter(Boolean).pop() || "Home";
+
+          if (last === "index.html") return "Home";
+          const clean = last.replace(/\.html$/i, "");
+          return clean
+            .replace(/[-_]+/g, " ")
+            .replace(/\b\w/g, (m) => m.toUpperCase());
+        } catch {
+          // fallback
+          return url;
+        }
+      };
+
+      // Customize grouping here if needed
+      const groupForUrl = (url) => {
+        let p = "";
+        try { p = new URL(url, SITE_ORIGIN).pathname; } catch { p = url; }
+
+        // Products
+        if (p.startsWith("/products/")) return "Products";
+
+        // Industries
+        if (p.startsWith("/industries/")) return "Industries";
+
+        // Buyers guide/resources
+        if (p.startsWith("/buyers-guide/") || p.includes("buyers-guide")) return "Buyer Resources";
+
+        // Applications
+        if (p.startsWith("/applications/")) return "Applications";
+
+        // Company (top-level pages)
+        const companySet = new Set([
+          "/", "/index.html", "/why-atlas-agro.html", "/quality.html", "/gallery.html", "/contact.html",
+          "/faq.html", "/privacy-policy.html", "/terms.html", "/sitemap.html"
+        ]);
+        if (companySet.has(p)) return "Company";
+
+        // Everything else
+        return "Other";
+      };
+
+      const sortUrlNice = (a, b) => titleFromUrl(a).localeCompare(titleFromUrl(b));
+
+      const sectionMeta = {
+        "Company": { icon: "🏢", subtitle: "Core pages and policies" },
+        "Products": { icon: "🥕", subtitle: "All product detail pages" },
+        "Industries": { icon: "🏭", subtitle: "Industries we serve" },
+        "Buyer Resources": { icon: "📘", subtitle: "Guides & buyer information" },
+        "Applications": { icon: "🍽️", subtitle: "Use-cases and applications" },
+        "Other": { icon: "🔗", subtitle: "Other pages" }
+      };
+
+      const renderSection = (name, urls) => {
+        const meta = sectionMeta[name] || { icon: "🔗", subtitle: "" };
+        const count = urls.length;
+
+        // Products in 2 columns on large lists, others simple list
+        const isTwoCol = name === "Products" && count >= 12;
+
+        const itemsHtml = urls.map((u) => {
+          const t = titleFromUrl(u);
+          return `
+            <li>
+              <a href="${escapeHtml(u)}"
+                 class="block rounded-xl px-3 py-2 hover:bg-stone-50 transition text-stone-700 hover:text-brand-700">
+                ${escapeHtml(t)}
+              </a>
+            </li>`;
+        }).join("");
+
+        return `
+          <section class="sitemap-section rounded-3xl border border-stone-200 bg-white p-7 shadow-sm"
+                   data-section="${escapeHtml(name)}">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <h2 class="font-serif-display text-xl text-brand-800 flex items-center gap-2">
+                  <span class="text-xl">${meta.icon}</span>
+                  <span>${escapeHtml(name)}</span>
+                </h2>
+                <p class="text-xs text-stone-500 mt-1">${escapeHtml(meta.subtitle)}</p>
+              </div>
+              <!-- Count badge -->
+              <div class="shrink-0">
+                <span class="inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-bold text-stone-600">
+                  ${count} ${count === 1 ? "link" : "links"}
+                </span>
+              </div>
+            </div>
+
+            <ul class="${isTwoCol ? "grid grid-cols-2 gap-x-3 gap-y-1" : "space-y-1"}">
+              ${itemsHtml}
+            </ul>
+          </section>`;
+      };
+
+      const applySearch = (q) => {
+        const query = (q || "").trim().toLowerCase();
+        const sections = Array.from(document.querySelectorAll(".sitemap-section"));
+
+        if (!query) {
+          sections.forEach(s => s.classList.remove("hidden"));
+          return;
+        }
+        sections.forEach(sec => {
+          const text = sec.innerText.toLowerCase();
+          sec.classList.toggle("hidden", !text.includes(query));
+        });
+      };
+
+      // --- Load sitemap.xml ---
+      try {
+        const res = await fetch("/sitemap.xml", { cache: "no-store" });
+        if (!res.ok) throw new Error("Could not load /sitemap.xml");
+        const xmlText = await res.text();
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlText, "application/xml");
+
+        // Detect XML parse errors
+        if (xml.querySelector("parsererror")) throw new Error("sitemap.xml is not valid XML");
+
+        const locNodes = Array.from(xml.getElementsByTagName("loc"));
+        const urls = locNodes
+          .map(n => (n.textContent || "").trim())
+          .filter(Boolean)
+          .map(normalizeUrl);
+
+        // Remove duplicates
+        const uniq = Array.from(new Set(urls));
+
+        // Group
+        const groups = {};
+        uniq.forEach((u) => {
+          const g = groupForUrl(u);
+          (groups[g] ||= []).push(u);
+        });
+
+        // Sort within each group
+        Object.keys(groups).forEach(g => groups[g].sort(sortUrlNice));
+
+        // Render in preferred order
+        const order = ["Company", "Products", "Industries", "Buyer Resources", "Applications", "Other"];
+        grid.innerHTML = order
+          .filter(k => groups[k] && groups[k].length)
+          .map(k => renderSection(k, groups[k]))
+          .join("");
+
+        statusEl.textContent = `Loaded ${uniq.length} URLs from sitemap.xml`;
+        statusEl.className = "text-sm text-stone-500 mb-8";
+
+        // Search
+        searchInput.addEventListener("input", (e) => applySearch(e.target.value));
+
+      } catch (err) {
+        statusEl.textContent = "Could not load sitemap.xml. Please ensure /sitemap.xml exists on the server.";
+        statusEl.className = "text-sm text-red-700 mb-8";
+        grid.innerHTML = "";
+        console.error(err);
+      }
+    });
+  </script>
+  <style>
+    /* Limit tall sitemap panels */
+    .sitemap-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Scroll only when content is long */
+    .sitemap-section ul {
+      max-height: 420px; /* desktop */
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    /* Smaller sections should NOT look tall */
+    .sitemap-section[data-section="Company"] ul,
+    .sitemap-section[data-section="Applications"] ul,
+    .sitemap-section[data-section="Other"] ul {
+      max-height: none;
+      overflow: visible;
+    }
+
+    /* Subtle scrollbar (WebKit) */
+    .sitemap-section ul::-webkit-scrollbar {
+      width: 4px;
+    }
+    .sitemap-section ul::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 999px;
+    }
+
+    /* Mobile tuning */
+    @media (max-width: 768px) {
+      .sitemap-section ul {
+        max-height: none;
+        overflow: visible;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
+
+  <div id="site-header"></div>
+
+  <main class="max-w-7xl mx-auto px-4 py-14">
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="font-serif-display text-4xl md:text-5xl text-brand-800">Sitemap</h1>
+      <p class="text-stone-600 max-w-3xl mt-3">
+        Find products, industries, buyer resources, and applications. This page is generated automatically from our sitemap.xml.
+      </p>
+    </div>
+
+    <!-- Search -->
+    <div class="mb-10 max-w-xl">
+      <div class="bg-white p-2 rounded-2xl border border-stone-200 shadow-sm">
+        <input
+                type="text"
+                id="sitemapSearch"
+                placeholder="Search pages… (e.g. Onion, Buyers Guide, Industries)"
+                class="w-full bg-stone-50 border border-stone-100 rounded-xl px-4 py-4 outline-none
+               focus:border-brand-500 focus:bg-white transition text-ink placeholder:text-stone-400"
+                style="font-size:16px; line-height:24px;"
+        />
+      </div>
+    </div>
+
+    <!-- Loading / Error -->
+    <div id="sitemapStatus" class="text-sm text-stone-500 mb-8">Loading sitemap…</div>
+
+    <!-- Grid -->
+    <div id="sitemapGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
