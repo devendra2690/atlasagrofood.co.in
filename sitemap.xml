@@ -102,12 +102,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<!--  <url>
     <loc>https://atlasagrofood.co.in/products/mango.html</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
+  </url>-->
   <url>
     <loc>https://atlasagrofood.co.in/products/methi.html</loc>
     <lastmod>2026-01-11</lastmod>
@@ -162,12 +162,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+  <!--<url>
     <loc>https://atlasagrofood.co.in/products/orange.html</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
+  </url>-->
   <url>
     <loc>https://atlasagrofood.co.in/products/papaya.html</loc>
     <lastmod>2026-01-11</lastmod>
