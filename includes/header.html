@@ -13,12 +13,12 @@
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 h-24 md:h-32 flex items-center justify-between">
-    
-    <a href="/" class="flex items-center gap-4 group">
+
+    <a href="/" class="flex items-center gap-4 group" aria-label="Atlas AgroFood Home">
       <div class="h-20 w-20 md:h-24 md:w-24 shrink-0 transition-transform duration-300 group-hover:scale-105">
-         <img src="/assets/atlas-agrofood-logo.png" 
-              alt="Atlas AgroFood - Dehydrated Onion & Garlic Manufacturer" 
-              class="w-full h-full object-contain">
+        <img src="/assets/atlas-agrofood-logo.png"
+             alt="Atlas AgroFood - Dehydrated Vegetables, Fruits & Spices Manufacturer"
+             class="w-full h-full object-contain">
       </div>
       <div class="flex flex-col justify-center">
         <span class="font-serif-display font-bold text-xl md:text-3xl text-brand-900 leading-none group-hover:text-brand-700 transition">
@@ -30,23 +30,23 @@
       </div>
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600" aria-label="Desktop Navigation">
       <a href="/" class="hover:text-brand-700 transition">Home</a>
       <a href="/products/" class="hover:text-brand-700 transition">Products</a>
       <a href="/industries/" class="hover:text-brand-700 transition">Industries</a>
       <a href="/quality.html" class="hover:text-brand-700 transition">Quality</a>
-      <a href="/gallery.html" class="hover:text-brand-700 transition">Gallery</a> 
+      <a href="/gallery.html" class="hover:text-brand-700 transition">Gallery</a>
       <a href="/contact.html" class="hover:text-brand-700 transition">Contact</a>
       <a href="/why-atlas-agro.html" class="hover:text-brand-700 transition">About us</a>
     </nav>
 
     <div class="hidden md:flex items-center gap-3">
-      <a href="https://wa.me/917738505687" target="_blank" class="rounded-full border-2 border-brand-700 text-brand-700 px-6 py-2 text-sm font-bold hover:bg-brand-700 hover:text-white transition duration-300">
+      <a href="https://wa.me/917738505687" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-brand-700 text-brand-700 px-6 py-2 text-sm font-bold hover:bg-brand-700 hover:text-white transition duration-300" aria-label="Chat on WhatsApp">
         WhatsApp
       </a>
     </div>
 
-    <button id="mobile-open-btn" class="md:hidden text-brand-900 p-2">
+    <button id="mobile-open-btn" class="md:hidden text-brand-900 p-2" aria-label="Open Menu">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
     </button>
   </div>
@@ -55,19 +55,21 @@
 <div id="mobile-overlay" class="hidden fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm"></div>
 
 <div id="mobile-sidebar" class="hidden fixed right-0 top-0 bottom-0 w-[80%] max-w-sm bg-earth-cream z-[70] shadow-2xl p-6 flex flex-col gap-6 border-l border-stone-200">
-    <div class="flex justify-between items-center mb-4">
-      <span class="font-serif-display font-bold text-xl text-brand-900">Menu</span>
-      <button id="mobile-close-btn" class="text-stone-500 text-2xl">✕</button>
-    </div>
-    <nav class="flex flex-col gap-4 text-lg font-medium text-stone-700">
-      <a href="/" class="text-brand-700">Home</a>
-      <a href="/products/">Products</a>
-      <a href="/industries/">Industries</a>
-      <a href="/quality.html">Quality</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/why-atlas-agro.html">About us</a>
-      <a href="/assets/brochure.pdf">Download Brochure</a>
-    </nav>
-    <a href="https://wa.me/917738505687" class="mt-auto w-full bg-brand-700 text-white text-center py-4 rounded-xl font-bold">Chat on WhatsApp</a>
+  <div class="flex justify-between items-center mb-4">
+    <span class="font-serif-display font-bold text-xl text-brand-900">Menu</span>
+    <button id="mobile-close-btn" class="text-stone-500 text-2xl" aria-label="Close Menu">✕</button>
+  </div>
+
+  <nav class="flex flex-col gap-4 text-lg font-medium text-stone-700" aria-label="Mobile Navigation">
+    <a href="/" class="text-brand-700">Home</a>
+    <a href="/products/">Products</a>
+    <a href="/industries/">Industries</a>
+    <a href="/quality.html">Quality</a>
+    <a href="/gallery.html">Gallery</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/why-atlas-agro.html">About us</a>
+    <a href="/assets/brochure.pdf" download>Download Brochure</a>
+  </nav>
+
+  <a href="https://wa.me/917738505687" target="_blank" rel="noopener noreferrer" class="mt-auto w-full bg-brand-700 text-white text-center py-4 rounded-xl font-bold">Chat on WhatsApp</a>
 </div>
