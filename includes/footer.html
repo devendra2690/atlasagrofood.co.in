@@ -1,16 +1,15 @@
 <footer class="bg-brand-900 text-white pt-16 pb-8 border-t-[10px] border-earth-gold">
   <div class="max-w-7xl mx-auto px-4">
 
-    <!-- TOP GRID -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 md:items-start">
 
-      <!-- Brand -->
       <div class="md:col-span-1">
-        <a href="/" class="flex items-center gap-4 group md:items-start">
+        <a href="/" class="flex items-center gap-4 group md:items-start" aria-label="Atlas AgroFood Home">
           <div class="h-16 w-16 md:h-20 md:w-20 shrink-0 transition-transform duration-300 group-hover:scale-105">
             <img src="/assets/atlas-agrofood-logo.png"
-                 alt="Atlas AgroFood"
-                 class="w-full h-full object-contain">
+                 alt="Atlas AgroFood - Dehydrated Ingredients Manufacturer"
+                 class="w-full h-full object-contain"
+                 loading="lazy">
           </div>
 
           <div class="flex flex-col justify-center md:pt-1">
@@ -22,57 +21,63 @@
         </a>
 
         <p class="text-brand-200 text-sm leading-relaxed mt-4 max-w-xs">
-          Premium manufacturer of dehydrated vegetables, fruit powders, and culinary spice blends.
+          Premium manufacturer of dehydrated vegetables, fruit powders, and culinary spice blends for global food industries.
         </p>
       </div>
 
-      <!-- Products -->
       <div class="md:col-span-1">
-        <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Products</h4>
-        <ul class="space-y-2 text-sm text-brand-100">
-          <li><a href="/products/spices.html" class="hover:text-white transition">Onion Flakes &amp; Powder</a></li>
-          <li><a href="/products/spices.html" class="hover:text-white transition">Garlic Powder</a></li>
-          <li><a href="/products/dehydrated-products.html" class="hover:text-white transition">Fruit Chips</a></li>
-          <li><a href="/products/spices.html" class="hover:text-white transition">Spices</a></li>
-        </ul>
+        <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Core Products</h4>
+        <nav aria-label="Footer Product Navigation">
+          <ul class="space-y-2 text-sm text-brand-100">
+            <li><a href="/products/onion.html" class="hover:text-white transition" title="Bulk Dehydrated Onion">Onion Flakes &amp; Powder</a></li>
+            <li><a href="/products/garlic.html" class="hover:text-white transition" title="Bulk Garlic Powder">Garlic Granules &amp; Powder</a></li>
+            <li><a href="/products/assorted-dehydrated-fruit-chips.html" class="hover:text-white transition" title="Vacuum Fried Fruit Chips">Fruit Chips</a></li>
+            <li><a href="/products/spices.html" class="hover:text-white transition" title="Whole and Ground Spices">Whole &amp; Ground Spices</a></li>
+            <li><a href="/products/dehydrated-products.html" class="hover:text-white transition font-semibold text-earth-gold">View All Products →</a></li>
+          </ul>
+        </nav>
       </div>
 
-      <!-- Company -->
       <div class="md:col-span-1">
         <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Company</h4>
-        <ul class="space-y-2 text-sm text-brand-100">
-          <li><a href="/quality.html" class="hover:text-white transition">Quality Assurance</a></li>
-          <li><a href="/why-atlas-agro.html" class="hover:text-white transition">Why Atlas AgroFood</a></li>
-          <li><a href="/industries/" class="hover:text-white transition">Industries</a></li>
-          <li><a href="/buyers-guide/" class="hover:text-white transition">Buyer's Guide</a></li>
-          <li><a href="/sitemap.html" class="hover:text-white transition">Sitemap</a></li>
-          <li><a href="/faq.html" class="hover:text-white transition">FAQ</a></li>
-          <li><a href="/contact.html" class="hover:text-white transition">Contact Us</a></li>
-        </ul>
+        <nav aria-label="Footer Company Navigation">
+          <ul class="space-y-2 text-sm text-brand-100">
+            <li><a href="/quality.html" class="hover:text-white transition">Quality Assurance</a></li>
+            <li><a href="/why-atlas-agro.html" class="hover:text-white transition">Why Atlas AgroFood</a></li>
+            <li><a href="/industries/" class="hover:text-white transition">Industries We Serve</a></li>
+            <li><a href="/buyers-guide/" class="hover:text-white transition">Buyer's Guide</a></li>
+            <li><a href="/faq.html" class="hover:text-white transition">FAQ</a></li>
+            <li><a href="/contact.html" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </nav>
       </div>
 
-      <!-- Address -->
-      <div class="md:col-span-1">
-        <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Address</h4>
+      <div class="md:col-span-1" itemscope itemtype="https://schema.org/Organization">
+        <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Contact Details</h4>
 
-        <p class="text-sm text-brand-100 leading-relaxed">
-          Khamgaon, Dist Buldhana,<br>
-          Maharashtra, India 444303
-        </p>
+        <meta itemprop="name" content="Atlas AgroFood">
 
-        <!-- Sales Contact -->
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <p class="text-sm text-brand-100 leading-relaxed">
+            <span itemprop="streetAddress">Khamgaon, Dist Buldhana</span>,<br>
+            <span itemprop="addressRegion">Maharashtra</span>, <span itemprop="addressCountry">India</span> <span itemprop="postalCode">444303</span>
+          </p>
+        </div>
+
         <div class="mt-4 space-y-1">
           <p class="text-sm text-brand-200">
             <span class="font-semibold text-earth-gold">Sales Contact</span><br>
-            Nishant Sawale
+            <span itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+              <span itemprop="contactType" content="Sales">Nishant Sawale</span>
+            </span>
           </p>
 
           <p class="text-sm text-brand-200 font-bold">
-            +91-7738505687
+            <a href="tel:+917738505687" class="hover:text-white transition" itemprop="telephone">+91-7738505687</a>
           </p>
 
           <p class="text-sm text-brand-200">
-            <a href="mailto:sales@atlasagrofood.co.in" class="hover:text-white transition">
+            <a href="mailto:sales@atlasagrofood.co.in" class="hover:text-white transition" itemprop="email">
               nishantsawale@atlasagrofood.co.in
             </a>
           </p>
@@ -81,7 +86,6 @@
 
     </div>
 
-    <!-- BOTTOM BAR -->
     <div class="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-brand-300">
       <p>&copy; <span id="footer-year">2026</span> Atlas AgroFood Pvt Ltd. All rights reserved.</p>
 
