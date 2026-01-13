@@ -73,10 +73,6 @@
       }
     }
 
-    .section-gap {
-      margin-top: 4rem; /* 64px */
-    }
-
     /* 2. HIDE the Bottom Bar on Desktop */
     @media (min-width: 768px) {
       .mobile-cta {
@@ -241,13 +237,13 @@
 
       <div class="relative overflow-hidden rounded-2xl border border-stone-100"
            x-data="{
-           active: 0,
-           slides: [
-             { src: '/assets/products/spinach/hero.png', alt: 'Spinach Powder (Palak)' }
-           ],
-           next(){ this.active=(this.active+1)%this.slides.length },
-           prev(){ this.active=(this.active-1+this.slides.length)%this.slides.length }
-         }">
+               active: 0,
+               slides: [
+                 { src: '/assets/products/spinach/hero.png', alt: 'Spinach Powder (Palak)' }
+               ],
+               next(){ this.active=(this.active+1)%this.slides.length },
+               prev(){ this.active=(this.active-1+this.slides.length)%this.slides.length }
+             }">
 
         <div class="aspect-[16/9] bg-stone-50 relative">
           <template x-for="(s,i) in slides" :key="i">
