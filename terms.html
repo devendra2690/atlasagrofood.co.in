@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/atlas-agrofood-logo.png" />
+  <title>Terms of Service | Atlas AgroFood</title>
+  <meta name="description" content="Terms and Conditions for using Atlas AgroFood's website and services."/>
+  <meta name="theme-color" content="#15803d" />
+  <link rel="canonical" href="https://atlasagrofood.co.in/terms.html"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 900: '#14532d' }, ink: '#1e293b', 'earth-cream': '#f9f7f2', 'earth-gold': '#c5a365' }, fontFamily: { sans: ['Lato', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
+    function siteApp() { return { mobileOpen: false, whatsappLink: "https://wa.me/917738505687", init() { console.log('Site App Initialized'); } }; }
+  </script>
+  <style>
+            /* 1. HIDE the Vertical Buttons on Mobile */
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: none !important;
+      }
+    }
+
+    /* 2. HIDE the Bottom Bar on Desktop */
+    @media (min-width: 768px) {
+      .mobile-cta {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" x-data="siteApp()">
+  <div id="site-header"></div>
+
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-brand-900 mb-8">Terms of Service</h1>
+    <div class="text-stone-600 mb-8">Last Updated: January 2026</div>
+
+    <div class="prose prose-lg prose-stone max-w-none bg-white p-8 md:p-12 rounded-3xl border border-stone-200 shadow-sm">
+      
+      <h3 class="text-brand-900 font-serif-display mt-2 mb-4 text-2xl font-bold">1. Terms</h3>
+      <p>By accessing this Website, accessible from https://atlasagrofood.co.in, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws.</p>
+
+      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">2. Use License</h3>
+      <p>Permission is granted to temporarily download one copy of the materials on Atlas AgroFood's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>modify or copy the materials;</li>
+        <li>use the materials for any commercial purpose or for any public display;</li>
+        <li>attempt to reverse engineer any software contained on Atlas AgroFood's Website;</li>
+        <li>remove any copyright or other proprietary notations from the materials; or</li>
+        <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+      </ul>
+
+      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">3. Disclaimer</h3>
+      <p>All the materials on Atlas AgroFood's Website are provided "as is". Atlas AgroFood makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, Atlas AgroFood does not make any representations concerning the accuracy or reliability of the use of the materials on its Website.</p>
+
+      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">4. Product Information</h3>
+      <p>While we strive to display our products as accurately as possible, the colors and specifications of the dehydrated products shown on the website are for reference only. Actual product specifications (mesh size, color, moisture) are confirmed via Certificate of Analysis (COA) at the time of order.</p>
+
+      <h3 class="text-brand-900 font-serif-display mt-8 mb-4 text-2xl font-bold">5. Governing Law</h3>
+      <p>Any claim related to Atlas AgroFood's Website shall be governed by the laws of India, specifically within the jurisdiction of Maharashtra, without regards to its conflict of law provisions.</p>
+      
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/includes.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
