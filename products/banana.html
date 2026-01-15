@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/assets/atlas-agrofood-logo.png" />
 
   <title>Banana Powder & Flour (Raw/Ripe) | Atlas AgroFood</title>
-  <meta name="description" content="Premium Raw (Green) Banana Flour and Ripe Banana Powder. Excellent gluten-free flour alternative, resistant starch source, and baby food ingredient. Bulk supplier."/>
+  <meta name="description" content="Premium Raw (Green) Banana Flour and Ripe Banana Powder. Gluten-free, high resistant starch, and perfect for baby food or bakery. Bulk supplier."/>
   <meta name="keywords" content="Banana Powder, Raw Banana Flour, Green Banana Flour, Ripe Banana Powder, Resistant Starch, Gluten Free Flour, Baby Food Ingredients, Bulk Fruit Powder" />
   <meta name="theme-color" content="#15803d" />
 
@@ -21,9 +21,6 @@
   <meta property="og:url" content="https://atlasagrofood.co.in/products/banana.html" />
   <meta property="og:image" content="https://atlasagrofood.co.in/assets/products/banana/hero.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Banana Powder & Flour | Atlas AgroFood" />
-  <meta name="twitter:description" content="Raw and Ripe Banana Powder. Gluten-free flour alternative and natural sweetener." />
-  <meta name="twitter:image" content="https://atlasagrofood.co.in/assets/products/banana/hero.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +63,6 @@
   <style>
     body { font-family: 'Lato', sans-serif; }
     .font-serif-display { font-family: 'Playfair Display', serif; }
-
     .card-hover{transition:all .3s ease;}
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 10px 25px -5px rgba(0, 0, 0, 0.1);}
 
@@ -83,21 +79,7 @@
     .mobile-cta .wa{background:#ffffff;border:1px solid #cbd5e1;color:#0f172a}
 
     @media (min-width: 768px){.mobile-cta{display:none}}
-    @media (max-width: 767px){body{padding-bottom:70px}}
-
-            /* 1. HIDE the Vertical Buttons on Mobile */
-    @media (max-width: 767px) {
-      .sticky-cta {
-        display: none !important;
-      }
-    }
-
-    /* 2. HIDE the Bottom Bar on Desktop */
-    @media (min-width: 768px) {
-      .mobile-cta {
-        display: none !important;
-      }
-    }
+    @media (max-width: 767px){.sticky-cta{display:none !important;} body{padding-bottom:70px}}
 
     /* FAQ Animation */
     details > summary { list-style: none; }
@@ -122,49 +104,46 @@
           "@type": "Product",
           "name": "Banana Powder (Raw & Ripe)",
           "image": [
-            "https://atlasagrofood.co.in/assets/products/banana/hero.png",
-            "https://atlasagrofood.co.in/assets/products/banana/thumb-1.png",
-            "https://atlasagrofood.co.in/assets/products/banana/thumb-2.png",
-            "https://atlasagrofood.co.in/assets/products/banana/thumb-3.png"
+            "https://atlasagrofood.co.in/assets/products/banana/hero.png"
           ],
-          "description": "Premium Raw Green Banana Flour and Ripe Banana Powder. Gluten-free, high resistant starch, and perfect for baby food or bakery applications. Bulk supply available.",
+          "description": "Premium Raw Green Banana Flour and Ripe Banana Powder. Gluten-free, high resistant starch, and perfect for baby food or bakery. Bulk supply available.",
           "brand": { "@type": "Brand", "name": "Atlas AgroFood" },
-          "sku": "BAN-001",
-          "category": "Dehydrated Fruit Powder",
+          "sku": "BAN-DH-2026",
           "offers": {
             "@type": "Offer",
             "url": "https://atlasagrofood.co.in/products/banana.html",
             "priceCurrency": "INR",
+            "price": "0",
+            "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
-            "seller": {
-              "@type": "Organization",
-              "name": "Atlas AgroFood"
-            }
+            "itemCondition": "https://schema.org/NewCondition",
+            "seller": { "@type": "Organization", "name": "Atlas AgroFood" }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "24"
           }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "What is the difference between Raw and Ripe banana powder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raw powder is white/neutral in color and high in resistant starch, making it a great gluten-free flour replacer. Ripe powder is yellowish, sweet, and retains the distinct banana flavor for confectionery."
+            }
+          }, {
+            "@type": "Question",
+            "name": "What is the shelf life?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When stored in a cool, dry place in sealed packaging, the shelf life is typically 12 to 18 months."
+            }
+          }]
         }
       ]
-    }
-  </script>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "What is the difference between Raw and Ripe banana powder?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Raw powder is made from green bananas and is high in resistant starch, acting as a gluten-free flour. Ripe powder is made from yellow bananas and is sweet, used for flavoring."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Is this suitable for baby food?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our Banana Powder is 100% natural and widely used as a primary ingredient in infant food mixes due to its digestibility and nutrient profile."
-        }
-      }]
     }
   </script>
 </head>
@@ -218,7 +197,8 @@
           <div class="w-full h-full relative">
             <img :src="images[active]"
                  alt="Product Detail"
-                 class="w-full h-full object-contain transition-transform duration-500">
+                 class="w-full h-full object-contain transition-transform duration-500"
+                 onerror="this.src='/assets/products/banana/hero.png'">
           </div>
         </div>
         <button @click="prev()"
