@@ -23,18 +23,39 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Atlas AgroFood",
-      "url": "https://atlasagrofood.co.in",
-      "logo": "https://atlasagrofood.co.in/assets/atlas-agrofood-logo.png",
-      "description": "Manufacturer and exporter of dehydrated vegetables and fruit powders.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-7738505687",
-        "contactType": "sales",
-        "areaServed": "Global",
-        "availableLanguage": ["English", "Hindi"]
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://atlasagrofood.co.in/#organization",
+          "name": "Atlas AgroFood",
+          "url": "https://atlasagrofood.co.in",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://atlasagrofood.co.in/assets/atlas-agrofood-logo.png",
+            "width": 512,
+            "height": 512,
+            "caption": "Atlas AgroFood"
+          },
+          "image": { "@id": "https://atlasagrofood.co.in/#logo" },
+          "description": "Manufacturer and exporter of dehydrated vegetables and fruit powders.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-7738505687",
+            "contactType": "sales",
+            "areaServed": "Global",
+            "availableLanguage": ["English", "Hindi"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://atlasagrofood.co.in/#website",
+          "url": "https://atlasagrofood.co.in",
+          "name": "Atlas AgroFood",
+          "description": "Dehydrated Vegetables & Fruit Powders Manufacturer",
+          "publisher": { "@id": "https://atlasagrofood.co.in/#organization" },
+          "inLanguage": "en"
+        }
+      ]
     }
   </script>
 
